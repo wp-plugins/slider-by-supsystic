@@ -1,0 +1,178 @@
+<style>
+    .spacer {width:100%; height:25px;}
+    .container {
+        position: relative;
+        max-width: 1050px;
+    }
+    .container h1 {text-align:center; font-size: 30px; margin:10px 0; float: left;}
+    .container h2 {font-size:24px; margin:10px 0;}
+    .container h3 {font-size:20px; margin:10px 0;}
+    .container p {line-height:20px; margin-bottom:10px;}
+    .container ul {margin-bottom:10px; margin-left:20px;}
+    .container ul li {list-style-type:disc;}
+
+    .about-message {
+        font-size: 21px;
+        line-height: 30px;
+        float: left;
+    }
+
+    .plug-icon-shell {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .plug-icon-shell a {
+        font-size: 14px;
+        color: grey;
+        text-decoration: none;
+    }
+
+    .video-wrapper {
+        margin:0 auto;
+        width:640px;
+        float: left;
+    }
+    .clear {clear:both;}
+
+    .col-3 {
+        float:left;
+        padding-right: 20px;
+        width:29%;
+    }
+
+    #bupWelcomePageFindUsForm label {
+        line-height: 24px;
+        margin-left: 20px;
+        font-size: 14px;
+        display: block;
+    }
+</style>
+
+<div id="bup-first-start">
+    <div class="container">
+        <form id="bupWelcomePageFindUsForm" method="post" action="{{ environment.generateUrl('promo', 'index') }}">
+            <input name="promo_viewed" value="true" type="hidden"/>
+            <h1>
+                {{ environment.translate('Welcome to') }}
+                {{ pluginName }}
+                {{ environment.translate('Version') }}
+                {{ environment.config.get('plugin_version') }}!
+            </h1>
+            <div class="clear"></div>
+            <div class="about-message">
+                This is first start up of the {{ pluginName }} plugin.<br />
+                If you are newbie - check all features on that page, if you are guru - please correct us.
+            </div>
+            <div class="plug-icon-shell">
+                {#<a target="_blank" href="http://supsystic.com"><img src="<?php echo $this->getModule()->getModPath(). 'img/plug-icon.png'?>" /></a><br />#}
+                <a target="_blank" href="'http://supsystic.com/">{{ pluginName }}</a><br />
+                <a target="_blank" href="'http://supsystic.com/">{{ environment.config.get('plugin_version') }}</a><br />
+            </div>
+            <div class="clear"></div>
+            <div class="spacer"></div>
+
+            <h2>Where did you find us?</h2>
+
+            {#<form action="">#}
+
+            <!-- Google -->
+            <label for="find-google">
+                <input value="1" type="radio" name="where_find_us" id="find-google"/>
+                {{ environment.translate('Google') }}
+            </label>
+
+            <!-- Wordpress.org -->
+            <label for="find-wordpress">
+                <input value="2" type="radio" name="where_find_us" id="find-wordpress"/>
+                {{ environment.translate('Wordpress.org') }}
+            </label>
+
+            <!-- Reffer a friend -->
+            <label for="find-friend">
+                <input value="3" type="radio" name="where_find_us" id="find-friend"/>
+                {{ environment.translate('Reffer a friend') }}
+            </label>
+
+            <!-- Find on the web -->
+            <label for="find-web">
+                <input value="4" type="radio" name="where_find_us" id="find-web"/>
+                {{ environment.translate('Find on the web') }}
+            </label>
+
+            <!-- Find on the web URL -->
+            <input type="text" name="4" id="find-web-description" class="r-description" placeholder="URL" style="display: none;"/>
+
+            <!-- Other way -->
+            <label for="find-other">
+                <input value="5" type="radio" name="where_find_us" id="find-other"/>
+                {{ environment.translate('Other way') }}
+            </label>
+
+            <!-- Other way description -->
+            <textarea name="5" id="find-other-description" class="r-description" cols="30" rows="10" style="display: none;"></textarea>
+
+
+            {#</form>#}
+
+            <div class="spacer"></div>
+
+            <h2>Video tutorial</h2>
+            <div class="video-wrapper">
+                <iframe width="640" height="360" src="{{ parameters.video }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="clear"></div>
+
+            <div class="about-message">What to do next? Check below section:</div>
+            <div class="clear"></div>
+
+            <div class="col-3">
+                <h3>Boost us:</h3>
+                <p>It's amazing when you boost development with your feedback and ratings. So we create special <a target="_blank" href="'http://supsystic.com/plugins/slider'">boost page</a> to help you to help us.</p>
+            </div>
+
+            <div class="col-3">
+                <h3>Documentation:</h3>
+                <p>Check <a target="_blank" href="'http://supsystic.com/plugins/slider'">documentation</a> and FAQ section. If you can't solve your problems - <a target="_blank" href="http://supsystic.com/plugins/slider">contact us</a>.</p>
+            </div>
+
+            <div class="col-3">
+                <h3>Full Features List:</h3>
+                <p>There are so many features, so we can't post it here. Like:</p>
+                <ul>
+                    {% for feature in parameters.features %}
+                        <li>{{ feature|raw }}</li>
+                    {% endfor %}
+                </ul>
+                <p>So check full features list <a target="_blank" href="{{ parameters.url }}">here</a>.</p>
+
+            </div>
+            <div class="clear"></div>
+
+            <input class="button button-primary button-hero" type="submit" value="{{ environment.translate('Thank for check info. Start using plugin') }}"/>
+
+            <!-- <a class="button button-primary button-hero bupSendInfo" href="javascript:void(0)">Thank for check info. Start using plugin.</a>-->
+
+            <span id="bupWelcomePageFindUsMsg"></span>
+        </form>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $ = jQuery.noConflict();
+
+    $(document).ready(function() {
+
+        showDescriptionField($('#find-web'), $('#find-web-description'));
+        showDescriptionField($('#find-other'), $('#find-other-description'));
+
+    });
+
+    function showDescriptionField($checkbox, $field) {
+        $checkbox.change(function() {
+            jQuery('.r-description').hide();
+            $field.toggle(this.checked);
+        });
+    }
+</script>

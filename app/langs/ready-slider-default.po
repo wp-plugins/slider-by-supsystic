@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Artur Kovalevsky <kovalevskyproj@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "New Slider"
+msgstr ""
+
+msgid "Sliders"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Get PRO"
+msgstr ""
+
+msgid "Slider by Supsystic"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "An error has occurred"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Touch"
+msgstr ""
+
+msgid "Pager"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Type of transition between slides."
+msgstr ""
+
+msgid "Captions"
+msgstr ""
+
+msgid "Include image captions."
+msgstr ""
+
+msgid "Speed"
+msgstr ""
+
+msgid "Slide transition duration (in ms)."
+msgstr ""
+
+msgid "Margin"
+msgstr ""
+
+msgid "Margin between each slide."
+msgstr ""
+
+msgid "Starting slide"
+msgstr ""
+
+msgid "Start slider on a random slide"
+msgstr ""
+
+msgid "Easing"
+msgstr ""
+
+msgid "The type of \"easing\" to use during transitions."
+msgstr ""
+
+msgid "Enable touch"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "If <code>Yes</code>, slider will allow touch swipe transitions"
+msgstr ""
+
+msgid "One-to-One touch"
+msgstr ""
+
+msgid "If <code>Yes</code>, non-fade slides follow the finger as it swipes"
+msgstr ""
+
+msgid "Swipe threshold"
+msgstr ""
+
+msgid "Amount of pixels a touch swipe needs to exceed in order to execute a slide transition"
+msgstr ""
+
+msgid "Enable pager"
+msgstr ""
+
+msgid "If <code>Yes</code>, a pager will be added"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "If <code>Full</code>, a pager link will be generated for each slide. If <code>Short</code>, a x / y pager will be used (ex. 1 / 5)"
+msgstr ""
+
+msgid "Effects"
+msgstr ""
+
+msgid "Controls"
+msgstr ""
+
+msgid "Effect"
+msgstr ""
+
+msgid "Select effect"
+msgstr ""
+
+msgid "Title speed"
+msgstr ""
+
+msgid "Speed of title appereance in ms."
+msgstr ""
+
+msgid "Opacity"
+msgstr ""
+
+msgid "Opacity of title and navigation."
+msgstr ""
+
+msgid "Delay"
+msgstr ""
+
+msgid "Delay between images in ms."
+msgstr ""
+
+msgid "Pause on hover"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Prev and next buttons."
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Show images as links."
+msgstr ""
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr ""
+
+msgid "New Folder"
+msgstr ""
+
+msgid "The title can't be empty"
+msgstr ""
+
+msgid "Title successfully updated"
+msgstr ""
+
+msgid "Failed to update position."
+msgstr ""
+
+msgid "Position updated successfully!"
+msgstr ""
+
+msgid "Rename folder"
+msgstr ""
+
+msgid "Folder name:"
+msgstr ""
+
+msgid "Add images to the slider"
+msgstr ""
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr ""
+
+msgid "Select slider:"
+msgstr ""
+
+msgid "New folder"
+msgstr ""
+
+msgid "Import video"
+msgstr ""
+
+msgid "Video URL:"
+msgstr ""
+
+msgid "Supported platforms: %s."
+msgstr ""
+
+msgid "Add images to the new slider"
+msgstr ""
+
+msgid "Slider title:"
+msgstr ""
+
+msgid "Upload new images"
+msgstr ""
+
+msgid "Import images"
+msgstr ""
+
+msgid "Add new video"
+msgstr ""
+
+msgid "Import videos"
+msgstr ""
+
+msgid "Create new folder"
+msgstr ""
+
+msgid "Edit selected item"
+msgstr ""
+
+msgid "Delete selected items"
+msgstr ""
+
+msgid "Select/unselect all photos"
+msgstr ""
+
+msgid "Create new slider from the selected items"
+msgstr ""
+
+msgid "New slider from selected"
+msgstr ""
+
+msgid "Add the selected items to the existing slider"
+msgstr ""
+
+msgid "Add selected to the slider"
+msgstr ""
+
+msgid "Switch to the list view"
+msgstr ""
+
+msgid "Switch to the block view"
+msgstr ""
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr ""
+
+msgid "All photos"
+msgstr ""
+
+msgid "Drop photos here to move them from the folder"
+msgstr ""
+
+msgid "Gallery by Supsystic"
+msgstr ""
+
+msgid "Lifetime for cached data"
+msgstr ""
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr ""
+
+msgid "Settings successfully updated!"
+msgstr ""
+
+msgid "Please correct following errors:"
+msgstr ""
+
+msgid "Plugin settings"
+msgstr ""
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr ""
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr ""
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr ""
+
+msgid "Clear cache"
+msgstr ""
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Unable to delete selected slider"
+msgstr ""
+
+msgid "Failed to import selected items."
+msgstr ""
+
+msgid "Invalid slider identifier."
+msgstr ""
+
+msgid "Unable to find requested slider."
+msgstr ""
+
+msgid "Failed to save settings. %s"
+msgstr ""
+
+msgid "Failed to attach resources"
+msgstr ""
+
+msgid "Successfully removed!"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Images and Properties"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "There are %s photos in the slider \"%s\""
+msgstr ""
+
+msgid "New slider"
+msgstr ""
+
+msgid "Slider title"
+msgstr ""
+
+msgid "Select module"
+msgstr ""
+
+msgid "Change plugin: "
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Are you really want to delete "
+msgstr ""
+
+msgid "Properties"
+msgstr ""
+
+msgid "Shortcode"
+msgstr ""
+
+msgid "Images width"
+msgstr ""
+
+msgid "Images height"
+msgstr ""
+
+msgid "Change plugin"
+msgstr ""
+
+msgid "Select plugin"
+msgstr ""
+
+msgid "Please note:"
+msgstr ""
+
+msgid "Current settings will be removed without ability to restore."
+msgstr ""
+
+msgid "Edit image"
+msgstr ""
+
+msgid "Main"
+msgstr ""
+
+msgid "Caption"
+msgstr ""
+
+msgid "SEO"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Alternative text"
+msgstr ""
+
+msgid "External link"
+msgstr ""
+
+msgid "Available in PRO version."
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Open in new window"
+msgstr ""
+
+msgid "Embeded video"
+msgstr ""
+
+msgid "Video URL"
+msgstr ""
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Select %s"
+msgstr ""
+
+msgid "photo"
+msgstr ""
+
+msgid "photos"
+msgstr ""
+
+msgid "Welcome to"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Google"
+msgstr ""
+
+msgid "Wordpress.org"
+msgstr ""
+
+msgid "Reffer a friend"
+msgstr ""
+
+msgid "Find on the web"
+msgstr ""
+
+msgid "Other way"
+msgstr ""
+
+msgid "Thank for check info. Start using plugin"
+msgstr ""

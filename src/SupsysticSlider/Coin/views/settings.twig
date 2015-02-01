@@ -1,0 +1,204 @@
+{% extends '@slider/view.twig' %}
+
+{% macro checked(expected, actual, default) %}
+    {% if actual is empty %}
+        {% if default %}checked="checked"{% endif %}
+    {% elseif expected == actual %}
+        checked="checked"
+    {% else %}
+        {% if default %}checked="checked"{% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% block buttons %}
+    {% import '@slider/macro/tabs.twig' as tabs %}
+
+    {{ tabs.button(environment.translate('Effects'), 'effects') }}
+    {{ tabs.button(environment.translate('Controls'), 'controls') }}
+{% endblock %}
+
+{% block form %}
+
+    {% import _self as macro %}
+
+    <table class="form-table" data-tab="effects" id="effects">
+        <thead>
+        <tr>
+            <th scope="row">
+                <label for="effectsEffect">
+                    {{ environment.translate('Effect') }}
+                </label>
+            </th>
+            <td>
+                <span id="effectName" style="position: relative; bottom: -5px; margin-right: 5px;">{{ slider.settings.effects.effect|title }}</span>
+                <button id="showEffectsPreview" class="button">
+                    {{ environment.translate('Select effect') }}
+                </button>
+                <input name="effects[effect]" value="{{ slider.settings.effects.effect }}" type="hidden"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="effectsTitleSpeed">
+                    {{ environment.translate('Title speed') }}
+                </label>
+            </th>
+            <td>
+                <input class="regular-text" type="number" name="effects[titleSpeed]"
+                       id="effectsTitleSpeed" value="{{ slider.settings.effects.titleSpeed }}" step="100" min="0"/>
+                <p class="description">
+                    {{ environment.translate('Speed of title appereance in ms.') }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="effectsOpacity">
+                    {{ environment.translate('Opacity') }}
+                </label>
+            </th>
+            <td>
+                <input class="regular-text" type="number"
+                       name="effects[opacity]" id="effectsOpacity" value="{{ slider.settings.effects.opacity }}" min="0" max="1" step="0.1"/>
+                <p class="description">
+                    {{ environment.translate('Opacity of title and navigation.') }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="effectsDelay">
+                    {{ environment.translate('Delay') }}
+                </label>
+            </th>
+            <td>
+                <input class="regular-text" type="number" name="effects[delay]"
+                       id="effectsDelay" value="{{ slider.settings.effects.delay }}" min="0" step="100"/>
+                <p class="description">
+                    {{ environment.translate('Delay between images in ms.') }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="effectsHoverPause">
+                    {{ environment.translate('Pause on hover') }}
+                </label>
+            </th>
+            <td>
+                <label for="effectsHoverPauseFalse">
+                    <input type="radio" name="effects[hoverPause]"
+                           id="effectsHoverPauseTrue"
+                           value="true" {{ macro.checked('true', slider.settings.effects.hoverPause, true) }}/>
+                    <span>{{ environment.translate('Yes') }}</span>
+                    <br/>
+                </label>
+                <label for="effectsHoverPauseFalse">
+                    <input type="radio" name="effects[hoverPause]"
+                           id="effectsHoverPauseFalse"
+                           value="false" {{ macro.checked('false', slider.settings.effects.hoverPause, false) }}/>
+                    <span>{{ environment.translate('No') }}</span>
+                    <br/>
+                </label>
+            </td>
+        </tr>
+        </thead>
+    </table>
+
+    <table class="form-table" data-tab="controls" id="controls">
+        <thead>
+        <tr>
+            <th scope="row">
+                <label for="controlsNavigation">
+                    {{ environment.translate('Navigation') }}
+                </label>
+            </th>
+            <td>
+                <label for="controlsNavigationTrue">
+                    <input type="radio" name="controls[navigation]"
+                           id="controlsNavigationTrue"
+                           value="true"
+                           {% if 'true' == slider.settings.controls.navigation %}
+                               checked="checked"
+                           {% endif %}
+                           />
+                    <span>{{ environment.translate('Yes') }}</span>
+                    <br/>
+                </label>
+                <label for="controlsNavigationFalse">
+                    <input type="radio" name="controls[navigation]"
+                           id="controlsNavigationFalse"
+                           value="false"
+                            {% if 'false' == slider.settings.controls.navigation %}
+                                checked="checked"
+                            {% endif %}
+                           />
+                    <span>{{ environment.translate('No') }}</span>
+                    <br/>
+                </label>
+                <p class="description">
+                    {{ environment.translate('Prev and next buttons.') }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="controlsLinks">
+                    {{ environment.translate('Links') }}
+                </label>
+            </th>
+            <td>
+                <label for="controlsLinksTrue">
+                    <input type="radio" name="controls[links]"
+                           id="controlsLinksTrue"
+                           value="true"
+                           {% if 'true' == slider.settings.controls.links %}
+                               checked="checked"
+                           {% endif %}
+                           />
+                    <span>{{ environment.translate('Yes') }}</span>
+                    <br/>
+                </label>
+                <label for="controlsLinksFalse">
+                    <input value="false" type="radio" name="controls[links]"
+                           id="controlsLinksFalse"
+                           {% if 'false' == slider.settings.controls.links %}
+                               checked="checked"
+                           {% endif %}
+                           />
+                    <span>{{ environment.translate('No') }}</span>
+                    <br/>
+                </label>
+
+                <p class="description">
+                    {{ environment.translate('Show images as links.') }}
+                </p>
+            </td>
+        </tr>
+        </thead>
+    </table>
+
+    <!-- Effect preview modal window -->
+    <div id="previewWindow" style="display: none" title="Effects">
+        {% for current in ['random', 'swirl', 'rain', 'straight'] %}
+            <div id="effectPreview-{{ current }}" class="effectPreview" data-effect="{{ current }}" style="display: none;">
+                {% for i in 0..3 %}
+                    <a href="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/{{ i }}.jpg" target="_blank">
+                        <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/{{ i }}.jpg">
+                    <span>
+                        {{ current|title }}
+                    </span>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <div id="effectPreviewVariants" style="margin-top: 20px;">
+            {% for effect in ['random', 'swirl', 'rain', 'straight'] %}
+                <label style="width: 190px; float: left; margin-bottom: 10px;" for="effect{{ effect|title }}">
+                    <input type="radio" name="unsusedvalueradiobutton" value="{{ effect }}" id="effect{{ effect|title }}" class="changeEffect" {% if slider.settings.effects.effect == effect %}checked="checked"{% endif %}/>
+                    <span>{{ effect|title }}</span>
+                </label>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

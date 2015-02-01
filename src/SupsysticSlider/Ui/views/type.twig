@@ -1,0 +1,286 @@
+{% macro list_view(entities) %}
+
+    {% import _self as view %}
+
+    <table id="jqgrid-htable-img-list">
+            {#Uncomment if folder support added#}
+            {#{% for folder in entities.folders %}
+                {{ view.list_folder(folder) }}
+            {% endfor %}#}
+    </table>
+
+    <script type="text/javascript">
+        jQuery("#jqgrid-htable-img-list").jqGrid({
+            datatype: "local",
+            autowidth: true,
+            shrinkToFit: true,
+            colNames:['Id', 'Image','Properties'],
+            colModel:[
+                {name:'id', index:'id', sortable: false, width: 20},
+                {name:'image',index:'image', sortable: false, width: 40},
+                {name:'properties', sortable: false, index:'properties'}
+            ],
+            height: 'auto'
+        });
+    </script>
+
+    {% if entities.entities is not defined %}
+        {% for image in entities.images %}
+            {{ view.list_image(image, loop.index) }}
+        {% else %}
+            {# No images. #}
+        {% endfor %}
+        {% for video in entities.videos %}
+            {{ view.list_video(video, loop.index) }}
+        {% endfor %}
+    {% else %}
+        {% for entity in entities.entities %}
+            {% if entity.type == 'image' %}
+                {{ view.list_image(entity, loop.index) }}
+            {% elseif entity.type == 'video' %}
+                {{ view.list_video(entity, loop.index) }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+{% endmacro %}
+
+{% macro block_view(entities) %}
+
+    {% import _self as view %}
+
+    <ul class="gg-photos" data-sortable data-container="block">
+        {% for folder in entities.folders %}
+            {{ view.block_folder(folder) }}
+        {% endfor %}
+
+        {% for image in entities.images %}
+            {{ view.block_image(image) }}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro block_folder(folder) %}
+    <li data-droppable class="gg-list-item" data-entity data-entity-id="{{ folder.id }}" data-entity-type="folder" data-entity-info="{{ folder|json_encode }}">
+        <div class="gg-item" style="z-index: 0;">
+            <div class="gg-check">
+                <input type="checkbox" class="gg-checkbox" data-observable>
+            </div>
+            <a href="{{ environment.generateUrl('photos', 'view', { 'folder_id': folder.id, 'view': 'block' }) }}">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADIAQMAAAAwS4omAAAAA1BMVEXk5+pYcSvrAAAAG0lEQVRIie3BMQEAAADCoPVPbQwfoAAAAIC3AQ+gAAEq5xQCAAAAAElFTkSuQmCC"
+                     alt="" width="150" height="150"/>
+
+                <div style="position: absolute; top: 55px; left: 55px; color: #bdc3c7;">
+                    <i class="fa fa-folder-open-o" style="font-size: 5em;"></i>
+                </div>
+
+                <div class="gg-folder-photos">
+                    <i class="fa fa-picture-o"></i> <span class="gg-folder-photos-num">{{ folder.photos|length }}</span>
+                </div>
+            </a>
+            <p>
+                <span class="folder-title">{{ folder.title|title }}</span>
+                <small>
+                    {{ folder.date }}
+                </small>
+            </p>
+        </div>
+    </li>
+{% endmacro %}
+
+{% macro block_image(image) %}
+    <li class="gg-list-item" data-entity data-entity-id="{{ image.id }}" data-entity-type="photo" data-entity-info="{{ image|json_encode }}">
+        <div class="gg-item" style="z-index: 10;">
+            <div class="gg-check">
+                <input type="checkbox" class="gg-checkbox" data-observable>
+            </div>
+            <a data-colorbox href="{{ image.attachment.sizes.full.url }}">
+                {% if image.attachment.sizes.thumbnail is empty %}
+                    {% set src = image.attachment.sizes.full.url %}
+                    {% if image.attachment.orientation == 'landscape' %}
+                        {% set sizes = { 'width': 80, 'height': 60 } %}
+                    {% else %}
+                        {% set sizes = { 'width': 60, 'height': 80 } %}
+                    {% endif %}
+                {% else %}
+                    {% set src = image.attachment.sizes.thumbnail.url %}
+                    {% set sizes = { 'width': 60, 'height': 60 } %}
+                {% endif %}
+                <img class="ready-lazy" data-original="{{ src }}" alt="{{ image.attachment.title }}" width="150" style="min-height:150px;max-height:150px;"/>
+            </a>
+            <p title="{{ image.attachment.title }}">
+                {{ image.attachment.title }}
+                <small>
+                    {{ image.attachment.dateFormatted }}
+                </small>
+            </p>
+        </div>
+    </li>
+{% endmacro %}
+
+{% macro list_folder(folder) %}
+    <tr data-droppable data-entity data-entity-id="{{ folder.id }}" data-entity-type="folder" data-entity-info="{{ folder|json_encode }}">
+        <th scope="row" class="check-column">
+            <label class="screen-reader-text" for="cb-select-{{ folder.id }}">{{ environment.translate('Select %s')|format(folder.title) }}</label>
+            <input type="checkbox" name="folder[]" id="cb-select-{{ folder.id }}" value="{{ folder.id }}" data-observable>
+        </th>
+        <td class="column-icon media-icon" style="position: relative;">
+            <a href="{{ environment.generateUrl('photos', 'view', { 'folder_id': folder.id, 'view': 'list' }) }}" data-colorbox>
+                <img width="60" height="60" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADIAQMAAAAwS4omAAAAA1BMVEXk5+pYcSvrAAAAG0lEQVRIie3BMQEAAADCoPVPbQwfoAAAAIC3AQ+gAAEq5xQCAAAAAElFTkSuQmCC" class="attachment-80x60 ready-lazy" alt="{{ folder.title }}">
+            </a>
+            <div style="position: absolute; top: 20px; left: 31px; color: #bdc3c7; z-index: 100;">
+                <i class="fa fa-folder-open-o" style="font-size: 3em;"></i>
+            </div>
+        </td>
+        <td class="title column-title">
+            <strong>
+                <a href="{{ environment.generateUrl('photos', 'view', { 'folder_id': folder.id, 'view': 'list' }) }}">
+                    <span class="folder-title">{{ folder.title|title|raw }}</span>
+                </a>
+            </strong>
+            <p>
+                <i class="fa fa-fw fa-camera" style="color: #888;"></i>
+                <span class="gg-folder-photos-num">
+                    {{ folder.photos|length }}
+                </span>
+
+                {% if environment.isPro() %}
+                    /
+                    <i class="fa fa-fw fa-video-camera" style="color: #888"></i>
+                    <span class="rs-folder-videos-num">
+                        {{ folder.videos|length }}
+                    </span>
+                {% endif %}
+            </p>
+        </td>
+        {#<td class="date column-date">{{ folder.date }}</td>#}
+    </tr>
+{% endmacro %}
+
+{% macro thumbnail(image) %}
+    {% spaceless %}
+    <a href="{{ image.attachment.sizes.full.url }}" data-colorbox>
+        {% if image.attachment.sizes.thumbnail is empty %}
+            {% set src = image.attachment.sizes.full.url %}
+            {% if image.attachment.orientation == 'landscape' %}
+                {% set sizes = { 'width': 80, 'height': 60 } %}
+            {% else %}
+                {% set sizes = { 'width': 60, 'height': 80 } %}
+            {% endif %}
+        {% else %}
+            {% set src = image.attachment.sizes.thumbnail.url %}
+            {% set sizes = { 'width': 60, 'height': 60 } %}
+        {% endif %}
+        <img width="{{ sizes.width }}" height="{{ sizes.height }}" data-original="{{ src }}" class="attachment-80x60 ready-lazy" alt="{{ image.attachment.title }}">
+    </a>
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro properties(image) %}
+    {% spaceless %}
+    <form id="photo-editor-{{ image.id }}" class="photo-editor attachment-{{ image.attachment.id }}">
+        <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
+            <a href="#photo-desc-{{ image.id }}" class="add-new-h2 button active">{{ environment.translate('Description')|trim }}</a>
+        </strong>
+        <p id="photo-desc-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;">
+            <input type="text" name="description" value="{{ image.attachment.description }}" placeholder="Image description"/>
+        </p>
+        <input name="attachment_id" value="{{ image.attachment.id }}" type="hidden"/>
+        <input name="action" value="{{ environment.getConfig().get('ajax_action') }}" type="hidden"/>
+        <input name="route[module]" value="photos" type="hidden"/>
+        <input name="route[action]" value="updateAttachment" type="hidden"/>
+    </form>
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro idImage(image) %}
+    {% spaceless %}
+    <div data-entity data-entity-id="{{ image.id }}" data-entity-type="photo" data-entity-info="{{ image|json_encode }}">
+        <label class="screen-reader-text" for="cb-select-{{ image.id }}">{{ environment.translate('Select %s')|format(image.attachment.title) }}</label>
+        <input type="checkbox" name="image[]" id="cb-select-{{ image.id }}" value="{{ image.id }}" data-observable>
+    </div>
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro idVideo(video) %}
+    {% spaceless %}
+        <div data-entity data-entity-id="{{ video.id }}" data-entity-type="video" data-entity-info="{{ video|json_encode }}">
+            <label class="screen-reader-text" for="cb-select-{{ video.id }}">{{ environment.translate('Select %s')|format(video.attachment.title) }}</label>
+            <input type="checkbox" name="image[]" id="cb-select-{{ video.id }}" value="{{ video.id }}" data-observable>
+        </div>
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro list_image(image, index) %}
+    {% import _self as view %}
+
+    {% set nonProMsg = '<a href="http://supsystic.com" target="_blank" style="color:red;">Available in PRO</a>' %}
+
+
+    <script type="text/javascript">
+        var data = {
+            id: '{{ view.idImage(image) }}',
+            image: '{{ view.thumbnail(image) }}',
+            properties: '{{ view.properties(image) }}'
+        };
+        jQuery("#jqgrid-htable-img-list").jqGrid('addRowData', "{{ index }}", data);
+    </script>
+{% endmacro %}
+
+{% macro list_video(video, index) %}
+    {% import _self as view %}
+
+    {% set nonProMsg = '<a href="http://supsystic.com" target="_blank" style="color:red;">Available in PRO</a>' %}
+
+    <script type="text/javascript">
+        var data = {
+            id: '{{ view.idVideo(video) }}',
+            image: '{{ view.thumbnail(video) }}',
+            properties: '{{ view.properties(video) }}'
+        };
+        jQuery("#jqgrid-htable-img-list").jqGrid('addRowData', "{{ index }}", data);
+    </script>
+    {#<tr data-entity data-entity-id="{{ video.id }}" data-entity-type="video" data-entity-info="{{ video|json_encode }}">
+        <th scope="row" class="check-column">
+            <label class="screen-reader-text" for="cb-select-{{ video.id }}">{{ environment.translate('Select %s')|format(video.attachment.title) }}</label>
+            <input type="checkbox" name="video[]" id="cb-select-{{ video.id }}" value="{{ video.id }}" data-observable>
+        </th>
+        <td class="column-icon media-icon">
+            <a href="{{ video.url }}" target="_blank" title="{{ video.attachment.title }}">
+                {% if video.attachment.sizes.thumbnail is empty %}
+                    {% set src = video.attachment.sizes.full.url %}
+                    {% if video.attachment.orientation == 'landscape' %}
+                        {% set sizes = { 'width': 80, 'height': 60 } %}
+                    {% else %}
+                        {% set sizes = { 'width': 60, 'height': 80 } %}
+                    {% endif %}
+                {% else %}
+                    {% set src = video.attachment.sizes.thumbnail.url %}
+                    {% set sizes = { 'width': 60, 'height': 60 } %}
+                {% endif %}
+                <div style="position: relative;">
+                    <span style="position: absolute; color: #fff; text-shadow: 1px 1px 1px #666; bottom: 2px; left: 10px;">
+                        <i class="fa fa-fw fa-video-camera"></i>
+                    </span>
+                    <img width="{{ sizes.width }}" height="{{ sizes.height }}" data-original="{{ src }}" class="attachment-80x60 ready-lazy" alt="{{ video.attachment.title }}">
+                </div>
+            </a>
+        </td>
+        <td class="title column-title">
+            <form id="photo-editor-{{ video.id }}" class="photo-editor attachment-{{ video.attachment.id }}">
+                <strong data-tabcontent=".tabcontent-{{ video.id }}" style="margin-left: 4px;">
+                    <a href="#video-desc-{{ video.id }}" class="add-new-h2 button active">
+                        {{ environment.translate('Description') }}
+                    </a>
+                </strong>
+                <p id="video-desc-{{ video.id }}" class="tabcontent-{{ video.id }}" style="margin: 0;">
+                    <input type="text" name="description" value="{{ video.attachment.description }}" placeholder="Video description"/>
+                </p>
+                <input name="attachment_id" value="{{ video.attachment.id }}" type="hidden"/>
+                <input name="action" value="{{ environment.getConfig().get('ajax_action') }}" type="hidden"/>
+                <input name="route[module]" value="photos" type="hidden"/>
+                <input name="route[action]" value="updateAttachment" type="hidden"/>
+            </form>
+        </td>
+    </tr>#}
+{% endmacro %}

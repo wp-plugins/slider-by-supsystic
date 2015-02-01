@@ -1,0 +1,43 @@
+{% set veditor = attribute(slider.data, '__veditor__') %}
+{% set v = attribute(veditor, '.bx-controls-direction') %}
+
+<div class="rs-veditor-group">
+    <label>{{ environment.translate('Controls type') }}</label>
+    <select
+        name="[_veditor_][.bx-controls-direction][background]"
+        class="rs-veditor-input"
+        data-selector=".bx-controls-direction"
+        data-selector-helper="a"
+        data-prop="background"
+        data-type="controls"
+        data-attr="id"
+    >
+        <option value="circle_arrows" {% if attribute(v, 'background')|default('circle_arrows') == 'circle_arrows' %}selected="selected"{% endif %}>
+            {{ environment.translate('circle_arrows') }}
+        </option>
+        <option value="little_arrows" {% if attribute(v, 'background')|default('circle_arrows') == 'little_arrows' %}selected="selected"{% endif %}>
+            {{ environment.translate('little_arrows') }}
+        </option>
+        <option value="standart_big" {% if attribute(v, 'background')|default('circle_arrows') == 'standart_big' %}selected="selected"{% endif %}>
+            {{ environment.translate('standart_big') }}
+        </option>
+        <option value="standart_small" {% if attribute(v, 'background')|default('circle_arrows') == 'standart_small' %}selected="selected"{% endif %}>
+            {{ environment.translate('standart_small') }}
+        </option>
+        <option value="circle_little" {% if attribute(v, 'background')|default('circle_arrows') == 'circle_little' %}selected="selected"{% endif %}>
+            {{ environment.translate('circle_little') }}
+        </option>
+        <option value="square_big" {% if attribute(v, 'background')|default('circle_arrows') == 'square_big' %}selected="selected"{% endif %}>
+            {{ environment.translate('square_big') }}
+        </option>
+        <option value="fast" {% if attribute(v, 'background')|default('circle_arrows') == 'fast' %}selected="selected"{% endif %}>
+            {{ environment.translate('fast') }}
+        </option>
+        <option value="little" {% if attribute(v, 'background')|default('circle_arrows') == 'little' %}selected="selected"{% endif %}>
+            {{ environment.translate('little') }}
+        </option>
+        <option value="go_small" {% if attribute(v, 'background')|default('circle_arrows') == 'go_small' %}selected="selected"{% endif %}>
+            {{ environment.translate('go_small') }}
+        </option>
+    </select>
+</div>

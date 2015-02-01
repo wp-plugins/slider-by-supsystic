@@ -1,0 +1,10 @@
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }} supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}">
+    {% for image in slider.images %}
+        <a href="{{ image.attachment.sizes.full.url }}" target="_blank">
+            <img src="{{ image|image_size(slider.settings.properties.width, slider.settings.properties.height) }}">
+            <span>
+                {{ image.attachment.description }}
+            </span>
+        </a>
+    {% endfor %}
+</div>

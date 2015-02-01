@@ -1,0 +1,57 @@
+{% macro button(id, text, attributes = {}) %}
+    {% import 'macro/toolbar_utils.twig' as utils %}
+
+    <li class="list-item-{{ id }}" {{ utils._style(attributes.container) }} {{ utils._custom(attributes.li) }}>
+        <button id="{{ id }}" class="button {% if attributes.class is defined %}{{ attributes.class }}{% endif %}"
+                {{ utils._dataset(attributes) }}
+                {{ utils._style(attributes) }}
+                {{ utils._custom(attributes) }}
+        >
+            {% if attributes.icon is defined %}
+                <i class="fa fa-fw fa-{{ attributes.icon }}"></i>
+            {% endif %}
+            {{ text }}
+        </button>
+    </li>
+{% endmacro %}
+
+{% macro primary(id, text, attributes = {}) %}
+    {% import _self as toolbar %}
+
+    {{ toolbar.button(id, text, attributes|merge({ 'class': 'button-primary' })) }}
+{% endmacro %}
+
+{% macro icon(id, icon, attributes = {}) %}
+    {% import _self as toolbar %}
+
+    {{ toolbar.button(id, '', attributes|merge({ 'icon': icon })) }}
+{% endmacro %}
+
+{% macro buttonUrl(id, url, text, attributes = {}) %}
+    {% import 'macro/toolbar_utils.twig' as utils %}
+
+    <li class="list-item-{{ id }}">
+        <a href="{{ url }}" class="button {% if attributes.class is defined %}{{ attributes.class }}{% endif %}" {{ utils._dataset(attributes) }}>
+            {% if attributes.icon is defined %}
+                <i class="fa fa-fw fa-{{ attributes.icon }}"></i>
+            {% endif %}
+            {{ text }}
+        </a>
+    </li>
+{% endmacro %}
+
+{% macro primaryUrl(id, url, text, attributes = {}) %}
+    {% import _self as toolbar %}
+
+    {{ toolbar.buttonUrl(id, url, text, attributes|merge({ 'class': 'button-primary' })) }}
+{% endmacro %}
+
+{% macro iconUrl(id, url, icon, attributes = {}) %}
+    {% import _self as toolbar %}
+
+    {{ toolbar.buttonUrl(id, url, '', attributes|merge({ 'icon': icon })) }}
+{% endmacro %}
+
+{% macro separator() %}
+    <li class="separator">|</li>
+{% endmacro %}

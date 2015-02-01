@@ -1,0 +1,65 @@
+{# Toolbar #}
+<section id="photo-toolbar" class="supsystic-bar" data-intro="{{ manual.intro }}" data-step="1">
+    <ul class="supsystic-bar-controls">
+        <li title="{{ environment.translate('Upload new images') }}">
+            <button class="button button-primary" id="gg-btn-upload" data-folder-id="0" data-upload>
+                <i class="fa fa-fw fa-camera"></i>
+                {{ environment.translate('Import images') }}
+            </button>
+        </li>
+
+        {% if environment.isPro() %}
+            <li title="{{ environment.translate('Add new video') }}">
+                <button class="button button-primary" id="uploadVideo" data-folder-id="0">
+                    <i class="fa fa-fw fa-video-camera"></i>
+                    {{ environment.translate('Import videos') }}
+                </button>
+            </li>
+        {% else %}
+            <li title="{{ environment.translate('Add new video') }}">
+                <button class="button button-primary" id="provideo">
+                    <i class="fa fa-fw fa-video-camera"></i>
+                    {{ environment.translate('Import videos') }}
+                </button>
+            </li>
+        {% endif %}
+
+        <li title="{{ environment.translate('Create new folder') }}">
+            <button class="button" id="button-folder" data-enabled="none|one|many|all" data-toolbar-button>
+                <i class="fa fa-fw fa-folder-open"></i>
+            </button>
+        </li>
+
+        <li class="separator">
+            |
+        </li>
+
+        <li title="{{ environment.translate('Delete selected items') }}">
+            <button class="button" id="button-delete" disabled data-enabled="one|many|all" data-toolbar-button>
+                <i class="fa fa-fw fa-trash-o"></i>
+            </button>
+        </li>
+
+        <li title="{{ environment.translate('Select/unselect all photos') }}">
+            <button id="button-select" class="button" data-enabled="none|one|many|all" data-toolbar-button>
+                <i class="fa fa-check-square-o fa-fw"></i>
+            </button>
+        </li>
+
+        <li class="separator">|</li>
+
+        <li title="{{ environment.translate('Create new slider from the selected items') }}">
+            <button class="button" id="button-create" disabled data-enabled="one|many|all" data-toolbar-button>
+                {{ environment.translate('New slider from selected') }}
+            </button>
+        </li>
+
+        <li title="{{ environment.translate('Add the selected items to the existing slider') }}">
+            <button class="button" id="button-attach" disabled data-enabled="one|many|all" data-toolbar-button>
+                {{ environment.translate('Add selected to the slider') }}
+            </button>
+        </li>
+
+    </ul>
+</section>
+{# End of toolbar #}

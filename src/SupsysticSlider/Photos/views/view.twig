@@ -1,0 +1,23 @@
+{% extends '@photos/index.twig' %}
+
+{% block breadcrumbs %}
+    {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
+
+    {{ parent() }}
+    {{ breadcrumbs.item('', folder.title) }}
+{% endblock %}
+
+{% block photos %}
+    <section id="gg-photos">
+
+        {% import '@ui/type.twig' as view %}
+        {% set entity = { 'images': folder.photos, 'videos': folder.videos } %}
+
+        {% if view_type == 'block' %}
+            {{ view.block_view(entity) }}
+        {% else %}
+            {{ view.list_view(entity) }}
+        {% endif %}
+        <div class="clear"></div>
+    </section>
+{% endblock %}

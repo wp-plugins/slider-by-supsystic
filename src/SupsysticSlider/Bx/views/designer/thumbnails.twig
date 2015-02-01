@@ -1,0 +1,50 @@
+{% set veditor = attribute(slider.settings, '__veditor__') %}
+{% set v = attribute(veditor, '.thumbnails img') %}
+
+<div class="rs-veditor-group">
+    <label>{{ environment.translate('Border style:') }}</label>
+    <select name="[_veditor_][.thumbnails][border_style]" class="rs-veditor-input" data-selector=".thumbnails img" data-prop="border-style">
+        <option value="none" {% if attribute(v, 'border-style')|default('none') == 'none' %}selected="selected"{% endif %}>
+            {{ environment.translate('None') }}
+        </option>
+        <option value="solid" {% if attribute(v, 'border-style')|default('none') == 'solid' %}selected="selected"{% endif %}>
+            {{ environment.translate('Solid') }}
+        </option>
+        <option value="dashed" {% if attribute(v, 'border-style')|default('none') == 'dashed' %}selected="selected"{% endif %}>
+            {{ environment.translate('Dashed') }}
+        </option>
+    </select>
+</div>
+
+<div class="rs-veditor-group">
+    <label>{{ environment.translate('Border width:') }}</label>
+    <input
+            data-selector=".thumbnails img"
+            data-prop="border-width"
+            type="text"
+            class="rs-veditor-input"
+            value="{{ attribute(v, 'border-width')|default(4) }}"
+            />
+</div>
+
+<div class="rs-veditor-group">
+    <label>{{ environment.translate('Border color:') }}</label>
+    <input
+            data-selector=".thumbnails img"
+            data-prop="border-color"
+            type="text"
+            class="rs-veditor-input rs-veditor-colorpicker"
+            value="{{ attribute(v, 'border-color')|default('#000000') }}"
+            />
+</div>
+
+<div class="rs-veditor-group">
+    <label>{{ environment.translate('Thumbnails margin') }}</label>
+    <input
+            data-selector=".thumbnails img"
+            data-prop="margin-right"
+            type="text"
+            class="rs-veditor-input"
+            value="{{ attribute(v, 'margin-right')|default('1px') }}"
+            />
+</div>

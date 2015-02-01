@@ -1,0 +1,148 @@
+.gg-galleries-grid {
+    margin-top: 10px;
+}
+
+.gg-slider {
+    margin-left: 20px;
+    height: 300px;
+    min-width: 1000px;
+    border-bottom: 1px solid rgba(63, 63, 63, 0.51);
+}
+
+.gg-slider .gg-control-btn {
+    opacity: 1;
+    width: 140px;
+    float: left;
+    text-align: center;
+    margin: 0 20px;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+}
+
+.gg-control-btn li {
+    display: block;
+}
+.gg-control-btn a,
+.gg-control-btn button {
+    width: 140px;
+}
+
+
+.gg-slider .image {
+    float: left;
+    display: inline-block;
+}
+
+.gg-slider .gg-counter {
+    float: left;
+    font-weight: 800;
+    font-size: 14px;
+    margin: 8px;
+}
+
+/* Visual editor */
+
+.rs-veditor-group {
+    margin-bottom: 15px;
+}
+
+.rs-veditor-group label {
+    display: block;
+}
+
+.rs-veditor-input {
+    width: 100%;
+}
+
+.rs-veditor-active {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px #2980b9;
+    border: 1px solid #3498db;
+    z-index: 1337;
+}
+
+.bx-viewport ul {
+    margin-top: 0 !important;
+}
+
+#veditor-sidebar {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+#veditor-container .bx-viewport {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Color Picker Alpha-channel support */
+.pluto-alpha-container .transparency {
+    height:24px;
+    width:100%;
+    background-color:#FFF;
+    background-image:url(../images/transparency-grid.png);
+    box-shadow:0 0 5px rgba(0,0,0,0.4) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding:0;
+    position: relative;
+    bottom: 15px;
+}
+
+.pluto-alpha-container .ui-slider-handle {
+    color:#777;
+    background-color:#FFF;
+    text-shadow:0 1px 0 #FFF;
+    text-decoration:none;
+    position:absolute;
+    z-index:2;
+    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+    border:1px solid #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    opacity:0.9;
+    margin-top:-2px;
+    height:20px;
+    cursor:ew-resize;
+    font-size:12px;
+    padding:3px;
+}
+
+.pluto-alpha-container .ui-slider {
+    position:relative;
+    text-align:center;
+    width:88%;
+}
+
+.wp-picker-container a.wp-picker-open ~ div.pluto-alpha-container {
+    display:block;
+}
+
+.pluto-alpha-container {
+    box-sizing:padding-box;
+    display:none;
+    border:1px solid #dfdfdf;
+    border-top:none;
+    background:#FFF;
+    padding: 8px 11px 0 11px;
+}
+
+.pluto-alpha-container .ui-slider .ui-slider-range {
+    z-index: 0;
+}
+
+.customize-control-alphacolor .wp-picker-container .iris-picker {
+    border-bottom:none;
+}

@@ -1,0 +1,11 @@
+<!-- Slider by Supsystic -->
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }}" data-settings="{{ slider.settings|json_encode }}">
+    <ul class="supsystic-slider-list">
+        {% for image in slider.images %}
+            <li class="supsystic-slider-list-item">
+                <img src="{{ image.attachment.sizes.full.url }}" title="{{ image.attachment.title }}" alt="{{ image.attachment.title }}" class="supsystic-slider-image supsystic-slider-image-{{ image.id }} supsystic-slider-attachment-{{ image.attachment.id }}"/>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- Slider by Supsystic -->

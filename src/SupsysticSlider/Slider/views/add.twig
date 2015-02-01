@@ -1,0 +1,45 @@
+{% extends '@slider/view.twig' %}
+
+{% block toolbar %}
+    <!-- Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+    {% import 'macro/toolbar.twig' as toolbar %}
+
+    {{ toolbar.button('gg-btn-upload', 'Import images', { 'icon': 'camera', 'class': 'button-primary', 'custom': {
+                'data-folder-id': '0',
+                'data-upload': '',
+            }, 'li': {
+            'custom': { 'title': 'Select/unselect all images' }
+            }
+        })
+    }}
+    {{ toolbar.primary('import', 'Add to slider', { 'icon': 'upload' }) }}
+    {{ toolbar.icon('select-all', 'check') }}
+    <!-- End of Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+    {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
+
+    {{ parent() }}
+    {{ breadcrumbs.item(environment.generateUrl('slider', 'add', { 'id': slider.id }), environment.translate('Import')) }}
+    <!-- End of Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+{% endblock %}
+
+{% block content %}
+    <!-- Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+    {% import '@ui/type.twig' as view_type %}
+    {% if entities.images is empty and entities.folders is empty %}
+        <h2 id="gg-alrt" style="text-align: center; color: #bfbfbf; margin: 50px 0 25px 0;">
+            <span style="margin-bottom: 20px; display: block;">
+                {{ environment.translate('You have no images') }}
+            </span>
+            <a class="button button-primary button-hero" href="{{ environment.generateUrl('photos') }}">
+                {{ environment.translate('Upload to images') }}
+            </a>
+        </h2>
+    {% else %}
+        {{ view_type.list_view(entities) }}
+    {% endif %}
+    <!-- End of Template: {{ environment.getModule('slider').getLocation() }}/views/add.twig -->
+{% endblock %}

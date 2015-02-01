@@ -1,0 +1,238 @@
+{% extends '@slider/index.twig' %}
+
+{% block breadcrumbs %}
+    {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
+
+    {{ parent() }}
+    {{ breadcrumbs.item(environment.generateUrl('slider', 'view', { 'id': slider.id }), slider.title|title) }}
+{% endblock %}
+
+{% block toolbar %}
+    {% import 'macro/toolbar.twig' as toolbar %}
+
+    {{ toolbar.button('import-images', environment.translate('Add Images'), { 'id': 'gg-btn-upload','icon': 'upload', 'dataset': { 'folder-id': '0', 'slider-id': slider.id },'custom': { 'data-upload':'' } }) }}
+
+    {% if environment.isPro() %}
+        {{ toolbar.button('uploadVideo', environment.translate('Add Video'), { 'id': 'uploadVideo','icon': 'video-camera', 'dataset': { 'folder-id': '0', 'slider-id': slider.id } }) }}
+    {% endif %}
+
+    {#{{ toolbar.primaryUrl('upload-images', environment.generateUrl('slider', 'add', { 'id': slider.id }), environment.translate('Add images'), { 'icon': 'upload' }) }}#}
+    {{ toolbar.button('preview-trigger', environment.translate('Preview'), { 'icon': 'eye' }) }}
+    {#{{ toolbar.button('change', environment.translate('Change plugin: ') ~ slider.plugin|title, { 'icon': 'wrench' }) }}#}
+
+    {{ toolbar.separator() }}
+
+    {{ toolbar.icon('delete-element', 'trash-o') }}
+
+    {{ toolbar.separator() }}
+
+    {{ toolbar.button('button-select', '', { 'icon': 'check', 'dataset': {
+                'enabled': 'none|one|many|all',
+                'toolbar-button': ''
+            }, 'custom': {
+                'value': 'select',
+                'name': 'Select all'
+            }, 'li': {
+                'custom': { 'title': 'Select/unselect all images' }
+            }
+        })
+    }}
+
+    {{ toolbar.separator() }}
+
+    {#{{ toolbar.icon('visual-editor', 'code') }}#}
+
+    {{ toolbar.primary('save', environment.translate('Save'), { 'icon': 'check', 'container': { 'style': {'float': 'right'} }, 'custom': {'form': 'settings'} }) }}
+    {{ toolbar.button('delete', environment.translate('Delete'), { 'icon': 'trash-o', 'container': { 'style': {'float': 'right'} }, 'dataset': { 'id': slider.id, 'redirect-uri': environment.generateUrl('slider'), 'confirm': environment.translate('Are you really want to delete ') ~ slider.title ~ '?' } }) }}
+{% endblock %}
+
+{% block content %}
+    {% import '@ui/type.twig' as view_type %}
+
+    {% set small = 0 %}
+    {% for image in slider.images %}
+        {% if image.attachment.sizes.full.width < slider.settings.properties.width %}
+            {% set small = small + 1 %}
+        {% endif %}
+    {% endfor %}
+
+    {% if small > 0 %}
+        <div class="error">
+            <p><strong>Warning:</strong> {{ small }} {% if small > 1 %}photos{% else %}photo{% endif %} is smaller then slider width (<span class="sliderWidth">{{ slider.settings.properties.width }}</span>px)</p>
+        </div>
+    {% endif %}
+
+    <div id="image-area" class="half-page-left">
+        {% if slider.images is not empty %}
+            {{ view_type.list_view(slider) }}
+        {% else %}
+            <h2 class="header-muted" style="text-align: center;">You haven't any images yet.</h2>
+        {% endif %}
+    </div>
+    <div id="settings-area" class="half-page-right settings">
+
+        <form id="settings" method="post" action="{{ environment.generateUrl('slider', 'saveSettings') }}">
+
+            <input id="sliderID" name="id" value="{{ slider.id }}" type="hidden"/>
+
+            <table class="form-table">
+                <thead>
+                <tr data-tab="properties" id="properties">
+                    <th scope="row">
+                        <label for="propsShortcode">
+                            {{ environment.translate('Shortcode') }}
+                        </label>
+                    </th>
+                    <td>
+                        <span class="regular-text" id="propsShortcode">[supsystic-slider id = {{ slider.id }}]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="propsSliderWidth">
+                            {{ environment.translate('Images width') }}
+                        </label>
+                    </th>
+                    <td>
+                        <input class="regular-text" type="number" style="display: inline; width: 140px;"
+                               value="{{ slider.settings.properties.width }}"
+                               min="0"
+                               step="100"
+                               name="properties[width]"
+                               id="propsSliderWidth"/>
+                        <select class="regular-text"
+                                name="properties[widthType]"
+                                style="display: inline; height: inherit;position: relative; bottom: 2px">
+                            <option value="px">px</option>
+                            <option value="%">%</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="propsSliderHeight">
+                            {{ environment.translate('Images height') }}
+                        </label>
+                    </th>
+                    <td>
+                        <input class="regular-text" type="number"
+                               style="display: inline; width: 140px;"
+                               value="{{ slider.settings.properties.height }}"
+                               min="0"
+                               step="100"
+                               name="properties[height]"
+                               id="propsSliderHeight"/>
+                        <span class="regular-text"
+                                style="display: inline; height: inherit;position: relative; bottom: 2px">
+                            {{ environment.translate('px') }}
+                        </span>
+                    </td>
+                </tr>
+                {% block form %}{% endblock %}
+                </thead>
+            </table>
+        </form>
+
+        <div id="changePluginWindow" title="{{ environment.translate('Change plugin') }}" style="display: none;">
+            <form id="changePlugin">
+                <input name="id" type="hidden" value="{{ slider.id }}"/>
+                <input name="route[module]" value="slider" type="hidden"/>
+                <input name="route[action]" value="changePlugin" type="hidden"/>
+                <input name="action" value="supsystic-slider" type="hidden"/>
+                <table class="form-table">
+                    <thead>
+                    <tr>
+                        <th scope="row">
+                            <label>
+                                {{ environment.translate('Select plugin') }}
+                            </label>
+                        </th>
+                        <td>
+                            {% for plugin in environment.getModule('slider').getAvailableSliders() %}
+                                <label for="plugin-{{ plugin.getModuleName() }}">
+                                    <input type="radio" name="plugin"
+                                           id="plugin-{{ plugin.getModuleName() }}"
+                                           value="{{ plugin.getModuleName() }}"
+                                           {% if slider.plugin == plugin.getModuleName() %}checked="checked"{% endif %}/>
+                                    <span>{{ plugin.getSliderName() }}</span>
+                                    <br/>
+                                </label>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" colspan="2">
+                            <p class="description">
+                                {{ environment.translate('Please note:') }}
+                                {{ environment.translate('Current settings will be removed without ability to restore.') }}
+                            </p>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <div id="preview-window" style="display: none;" title="Preview of {{ slider.title }}" data-id="{{ slider.id }}">
+        <img src="{{ environment.getConfig().get('admin_url') }}images/wpspin_light.gif" alt="" style="display: block; margin: 10px auto;"/>
+    </div>
+
+    <div id="visual-editor-window" style="display: none;" title="{{ environment.translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
+
+    </div>
+
+    <div id="uploadVideoModal" title="{{ environment.translate('Import video') }}" style="display: none;">
+        <form id="uploadVideoForm">
+            <table class="form-table">
+                <thead>
+                <tr>
+                    <th scope="row">
+                        <label for="videoUrl">
+                            {{ environment.translate('Video URL:') }}
+                        </label>
+                    </th>
+                    <td>
+                        <input class="regular-text" type="text" name="url"
+                               id="videoUrl"/>
+                        <p class="description">
+                            {{ environment.translate('Supported platforms: %s.')|format(['Youtube', 'Vimeo']|join(', ')) }}
+                        </p>
+                        <p id="uploadVideoFormError" class="description" style="color:red;"></p>
+                    </td>
+                </tr>
+                </thead>
+            </table>
+            <input value="supsystic-slider" name="action" type="hidden"/>
+            <input value="photos" name="route[module]" type="hidden"/>
+            <input value="importVideo" name="route[action]" type="hidden"/>
+        </form>
+    </div>
+
+    <script>
+        (function($) {
+            $(document).ready(function() {
+                jQuery('#button-select').on('click', function() {
+                    if($(this).val() == 'select') {
+                        jQuery('[name="image[]"]').each(function() {
+                            $(this).attr('checked', 'checked');
+                        });
+                        $(this).val('deselect');
+                    } else {
+                        jQuery('[name="image[]"]').each(function() {
+                            $(this).removeAttr('checked');
+                        });
+                        $(this).val('select');
+                    }
+                });
+
+                jQuery('[name="properties[widthType]"] option').each(function() {
+                    if($(this).val() == "{{ slider.settings.properties.widthType }}") {
+                        $(this).attr('selected', 'selected');
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+
+{% endblock %}

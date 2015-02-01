@@ -1,0 +1,6 @@
+{% macro button(text, target, icon) %}
+    <a class="add-new-h2 nav-tab change-tab" href="#{{ target }}">
+        {% if icon is not empty %}<i class="fa fa-{{ icon }}"></i>{% endif %}
+        {{ text }}
+    </a>
+{% endmacro %}

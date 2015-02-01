@@ -1,0 +1,74 @@
+<div class="wrap">
+    <div class="supsystic-plugin">
+        <section class="supsystic-content">
+            <div style="min-width: 1000px;">
+                <nav id="gg-breadcrumbs" class="gg-breadcrumbs">
+                    {% block breadcrumbs %}
+                        <a href="{{ environment.generateUrl(environment.getConfig().get('default_module')) }}">
+                            {{ environment.translate('Slider by Supsystic') }}
+                        </a>
+                    {% endblock %}
+                </nav>
+                <div class="navigation" style="margin-left: 50px;display: inline-block;">
+                    {% block buttons %}{% endblock %}
+                </div>
+            </div>
+            <nav class="supsystic-navigation">
+                <ul>
+                    <li>
+                        <a id="btn-add-new" href="{{ environment.generateUrl('slider', 'index', {'add':'true'}) }}">
+                            <i class="fa fa-plus-circle"></i>
+                            {{ environment.translate('New Slider') }}
+                        </a>
+                    </li>
+                    <li {% if request.query.module == 'slider' or request.query.module is null %}class="active"{% endif %}>
+                        <a href="{{ environment.generateUrl('slider') }}">
+                            <i class="fa fa-archive"></i>
+                            {{ environment.translate('Sliders') }}
+                        </a>
+                    </li>
+                    {#<li {% if request.query.module == 'photos' %}class="active"{% endif %}>
+                        <a href="{{ environment.generateUrl('photos') }}">
+                            <i class="fa fa-picture-o"></i>
+                            {{ environment.translate('Images') }}
+                        </a>
+                    </li>#}
+                    <li  {% if request.query.module == 'settings' %}class="active"{% endif %}>
+                        <a href="{{ environment.generateUrl('settings') }}">
+                            <i class="fa fa-gear"></i>
+                            {{ environment.translate('Settings') }}
+                        </a>
+                    </li>
+                    {#{% if environment.isPro() == false %}
+                        <li class="supsystic-pro">
+                            <a href="{{ environment.getConfig().get('pro_url') }}">
+                                <i class="fa fa-unlock"></i>
+                                {{ environment.translate('Get PRO') }}
+                            </a>
+                        </li>
+                    {% endif %}#}
+                </ul>
+            </nav>
+            <div class="supsystic-container">
+                {% block toolbar_wrap %}
+                <section class="supsystic-bar" id="all-galleries-toolbar">
+                    <ul class="supsystic-bar-controls">
+                        {% block toolbar %}{% endblock %}
+                    </ul>
+                </section>
+                {% endblock %}
+                {% block content %}{% endblock %}
+                <div class="clear"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal loading overlay -->
+    <div class="gg-modal-loading-overlay"></div>
+    <div class="gg-modal-loading-object" hidden>
+        <p>
+            <span id="loading-text">Loading</span>
+            <img src="{{ environment.config.get('admin_url') ~ '/images/wpspin_light.gif' }}" alt="" title="{{ environment.translate('Loading') }}"/>
+        </p>
+    </div>
+</div>

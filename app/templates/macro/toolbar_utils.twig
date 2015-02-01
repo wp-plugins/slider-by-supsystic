@@ -1,0 +1,23 @@
+{% macro _dataset(attributes) %}
+    {% if attributes.dataset is defined and attributes.dataset is iterable %}
+        {% for key, value in attributes.dataset %} data-{{ key }}="{{ value }}"{% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro _style(attributes) %}
+    {% if attributes.style is defined and attributes.style is iterable %}
+        style="{% for key, value in attributes.style %}{{ key }}:{{ value }};{% endfor %}"
+    {% endif %}
+{% endmacro %}
+
+{% macro _custom(attributes) %}
+    {% if attributes.custom is defined and attributes.custom is iterable %}
+        {% for attr, value in attributes.custom %}
+            {% if value is defined and value|length > 0 %}
+                {{ attr }}="{{ value }}"
+            {% else %}
+                {{ attr }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

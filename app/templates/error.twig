@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block toolbar_wrap %}{% endblock %}
+
+{% block breadcrumbs %}
+    {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
+
+    {{ parent() }}
+    {{ breadcrumbs.item('#', environment.translate('Error')) }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ environment.translate('An error has occurred') }}</h1>
+    <p>
+        {{ message|raw }}
+    </p>
+{% endblock %}
