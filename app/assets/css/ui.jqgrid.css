@@ -45,7 +45,7 @@ tr.ui-search-toolbar select {margin: 1px 0 0 0}
 .ui-widget-content {
     /* border: 1px solid #aaaaaa; */
     border: none !important;
-    border-top: 1px solid rgba(132, 132, 132, 0.419608) !important;
+    /*border-top: 1px solid rgba(132, 132, 132, 0.419608) !important;*/
     color: #222222;
 }
 

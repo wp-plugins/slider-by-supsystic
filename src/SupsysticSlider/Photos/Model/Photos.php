@@ -326,6 +326,25 @@ class SupsysticSlider_Photos_Model_Photos extends Rsc_Mvc_Model implements Rsc_E
         );
     }
 
+    public function setLink($attachmentId, $link)
+    {
+        update_post_meta(
+            (int)$attachmentId,
+            '_slider_link',
+            $link
+        );
+    }
+
+    public function setTarget($attachmentId, $target)
+    {
+        var_dump($target);
+        update_post_meta(
+            (int)$attachmentId,
+            'target',
+            $target
+        );
+    }
+
     public function updateMetadata($attachmentId, array $metadata)
     {
         foreach ($metadata as $key => $value) {

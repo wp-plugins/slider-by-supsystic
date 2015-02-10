@@ -422,6 +422,8 @@ class SupsysticSlider_Photos_Controller extends SupsysticSlider_Core_BaseControl
         $attachmentId = $request->post->get('attachment_id');
 //        $caption      = $request->post->get('caption');
         $description  = $request->post->get('description');
+        $link  = $request->post->get('link');
+        $target  = $request->post->get('target');
 
         /** @var SupsysticSlider_Photos_Model_Photos $photos */
         $photos = $this->getModel('photos');
@@ -430,6 +432,8 @@ class SupsysticSlider_Photos_Controller extends SupsysticSlider_Core_BaseControl
 //            'alt'         => $alt,
 //            'caption'     => $caption,
             'description' => $description,
+            'link' => $link,
+            'target' => $target
         ));
 
         return $this->response(Rsc_Http_Response::AJAX);

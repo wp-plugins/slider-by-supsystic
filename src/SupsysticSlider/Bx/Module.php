@@ -170,12 +170,20 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
      */
     public function render($slider)
     {
+
+        foreach($slider->images as $key => $value) {
+            $link = get_post_meta($value->attachment_id, '_slider_link');
+            $target = get_post_meta($value->attachment_id, 'target');
+            $slider->images[$key]->attachment['external_link'] = $link[0];
+            $slider->images[$key]->attachment['target'] = $target[0];
+        }
+
         return $this->getEnvironment()
             ->getTwig()
             ->render(
                 $this->getSliderTemplate(),
                 array(
-                    'slider' => $slider,
+                    'slider' => $slider
                 )
             );
     }

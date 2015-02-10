@@ -19,10 +19,10 @@
                     </a>
                 </li>
                 <li>
-                    <button class="button" disabled="disabled">
+                    <a href="{{ environment.generateUrl('slider', 'view', { 'preview':'true', 'id': slider.id }) }}" class="button">
                         <i class="fa fa-eye"></i>
                         {{ environment.translate('Preview') }}
-                    </button>
+                    </a>
                 </li>
                 <li>
                     <a class="delete-gallery button" href="{{ environment.generateUrl('slider', 'delete', { 'id': slider.id }) }}">
@@ -47,6 +47,9 @@
         <div class="regular-text" id="propsShortcode" style="display: inline-block; margin-left: 20px;">
             <h3 style="display: inline-block;"> {{ environment.translate('Shortcode: ') }} </h3>
             [supsystic-slider id = {{ slider.id }}]
+            </br>
+            <h3 style="display: inline-block;"> {{ environment.translate('PhpCode: ') }} </h3>
+            < ?php echo do_shortcode("[supsystic-slider id = {{ slider.id }}]") ?>
         </div>
     </div>
 {% endmacro %}
@@ -84,18 +87,22 @@
         </div>
     </section>
 
-    <div id="newSliderDialog" title="{{ environment.translate('New slider') }}" data-width="550" data-auto-open="false">
-        <form id="newSliderDialogForm">
+    <div id="newSliderDialog" data-width="550" data-auto-open="false">
+        <form id="newSliderDialogForm" style="padding-top: 10px;">
             <table class="form-table">
                 <thead>
                 <tr>
-                    <th scope="row">
+                    <th scope="row" style="width: auto;float: left;">
                         <label for="sliderNameInput">
                             {{ environment.translate('Slider title') }}
                         </label>
                     </th>
+                    <td style="float: left;">
+                        <input id="sliderNameInput" type="text" name="title" style="width:100%;"/>
+                    </td>
                     <td>
-                        <input id="sliderNameInput" type="text" name="title" style="width:100%"/>
+                        <input type="button" id="add-slider-button" value="Ok" class="button" style="margin-bottom: 10px;"/>
+                        <input type="button" id="cancel-slider-button" value="Cancel" class="button" style="margin-bottom: 10px;"/>
                     </td>
                 </tr>
                 {% if available is defined and available is iterable and available|length > 1 %}
@@ -122,8 +129,6 @@
                 {% endif %}
                 </thead>
             </table>
-            <input type="button" id="add-slider-button" value="Ok" class="button"/>
-            <input type="button" id="cancel-slider-button" value="Cancel" class="button"/>
             <input name="action" value="supsystic-slider" type="hidden"/>
             <input name="route[module]" value="slider" type="hidden"/>
             <input name="route[action]" value="create" type="hidden"/>

@@ -139,6 +139,7 @@
 
         if (document.location.hash == '#addSliderWindow') {
             this.$newSlider.dialog('open');
+            $(".ui-dialog-titlebar").hide();
         }
     });
 

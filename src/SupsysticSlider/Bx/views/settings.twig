@@ -55,8 +55,8 @@
     {{ form.row(environment.translate('Speed'),
     form.input('text', 'general[speed]', slider.settings.general.speed|default(500), {'id': 'generalSpeed', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-speed') }}
 
-    {{ form.row(environment.translate('Margin'),
-    form.input('text', 'general[slideMargin]', slider.settings.general.slideMargin|default(0), {'id': 'generalSlideMargin', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-margin') }}
+    {#{{ form.row(environment.translate('Margin'),
+    form.input('text', 'general[slideMargin]', slider.settings.general.slideMargin|default(0), {'id': 'generalSlideMargin', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-margin') }}#}
 
     {{ form.row(environment.translate('Starting slide'),
     form.input('checkbox', 'general[randomStart]', slider.settings.general.randomStart|default(0), {'id': 'generalRandomStart' })

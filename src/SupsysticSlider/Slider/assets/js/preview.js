@@ -15,11 +15,11 @@
         if ($window.length) {
             $window.dialog({
                 autoOpen: false,
-                buttons:  {
+                /*buttons:  {
                     Close: function () {
                         $(this).dialog('close');
                     }
-                },
+                },*/
                 modal:    true,
                 open:     function (e, ui) {
                     $.post(WordPress.ajax.settings.url, {
@@ -53,6 +53,10 @@
     Controller.prototype.init = (function () {
         if (!this.$window || !this.$trigger) {
             return false;
+        }
+
+        if (document.location.hash == '#previewAction') {
+            this.$window.dialog('open');
         }
 
         this.$trigger.on('click', $.proxy(function (e) {

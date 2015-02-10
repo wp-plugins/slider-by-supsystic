@@ -40,7 +40,9 @@
 
     {{ toolbar.separator() }}
 
-    {#{{ toolbar.icon('visual-editor', 'code') }}#}
+    {% if environment.isPro() %}
+        {{ toolbar.icon('visual-editor', 'edit') }}
+    {% endif %}
 
     {{ toolbar.primary('save', environment.translate('Save'), { 'icon': 'check', 'container': { 'style': {'float': 'right'} }, 'custom': {'form': 'settings'} }) }}
     {{ toolbar.button('delete', environment.translate('Delete'), { 'icon': 'trash-o', 'container': { 'style': {'float': 'right'} }, 'dataset': { 'id': slider.id, 'redirect-uri': environment.generateUrl('slider'), 'confirm': environment.translate('Are you really want to delete ') ~ slider.title ~ '?' } }) }}
@@ -90,7 +92,7 @@
                 <tr>
                     <th scope="row">
                         <label for="propsSliderWidth">
-                            {{ environment.translate('Images width') }}
+                            {{ environment.translate('Slider width') }}
                         </label>
                     </th>
                     <td>
@@ -103,15 +105,15 @@
                         <select class="regular-text"
                                 name="properties[widthType]"
                                 style="display: inline; height: inherit;position: relative; bottom: 2px">
-                            <option value="px">px</option>
-                            <option value="%">%</option>
+                            <option value="px">pixels</option>
+                            <option value="%">percents</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
                         <label for="propsSliderHeight">
-                            {{ environment.translate('Images height') }}
+                            {{ environment.translate('Slider height') }}
                         </label>
                     </th>
                     <td>
@@ -124,7 +126,7 @@
                                id="propsSliderHeight"/>
                         <span class="regular-text"
                                 style="display: inline; height: inherit;position: relative; bottom: 2px">
-                            {{ environment.translate('px') }}
+                            {{ environment.translate('pixels') }}
                         </span>
                     </td>
                 </tr>

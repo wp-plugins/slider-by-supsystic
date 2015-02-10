@@ -32,6 +32,44 @@
         });
     });
 
+    Controller.prototype.formNavigation = (function() {
+        var $buttons = $('form .add-new-h2');
+
+        $buttons.on('click', function() {
+            var $container = $(this).closest('tr');
+            $container.find('.add-new-h2').removeClass('active');
+            $buttons.css('background-color', 'white');
+            $(this).addClass('active');
+        });
+    });
+
+    Controller.prototype.checkWidth = (function() {
+        var $widthType = $('[name="properties[widthType]"]'),
+            $height = $('[name="properties[height]"]');
+
+        $widthType.on('change', function() {
+            if($(this).val() == '%') {
+
+                $height.attr('disabled', 'disabled');
+
+                var notification = noty({
+                    layout: 'topRight',
+                    type: 'warning',
+                    text : '<h3>Warning</h3>Max width in percents is equal to 100',
+                    timeout: 2000,
+                    animation: {
+                        open: 'animated flipInX',
+                        close: 'animated flipOutX',
+                        easing: 'swing',
+                        speed: '800'
+                    }
+                });
+            } else {
+                $height.attr('disabled', false);
+            }
+        });
+    });
+
     /**
      * Init controller.
      *
@@ -48,6 +86,8 @@
         });
 
         this.randomToggle();
+        this.formNavigation();
+        this.checkWidth();
     });
 
     /**

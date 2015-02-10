@@ -251,6 +251,14 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
     {
         /** @var SupsysticSlider_Slider_Model_Sliders $sliders */
         $sliders = $this->getSliders();
+        $previewAction = $request->query->get('preview');
+
+        if ($previewAction) {
+            $id = $request->query->get('id');
+            return $this->redirect(
+                $this->generateUrl('slider', 'view') . '&id=' . $id . '#previewAction'
+            );
+        }
 
         $id      = $request->query->get('id');
         $current = $sliders->getById($id);
@@ -275,6 +283,15 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
 
         $this->getEnvironment()->getTwig()->addGlobal('tooltips', $tooltips);
         $this->getEnvironment()->getTwig()->addGlobal('tooltips_icon', $icon);
+
+
+        //redo this
+        foreach($current->images as $key => $value) {
+            $link = get_post_meta($value->attachment_id, '_slider_link');
+            $target = get_post_meta($value->attachment_id, 'target');
+            $current->images[$key]->attachment['external_link'] = $link[0];
+            $current->images[$key]->attachment['target'] = $target[0];
+        }
 
         return $this->response(
             $module->getSettingsTemplate(),

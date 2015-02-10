@@ -40,6 +40,15 @@
                 settings = $slider.data('settings'),
                 config = {};
 
+            if(settings.properties.width > 100 && settings.properties.widthType == '%') {
+                settings.properties.width = 100;
+            }
+
+            if(settings.properties.widthType == '%') {
+                settings.properties.width = parseInt($container.parent().css('width'))*parseInt(settings.properties.width)/100.0;
+                settings.properties.height = parseInt(settings.properties.height)*100/parseInt(settings.properties.width);
+            }
+
             $.each(settings, function (category, opts) {
                 if(category != '__veditor__') {
                     $.each(opts, function (key, value) {;

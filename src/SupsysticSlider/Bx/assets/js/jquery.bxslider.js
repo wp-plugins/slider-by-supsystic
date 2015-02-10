@@ -127,6 +127,7 @@
 			slider.settings = $.extend({}, defaults, options);
 			// parse slideWidth setting
 			slider.settings.slideWidth = parseInt(slider.settings.slideWidth);
+			console.log(slider.settings.slideWidth);
 			slider.settings.pagerType = parseInt(slider.settings.navigation);
 			slider.settings.slideMargin = parseInt(slider.settings.slideMargin);
 			slider.settings.oneToOneTouch = slider.settings.oneToOne;
@@ -421,7 +422,7 @@
 				}
 			}
 			return width;
-		}
+		};
 
 		/**
 		 * Returns the calculated width to be applied to each slide

@@ -22,7 +22,8 @@
 }
 
 .bx-wrapper img {
-	max-width: 100%;
+	width: 100% !important;
+	max-width: 100% !important;
 	display: block;
 }
 
@@ -268,8 +269,8 @@
 	top: 50%;
 	margin-top: -16px;
 	outline: 0;
-	width: 32px;
-	height: 32px;
+	width: 32px !important;
+	height: 32px !important;
 	text-indent: -9999px;
 	z-index: 9999;
 }
