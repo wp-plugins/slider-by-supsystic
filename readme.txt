@@ -53,6 +53,13 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 == Changelog ==
 
+= 1.0.4 =
+ * Coin slider added
+ * Coin slider effects settings
+ * Title fixed for Coin slider
+ * Preview for coin slider
+ * Minor fixes
+
 = 1.0.3 =
  * Options navigation fixed in ff
  * Slide external url added

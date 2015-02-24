@@ -5,7 +5,7 @@
  *
  * Allows to use Coin-Slider as Slider by Supsystic module.
  */
-class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module /*implements SupsysticSlider_Slider_Interface*/
+class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSlider_Slider_Interface
 {
 
     const OPT_TRUE  = 'true';
@@ -65,6 +65,14 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module /*implements SupsysticS
                 )
             );
         }
+
+        $ui->add(
+            new SupsysticSlider_Ui_BackendJavascript(
+                'supsysticSlider-bx-preview',
+                $this->getLocationUrl() . '/assets/js/frontend.js',
+                $preventCaching
+            )
+        );
     }
 
     /**
@@ -143,6 +151,16 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module /*implements SupsysticS
             '1.0.0',
             true
         );
+    }
+
+    public function getSettingsTemplate()
+    {
+        return '@coin/settings.twig';
+    }
+
+    public function getSliderTemplate()
+    {
+        return '@coin/markup.twig';
     }
 
     /**

@@ -40,7 +40,7 @@
 
     {{ toolbar.separator() }}
 
-    {% if environment.isPro() %}
+    {% if environment.isPro() and environment.plugin == 'bx' %}
         {{ toolbar.icon('visual-editor', 'edit') }}
     {% endif %}
 
@@ -65,11 +65,31 @@
     {% endif %}
 
     <div id="image-area" class="half-page-left">
+        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Select posts to show</h3>
+        <label for="post-feed-selectPages" style="margin-left: 20px;">Pages: </label>
+        <select id="post-feed-selectPages" style="margin-left: 17px;">
+            {% for page in all_pages() %}
+                <option value="{{ page.ID }}">{{ page.post_title }}</option>
+            {% endfor %}
+        </select>
+        <button class="button add-page" style="height: 29px; line-height: 1px;">Add page</button>
+        </br>
+        <label for="post-feed-selectPosts" style="margin-left: 20px;">Posts: </label>
+        <select id="post-feed-selectPosts" style="margin-left: 20px;">
+            {% for post in all_posts() %}
+                <option value="{{ post.ID }}">{{ post.post_title }}</option>
+            {% endfor %}
+        </select>
+        <button class="button add-post" style="height: 29px; line-height: 1px;">Add post</button>
+        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Resources</h3>
         {% if slider.images is not empty %}
             {{ view_type.list_view(slider) }}
         {% else %}
             <h2 class="header-muted" style="text-align: center;">You haven't any images yet.</h2>
         {% endif %}
+
+        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Active posts list</h3>
+        <table id="posts-table"></table>
     </div>
     <div id="settings-area" class="half-page-right settings">
 
@@ -96,7 +116,7 @@
                         </label>
                     </th>
                     <td>
-                        <input class="regular-text" type="number" style="display: inline; width: 140px;"
+                        <input class="regular-text" type="number" style="display: inline; width: 124px;"
                                value="{{ slider.settings.properties.width }}"
                                min="0"
                                step="100"
@@ -118,7 +138,7 @@
                     </th>
                     <td>
                         <input class="regular-text" type="number"
-                               style="display: inline; width: 140px;"
+                               style="display: inline; width: 124px;"
                                value="{{ slider.settings.properties.height }}"
                                min="0"
                                step="100"
@@ -180,8 +200,7 @@
         <img src="{{ environment.getConfig().get('admin_url') }}images/wpspin_light.gif" alt="" style="display: block; margin: 10px auto;"/>
     </div>
 
-    <div id="visual-editor-window" style="display: none;" title="{{ environment.translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
-
+    <div id="visual-editor-window" title="{{ environment.translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
     </div>
 
     <div id="uploadVideoModal" title="{{ environment.translate('Import video') }}" style="display: none;">

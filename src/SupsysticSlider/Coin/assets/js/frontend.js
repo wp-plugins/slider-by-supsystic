@@ -35,9 +35,21 @@
                 config   = {};
 
             $.each(settings, function (category, opts) {
-                $.each(opts, function (key, value) {
-                    config[key] = stringToBoolean(value);
-                });
+                if(opts) {
+                    $.each(opts, function (key, value) {
+                        config[key] = stringToBoolean(value);
+                    });
+                }
+            });
+
+            $.each(settings, function (category, opts) {
+                if(category != '__veditor__') {
+                    $.each(opts, function (key, value) {;
+                        if (key !== 'enabled') {
+                            config[key] = stringToBoolean(value);
+                        }
+                    });
+                }
             });
 
             $slider.coinslider(config);

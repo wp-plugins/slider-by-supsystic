@@ -15,7 +15,14 @@ return array(
         'general-one-to-one' => 'If <code>Yes</code>, non-fade slides follow the finger as it swipes',
         'general-threshold' => 'Amount of pixels a touch swipe needs to exceed in order to execute a slide transition',
         'general-pager' => 'If <code>Yes</code>, a pager will be added',
-        'general-pager-type' => 'If <code>Full</code>, a pager link will be generated for each slide. If <code>Short</code>, a x / y pager will be used (ex. 1 / 5)'
+        'general-pager-type' => 'If <code>Full</code>, a pager link will be generated for each slide. If <code>Short</code>, a x / y pager will be used (ex. 1 / 5)',
+        'general-effect' => 'Slide changing effect',
+        'general-title-speed' => 'Coin slider title speed',
+        'general-opacity' => 'Caption opacity',
+        'general-delay' => 'Delay between slide changing',
+        'general-pause' => 'Pause when mouse is over slider container',
+        'general-navigation-coin' => 'Show or hide slider controls buttons',
+        'general-links' => 'Show all images with their full size links'
     ),
     'tooltips_icon' => array(
         'icon' => 'question'

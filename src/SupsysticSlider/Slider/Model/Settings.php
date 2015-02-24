@@ -89,6 +89,44 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         return true;
     }
 
+    public function savePost($id, $sliderId = '', $type='post') {
+        $elements = array();
+
+        $elements = get_option($type . $sliderId);
+        $elements = unserialize($elements);
+        if(!empty($elements) && $elements) {
+            if(!in_array($id, $elements)) {
+                array_push($elements, $id);
+            }
+        } else {
+            $elements = array($id);
+        }
+        $elements = serialize($elements);
+
+        update_option($type . $sliderId, $elements);
+    }
+
+    public function getPosts($sliderId = '', $type='post', $thumbSize = 'thumbnail') {
+        $elements = get_option($type . $sliderId);
+        $elements = unserialize($elements);
+        $posts = array();
+
+        foreach($elements as $id) {
+            $post = get_post($id);
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), $thumbSize);
+            array_push($posts, array(
+                'id' => $id,
+                'title'=> $post->post_title,
+                'image' => $image[0],
+                'author' => the_author($id),
+                'content' => $post->post_content
+
+            ));
+        }
+
+        return $posts;
+    }
+
     /**
      * Adds the settings to the slider object.
      *

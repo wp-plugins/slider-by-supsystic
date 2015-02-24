@@ -285,6 +285,8 @@ Color.prototype.toString = function(remove_alpha) {
     });
 
     Controller.prototype.init = (function () {
+        var self = this;
+
         if (!this.$dialog.length) {
             return;
         }
@@ -361,8 +363,14 @@ Color.prototype.toString = function(remove_alpha) {
 
                     // Initialize Slider by Supsystic javascript plugins.
                     _app.init();
+                    self.initCoinSlider();
 
-                    var $blocks = $('.bx-viewport, .bx-caption, .bx-prev, .bx-next, .thumbnails', $slider);
+                    $slider.append('<div class="bx-viewport-button button" style="display: inline-block; margin: 10px;">Viewport</div>' +
+                                    '<div class="bx-caption-button button" style="display: inline-block; margin: 10px;">Caption</div>' +
+                                    '<div class="thumbnails-button button" style="display: inline-block; margin: 10px;">Thumbnails</div>' +
+                                    '<div class="bx-prev-button button" style="display: inline-block; margin: 10px;">Buttons</div>');
+
+                    var $blocks = $('.bx-viewport, .bx-caption, .bx-prev, .bx-next, .thumbnails, .bx-viewport-button, .bx-caption-button, .bx-prev-button, .thumbnails-button', $slider);
 
                     $blocks
                         .on('click veditorClose', function (e) {
@@ -386,6 +394,39 @@ Color.prototype.toString = function(remove_alpha) {
             }
         });
     });
+
+    Controller.prototype.initCoinSlider = function() {
+        var $sliders = $('.supsystic-slider.supsystic-slider-coin'),
+            stringToBoolean = function (value) {
+                if (value == 'true') {
+                    return true;
+                } else if (value == 'false') {
+                    return false;
+                } else {
+                    return value;
+                }
+            };
+
+        if ($sliders.length < 1) {
+            return false;
+        }
+
+        $.each($sliders, function (index, slider) {
+            var $slider  = $(slider),
+                settings = $slider.data('settings'),
+                config   = {};
+
+            $.each(settings, function (category, opts) {
+                if(opts) {
+                    $.each(opts, function (key, value) {
+                        config[key] = stringToBoolean(value);
+                    });
+                }
+            });
+
+            $slider.coinslider(config);
+        });
+    };
 
     $(document).ready(function () {
         var controller = new Controller();

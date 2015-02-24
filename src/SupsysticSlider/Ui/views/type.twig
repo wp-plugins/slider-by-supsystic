@@ -16,8 +16,8 @@
             shrinkToFit: true,
             colNames:['Id', 'Image','Properties'],
             colModel:[
-                {name:'id', index:'id', sortable: false, width: 20},
-                {name:'image',index:'image', sortable: false, width: 40},
+                {name:'id', index:'id', sortable: false, width: 20, align: 'center'},
+                {name:'image',index:'image', sortable: false, width: 60, align: 'center'},
                 {name:'properties', sortable: false, index:'properties'}
             ],
             height: 'auto'
@@ -186,12 +186,12 @@
             <a href="#photo-link-{{ image.id }}" class="add-new-h2 button">{{ environment.translate('Link')|trim }}</a>
         </strong>
         <p id="photo-desc-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;">
-            <input type="text" name="description" value="{{ image.attachment.description }}" placeholder="Image description"/>
+            <input type="text" name="description" value="{{ image.attachment.description }}" style="margin-left: 4px" placeholder="Image description"/>
         </p>
         <p id="photo-link-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
-            <input type="text" name="link" value="{{ image.attachment.external_link }}" placeholder="Image link"/>
+            <input type="text" name="link" value="{{ image.attachment.external_link }}" style="margin-left: 4px" placeholder="Image link"/>
             <label style="margin-left: 10px;">
-                <input type="checkbox" name="target" value="_blank" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
+                <input type="checkbox" name="target" value="_blank" title="Open link in a new tab" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
             </label>
         </p>
         <input name="attachment_id" value="{{ image.attachment.id }}" type="hidden"/>

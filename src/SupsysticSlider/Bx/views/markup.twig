@@ -6,16 +6,16 @@
                 {% if entity.attachment.external_link %}
                     <a href="{{ entity.attachment.external_link }}" target="{{ entity.attachment.target }}">
                         {% if slider.settings.properties.widthType == '%' %}
-                            <img src="{{ entity.attachment.url }}" width="100%" height="100%" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description }}"/>
+                            <img src="{{ entity.attachment.url }}" width="100%" height="100%" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description|raw }}"/>
                         {% else %}
-                            <img src="{{ entity|image_size(slider.settings.properties.width, slider.settings.properties.height) }}" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description }}"/>
+                            <img src="{{ entity|image_size(slider.settings.properties.width, slider.settings.properties.height) }}" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description|raw }}"/>
                         {% endif %}
                     </a>
                     {% else %}
                         {% if slider.settings.properties.widthType == '%' %}
-                            <img src="{{ entity.attachment.url }}" width="100%" height="100%" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description }}"/>
+                            <img src="{{ entity.attachment.url }}" width="100%" height="100%" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description|raw }}"/>
                         {% else %}
-                            <img src="{{ entity|image_size(slider.settings.properties.width, slider.settings.properties.height) }}" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description }}"/>
+                            <img src="{{ entity|image_size(slider.settings.properties.width, slider.settings.properties.height) }}" alt="{{ entity.attachment.title|title }}" title="{{ entity.attachment.description|raw }}"/>
                         {% endif %}
                     {% endif %}
                 </li>

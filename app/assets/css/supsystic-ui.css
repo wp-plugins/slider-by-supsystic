@@ -286,6 +286,15 @@ input[type="color"] {
 #jqgrid-htable-img-list input[type="text"] {
     width: 90%;
 }
+
+#jqgrid-htable-img-list img {
+    margin-top: 13px;
+}
+
+#jqgrid-htable-img-list td div {
+    margin-bottom: 20px;
+}
+
 /*Admin footer links*/
 .swrAdminFooterCell {
 	float: left;
@@ -409,6 +418,13 @@ input[type=checkbox] + label:before { letter-spacing: 10px; }
 input[type=checkbox]:checked + label:before { content: "\f046"; } 
 input[type=checkbox]:checked + label:before { letter-spacing: 5px; } */
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+}
+
 .swrHtaccessPre {
 	background-color: #eef;
 	padding: 10px;
@@ -516,6 +532,10 @@ h3 .nav-tab {
 }
 
 .supsystic-plugin #gbox_jqgrid-htable-img-list {
+    margin-left: 20px;
+}
+
+#gbox_posts-table {
     margin-left: 20px;
 }
 

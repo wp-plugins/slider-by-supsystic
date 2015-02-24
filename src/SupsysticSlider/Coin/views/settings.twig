@@ -13,11 +13,13 @@
 {% block buttons %}
     {% import '@slider/macro/tabs.twig' as tabs %}
 
-    {{ tabs.button(environment.translate('Effects'), 'effects') }}
-    {{ tabs.button(environment.translate('Controls'), 'controls') }}
+    {{ tabs.button(environment.translate('Effects'), 'effects', 'gears') }}
+    <div class="separator">|</div>
+    {{ tabs.button(environment.translate('Controls'), 'controls', 'laptop') }}
 {% endblock %}
 
 {% block form %}
+    {% import '@core/form.twig' as form %}
 
     {% import _self as macro %}
 
@@ -27,6 +29,7 @@
             <th scope="row">
                 <label for="effectsEffect">
                     {{ environment.translate('Effect') }}
+                    {{ form.tooltip('general-effect') }}
                 </label>
             </th>
             <td>
@@ -41,48 +44,43 @@
             <th scope="row">
                 <label for="effectsTitleSpeed">
                     {{ environment.translate('Title speed') }}
+                    {{ form.tooltip('general-title-speed') }}
                 </label>
             </th>
             <td>
                 <input class="regular-text" type="number" name="effects[titleSpeed]"
                        id="effectsTitleSpeed" value="{{ slider.settings.effects.titleSpeed }}" step="100" min="0"/>
-                <p class="description">
-                    {{ environment.translate('Speed of title appereance in ms.') }}
-                </p>
             </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="effectsOpacity">
                     {{ environment.translate('Opacity') }}
+                    {{ form.tooltip('general-opacity') }}
                 </label>
             </th>
             <td>
                 <input class="regular-text" type="number"
                        name="effects[opacity]" id="effectsOpacity" value="{{ slider.settings.effects.opacity }}" min="0" max="1" step="0.1"/>
-                <p class="description">
-                    {{ environment.translate('Opacity of title and navigation.') }}
-                </p>
             </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="effectsDelay">
                     {{ environment.translate('Delay') }}
+                    {{ form.tooltip('general-delay') }}
                 </label>
             </th>
             <td>
                 <input class="regular-text" type="number" name="effects[delay]"
                        id="effectsDelay" value="{{ slider.settings.effects.delay }}" min="0" step="100"/>
-                <p class="description">
-                    {{ environment.translate('Delay between images in ms.') }}
-                </p>
             </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="effectsHoverPause">
-                    {{ environment.translate('Pause on hover') }}
+                    {{ environment.translate('Pause') }}
+                    {{ form.tooltip('general-pause') }}
                 </label>
             </th>
             <td>
@@ -111,6 +109,7 @@
             <th scope="row">
                 <label for="controlsNavigation">
                     {{ environment.translate('Navigation') }}
+                    {{ form.tooltip('general-navigation-coin') }}
                 </label>
             </th>
             <td>
@@ -136,15 +135,13 @@
                     <span>{{ environment.translate('No') }}</span>
                     <br/>
                 </label>
-                <p class="description">
-                    {{ environment.translate('Prev and next buttons.') }}
-                </p>
             </td>
         </tr>
         <tr>
             <th scope="row">
                 <label for="controlsLinks">
                     {{ environment.translate('Links') }}
+                    {{ form.tooltip('general-links') }}
                 </label>
             </th>
             <td>
@@ -169,10 +166,6 @@
                     <span>{{ environment.translate('No') }}</span>
                     <br/>
                 </label>
-
-                <p class="description">
-                    {{ environment.translate('Show images as links.') }}
-                </p>
             </td>
         </tr>
         </thead>

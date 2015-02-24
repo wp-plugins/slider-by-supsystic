@@ -10,8 +10,10 @@
         this.$form = $('form#settings');
         this.$pluginBtn = $('button#change');
         this.$pluginWindow = $('#changePluginWindow');
-        this.$deleteBtn = $('button#delete'),
+        this.$deleteBtn = $('button#delete');
         this.$randomCheckbox = $('#generalRandomStart');
+        this.$addPage = $('.add-page');
+        this.$addPost = $('.add-post');
 
         this.init();
     }
@@ -70,6 +72,98 @@
         });
     });
 
+    Controller.prototype.addPages = function() {
+        var sliderId = parseInt($('#sliderID').attr('value'));
+
+        this.$addPage.on('click', function() {
+            var postId = $('#post-feed-selectPages').val();
+
+            $.post(WordPress.ajax.settings.url,
+                {
+                    id: postId,
+                    slider : sliderId,
+                    type: 'page',
+                    action: 'supsystic-slider',
+                    route: {
+                        module: 'slider',
+                        action: 'addPost'
+                    }
+                })
+                .success(function (response) {
+                    $.jGrowl(response.message);
+                });
+        });
+    };
+
+    Controller.prototype.addPosts = function() {
+        var sliderId = parseInt($('#sliderID').attr('value'));
+
+        this.$addPost.on('click', function() {
+            var postId = $('#post-feed-selectPosts').val();
+
+            $.post(WordPress.ajax.settings.url,
+                {
+                    id: postId,
+                    slider : sliderId,
+                    type: 'post',
+                    action: 'supsystic-slider',
+                    route: {
+                        module: 'slider',
+                        action: 'addPost'
+                    }
+                })
+                .success(function (response) {
+                    $.jGrowl(response.message);
+                });
+        });
+    };
+
+    Controller.prototype.initPostsTable = function() {
+
+        jQuery("#posts-table").jqGrid({
+            datatype: "local",
+            autowidth: true,
+            shrinkToFit: true,
+            colNames:['Id', 'Image','Title'],
+            colModel:[
+                {name:'id', index:'id', sortable: false, width: 20, align: 'center'},
+                {name:'image',index:'image', sortable: false, width: 60, align: 'center'},
+                {name:'title', sortable: false, index:'title', align: 'center'}
+            ],
+            height: 'auto'
+        });
+    };
+
+    Controller.prototype.fillPostsTable = function() {
+        var posts = [],
+            sliderId = parseInt($('#sliderID').attr('value'));
+
+        $.post(WordPress.ajax.settings.url,
+            {
+                slider : sliderId,
+                type: 'post',
+                action: 'supsystic-slider',
+                route: {
+                    module: 'slider',
+                    action: 'getPosts'
+                }
+            })
+            .success(function (response) {
+                console.log(response);
+
+                $.each(response.elements, function(index, value) {
+                    var data = {
+                        'id': value.id,
+                        'image': '<img src=' + value.image + ' width = 60 height = 60>',
+                        'title': value.title
+                    };
+
+                    jQuery("#posts-table").jqGrid('addRowData', index, data);
+                });
+                //$.jGrowl(response.message);
+            });
+    };
+
     /**
      * Init controller.
      *
@@ -88,6 +182,10 @@
         this.randomToggle();
         this.formNavigation();
         this.checkWidth();
+        this.addPages();
+        this.addPosts();
+        this.initPostsTable();
+        this.fillPostsTable();
     });
 
     /**

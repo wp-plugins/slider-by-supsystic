@@ -139,6 +139,14 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
 
             $ui->add(
                 new SupsysticSlider_Ui_BackendJavascript(
+                    'supsysticSlider-scroll-settings',
+                    $this->getLocationUrl() . '/assets/js/jquery.slimscroll.min.js',
+                    $preventCaching
+                )
+            );
+
+            $ui->add(
+                new SupsysticSlider_Ui_BackendJavascript(
                     'supsysticSlider-slider-view',
                     $this->getLocationUrl() . '/assets/js/view.js',
                     $preventCaching
@@ -304,6 +312,10 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
 
         add_action('wp_footer', array($this, 'enqueueFrontendJavascript'));
         add_action('wp_footer', array($this, 'enqueueFrontendStylesheet'));
+
+        $posts = $this->getController()->getModel('settings')->getPosts($slider->id, 'post', 'full');
+
+        //$slider['posts'] = $posts;
 
         return $module->render($slider);
     }

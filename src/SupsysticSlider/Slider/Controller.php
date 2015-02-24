@@ -274,6 +274,20 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             )
         );
 
+        $twig->addFunction(
+            new Twig_SimpleFunction(
+                'all_posts',
+                'get_posts'
+            )
+        );
+
+        $twig->addFunction(
+            new Twig_SimpleFunction(
+                'all_pages',
+                'get_pages'
+            )
+        );
+
         $this->getEnvironment()->getConfig()->load('@slider/tooltips.php');
 
         $tooltips = $this->getEnvironment()->getConfig()->get('tooltips');
@@ -344,6 +358,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                     )
                 ),
                 'is_empty' => $isEmpty,
+                'preview' => true
             )
         );
     }
@@ -397,6 +412,33 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         return $this->response(
             Rsc_Http_Response::AJAX,
             $this->getSuccessResponseData()
+        );
+    }
+
+    public function addPostAction(Rsc_Http_Request $request) {
+        $postId = $request->post->get('id');
+        $sliderId = $request->post->get('slider');
+        $settings = $this->getModel('settings');
+        $type = $request->post->get('type');
+
+        $settings->savePost($postId, $sliderId, $type);
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array('message' => 'Successfully added')
+        );
+    }
+
+    public function getPostsAction(Rsc_Http_Request $request) {
+        $sliderId = $request->post->get('slider');
+        $settings = $this->getModel('settings');
+        $type = $request->post->get('type');
+
+        $elements = $settings->getPosts($sliderId, $type);
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array('message' => 'Successfully added', 'elements' => $elements)
         );
     }
 
@@ -807,12 +849,27 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                         'slider' => $slider,
                     ));
                     break;
+                case 'bx-viewport-button button':
+                    $template = $twig->render('@bx/designer/viewport.twig', array(
+                        'slider' => $slider,
+                    ));
+                    break;
                 case 'bx-caption':
                     $template = $twig->render('@bx/designer/caption.twig', array(
                         'slider' => $slider,
                     ));
                     break;
+                case 'bx-caption-button button':
+                    $template = $twig->render('@bx/designer/caption.twig', array(
+                        'slider' => $slider,
+                    ));
+                    break;
                 case 'bx-prev':
+                    $template = $twig->render('@bx/designer/controls.twig', array(
+                        'slider' => $settings,
+                    ));
+                    break;
+                case 'bx-prev-button button':
                     $template = $twig->render('@bx/designer/controls.twig', array(
                         'slider' => $settings,
                     ));
@@ -823,6 +880,11 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                     ));
                     break;
                 case 'bx-controls bx-has-pager thumbnails bx-has-controls-direction':
+                    $template = $twig->render('@bx/designer/thumbnails.twig', array(
+                        'slider' => $slider,
+                    ));
+                    break;
+                case 'thumbnails-button button':
                     $template = $twig->render('@bx/designer/thumbnails.twig', array(
                         'slider' => $slider,
                     ));

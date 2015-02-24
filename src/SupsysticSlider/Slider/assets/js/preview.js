@@ -10,7 +10,8 @@
     }
 
     Controller.prototype.setWindow = (function (windowId) {
-        var $window = $(windowId), onDialogOpen;
+        var $window = $(windowId), onDialogOpen,
+            self = this;
 
         if ($window.length) {
             $window.dialog({
@@ -32,6 +33,8 @@
                         width:  sliderWidth
                     }).success(function (response) {
                         $window.html(response.slider);
+                        self.initCoinSlider();
+                        self.initJssorSlider();
                         app.init();
                     });
                 },
@@ -49,6 +52,97 @@
             this.$trigger = $trigger;
         }
     });
+
+    Controller.prototype.initCoinSlider = function() {
+        var $sliders = $('.supsystic-slider.supsystic-slider-coin'),
+            stringToBoolean = function (value) {
+                if (value == 'true') {
+                    return true;
+                } else if (value == 'false') {
+                    return false;
+                } else {
+                    return value;
+                }
+            };
+
+        if ($sliders.length < 1) {
+            return false;
+        }
+
+        $.each($sliders, function (index, slider) {
+            var $slider  = $(slider),
+                settings = $slider.data('settings'),
+                config   = {};
+
+            $.each(settings, function (category, opts) {
+                if(opts) {
+                    $.each(opts, function (key, value) {
+                        config[key] = stringToBoolean(value);
+                    });
+                }
+            });
+
+            $slider.coinslider(config);
+        });
+    };
+
+    Controller.prototype.initJssorSlider = function() {
+        var $sliders = $('.supsystic-slider-jssor'),
+            stringToBoolean = function (value) {
+                if (value == 'true') {
+                    return true;
+                } else if (value == 'false') {
+                    return false;
+                } else {
+                    return value;
+                }
+            },
+            options = {
+                $PlayOrientation: 2,
+                $DragOrientation: 2,
+                $AutoPlay: true,
+                $AutoPlayInterval: 1500,
+                $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$,
+                    $ChanceToShow: 2
+                },
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,
+                    $ChanceToShow: 2,
+                    $AutoCenter: 0,
+                    $Steps: 1
+                },
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,
+                    $ChanceToShow: 2,
+                    $Loop: 2,
+                    $SpacingX: 3,
+                    $SpacingY: 3,
+                    $DisplayPieces: 6,
+                    $ParkingPosition: 204
+                }
+            };
+
+        if ($sliders.length < 1) {
+            return false;
+        }
+
+        $.each($sliders, function (index, slider) {
+            var $slider  = $(slider),
+                settings = $slider.data('settings'),
+                config   = {};
+
+            $.each(settings, function (category, opts) {
+                if(opts) {
+                    $.each(opts, function (key, value) {
+                        config[key] = stringToBoolean(value);
+                    });
+                }
+            });
+
+            var jssorSlider = new $JssorSlider$("supsystic-jssor-slider", options);
+        });
+    };
 
     Controller.prototype.init = (function () {
         if (!this.$window || !this.$trigger) {
