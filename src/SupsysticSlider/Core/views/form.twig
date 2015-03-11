@@ -7,12 +7,17 @@
     </form>
 {% endmacro %}
 
-{% macro tooltip(id) %}
+{% macro tooltip(id, style = '') %}
 
     {% set title = tooltips[id] %}
+    {% if style %}
+        {% set icon_style = style %}
+    {% else %}
+        {% set icon_style = tooltips_icon.style %}
+    {% endif %}
 
     {% if title is not empty %}
-        <i class="fa fa-{{ tooltips_icon.icon|default('question-circle') }} supsystic-tooltip" title="{{ title|raw }}" style="{% for property, value in tooltips_icon.style %}{{ property|trim }}:{{ value|trim }};{% endfor %}"></i>
+        <i class="fa fa-{{ tooltips_icon.icon|default('question-circle') }} supsystic-tooltip" title="{{ title|raw }}" style="{% for property, value in icon_style %}{{ property|trim }}:{{ value|trim }};{% endfor %}"></i>
     {% endif %}
 
 {% endmacro %}

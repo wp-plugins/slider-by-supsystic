@@ -31,6 +31,25 @@
         }
     });
 
+    var initVisualSettings = function($container, self) {
+        // Apply visual editor styles.
+        if ($.isPlainObject($container.data('settings'))) {
+            var settings = $container.data('settings');
+
+            if ('__veditor__' in settings && settings['__veditor__'] != null) {
+                $.each(settings['__veditor__'], function (selector, properties) {
+                    var $part = $(selector, $container);
+
+                    self.setArrows($part, properties);
+                    $.each(properties, function (key, value) {
+                        $part.css(key, value);
+                    });
+                    self.enableTextAnimation($part, properties);
+                });
+            }
+        }
+    };
+
     app.init = (function (selector) {
         var $container, defaultSelector = '.supsystic-slider';
         var self = this;
@@ -66,22 +85,11 @@
 
             callback($container);
 
-            // Apply visual editor styles.
-            if ($.isPlainObject($container.data('settings'))) {
-                var settings = $container.data('settings');
+            $.each($container, function(index, value) {
+                initVisualSettings($(value), self);
+            });
 
-                if ('__veditor__' in settings && settings['__veditor__'] != null) {
-                    $.each(settings['__veditor__'], function (selector, properties) {
-                        var $part = $(selector, $container);
 
-                        self.setArrows($part, properties);
-                        $.each(properties, function (key, value) {
-                            $part.css(key, value);
-                        });
-                        self.enableTextAnimation($part, properties);
-                    });
-                }
-            }
         });
 
         return true;

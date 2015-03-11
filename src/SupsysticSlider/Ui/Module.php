@@ -106,6 +106,8 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/tooltipster.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster-theme-shadow', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/themes/tooltipster-shadow.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-animate-css', $url . '/app/assets/css/animate.css'));
+        $this->add(new SupsysticSlider_Ui_Stylesheet('rs-shadows-css', $url . '/app/assets/css/shadows.css'));
+        $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-shadows-backend-css', $url . '/app/assets/css/shadows.css'));
 
         /* Javascript */
         $this->add(new SupsysticSlider_Ui_BackendJavascript('jquery'));
@@ -117,6 +119,8 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-form-serializer-js', $this->getLocationUrl() . '/plugins/gird-gallery.ui.formSerialize.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-jgrowl-js', '//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.2.12/jquery.jgrowl.min.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-tooltipster-js', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/js/jquery.tooltipster.min.js'));
+        $this->add(new SupsysticSlider_Ui_BackendJavascript('gg-ddslick-js', '//cdn.jsdelivr.net/ddslick/2.0/jquery.ddslick.min.js'));
+        $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-slimscroll-js', $this->getLocationUrl() . '/js/jquery.slimscroll.min.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-jqgrid-min-js', '//cdn.jsdelivr.net/jqgrid/4.6.0/jquery.jqGrid.min.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-jqgrid-locale-en-js', '//cdn.jsdelivr.net/jqgrid/4.6.0/i18n/grid.locale-en.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-toolbar-js', $this->getLocationUrl() . '/plugins/gird-gallery.ui.toolbar.js'));

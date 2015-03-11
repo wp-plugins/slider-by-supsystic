@@ -127,7 +127,6 @@
 			slider.settings = $.extend({}, defaults, options);
 			// parse slideWidth setting
 			slider.settings.slideWidth = parseInt(slider.settings.slideWidth);
-			console.log(slider.settings.slideWidth);
 			slider.settings.pagerType = parseInt(slider.settings.navigation);
 			slider.settings.slideMargin = parseInt(slider.settings.slideMargin);
 			slider.settings.oneToOneTouch = slider.settings.oneToOne;
@@ -257,7 +256,7 @@
 				slider.children.eq(slider.settings.startSlide).css({zIndex: slider.settings.slideZIndex, display: 'block'});
 			}
 			//set thumbnails function
-			if(slider.settings.pagerType) {
+			/*if(slider.settings.pagerType) {
 				var resources = $('.thumbnails').clone();
 				slider.settings.buildPager = function(index) {
 					var img = resources.find('li').get(index);
@@ -268,7 +267,7 @@
 					return '<img src="' + $(img).find('img').attr('src') + '">';
 				}
 			}
-			$('.thumbnails').remove();
+			$('.thumbnails').remove();*/
 			// create an element to contain all slider controls (pager, start / stop, etc)
 			slider.controls.el = $('<div class="bx-controls" />');
 			// if captions are requested, add them
@@ -414,6 +413,7 @@
 		 */
 		var getViewportMaxWidth = function(){
 			var width = '100%';
+
 			if(slider.settings.slideWidth > 0){
 				if(slider.settings.mode == 'horizontal'){
 					width = (slider.settings.maxSlides * slider.settings.slideWidth) + ((slider.settings.maxSlides - 1) * slider.settings.slideMargin);
@@ -421,6 +421,7 @@
 					width = slider.settings.slideWidth;
 				}
 			}
+
 			return width;
 		};
 
@@ -645,9 +646,6 @@
 			if(!slider.settings.pagerCustom){
 				// create the pager DOM element
 				slider.pagerEl = $('<ul class="bx-pager" data-center="1" data-transform="0"/>');
-				if(slider.settings.pagerType == '1') {
-					slider.pagerEl.css('width', slider.children.length*100 + '%');
-				}
 				// if a pager selector was supplied, populate it with the pager
 				if(slider.settings.pagerSelector){
 					$(slider.settings.pagerSelector).html(slider.pagerEl);
@@ -762,9 +760,11 @@
 			// if auto show is running, stop it
 			if (slider.settings.auto) el.stopAuto();
 			el.goToNextSlide();
-			pagerMoveLeft();
+            /*if(slider.settings.pagerType) {
+                pagerMoveLeft();
+            }*/
 			e.preventDefault();
-		}
+		};
 
 		/**
 		 * Click prev binding
@@ -776,9 +776,11 @@
 			// if auto show is running, stop it
 			if (slider.settings.auto) el.stopAuto();
 			el.goToPrevSlide();
-			pagerMoveRight();
+            /*if(slider.settings.pagerType) {
+                pagerMoveRight();
+            }*/
 			e.preventDefault();
-		}
+		};
 
 		/**
 		 * Click start binding
@@ -818,12 +820,12 @@
 				if(pagerIndex != slider.active.index) el.goToSlide(pagerIndex);
 				e.preventDefault();
 			}
-			if(slider.settings.pagerType) {
+			/*if(slider.settings.pagerType) {
 				pagerTranslate(this);
-			}
+			}*/
 		};
 
-		var pagerTranslate = function(self) {
+		/*var pagerTranslate = function(self) {
 			var $pager = $('.bx-pager');
 
 			if($(self).parent('li').index() > parseInt($pager.data('center'), 10)) {
@@ -890,7 +892,7 @@
 			}
 
 			$pager.data('center', parseInt($pager.data('center'), 10) - 1);
-		};
+		};*/
 
 		/**
 		 * Updates the pager links with an active class

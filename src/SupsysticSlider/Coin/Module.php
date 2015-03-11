@@ -95,10 +95,14 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSli
                 'links'      => self::OPT_FALSE,
             ),
             'properties' => array(
-                'width'  => 640,
+                'width'  => 400,
                 'height' => 240,
             ),
         );
+    }
+
+    public function getPresetSettings($presetName) {
+        return $this->getDefaults();
     }
 
     /**
@@ -145,7 +149,7 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSli
         );
 
         wp_enqueue_script(
-            'supsysticSlider-coinSlider',
+            'supsysticSlider-coinSlider-frontend',
             $this->getLocationUrl() . '/assets/js/frontend.js',
             array(),
             '1.0.0',

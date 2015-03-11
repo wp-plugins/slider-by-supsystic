@@ -59,4 +59,10 @@ interface SupsysticSlider_Slider_Interface
      * @return string
      */
     public function getSliderTemplate();
+
+    /**
+     * Return specified preset settings
+     *
+     * */
+    public function getPresetSettings($presetName);
 } 

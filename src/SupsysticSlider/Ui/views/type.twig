@@ -14,7 +14,7 @@
             datatype: "local",
             autowidth: true,
             shrinkToFit: true,
-            colNames:['Id', 'Image','Properties'],
+            colNames:['<i class="fa fa-fw fa-check" style="margin-left: 8px;"></i>', 'Image','Properties'],
             colModel:[
                 {name:'id', index:'id', sortable: false, width: 20, align: 'center'},
                 {name:'image',index:'image', sortable: false, width: 60, align: 'center'},
@@ -185,14 +185,30 @@
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
             <a href="#photo-link-{{ image.id }}" class="add-new-h2 button">{{ environment.translate('Link')|trim }}</a>
         </strong>
+        <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
+            <a href="#photo-seo-{{ image.id }}" class="add-new-h2 button">{{ environment.translate('SEO')|trim }}</a>
+        </strong>
+        <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
+            <a href="#photo-html-{{ image.id }}" class="add-new-h2 button">{{ environment.translate('Html')|trim }}</a>
+        </strong>
         <p id="photo-desc-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;">
             <input type="text" name="description" value="{{ image.attachment.description }}" style="margin-left: 4px" placeholder="Image description"/>
         </p>
         <p id="photo-link-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
             <input type="text" name="link" value="{{ image.attachment.external_link }}" style="margin-left: 4px" placeholder="Image link"/>
             <label style="margin-left: 10px;">
-                <input type="checkbox" name="target" value="_blank" title="Open link in a new tab" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
+                <input type="checkbox" name="target" value="_blank" title="Open link in a new window" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
             </label>
+        </p>
+        <p id="photo-seo-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
+            {% if environment.isPro() %}
+                <input type="text" name="seo" value="{{ image.attachment.seo }}" style="margin-left: 4px" placeholder="Image alt"/>
+            {% endif %}
+        </p>
+        <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
+            {% if environment.isPro() %}
+                <input type="text" name="html" value="{{ image.attachment.html }}" style="margin-left: 4px" placeholder="Slide html"/>
+            {% endif %}
         </p>
         <input name="attachment_id" value="{{ image.attachment.id }}" type="hidden"/>
         <input name="action" value="{{ environment.getConfig().get('ajax_action') }}" type="hidden"/>

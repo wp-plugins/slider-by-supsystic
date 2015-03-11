@@ -83,6 +83,7 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
                 'slideMargin' => 0,
                 'captions'    => self::OPT_TRUE,
                 'easing'      => 'linear',
+                'navigation' => 0,
             ),
             'touch'      => array(
                 'enabled'        => self::OPT_TRUE,
@@ -90,7 +91,7 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
                 'swipeThreshold' => 55,
             ),
             'pager'      => array(
-                'enabled' => self::OPT_FALSE,
+                'pagerEnabled' => self::OPT_TRUE,
                 'type'    => 'full',
             ),
             'properties' => array(
@@ -98,6 +99,18 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
                 'height' => 240,
             ),
         );
+    }
+
+    public function getPresetSettings($presetName) {
+        if(!$presetName) {
+            return $this->getDefaults();
+        } else {
+            if($presetName == 'thumbs') {
+                $settings = $this->getDefaults();
+                $settings['general']['navigation'] = 1;
+                return $settings;
+            }
+        }
     }
 
     /**

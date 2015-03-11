@@ -210,6 +210,9 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             /** @var string $plugin */
             $plugin = $this->escape($request->post->get('plugin'));
 
+            /** @var string $preset */
+            $preset = $this->escape($request->post->get('preset'));
+
             $sliders->create($title, $plugin);
         } catch (Exception $e) {
             return $this->response(
@@ -219,6 +222,16 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         }
 
         $sliderId = $sliders->getInsertId();
+        $slider = $sliders->getById($sliderId);
+        $module = $this->getModule($slider->plugin);
+        $settings = $this->getModel('settings');
+
+        $presetSettings = $module->getPresetSettings($preset);
+
+        $settings->insert($presetSettings);
+        $settingsId = $settings->getInsertId();
+
+        $sliders->updateSettingsId($sliderId, $settingsId);
 
         return $this->response(
             Rsc_Http_Response::AJAX,
@@ -303,13 +316,17 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         foreach($current->images as $key => $value) {
             $link = get_post_meta($value->attachment_id, '_slider_link');
             $target = get_post_meta($value->attachment_id, 'target');
+            $alt = get_post_meta($value->attachment_id, '_wp_attachment_image_alt');
+            $html = get_post_meta($value->attachment_id, 'slideHtml');
             $current->images[$key]->attachment['external_link'] = $link[0];
             $current->images[$key]->attachment['target'] = $target[0];
+            $current->images[$key]->attachment['seo'] = $alt[0];
+            $current->images[$key]->attachment['html'] = $html[0];
         }
 
         return $this->response(
             $module->getSettingsTemplate(),
-            array('slider' => $current)
+            array('slider' => $current, 'path' => plugins_url() . '/slider-by-supsystic')
         );
     }
 
@@ -432,13 +449,26 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
     public function getPostsAction(Rsc_Http_Request $request) {
         $sliderId = $request->post->get('slider');
         $settings = $this->getModel('settings');
-        $type = $request->post->get('type');
+        $size = $request->post->get('size');
 
-        $elements = $settings->getPosts($sliderId, $type);
+        $elements = $settings->getPosts($sliderId, $size);
 
         return $this->response(
             Rsc_Http_Response::AJAX,
             array('message' => 'Successfully added', 'elements' => $elements)
+        );
+    }
+
+    public function deletePostsAction(Rsc_Http_Request $request) {
+        $sliderId = $request->post->get('slider');
+        $settings = $this->getModel('settings');
+        $posts = $request->post->get('posts');
+
+        $settings->deletePost($sliderId, $posts);
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array('message' => 'Successfully added')
         );
     }
 

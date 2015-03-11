@@ -22,7 +22,10 @@ return array(
         'general-delay' => 'Delay between slide changing',
         'general-pause' => 'Pause when mouse is over slider container',
         'general-navigation-coin' => 'Show or hide slider controls buttons',
-        'general-links' => 'Show all images with their full size links'
+        'general-links' => 'Show all images with their full size links',
+        'general-slider-bx' => '<img src=@url/bx_slider.jpg>',
+        'general-slider-coin' => '<img src=@url/coin_slider.jpg>',
+        'general-slider-jssor' => '<img src=@url/jssor_slider.jpg>',
     ),
     'tooltips_icon' => array(
         'icon' => 'question'

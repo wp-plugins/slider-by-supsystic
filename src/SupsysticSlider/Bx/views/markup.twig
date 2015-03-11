@@ -1,4 +1,4 @@
-<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}">
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" data-thumbs="thumbnails-{{ slider.id }}">
     <ul style="margin: 0 !important;">
         {% for entity in slider.entities %}
             {% if entity.type == 'image' %}
@@ -24,7 +24,7 @@
     </ul>
 </div>
 
-<ul class="thumbnails" style="margin-left: 0 !important; margin-right: 0 !important;" hidden>
+<ul class="thumbnails-{{ slider.id }} thumbs" style="margin: 0 10px !important;">
     {% for entity in slider.entities %}
         <li>
             {% if slider.settings.properties.widthType == '%' %}

@@ -12,36 +12,37 @@
 
     {{ toolbar.button('import-images', environment.translate('Add Images'), { 'id': 'gg-btn-upload','icon': 'upload', 'dataset': { 'folder-id': '0', 'slider-id': slider.id },'custom': { 'data-upload':'' } }) }}
 
-    {% if environment.isPro() %}
-        {{ toolbar.button('uploadVideo', environment.translate('Add Video'), { 'id': 'uploadVideo','icon': 'video-camera', 'dataset': { 'folder-id': '0', 'slider-id': slider.id } }) }}
+    {% if slider.plugin != 'coin' %}
+        {% if environment.isPro() %}
+            {{ toolbar.button('uploadVideo', environment.translate('Add Video'), { 'id': 'uploadVideo','icon': 'video-camera', 'dataset': { 'folder-id': '0', 'slider-id': slider.id } }) }}
+        {% else %}
+            <button id="free-video" class="button button-primary">
+                <i class="fa fa-video-camera"></i>
+                Import Video
+            </button>
+        {% endif %}
     {% endif %}
 
     {#{{ toolbar.primaryUrl('upload-images', environment.generateUrl('slider', 'add', { 'id': slider.id }), environment.translate('Add images'), { 'icon': 'upload' }) }}#}
-    {{ toolbar.button('preview-trigger', environment.translate('Preview'), { 'icon': 'eye' }) }}
-    {#{{ toolbar.button('change', environment.translate('Change plugin: ') ~ slider.plugin|title, { 'icon': 'wrench' }) }}#}
+    {{ toolbar.button('preview-trigger', environment.translate('Preview'), { 'icon': 'eye', 'container': { 'style': {'float': 'right'}} }) }}
+    {{ toolbar.button('change', environment.translate('Change Slider') , { 'icon': 'wrench' }) }}
 
     {{ toolbar.separator() }}
 
-    {{ toolbar.icon('delete-element', 'trash-o') }}
+    {#Uncomment to enable delete items button#}
+    {#{{ toolbar.icon('delete-element', 'trash-o') }}
 
-    {{ toolbar.separator() }}
+    {{ toolbar.separator() }}#}
 
-    {{ toolbar.button('button-select', '', { 'icon': 'check', 'dataset': {
-                'enabled': 'none|one|many|all',
-                'toolbar-button': ''
-            }, 'custom': {
-                'value': 'select',
-                'name': 'Select all'
-            }, 'li': {
-                'custom': { 'title': 'Select/unselect all images' }
-            }
-        })
-    }}
-
-    {{ toolbar.separator() }}
-
-    {% if environment.isPro() and environment.plugin == 'bx' %}
-        {{ toolbar.icon('visual-editor', 'edit') }}
+    {% if slider.plugin == 'bx' %}
+        {% if environment.isPro() %}
+            {{ toolbar.icon('visual-editor', 'edit', {}, 'Builder') }}
+        {% else %}
+            <button id="free-builder" class="button button-primary">
+                <i class="fa fa-edit"></i>
+                Builder
+            </button>
+        {% endif %}
     {% endif %}
 
     {{ toolbar.primary('save', environment.translate('Save'), { 'icon': 'check', 'container': { 'style': {'float': 'right'} }, 'custom': {'form': 'settings'} }) }}
@@ -50,6 +51,8 @@
 
 {% block content %}
     {% import '@ui/type.twig' as view_type %}
+    {% import '@core/form.twig' as form %}
+    {% import 'macro/toolbar.twig' as toolbar %}
 
     {% set small = 0 %}
     {% for image in slider.images %}
@@ -65,31 +68,47 @@
     {% endif %}
 
     <div id="image-area" class="half-page-left">
-        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Select posts to show</h3>
-        <label for="post-feed-selectPages" style="margin-left: 20px;">Pages: </label>
-        <select id="post-feed-selectPages" style="margin-left: 17px;">
-            {% for page in all_pages() %}
-                <option value="{{ page.ID }}">{{ page.post_title }}</option>
-            {% endfor %}
-        </select>
-        <button class="button add-page" style="height: 29px; line-height: 1px;">Add page</button>
-        </br>
-        <label for="post-feed-selectPosts" style="margin-left: 20px;">Posts: </label>
-        <select id="post-feed-selectPosts" style="margin-left: 20px;">
-            {% for post in all_posts() %}
-                <option value="{{ post.ID }}">{{ post.post_title }}</option>
-            {% endfor %}
-        </select>
-        <button class="button add-post" style="height: 29px; line-height: 1px;">Add post</button>
-        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Resources</h3>
+        {% if environment.isPro() and slider.plugin != 'bx' %}
+            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Posts and Pages</h3>
+            <button class="button remove-post" style="display: block; margin-left: 20px;">
+            <i class="fa fa-trash-o"></i>
+                Remove post
+            </button>
+            <table id="posts-table"></table>
+            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Select posts to show</h3>
+            <label for="post-feed-selectPages" style="margin-left: 20px;">Pages: </label>
+            <select id="post-feed-selectPages" style="margin-left: 17px; max-width: 240px;">
+                {% for page in all_pages({'posts_per_page': -1}) %}
+                    <option value="{{ page.ID }}">{{ page.post_title }}</option>
+                {% endfor %}
+            </select>
+            <button class="button add-page" style="height: 29px; line-height: 1px; float: right;">Add page</button>
+            </br>
+            <label for="post-feed-selectPosts" style="margin-left: 20px;">Posts: </label>
+            <select id="post-feed-selectPosts" style="margin-left: 20px; max-width: 240px;">
+                {% for post in all_posts({'posts_per_page': -1}) %}
+                    <option value="{{ post.ID }}">{{ post.post_title }}</option>
+                {% endfor %}
+            </select>
+            <button class="button add-post" style="height: 29px; line-height: 1px; float: right;">Add post</button>
+        {% endif %}
+        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Media</h3>
+        {#<button id="button-select" class="button " data-enabled="none|one|many|all" data-toolbar-button="" value="select" name="Select all" style="margin-left: 24px;">
+            <i class="fa fa-fw fa-check"></i>
+        </button>#}
+        <button id="delete-element" class="button" style="margin-left: 90%;">
+            <i class="fa fa-fw fa-trash-o"></i>
+        </button>
         {% if slider.images is not empty %}
             {{ view_type.list_view(slider) }}
         {% else %}
             <h2 class="header-muted" style="text-align: center;">You haven't any images yet.</h2>
         {% endif %}
-
-        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Active posts list</h3>
-        <table id="posts-table"></table>
+        {% if environment.isPro() != 'true' %}
+            <a href="http://supsystic.com/plugins/slider/">
+                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;">
+            </a>
+        {% endif %}
     </div>
     <div id="settings-area" class="half-page-right settings">
 
@@ -116,7 +135,7 @@
                         </label>
                     </th>
                     <td>
-                        <input class="regular-text" type="number" style="display: inline; width: 124px;"
+                        <input class="regular-text" type="number" style="display: inline; width: 110px;"
                                value="{{ slider.settings.properties.width }}"
                                min="0"
                                step="100"
@@ -124,7 +143,7 @@
                                id="propsSliderWidth"/>
                         <select class="regular-text"
                                 name="properties[widthType]"
-                                style="display: inline; height: inherit;position: relative; bottom: 2px">
+                                style="display: inline; height: inherit;position: relative; bottom: 2px; width: 64px;">
                             <option value="px">pixels</option>
                             <option value="%">percents</option>
                         </select>
@@ -136,16 +155,15 @@
                             {{ environment.translate('Slider height') }}
                         </label>
                     </th>
-                    <td>
+                    <td style="float: left;">
                         <input class="regular-text" type="number"
-                               style="display: inline; width: 124px;"
+                               style="display: inline; width: 110px;"
                                value="{{ slider.settings.properties.height }}"
                                min="0"
                                step="100"
                                name="properties[height]"
                                id="propsSliderHeight"/>
-                        <span class="regular-text"
-                                style="display: inline; height: inherit;position: relative; bottom: 2px">
+                        <span class="regular-text" style="display: inline; height: inherit;position: relative; bottom: 2px;">
                             {{ environment.translate('pixels') }}
                         </span>
                     </td>
@@ -155,43 +173,42 @@
             </table>
         </form>
 
-        <div id="changePluginWindow" title="{{ environment.translate('Change plugin') }}" style="display: none;">
+        <div id="changePluginWindow" title="{{ environment.translate('Change Slider Type') }}" style="display: none;">
             <form id="changePlugin">
                 <input name="id" type="hidden" value="{{ slider.id }}"/>
                 <input name="route[module]" value="slider" type="hidden"/>
                 <input name="route[action]" value="changePlugin" type="hidden"/>
                 <input name="action" value="supsystic-slider" type="hidden"/>
-                <table class="form-table">
-                    <thead>
-                    <tr>
-                        <th scope="row">
-                            <label>
-                                {{ environment.translate('Select plugin') }}
-                            </label>
-                        </th>
-                        <td>
-                            {% for plugin in environment.getModule('slider').getAvailableSliders() %}
-                                <label for="plugin-{{ plugin.getModuleName() }}">
-                                    <input type="radio" name="plugin"
-                                           id="plugin-{{ plugin.getModuleName() }}"
-                                           value="{{ plugin.getModuleName() }}"
-                                           {% if slider.plugin == plugin.getModuleName() %}checked="checked"{% endif %}/>
-                                    <span>{{ plugin.getSliderName() }}</span>
-                                    <br/>
-                                </label>
-                            {% endfor %}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" colspan="2">
-                            <p class="description">
-                                {{ environment.translate('Please note:') }}
-                                {{ environment.translate('Current settings will be removed without ability to restore.') }}
-                            </p>
-                        </th>
-                    </tr>
-                    </thead>
-                </table>
+
+                <h3>{{ environment.translate('Select plugin') }}</h3>
+
+                {% for plugin in environment.getModule('slider').getAvailableSliders() %}
+                    <div>
+                        <input type="radio" name="plugin"
+                               id="plugin-{{ plugin.getModuleName() }}"
+                               value="{{ plugin.getModuleName() }}"
+                               {% if slider.plugin == plugin.getModuleName() %}checked="checked"{% endif %}/>
+                        <h3 style="display: inline-block;">
+                            {{ plugin.getSliderName() }}
+                            {{ form.tooltip('general-slider-' ~ plugin.getModuleName(), { 'border': '1px solid black;', 'padding': '1px 5px;', 'border-radius': '50%' }) }}
+                        </h3>
+                        <br/>
+                    </div>
+                {% endfor %}
+                {% if environment.isPro() != 'true' %}
+                    <div>
+                        <input type="radio" disabled>
+                        <h3 style="display: inline-block;">
+                            {{ environment.translate('Jssor PRO') }}
+                            {{ form.tooltip('general-slider-jssor', { 'border': '1px solid black;', 'padding': '1px 5px;', 'border-radius': '50%' }) }}
+                        </h3>
+                        <br/>
+                    </div>
+                {% endif %}
+                <p class="description">
+                    {{ environment.translate('Please note:') }}
+                    {{ environment.translate('Current settings will be removed without ability to restore.') }}
+                </p>
             </form>
         </div>
     </div>
@@ -201,6 +218,12 @@
     </div>
 
     <div id="visual-editor-window" title="{{ environment.translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
+    </div>
+
+    <div id="bx-editor-notice" title="{{ environment.translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
+        <a href="http://supsystic.com/plugins/slider/">
+            <img src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/pro_builder.jpg">
+        </a>
     </div>
 
     <div id="uploadVideoModal" title="{{ environment.translate('Import video') }}" style="display: none;">
@@ -217,7 +240,12 @@
                         <input class="regular-text" type="text" name="url"
                                id="videoUrl"/>
                         <p class="description">
-                            {{ environment.translate('Supported platforms: %s.')|format(['Youtube', 'Vimeo']|join(', ')) }}
+                            {% if slider.plugin == 'bx' %}
+                                {% set sources = ['Youtube', 'Vimeo'] %}
+                            {% else %}
+                                {% set sources = ['Youtube'] %}
+                            {% endif %}
+                            {{ environment.translate('Supported platforms: %s.')|format(sources|join(', ')) }}
                         </p>
                         <p id="uploadVideoFormError" class="description" style="color:red;"></p>
                     </td>
@@ -233,7 +261,7 @@
     <script>
         (function($) {
             $(document).ready(function() {
-                jQuery('#button-select').on('click', function() {
+                jQuery('#button-select, #jqgh_jqgrid-htable-img-list_id').on('click', function() {
                     if($(this).val() == 'select') {
                         jQuery('[name="image[]"]').each(function() {
                             $(this).attr('checked', 'checked');
@@ -246,6 +274,8 @@
                         $(this).val('select');
                     }
                 });
+
+                $('#jqgh_jqgrid-htable-img-list_id').attr('value', 'select');
 
                 jQuery('[name="properties[widthType]"] option').each(function() {
                     if($(this).val() == "{{ slider.settings.properties.widthType }}") {

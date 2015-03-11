@@ -89,10 +89,10 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         return true;
     }
 
-    public function savePost($id, $sliderId = '', $type='post') {
+    public function savePost($id, $sliderId = '') {
         $elements = array();
 
-        $elements = get_option($type . $sliderId);
+        $elements = get_option('post' . $sliderId);
         $elements = unserialize($elements);
         if(!empty($elements) && $elements) {
             if(!in_array($id, $elements)) {
@@ -103,28 +103,43 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         }
         $elements = serialize($elements);
 
-        update_option($type . $sliderId, $elements);
+        update_option('post' . $sliderId, $elements);
     }
 
-    public function getPosts($sliderId = '', $type='post', $thumbSize = 'thumbnail') {
-        $elements = get_option($type . $sliderId);
+    public function getPosts($sliderId = '', $thumbSize = 'thumbnail') {
+        $elements = get_option('post' . $sliderId);
         $elements = unserialize($elements);
         $posts = array();
 
         foreach($elements as $id) {
             $post = get_post($id);
             $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), $thumbSize);
+            $image = $image[0];
             array_push($posts, array(
                 'id' => $id,
                 'title'=> $post->post_title,
-                'image' => $image[0],
-                'author' => the_author($id),
-                'content' => $post->post_content
+                'image' => $image,
+                //'author' => the_author($id),
+                'date' => date('F j, Y', strtotime($post->post_date)),
+                'url' => get_permalink($id)
 
             ));
         }
 
         return $posts;
+    }
+
+    public function deletePost($sliderId = '', $posts) {
+        $elements = get_option('post' . $sliderId);
+        $elements = unserialize($elements);
+
+        if(!is_array($posts)) {
+            $posts = array($posts);
+        }
+
+        $elements = array_diff($elements, $posts);
+
+        update_option('post' . $sliderId, serialize($elements));
     }
 
     /**
@@ -183,10 +198,6 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         );
 
         return $slider;
-    }
-
-    public function getImagesPath() {
-        return get_bloginfo('wpurl'). '/wp-content/plugins/supsystic_slider/src/SupsysticSlider/Bx/assets/images';
     }
 
     /**

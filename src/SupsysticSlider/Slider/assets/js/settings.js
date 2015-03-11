@@ -10,6 +10,7 @@
         this.$form = $('form#settings');
         this.$pluginBtn = $('button#change');
         this.$pluginWindow = $('#changePluginWindow');
+        this.$shadowDialog = $('#selectShadowDialog');
         this.$deleteBtn = $('button#delete');
         this.$randomCheckbox = $('#generalRandomStart');
         this.$addPage = $('.add-page');
@@ -91,6 +92,7 @@
                 })
                 .success(function (response) {
                     $.jGrowl(response.message);
+                    window.location.reload(true);
                 });
         });
     };
@@ -105,7 +107,6 @@
                 {
                     id: postId,
                     slider : sliderId,
-                    type: 'post',
                     action: 'supsystic-slider',
                     route: {
                         module: 'slider',
@@ -114,12 +115,12 @@
                 })
                 .success(function (response) {
                     $.jGrowl(response.message);
+                    window.location.reload(true);
                 });
         });
     };
 
     Controller.prototype.initPostsTable = function() {
-
         jQuery("#posts-table").jqGrid({
             datatype: "local",
             autowidth: true,
@@ -141,7 +142,7 @@
         $.post(WordPress.ajax.settings.url,
             {
                 slider : sliderId,
-                type: 'post',
+                size: 'thumbnail',
                 action: 'supsystic-slider',
                 route: {
                     module: 'slider',
@@ -149,11 +150,10 @@
                 }
             })
             .success(function (response) {
-                console.log(response);
 
                 $.each(response.elements, function(index, value) {
                     var data = {
-                        'id': value.id,
+                        'id': '<input type="checkbox" class="post-cbox" value="' + value.id + '">',
                         'image': '<img src=' + value.image + ' width = 60 height = 60>',
                         'title': value.title
                     };
@@ -162,6 +162,95 @@
                 });
                 //$.jGrowl(response.message);
             });
+    };
+
+    Controller.prototype.deletePosts = function() {
+        var sliderId = parseInt($('#sliderID').attr('value')),
+            $button  = $('.remove-post');
+
+        $button.on('click', function() {
+            var $cboxSelected = $('.post-cbox:checked'),
+                postsSelected = [];
+            $.each($cboxSelected, function(index, value) {
+                postsSelected.push($(value).val());
+            });
+            if($cboxSelected.length) {
+                $.post(WordPress.ajax.settings.url,
+                    {
+                        slider : sliderId,
+                        posts: postsSelected,
+                        action: 'supsystic-slider',
+                        route: {
+                            module: 'slider',
+                            action: 'deletePosts'
+                        }
+                    })
+                    .success(function (response) {
+                        console.log(response);
+                        window.location.reload(true);
+                    });
+            }
+        });
+    };
+
+    Controller.prototype.initShadowDialog = (function () {
+        this.$shadowDialog.dialog({
+            modal:    true,
+            width:    560,
+            autoOpen: false
+        });
+    });
+
+    Controller.prototype.initShadowSelection = (function () {
+        var self = this;
+
+        this.$shadowDialog.find('img').on('click', function () {
+            $('#propertiesShadow').attr('value', $(this).data('value'));
+            self.$shadowDialog.dialog('close');
+        });
+    });
+
+    Controller.prototype.openShadowDialog = function() {
+        var button = $('#select-shadow'),
+            self = this;
+
+        button.on('click', function(e) {
+            e.preventDefault();
+            self.$shadowDialog.dialog('open');
+        });
+    };
+
+    Controller.prototype.featuresNotices = function() {
+        var $builderButton = $('#free-builder'),
+            $videoButton = $('#free-video'),
+            $builderNotice = $('#bx-editor-notice');
+
+        $builderNotice.dialog({
+            modal:    true,
+            width:    940,
+            autoOpen: false,
+            buttons: {
+            }
+        });
+
+        $builderButton.on('click', function() {
+            $builderNotice.dialog('open');
+        });
+
+        $videoButton.on('click', function() {
+            var notification = noty({
+                layout: 'topCenter',
+                type: 'information',
+                text : '<h3>Notice</h3>You can import YouTube and Vimeo videos in PRO version</br><a class="button button-primary" href="http://supsystic.com/plugins/slider/" style="margin: 10px;">Get Pro</a>',
+                timeout: false,
+                animation: {
+                    open: 'animated flipInX',
+                    close: 'animated flipOutX',
+                    easing: 'swing',
+                    speed: '800'
+                }
+            });
+        });
     };
 
     /**
@@ -186,6 +275,11 @@
         this.addPosts();
         this.initPostsTable();
         this.fillPostsTable();
+        this.deletePosts();
+        this.initShadowDialog();
+        this.openShadowDialog();
+        this.featuresNotices();
+        //this.initShadowSelection();
     });
 
     /**

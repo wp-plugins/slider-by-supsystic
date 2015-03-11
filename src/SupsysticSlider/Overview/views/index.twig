@@ -1,0 +1,140 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+
+    <nav id="supsystic-breadcrumbs" class="supsystic-breadcrumbs">
+        <a href="{{ environment.generateUrl('galleries') }}">{{ environment.translate('Gallery by Supsystic') }}</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="{{ environment.generateUrl('galleries') }}">{{ environment.translate('Overview') }}</a>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <div class="supsystic-overview">
+        <div class="half-page-left">
+            {#<h3>Gallery by Supsystic</h3>
+            <div class="description">
+                This plugin can easily build a bright gallery especially, if you are a photographer or a designer, Grid Gallery will be useful for you because you will be able to present your works in an unusual way. It is enough to install the plugin once, and it will work for you all the time, creating a beautiful collection of your best photos. The only thing you need to do is to set the preferred parameters of the WordPress grid gallery.
+            </div>#}
+            <h3>Most common FAQs</h3>
+            <div class="faq-list">
+                <div class="faq-title">
+                    <i class="fa fa-info-circle"></i>
+                    How to get PRO version of plugin for FREE?
+                    <div class="description" hidden>
+                        You can choose any way to get PRO version for free. Make Translation or Review of plugin. It will be amazing if you choose both of them!
+                    </div>
+                </div>
+                <div class="faq-title">
+                    <i class="fa fa-info-circle"></i>
+                    Translation
+                    <div class="description" hidden>
+                        Responsive Photo Gallery WordPress Plugin can be used on many languages, thanks to its extensive language back up. English is established there by default, but you can easily translate it into needed language.</br>
+                        Available Translations: English</br>
+                        Translate or update a translation Photo Gallery WordPress plugin in your language and get a Premium license for FREE.
+                    </div>
+                </div>
+                <a href="http://supsystic.com/plugins/photo-gallery/#faq" class="button button-primary button-hero">
+                    <i class="fa fa-info-circle"></i>
+                    Check all FAQs
+                </a>
+            </div>
+
+            <div class="video">
+                <h3>Video tutorial</h3>
+                {#<iframe type="text/html"
+                        width="80%"
+                        height="240px"
+                        src="http://www.youtube.com/embed/5bkjrlV14CE"
+                        frameborder="0">
+                </iframe>#}
+                <div style="width: 80%; height: 240px; text-align: center; font-size: 20px; font-weight: 800; border: 1px solid rgba(164, 170, 172, 0.28); line-height: 13;">Video tutorial will be added soon</div>
+            </div>
+
+            <div class="server-settings">
+                <h3>Server Settings</h3>
+                <ul class="settings-list">
+                    {% for title, element in serverSettings %}
+                        <li class="settings-line">
+                            <div class="settings-title">{{ title|trim }}:</div>
+                            <span>{{ element.value|trim }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="half-page-right" style="border: none !important;">
+            <div class="supsystic-overview-news">
+                {{ news|raw }}
+            </div>
+            <a href="http://supsystic.com/plugins/slider/#faq" class="button button-primary button-hero">
+                <i class="fa fa-info-circle"></i>
+                All news
+            </a>
+
+            <div class="overview-contact-form">
+                <h3>Contact form</h3>
+                {#<div class="description">Translate plugin in your language and get a Premium license for FREE</div>#}
+                {% import '@core/form.twig' as form %}
+
+                {{ form.open('post', environment.generateUrl('overview', 'sendMail'), { 'id': 'form-settings' }) }}
+
+                <table class="contact-form-table">
+                    <thead>
+
+                    {{ form.row(environment.translate('Your name'),
+                        form.text('mail[name]', '', { 'style': { 'width': '200px;' } })) }}
+
+                    {{ form.row(environment.translate('Your email'),
+                        form.text('mail[email]', '', { 'style': { 'width': '200px;' } })) }}
+
+                    {{ form.row(environment.translate('Website'),
+                        form.text('mail[website]', '', { 'style': { 'width': '200px;' } })) }}
+
+                    {{ form.row(environment.translate('Subject'),
+                        form.text('mail[subject]', '', { 'style': { 'width': '200px;' } })) }}
+
+                    <tr>
+                        <th scope="row">
+                            <label for="select-question">{{ environment.translate('Topic') }}</label>
+                        </th>
+                        <td>
+                            <select id="select-question" style="width: 200px;" name="mail[question]">
+                                <option value="plugin_options">
+                                    {{ environment.translate('Plugin options') }}
+                                </option>
+                                <option value="bug">
+                                    {{ environment.translate('Report a bug') }}
+                                </option>
+                                <option value="functionallity">
+                                    {{ environment.translate('Require a new functionallity') }}
+                                </option>
+                                <option value="other">
+                                    {{ environment.translate('Other') }}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label for="mail-text">{{ environment.translate('Type your message') }}</label>
+                        </th>
+                        <td>
+                            <textarea id="mail-text" name="mail[message]" style="width: 200px; height: 100px;"></textarea>
+                        </td>
+                    </tr>
+
+                    </thead>
+                </table>
+
+                <button id="send-mail" class="button button-primary button-hero" style="margin-left: 60%;">
+                    <i class="fa fa-upload"></i>
+                    Send email
+                </button>
+                {{ form.close() }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

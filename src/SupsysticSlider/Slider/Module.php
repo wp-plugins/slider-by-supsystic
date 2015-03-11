@@ -139,14 +139,6 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
 
             $ui->add(
                 new SupsysticSlider_Ui_BackendJavascript(
-                    'supsysticSlider-scroll-settings',
-                    $this->getLocationUrl() . '/assets/js/jquery.slimscroll.min.js',
-                    $preventCaching
-                )
-            );
-
-            $ui->add(
-                new SupsysticSlider_Ui_BackendJavascript(
                     'supsysticSlider-slider-view',
                     $this->getLocationUrl() . '/assets/js/view.js',
                     $preventCaching
@@ -286,6 +278,7 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         /** @var SupsysticSlider_Slider_Model_Sliders $sliders */
         $sliders = $controller->getModel('sliders');
         $slider  = $sliders->getById((int)$id);
+        $twig = $this->getEnvironment()->getTwig();
 
         if (!$slider) {
             // @TODO: Maybe we need to show error message here.
@@ -313,9 +306,23 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         add_action('wp_footer', array($this, 'enqueueFrontendJavascript'));
         add_action('wp_footer', array($this, 'enqueueFrontendStylesheet'));
 
-        $posts = $this->getController()->getModel('settings')->getPosts($slider->id, 'post', 'full');
+        $posts = $this->getController()->getModel('settings')->getPosts($slider->id, 'full');
 
-        //$slider['posts'] = $posts;
+        /*$twig->addFunction(
+            new Twig_SimpleFunction(
+                'get_image_src',
+                'wp_get_attachment_image_src'
+            )
+        );*/
+
+        $slider->posts = $posts;
+
+        //redo this
+        foreach($slider->images as $key => $value) {
+            $html = get_post_meta($value->attachment_id, 'slideHtml');
+            $slider->images[$key]->attachment['html'] = $html[0];
+            $slider->entities[$key]->attachment['service'] = $this->getService($slider, $key);
+        }
 
         return $module->render($slider);
     }
@@ -380,5 +387,24 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
 
         $menu->addSubmenuItem('newSlider', $submenuNewSlider);
 //            ->register();
+
+        $submenuSliders = $menu->createSubmenuItem();
+        $submenuSliders->setCapability('manage_options')
+            ->setMenuSlug('supsystic-slider&module=slider')
+            ->setMenuTitle('Sliders')
+            ->setPageTitle('Sliders')
+            ->setModuleName('slider');
+
+        $menu->addSubmenuItem('sliders', $submenuSliders);
+    }
+
+    protected function getService($slider, $index) {
+        foreach (array('youtube', 'vimeo') as $service) {
+            //$pattern = sprintf('/%s/i', $service);
+
+            if (strpos($slider->entities[$index]->url, $service)) {
+                return $service;
+            }
+        }
     }
 }

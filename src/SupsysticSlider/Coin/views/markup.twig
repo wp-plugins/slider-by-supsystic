@@ -1,10 +1,27 @@
-<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }} supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}">
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }} supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" style="margin: 0 auto 5px;">
     {% for image in slider.images %}
-        <a href="{{ image.attachment.sizes.full.url }}" target="_blank">
-            <img src="{{ image|image_size(slider.settings.properties.width, slider.settings.properties.height) }}">
-            <span>
-                {{ image.attachment.description }}
-            </span>
+        {% if entity.attachment.external_link %}
+            {% set url = entity.attachment.external_link  %}
+        {% else %}
+            {% set url = image.attachment.sizes.full.url %}
+        {% endif %}
+        <a href="{{ url }}" target="_blank">
+            <img src="{{ image|image_size(slider.settings.properties.width, slider.settings.properties.height) }}" alt="{{ image.attachment.alt }}">
+            {% if image.attachment.description is not empty %}
+                <span style="margin-left: 20px;">
+                    {{ image.attachment.description }}
+                </span>
+            {% endif %}
         </a>
+    {% endfor %}
+
+    {% for post in slider.posts %}
+        {% set image = post.image %}
+        <img src="{{ image }}" width="{{ slider.settings.properties.width }}" height="{{ slider.settings.properties.height }}" alt="{{ image.attachment.alt }}">
+        <span>
+            <h3 style="margin-left: 10px;">{{ post.title|capitalize }}</h3>
+            <div style="margin-left: 10px;">{{ post.date }}</div>
+            <a href="{{ post.url }}" style="margin-left: 10px; font-size: 16px;">Read more...</a>
+        </span>
     {% endfor %}
 </div>

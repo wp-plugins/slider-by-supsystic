@@ -39,7 +39,8 @@
             }
         });
 
-        $('#showEffectsPreview').on('click', $.proxy(function () {
+        $('#showEffectsPreview').on('click', $.proxy(function (e) {
+            e.preventDefault();
             this.$previewWindow.dialog('open');
         }, this));
     });

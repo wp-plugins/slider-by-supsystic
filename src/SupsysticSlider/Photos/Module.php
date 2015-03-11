@@ -68,6 +68,9 @@ class SupsysticSlider_Photos_Module extends Rsc_Mvc_Module
      */
     public function loadAssets(SupsysticSlider_Ui_Module $ui)
     {
+        $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery'));
+        $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery-ui-dialog'));
+
         $ui->add(new SupsysticSlider_Ui_BackendStylesheet(
             'gg-photos',
             $this->getLocationUrl() . '/assets/css/gird-gallery.photos.css'
@@ -83,7 +86,6 @@ class SupsysticSlider_Photos_Module extends Rsc_Mvc_Module
         //     $this->getLocationUrl() . '/assets/js/_photos.js'
         // ));
 
-        $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery'));
         $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery-ui-draggable'));
         $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery-ui-droppable'));
         $ui->add(new SupsysticSlider_Ui_BackendJavascript('rs-uri', $this->getLocationUrl() . '/assets/js/URI.min.js'));

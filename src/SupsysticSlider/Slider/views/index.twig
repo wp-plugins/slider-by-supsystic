@@ -87,32 +87,26 @@
         </div>
     </section>
 
-    <div id="newSliderDialog" data-width="550" data-auto-open="false">
+    <div id="newSliderDialog" data-width="900" data-auto-open="false">
+        <h3 style="border-bottom: 1px solid rgba(0, 0, 0, 0.21); padding-bottom: 20px;">Choose Slider Template. You can change it later.</h3>
         <form id="newSliderDialogForm" style="padding-top: 10px;">
-            <table class="form-table">
-                <thead>
-                <tr>
-                    <th scope="row" style="width: auto;float: left;">
-                        <label for="sliderNameInput">
-                            {{ environment.translate('Slider title') }}
-                        </label>
-                    </th>
-                    <td style="float: left;">
-                        <input id="sliderNameInput" type="text" name="title" style="width:100%;"/>
-                    </td>
-                    <td>
-                        <input type="button" id="add-slider-button" value="Ok" class="button" style="margin-bottom: 10px;"/>
-                        <input type="button" id="cancel-slider-button" value="Cancel" class="button" style="margin-bottom: 10px;"/>
-                    </td>
-                </tr>
+            <div class="new-slider" style="width: 100%;">
+                <div class="line name">
+                    <div class="caption" style="width: 140px; display: inline-block;">
+                        <h3>{{ environment.translate('Slider Name') }}</h3>
+                    </div>
+                    <div style="display: inline-block;">
+                        <input id="sliderNameInput" type="text" name="title"/>
+                        <input type="button" id="add-slider-button" value="Ok" class="button" style="margin: 0 4px;"/>
+                        <input type="button" id="cancel-slider-button" value="Cancel" class="button"/>
+                    </div>
+                </div>
                 {% if available is defined and available is iterable and available|length > 1 %}
-                <tr>
-                    <th scope="row">
-                        <label for="sliderPlugin">
-                            {{ environment.translate('Select module') }}
-                        </label>
-                    </th>
-                    <td>
+                {#<div class="line">
+                    <div class="caption" style="display: inline-block;">
+                        <h3>{{ environment.translate('Select module') }}</h3>
+                    </div>
+                    <div style="display: inline-block;">
                         {% for plugin in available %}
                             <label for="plugin-{{ plugin.getModuleName() }}">
                                 <input type="radio" name="plugin"
@@ -122,13 +116,68 @@
                                 <span>{{ plugin.getSliderName() }}</span>
                             </label><br/>
                         {% endfor %}
-                    </td>
-                </tr>
+                    </div>
+                </div>#}
+                    <input id="slider-plugin" type="text" name="plugin" value="bx" data-pro="{{ environment.isPro() }}" hidden>
+                    <input id="slider-preset" type="text" name="preset" value="" hidden>
+
+                    {% if environment.isPro() %}
+                        {% set html_plugin = 'jssor' %}
+                    {% else %}
+                        {% set html_plugin = 'bx' %}
+                    {% endif %}
+
+                    {% set presetImages = {
+                        'bullets': {
+                            'plugin': 'bx',
+                            'preset': '',
+                            'description': 'Bullets navigation',
+                            'pro': 'false'
+                        },
+                        'slideshow': {
+                            'plugin': 'coin',
+                            'preset': 'coin-slideshow',
+                            'description': 'Slideshow mode',
+                            'pro': 'false'
+                        },
+                        'thumbs': {
+                            'plugin': 'bx',
+                            'preset': 'thumbs',
+                            'description': 'Thumbnails navigation',
+                            'pro': 'false'
+                        },
+                        'posts_pro': {
+                            'plugin': 'coin',
+                            'preset': '',
+                            'description': 'Post feed slider',
+                            'pro': 'true'
+                        },
+                        'html_pro': {
+                            'plugin': html_plugin,
+                            'preset': '',
+                            'description': 'Html content',
+                            'pro': 'true'
+                        },
+                        'video_pro': {
+                            'plugin': 'bx',
+                            'preset': '',
+                            'description': 'Video slider',
+                            'pro': 'true'
+                        }
+                    } %}
+                    {% for element, value in presetImages %}
+                        <div class="line preset{% if loop.index == 1 %} selected{% endif %}" data-value="{{ value.plugin }}" data-preset="{{ value.preset }}">
+                            <img class="preset-image" src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/{{ element }}.jpg" width="400px" height="228px">
+                            <div class="caption">{{ value.description }}</div>
+                            {% if value.pro == 'true' and environment.isPro() != 'true' %}
+                                <a class="button" href="http://supsystic.com/plugins/slider/" style="opacity: 0.0;">Get Pro</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
                 {% else %}
                     <input name="plugin" value="{{ environment.getConfig().get('default_slider') }}" type="hidden"/>
                 {% endif %}
-                </thead>
-            </table>
+            </div>
             <input name="action" value="supsystic-slider" type="hidden"/>
             <input name="route[module]" value="slider" type="hidden"/>
             <input name="route[action]" value="create" type="hidden"/>

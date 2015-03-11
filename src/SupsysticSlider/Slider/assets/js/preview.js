@@ -34,7 +34,9 @@
                     }).success(function (response) {
                         $window.html(response.slider);
                         self.initCoinSlider();
-                        self.initJssorSlider();
+                        if($('.jssor-slider').length) {
+                            self.initJssorSlider();
+                        }
                         app.init();
                     });
                 },
@@ -87,7 +89,7 @@
     };
 
     Controller.prototype.initJssorSlider = function() {
-        var $sliders = $('.supsystic-slider-jssor'),
+        var $slider = $('.jssor-slider'),
             stringToBoolean = function (value) {
                 if (value == 'true') {
                     return true;
@@ -97,9 +99,10 @@
                     return value;
                 }
             },
+            _CaptionTransitions = [],
             options = {
                 $PlayOrientation: 2,
-                $DragOrientation: 2,
+                $DragOrientation: 0,
                 $AutoPlay: true,
                 $AutoPlayInterval: 1500,
                 $BulletNavigatorOptions: {
@@ -120,27 +123,87 @@
                     $SpacingY: 3,
                     $DisplayPieces: 6,
                     $ParkingPosition: 204
+                },
+                $CaptionSliderOptions: {
+                    $Class: $JssorCaptionSlider$,
+                    $CaptionTransitions: _CaptionTransitions,
+                    $PlayInMode: 1,
+                    $PlayOutMode: 3
                 }
             };
 
-        if ($sliders.length < 1) {
+        var initResponsive = function(jssorSlider) {
+            var $slider = $('#supsystic-jssor-slider');
+
+            if($slider.hasClass('responsive')) {
+                function ScaleSlider() {
+                    var bodyWidth = parseInt($slider.parent().css('width'));
+                    if (bodyWidth)
+                        jssorSlider.$ScaleWidth(Math.min(bodyWidth, 1920));
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+                ScaleSlider();
+                $(window).bind("load", ScaleSlider);
+                $(window).bind("resize", ScaleSlider);
+                $(window).bind("orientationchange", ScaleSlider);
+            }
+        };
+
+        var checkMode = function(config, options) {
+            if(config.mode == 'vertical') {
+                options.$DragOrientation = 0;
+                options.$PlayOrientation = 2;
+            } else {
+                options.$DragOrientation = 0;
+                options.$PlayOrientation = 1;
+            }
+        };
+
+        var initSlideshow = function(config, options) {
+
+            if(config.slideshow) {
+                options.$AutoPlay = true;
+            } else {
+                options.$AutoPlay = false;
+            }
+
+            if(config.slideshowSpeed) {
+                options.$AutoPlayInterval = parseInt(config.slideshowSpeed);
+            }
+        };
+
+        if ($slider.length < 1) {
             return false;
         }
 
-        $.each($sliders, function (index, slider) {
-            var $slider  = $(slider),
-                settings = $slider.data('settings'),
-                config   = {};
+        var settings = $slider.find('.supsystic-slider-jssor').data('settings'),
+            config   = {};
 
-            $.each(settings, function (category, opts) {
-                if(opts) {
-                    $.each(opts, function (key, value) {
-                        config[key] = stringToBoolean(value);
-                    });
-                }
-            });
+        $.each(settings, function (category, opts) {
+            if(opts) {
+                $.each(opts, function (key, value) {
+                    config[key] = stringToBoolean(value);
+                });
+            }
 
-            var jssorSlider = new $JssorSlider$("supsystic-jssor-slider", options);
+            initSlideshow(config, options);
+            checkMode(config, options);
+
+            _CaptionTransitions["L"] = { $Duration: 800, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["R"] = { $Duration: 800, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["T"] = { $Duration: 800, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["B"] = { $Duration: 800, y: -0.6, $Clip: 10, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["TL"] = { $Duration: 800, x: 0.6, y: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine, $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["TR"] = { $Duration: 800, x: -0.6, y: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine, $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["BL"] = { $Duration: 800, x: 0.6, y: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine, $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["BR"] = { $Duration: 800, x: -0.6, y: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine, $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+
+            var jssorSlider = new $JssorSlider$($slider.attr('id'), options);
+
+            initResponsive(jssorSlider);
+
+            $JssorPlayer$.$FetchPlayers(document.body);
         });
     };
 

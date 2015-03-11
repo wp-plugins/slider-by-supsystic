@@ -418,22 +418,24 @@ class SupsysticSlider_Photos_Controller extends SupsysticSlider_Core_BaseControl
 
     public function updateAttachmentAction(Rsc_Http_Request $request)
     {
-//        $alt          = $request->post->get('alt');
+        $alt          = $request->post->get('seo');
         $attachmentId = $request->post->get('attachment_id');
 //        $caption      = $request->post->get('caption');
         $description  = $request->post->get('description');
         $link  = $request->post->get('link');
         $target  = $request->post->get('target');
+        $html  = $request->post->get('html');
 
         /** @var SupsysticSlider_Photos_Model_Photos $photos */
         $photos = $this->getModel('photos');
 
         $photos->updateMetadata($attachmentId, array(
-//            'alt'         => $alt,
+            'alt'         => $alt,
 //            'caption'     => $caption,
             'description' => $description,
             'link' => $link,
-            'target' => $target
+            'target' => $target,
+            'html' => $html
         ));
 
         return $this->response(Rsc_Http_Response::AJAX);

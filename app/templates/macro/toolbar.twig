@@ -21,10 +21,10 @@
     {{ toolbar.button(id, text, attributes|merge({ 'class': 'button-primary' })) }}
 {% endmacro %}
 
-{% macro icon(id, icon, attributes = {}) %}
+{% macro icon(id, icon, attributes = {}, name = '') %}
     {% import _self as toolbar %}
 
-    {{ toolbar.button(id, '', attributes|merge({ 'icon': icon })) }}
+    {{ toolbar.button(id, name, attributes|merge({ 'icon': icon })) }}
 {% endmacro %}
 
 {% macro buttonUrl(id, url, text, attributes = {}) %}

@@ -65,7 +65,7 @@
 
     $(document).ready(function() {
 
-        var ggActiveTab = jQuery('nav.supsystic-navigation li.active a').attr('href').split('/');
+        /*var ggActiveTab = jQuery('nav.supsystic-navigation li.active a').attr('href').split('/');
         ggActiveTab = ggActiveTab[ggActiveTab.length - 1];
         if(typeof(ggActiveTab) != 'undefined' && ggActiveTab != 'admin.php?page=supsystic-slider') {
             var subMenus = jQuery('#toplevel_page_supsystic-slider').find('.wp-submenu li');
@@ -74,7 +74,7 @@
                     jQuery(this).addClass('current');
                 }
             });
-        }
+        }*/
 
         // SupsysticGallery.Loader.show();
 

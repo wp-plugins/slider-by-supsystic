@@ -56,7 +56,7 @@
          */
         Controller.prototype.init = (function () {
             if (hasSmallImages()) {
-                fireSmallImages();
+                //fireSmallImages();
             }
         });
 

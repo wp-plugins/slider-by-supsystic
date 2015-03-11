@@ -27,7 +27,7 @@ class SupsysticSlider
 
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.0.4', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.0.5', $pluginPath);
 
         /* Configure */
         $environment->configure(
@@ -56,7 +56,7 @@ class SupsysticSlider
                 'uploads_rw'       => true,
                 'jpeg_quality'     => 95,
                 'plugin_db_update' => true,
-                'revision'         => 39
+                'revision'         => 60
             )
         );
 
@@ -80,6 +80,11 @@ class SupsysticSlider
     {
         $this->environment->run();
         $this->environment->getTwig()->addGlobal('core_alerts', $this->alerts);
+    }
+
+    public function getEnvironment() {
+
+        return $this->environment;
     }
 
     protected function initialize()

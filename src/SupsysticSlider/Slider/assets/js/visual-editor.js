@@ -367,10 +367,9 @@ Color.prototype.toString = function(remove_alpha) {
 
                     $slider.append('<div class="bx-viewport-button button" style="display: inline-block; margin: 10px;">Viewport</div>' +
                                     '<div class="bx-caption-button button" style="display: inline-block; margin: 10px;">Caption</div>' +
-                                    '<div class="thumbnails-button button" style="display: inline-block; margin: 10px;">Thumbnails</div>' +
                                     '<div class="bx-prev-button button" style="display: inline-block; margin: 10px;">Buttons</div>');
 
-                    var $blocks = $('.bx-viewport, .bx-caption, .bx-prev, .bx-next, .thumbnails, .bx-viewport-button, .bx-caption-button, .bx-prev-button, .thumbnails-button', $slider);
+                    var $blocks = $('.bx-viewport, .bx-caption, .bx-prev, .bx-next, .bx-viewport-button, .bx-caption-button, .bx-prev-button, .thumbnails-button', $slider);
 
                     $blocks
                         .on('click veditorClose', function (e) {

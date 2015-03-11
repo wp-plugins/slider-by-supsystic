@@ -83,6 +83,19 @@
         });
     });
 
+    Controller.prototype.togglePresets = function() {
+        var $presets = this.$newSlider.find('.preset'),
+            $plugin = this.$newSlider.find('#slider-plugin'),
+            $preset = this.$newSlider.find('#slider-preset');
+
+        $presets.on('click', function() {
+            $presets.removeClass('selected');
+            $(this).addClass('selected');
+            $plugin.attr('value', $(this).data('value'));
+            $preset.attr('value', $(this).data('preset'));
+        });
+    };
+
     /**
      * Controller initialization.
      *
@@ -169,6 +182,8 @@
                 controller.$newSlider.dialog('close');
             }
         });
+
+        controller.togglePresets();
 
         $('#cancel-slider-button').on('click', function () {
             controller.$newSlider.dialog('close');

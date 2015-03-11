@@ -337,11 +337,19 @@ class SupsysticSlider_Photos_Model_Photos extends Rsc_Mvc_Model implements Rsc_E
 
     public function setTarget($attachmentId, $target)
     {
-        var_dump($target);
         update_post_meta(
             (int)$attachmentId,
             'target',
             $target
+        );
+    }
+
+    public function setHtml($attachmentId, $html)
+    {
+        update_post_meta(
+            (int)$attachmentId,
+            'slideHtml',
+            $html
         );
     }
 

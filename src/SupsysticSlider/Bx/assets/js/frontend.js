@@ -22,6 +22,29 @@
         responsive:     true
     };
 
+    var initThumbsTransition = function($slider, $thumbs) {
+        $thumbs.find('li').on('click', function() {
+            $slider.goToSlide(parseInt($(this).index()) - 3);
+            //$thumbs.goToSlide(parseInt($(this).index()) - 4);
+        });
+    };
+
+    var initThumbs = function($slider, $current, config) {
+        var $thumbs = $('.' + $slider.data('thumbs')).bxSlider({
+                slideWidth: 100,
+                minSlides: 3,
+                maxSlides: 3,
+                slideMargin: 1,
+                width: parseInt(config.width)
+            }),
+            $thumbsContainer = $('.thumbs');
+
+        initThumbsTransition($current, $thumbs);
+
+        $thumbsContainer.closest('.bx-wrapper').css('max-width', parseInt(config.width));
+        $thumbsContainer.closest('.bx-wrapper').css('margin-top', '5px');
+    };
+
     var init = (function ($container) {
         var $bx;
 
@@ -38,7 +61,8 @@
         $.each($bx, function (index, slider) {
             var $slider = $(slider),
                 settings = $slider.data('settings'),
-                config = {};
+                config = {},
+                $current;
 
             if(settings.properties.width > 100 && settings.properties.widthType == '%') {
                 settings.properties.width = 100;
@@ -65,7 +89,7 @@
             });
 
             $slider.find('ul').css({ visibility: 'hidden'}).each(function (index, container) {
-                $(container).bxSlider(
+                $current = $(container).bxSlider(
                     $.extend(config,
                         {
                             onSliderLoad: function () {
@@ -75,6 +99,12 @@
                     )
                 );
             });
+
+            if(parseInt(config.navigation)) {
+                initThumbs($slider, $current, config);
+            } else {
+                $('.' + $slider.data('thumbs')).remove();
+            }
         });
     });
 

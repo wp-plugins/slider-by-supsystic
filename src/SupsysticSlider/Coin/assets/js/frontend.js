@@ -4,7 +4,7 @@
  * Slider by Supsystic Wordpress Plugin
  * Coin-Slider module.
  */
-(function ($) {
+(function ($, app) {
 
     /**
      * Converts string true or false to the real boolean values.
@@ -17,12 +17,14 @@
             return true;
         } else if (value == 'false') {
             return false;
+        } else if(parseFloat(value)) {
+            return parseFloat(value);
         } else {
             return value;
         }
     };
 
-    $(document).ready(function () {
+    var initSlider = function() {
         var $sliders = $('.supsystic-slider.supsystic-slider-coin');
 
         if ($sliders.length < 1) {
@@ -54,7 +56,19 @@
 
             $slider.coinslider(config);
         });
+    };
 
-        return true;
+    /*$(document).ready(function () {
+        initSlider();
+        console.log('Yes');
     });
-}(jQuery));
+
+    $(document).ajaxComplete(function() {
+        initSlider();
+        console.log('Yes');
+    });*/
+
+    app.plugins = app.plugins || {};
+    app.plugins.coin = initSlider;
+
+}(jQuery, window.SupsysticSlider = window.SupsysticSlider || {}));

@@ -15,6 +15,12 @@
             </div>
             <nav class="supsystic-navigation">
                 <ul>
+                    <li  {% if request.query.module == 'overview' %}class="active"{% endif %}>
+                        <a href="{{ environment.generateUrl('overview') }}">
+                            <i class="fa fa-info"></i>
+                            {{ environment.translate('Overview') }}
+                        </a>
+                    </li>
                     <li>
                         <a id="btn-add-new" href="{{ environment.generateUrl('slider', 'index', {'add':'true'}) }}">
                             <i class="fa fa-plus-circle"></i>
