@@ -9,7 +9,7 @@ Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning 
 
 == Description ==
 
-[Slider by Supsystic](http://dev.supsystic.com/plugins/slider/ "WordPress Slider Plugin by Supsystic") is a great way to create stunning image slider and video slider without programming skills. Fully responsive, work on any mobile device.
+[Slider by Supsystic](http://supsystic.com/plugins/slider/ "WordPress Slider Plugin by Supsystic") is a great way to create stunning image slider and video slider without programming skills. Fully responsive, work on any mobile device.
 
 * Responsive image slider
 * Stunning slideshow themes
@@ -30,7 +30,19 @@ If you have any problem or feature request for the Slider by Supsystic, please [
 
 == Screenshots ==
 
-1. [WordPress Slider plugin](http://dev.supsystic.com/plugins/slider/ "WordPress Slider Plugin") admin area
+1. Thumbnail Slider
+
+2. Responsive Video Slider
+
+3. HTML Image Slider
+
+4. Pager
+
+5. Slideshow
+
+6. Post Feed Slider
+
+7. [WordPress Slider plugin](http://supsystic.com/plugins/slider/ "WordPress Slider Plugin") admin area
 
 == Installation ==
 
