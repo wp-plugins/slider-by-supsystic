@@ -229,6 +229,9 @@ class SupsysticSlider_Slider_Model_Sliders
 
         $dispatcher = $this->environment->getDispatcher();
 
+        if(!$slider)
+            return;
+
         return $dispatcher->apply(self::EVENT_COMPILE, array($slider));
     }
 }

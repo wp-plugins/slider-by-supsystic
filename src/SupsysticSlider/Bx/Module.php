@@ -43,6 +43,13 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
                 )
             );
 
+            $ui->add(new SupsysticSlider_Ui_BackendStylesheet(
+                    'rs-animate-css',
+                    $this->getLocationUrl() . '/assets/css/animate.css',
+                    $preventCaching
+                )
+            );
+
             $ui->add(
                 new SupsysticSlider_Ui_BackendJavascript(
                     'supsysticSlider-bx-fv',
@@ -163,6 +170,14 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
             '1.0.0',
             'all'
         );
+
+        wp_enqueue_style(
+            'supsysticSlider-bxSliderStyles-animate',
+            $this->getLocationUrl() . '/assets/css/animate.css',
+            array(),
+            '1.0.0',
+            'all'
+        );
     }
 
     /**
@@ -187,8 +202,12 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
         foreach($slider->images as $key => $value) {
             $link = get_post_meta($value->attachment_id, '_slider_link');
             $target = get_post_meta($value->attachment_id, 'target');
-            $slider->images[$key]->attachment['external_link'] = $link[0];
-            $slider->images[$key]->attachment['target'] = $target[0];
+            if($link && !empty($link)) {
+                $slider->images[$key]->attachment['external_link'] = $link[0];
+            }
+            if($target && !empty($target)) {
+                $slider->images[$key]->attachment['target'] = $target[0];
+            }
         }
 
         return $this->getEnvironment()

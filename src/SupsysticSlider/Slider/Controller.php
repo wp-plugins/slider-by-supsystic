@@ -318,10 +318,18 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             $target = get_post_meta($value->attachment_id, 'target');
             $alt = get_post_meta($value->attachment_id, '_wp_attachment_image_alt');
             $html = get_post_meta($value->attachment_id, 'slideHtml');
-            $current->images[$key]->attachment['external_link'] = $link[0];
-            $current->images[$key]->attachment['target'] = $target[0];
-            $current->images[$key]->attachment['seo'] = $alt[0];
-            $current->images[$key]->attachment['html'] = $html[0];
+            if($link && !empty($link)) {
+                $current->images[$key]->attachment['external_link'] = $link[0];
+            }
+            if($target && !empty($target)) {
+                $current->images[$key]->attachment['target'] = $target[0];
+            }
+            if($alt && !empty($alt)) {
+                $current->images[$key]->attachment['seo'] = $alt[0];
+            }
+            if($html && !empty($html)) {
+                $current->images[$key]->attachment['html'] = $html[0];
+            }
         }
 
         return $this->response(
@@ -676,7 +684,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
 
             // Settings id != 0;
         } else {
-            $data['__veditor__'] = $settings->getById($id)->data['__veditor__'];
+            $data['__veditor__'] = $settings->getById($current->settings_id)->data['__veditor__'];
             if (!$settings->update($current->settings_id, $data)) {
                 $message = sprintf(
                     $this->translate(
@@ -847,7 +855,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             if ($entity['folder_id'] > 0) {
                 $exclude->add($sliderId, $entity['id'], $entity['type']);
             } else {
-                $resources->delete($sliderId, $entity['id'], $entity['type']);
+                $result = $resources->delete($sliderId, $entity['id'], $entity['type']);
             }
         }
 

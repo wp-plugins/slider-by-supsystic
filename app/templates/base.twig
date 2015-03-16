@@ -45,6 +45,12 @@
                             {{ environment.translate('Settings') }}
                         </a>
                     </li>
+                    <li  {% if request.query.module == 'license' %}class="active"{% endif %}>
+                        <a href="{{ environment.generateUrl('license') }}">
+                            <i class="fa fa-hand-o-right"></i>
+                            {{ environment.translate('License') }}
+                        </a>
+                    </li>
                     {#{% if environment.isPro() == false %}
                         <li class="supsystic-pro">
                             <a href="{{ environment.getConfig().get('pro_url') }}">

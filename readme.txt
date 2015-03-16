@@ -3,7 +3,7 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider/
 Tags: 3D slider, best slider plugin, carousel, carousel slider, coin slider, coinslider, content slider, content slideshow, custom video slider, featured-content-slider, flex slider, free video slider, free video slideshow, Horizontal slider, HTML5 slider, image, Image Rotator, image slider, image slideshow, images, javascript slider, javascript slideshow, jquery slider, jquery slideshow, media, nivo slider, nivoslider, page, Photo Slider, picture slider, plugin, Post, posts, posts slider, recent post slider, responsive, slider, responsive slider, image slider, slider plugin, photo slider, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, galary, galery, gallary, gallerie, gallery, gallery decription, gallery image, gelary, gellary, gellery, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wordpress gallery, gallery plugin, responsive slideshow, image slidesgow, photo slideshow, photo, foto, foto slideshow, youtube slider, youtube slideshow
 Tested up to: 4.1.1
-Stable tag: 1.0.5
+Stable tag: 1.0.7
 
 Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning image and video sliders with professional templates and options
 
@@ -176,7 +176,23 @@ Copy and paste the shortcode into your post or page and Slider by Supsystic plug
 
 Important! Shortcode must be inserted in a text editor page, and not in the visual.
 
+*Check other WordPress plugins:*
+
+* [Backup by Supsystic](https://wordpress.org/plugins/backup-by-supsystic/ "Backup and Restoration plugin")
+* [Gallery by Supsystic](https://wordpress.org/plugins/gallery-by-supsystic/ "Gallery plugin")
+* [Google Maps](https://wordpress.org/plugins/google-maps-easy/ "Google Maps plugin")
+* [Popup plugin](https://wordpress.org/plugins/popup-by-supsystic/ "Popup plugin")
+* [Security and Firewall](https://wordpress.org/plugins/security-by-supsystic/ "Security solution")
+
+
 == Changelog ==
+
+= 1.0.7 = 16/03/2015
+ * Minor fixes
+ * Functional fixes
+ * Drag and Drop images sorting added
+ * Small images dialog added
+ * Text animation fixed
 
 = 1.0.5 = 10/03/2015
  * Bx slider preview fixes

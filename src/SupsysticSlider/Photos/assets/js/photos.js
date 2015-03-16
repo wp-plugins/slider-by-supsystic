@@ -308,7 +308,7 @@
 
         observer.reinit();
 
-        $('[data-sortable]').sortable({
+        $('#jqgrid-htable-img-list tbody').sortable({
             start: function (event, ui) {
                 ui.item.draggable();
             },

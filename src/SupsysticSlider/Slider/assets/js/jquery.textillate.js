@@ -34,12 +34,12 @@
       var nodeName = attr.nodeName.replace(/delayscale/, 'delayScale');
       if (/^data-in-*/.test(nodeName)) {
         data.in = data.in || {};
-        data.in[nodeName.replace(/data-in-/, '')] = stringToBoolean(attr.nodeValue);
+        data.in[nodeName.replace(/data-in-/, '')] = stringToBoolean(attr.value);
       } else if (/^data-out-*/.test(nodeName)) {
         data.out = data.out || {};
-        data.out[nodeName.replace(/data-out-/, '')] =stringToBoolean(attr.nodeValue);
+        data.out[nodeName.replace(/data-out-/, '')] =stringToBoolean(attr.value);
       } else if (/^data-*/.test(nodeName)) {
-        data[nodeName.replace(/data-/, '')] = stringToBoolean(attr.nodeValue);
+        data[nodeName.replace(/data-/, '')] = stringToBoolean(attr.value);
       }
     })
 

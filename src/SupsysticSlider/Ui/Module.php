@@ -105,7 +105,6 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-jgrowl', '//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.2.12/jquery.jgrowl.min.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/tooltipster.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster-theme-shadow', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/themes/tooltipster-shadow.css'));
-        $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-animate-css', $url . '/app/assets/css/animate.css'));
         $this->add(new SupsysticSlider_Ui_Stylesheet('rs-shadows-css', $url . '/app/assets/css/shadows.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-shadows-backend-css', $url . '/app/assets/css/shadows.css'));
 

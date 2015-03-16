@@ -27,7 +27,7 @@ class SupsysticSlider
 
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.0.5', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.0.7', $pluginPath);
 
         /* Configure */
         $environment->configure(
@@ -56,7 +56,7 @@ class SupsysticSlider
                 'uploads_rw'       => true,
                 'jpeg_quality'     => 95,
                 'plugin_db_update' => true,
-                'revision'         => 60
+                'revision'         => 76
             )
         );
 

@@ -49,7 +49,7 @@
             [supsystic-slider id = {{ slider.id }}]
             </br>
             <h3 style="display: inline-block;"> {{ environment.translate('PhpCode: ') }} </h3>
-            < ?php echo do_shortcode("[supsystic-slider id = {{ slider.id }}]") ?>
+            {{ '<?php echo do_shortcode("[supsystic-slider id =' ~ slider.id ~ ']") ?>' }}
         </div>
     </div>
 {% endmacro %}

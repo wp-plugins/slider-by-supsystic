@@ -320,8 +320,13 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         //redo this
         foreach($slider->images as $key => $value) {
             $html = get_post_meta($value->attachment_id, 'slideHtml');
-            $slider->images[$key]->attachment['html'] = $html[0];
-            $slider->entities[$key]->attachment['service'] = $this->getService($slider, $key);
+
+            if($html && !empty($html)) {
+                $slider->images[$key]->attachment['html'] = $html[0];
+            }
+            if(defined('$slider->entities[$key]->url')) {
+                $slider->entities[$key]->attachment['service'] = $this->getService($slider, $key);
+            }
         }
 
         return $module->render($slider);

@@ -44,7 +44,9 @@
                     $.each(properties, function (key, value) {
                         $part.css(key, value);
                     });
-                    self.enableTextAnimation($part, properties);
+                    if($part.is('.bx-caption')) {
+                        self.enableTextAnimation($part, properties);
+                    }
                 });
             }
         }

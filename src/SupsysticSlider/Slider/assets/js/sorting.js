@@ -3,7 +3,7 @@
     $(document).ready(function () {
 
         var $entities = $('[data-entity]'),
-            $container = $('[data-sortable]');
+            $container = $('#jqgrid-htable-img-list tbody');
 
         function Controller() {
             $container.on('sortstop', $.proxy(this.updatePosition, this));
@@ -22,7 +22,7 @@
                 sliderId = this.getParameterByName('id');
 
             $entities.each(function () {
-                var $entity = $(this),
+                var $entity = $(this);
                     index = $entity.data('entity-info').index;
 
                 data[index] = $entity.index($entities.selector);
