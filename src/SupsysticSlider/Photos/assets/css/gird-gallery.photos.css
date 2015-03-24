@@ -77,6 +77,12 @@
     display: block;
 }
 
+.ssl-photos .ssl-list-item {
+    position: relative;
+    margin: 40px;
+    float: left;
+}
+
 /* Highlight */
 .folder-highlight .gg-item {
     box-shadow: 0 0 15px #3498db;

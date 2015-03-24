@@ -6,11 +6,11 @@
     {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
 
     {{ parent() }}
-    {{ breadcrumbs.item('#', environment.translate('Error')) }}
+    {{ breadcrumbs.item('#', translate('Error')) }}
 {% endblock %}
 
 {% block content %}
-    <h1>{{ environment.translate('An error has occurred') }}</h1>
+    <h1>{{ translate('An error has occurred') }}</h1>
     <p>
         {{ message|raw }}
     </p>

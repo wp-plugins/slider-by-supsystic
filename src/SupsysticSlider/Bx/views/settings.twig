@@ -3,35 +3,35 @@
 {% block buttons %}
     {% import '@slider/macro/tabs.twig' as tabs %}
 
-    {{ tabs.button(environment.translate('General'), 'general-mode', 'gears') }}
+    {{ tabs.button(translate('General'), 'general-mode', 'gears') }}
     <div class="separator">|</div>
-    {{ tabs.button(environment.translate('Touch'), 'touch', 'dot-circle-o') }}
+    {{ tabs.button(translate('Touch'), 'touch', 'dot-circle-o') }}
     <div class="separator">|</div>
-    {{ tabs.button(environment.translate('Pager'), 'pager', 'bars') }}
+    {{ tabs.button(translate('Pager'), 'pager', 'bars') }}
     <div class="separator">|</div>
-    {{ tabs.button(environment.translate('Properties'), 'properties', 'bookmark') }}
+    {{ tabs.button(translate('Properties'), 'properties', 'bookmark') }}
 
 {% endblock %}
 
 {% block form %}
     {% import '@core/form.twig' as form %}
 
-    {{ form.row(environment.translate('Mode'),
+    {{ form.row(translate('Mode'),
     form.select('general[mode]', {'horizontal': 'Horizontal', 'vertical': 'Vertical', 'fade': 'Fade'}, slider.settings.general.mode, {'id': 'generalMode' }), 'general-mode') }}
 
-    {{ form.row(environment.translate('Slideshow'),
+    {{ form.row(translate('Slideshow'),
     form.select('general[auto]', {'disable': 'Disable', 'enable': 'Enable'}, slider.settings.general.auto, {'id': 'generalSlideshow' }), 'general-slideshow') }}
 
-    {{ form.row(environment.translate('Slideshow controls'),
+    {{ form.row(translate('Slideshow controls'),
     form.select('general[slideshowControls]', {'disable': 'Disable', 'enable': 'Enable'}, slider.settings.general.slideshowControls, {'id': 'slideshowControls' }), 'general-controls') }}
 
-    {{ form.row(environment.translate('Navigation'),
+    {{ form.row(translate('Navigation'),
     form.select('general[navigation]', ['standart', 'thumbnails'], slider.settings.general.navigation, {'id': 'generalNavigation' }), 'general-navigation') }}
 
     <tr>
         <th scope="row">
             <label for="generalCaptions">
-                {{ environment.translate('Captions') }}
+                {{ translate('Captions') }}
                 {{ form.tooltip('general-captions') }}
             </label>
         </th>
@@ -45,22 +45,22 @@
                         checked="checked"
                             {% endif %}/>
                         <span>
-                            {{ environment.translate(value|replace({ 'true': 'Yes', 'false': 'No' })) }}
+                            {{ translate(value|replace({ 'true': 'Yes', 'false': 'No' })) }}
                         </span>
                 </label>
             {% endfor %}
         </td>
     </tr>
 
-    {{ form.row(environment.translate('Speed'),
+    {{ form.row(translate('Speed'),
     form.input('text', 'general[speed]', slider.settings.general.speed|default(500), {'id': 'generalSpeed', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-speed') }}
 
     {#{{ form.row(environment.translate('Margin'),
     form.input('text', 'general[slideMargin]', slider.settings.general.slideMargin|default(0), {'id': 'generalSlideMargin', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-margin') }}#}
 
-    {{ form.row(environment.translate('Starting slide'),
+    {{ form.row(translate('Starting slide'),
     form.input('checkbox', 'general[randomStart]', slider.settings.general.randomStart|default(0), {'id': 'generalRandomStart' })
-    ~ form.label('generalRandomStart',environment.translate('Start slider on a random slide')), 'general-start') }}
+    ~ form.label('generalRandomStart',translate('Start slider on a random slide')), 'general-start') }}
 
 
     {% set easing = {
@@ -73,13 +73,13 @@
         'easeInOutElastic': 'EaseInOutElastic'
     } %}
 
-    {{ form.row(environment.translate('Easing'),
+    {{ form.row(translate('Easing'),
     form.select('general[easing]', easing, slider.settings.general.easing, {'id': 'generalEasing' }), 'general-easing') }}
 
     <tr data-tab="touch" id="touch">
         <th scope="row">
             <label for="touchEnabled">
-                {{ environment.translate('Enable touch') }}
+                {{ translate('Enable touch') }}
                 {{ form.tooltip('general-touch') }}
             </label>
         </th>
@@ -88,14 +88,14 @@
                 <input type="radio" name="touch[touchEnabled]" value="true"
                        {% if slider.settings.touch.touchEnabled|default('true') == 'true' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('Yes') }}
+                        {{ translate('Yes') }}
                     </span>
             </label>&nbsp;
             <label>
                 <input type="radio" name="touch[touchEnabled]" value="false"
                        {% if slider.settings.touch.touchEnabled|default('true') == 'false' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('No') }}
+                        {{ translate('No') }}
                     </span>
             </label>
         </td>
@@ -103,7 +103,7 @@
     <tr>
         <th scope="row">
             <label for="touchOneToOneTouch">
-                {{ environment.translate('One-to-One touch') }}
+                {{ translate('One-to-One touch') }}
                 {{ form.tooltip('general-one-to-one') }}
             </label>
         </th>
@@ -112,26 +112,26 @@
                 <input type="radio" name="touch[oneToOne]" value="true"
                        {% if slider.settings.touch.oneToOne|default('true') == 'true' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('Yes') }}
+                        {{ translate('Yes') }}
                     </span>
             </label>&nbsp;
             <label>
                 <input type="radio" name="touch[oneToOne]" value="false"
                        {% if slider.settings.touch.oneToOne|default('true') == 'false' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('No') }}
+                        {{ translate('No') }}
                     </span>
             </label>
         </td>
     </tr>
 
-    {{ form.row(environment.translate('Swipe threshold'),
+    {{ form.row(translate('Swipe threshold'),
     form.input('text', 'touch[swipeThreshold]', slider.settings.touch.swipeThreshold|default(50), {'id': 'touchSwipeThreshold', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-threshold') }}
 
     <tr data-tab="pager" id="pager">
         <th scope="row">
             <label for="pagerEnabled">
-                {{ environment.translate('Enable pager') }}
+                {{ translate('Enable pager') }}
                 {{ form.tooltip('general-pager') }}
             </label>
         </th>
@@ -140,21 +140,21 @@
                 <input type="radio" name="pager[pagerEnabled]" value="true"
                        {% if slider.settings.pager.pagerEnabled|default('false') == 'true' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('Yes') }}
+                        {{ translate('Yes') }}
                     </span>
             </label>&nbsp;
             <label>
                 <input type="radio" name="pager[pagerEnabled]" value="false"
                        {% if slider.settings.pager.pagerEnabled|default('false') == 'false' %}checked="checked"{% endif %}/>
                     <span>
-                        {{ environment.translate('No') }}
+                        {{ translate('No') }}
                     </span>
             </label>
 
         </td>
     </tr>
 
-    {{ form.row(environment.translate('Type'),
+    {{ form.row(translate('Type'),
     form.select('pager[pagerType]', {'full': 'Full', 'short': 'Short'}, slider.settings.pager.pagerType, {'id': 'pagerType' }), 'general-pager-type') }}
 
 {% endblock %}

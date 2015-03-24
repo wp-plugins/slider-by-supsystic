@@ -13,9 +13,9 @@
 {% block buttons %}
     {% import '@slider/macro/tabs.twig' as tabs %}
 
-    {{ tabs.button(environment.translate('Effects'), 'effects', 'gears') }}
+    {{ tabs.button(translate('Effects'), 'effects', 'gears') }}
     <div class="separator">|</div>
-    {{ tabs.button(environment.translate('Controls'), 'controls', 'laptop') }}
+    {{ tabs.button(translate('Controls'), 'controls', 'laptop') }}
 {% endblock %}
 
 {% block form %}
@@ -28,14 +28,14 @@
         <tr>
             <th scope="row">
                 <label for="effectsEffect">
-                    {{ environment.translate('Effect') }}
+                    {{ translate('Effect') }}
                     {{ form.tooltip('general-effect') }}
                 </label>
             </th>
             <td>
                 <span id="effectName" style="position: relative; bottom: -5px; margin-right: 5px;">{{ slider.settings.effects.effect|title }}</span>
                 <button id="showEffectsPreview" class="button">
-                    {{ environment.translate('Select effect') }}
+                    {{ translate('Select effect') }}
                 </button>
                 <input name="effects[effect]" value="{{ slider.settings.effects.effect }}" type="hidden"/>
             </td>
@@ -43,7 +43,7 @@
         <tr>
             <th scope="row">
                 <label for="effectsTitleSpeed">
-                    {{ environment.translate('Title speed') }}
+                    {{ translate('Title speed') }}
                     {{ form.tooltip('general-title-speed') }}
                 </label>
             </th>
@@ -55,7 +55,7 @@
         <tr>
             <th scope="row">
                 <label for="effectsOpacity">
-                    {{ environment.translate('Opacity') }}
+                    {{ translate('Opacity') }}
                     {{ form.tooltip('general-opacity') }}
                 </label>
             </th>
@@ -67,7 +67,7 @@
         <tr>
             <th scope="row">
                 <label for="effectsDelay">
-                    {{ environment.translate('Delay') }}
+                    {{ translate('Delay') }}
                     {{ form.tooltip('general-delay') }}
                 </label>
             </th>
@@ -79,7 +79,7 @@
         <tr>
             <th scope="row">
                 <label for="effectsHoverPause">
-                    {{ environment.translate('Pause') }}
+                    {{ translate('Pause') }}
                     {{ form.tooltip('general-pause') }}
                 </label>
             </th>
@@ -88,14 +88,14 @@
                     <input type="radio" name="effects[hoverPause]"
                            id="effectsHoverPauseTrue"
                            value="true" {{ macro.checked('true', slider.settings.effects.hoverPause, true) }}/>
-                    <span>{{ environment.translate('Yes') }}</span>
+                    <span>{{ translate('Yes') }}</span>
                     <br/>
                 </label>
                 <label for="effectsHoverPauseFalse">
                     <input type="radio" name="effects[hoverPause]"
                            id="effectsHoverPauseFalse"
                            value="false" {{ macro.checked('false', slider.settings.effects.hoverPause, false) }}/>
-                    <span>{{ environment.translate('No') }}</span>
+                    <span>{{ translate('No') }}</span>
                     <br/>
                 </label>
             </td>
@@ -108,7 +108,7 @@
         <tr>
             <th scope="row">
                 <label for="controlsNavigation">
-                    {{ environment.translate('Navigation') }}
+                    {{ translate('Navigation') }}
                     {{ form.tooltip('general-navigation-coin') }}
                 </label>
             </th>
@@ -121,7 +121,7 @@
                                checked="checked"
                            {% endif %}
                            />
-                    <span>{{ environment.translate('Yes') }}</span>
+                    <span>{{ translate('Yes') }}</span>
                     <br/>
                 </label>
                 <label for="controlsNavigationFalse">
@@ -132,7 +132,7 @@
                                 checked="checked"
                             {% endif %}
                            />
-                    <span>{{ environment.translate('No') }}</span>
+                    <span>{{ translate('No') }}</span>
                     <br/>
                 </label>
             </td>
@@ -140,7 +140,7 @@
         <tr>
             <th scope="row">
                 <label for="controlsLinks">
-                    {{ environment.translate('Links') }}
+                    {{ translate('Links') }}
                     {{ form.tooltip('general-links') }}
                 </label>
             </th>
@@ -153,7 +153,7 @@
                                checked="checked"
                            {% endif %}
                            />
-                    <span>{{ environment.translate('Yes') }}</span>
+                    <span>{{ translate('Yes') }}</span>
                     <br/>
                 </label>
                 <label for="controlsLinksFalse">
@@ -163,7 +163,7 @@
                                checked="checked"
                            {% endif %}
                            />
-                    <span>{{ environment.translate('No') }}</span>
+                    <span>{{ translate('No') }}</span>
                     <br/>
                 </label>
             </td>

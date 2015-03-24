@@ -2,22 +2,22 @@
 {% set v = attribute(veditor, '.bx-viewport') %}
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Border style:') }}</label>
+    <label>{{ translate('Border style:') }}</label>
     <select name="[_veditor_][border_style]" class="rs-veditor-input" data-selector=".bx-viewport" data-prop="border-style">
         <option value="none" {% if attribute(v, 'border-style')|default('none') == 'none' %}selected="selected"{% endif %}>
-            {{ environment.translate('None') }}
+            {{ translate('None') }}
         </option>
         <option value="solid" {% if attribute(v, 'border-style')|default('none') == 'solid' %}selected="selected"{% endif %}>
-            {{ environment.translate('Solid') }}
+            {{ translate('Solid') }}
         </option>
         <option value="dashed" {% if attribute(v, 'border-style')|default('none') == 'dashed' %}selected="selected"{% endif %}>
-            {{ environment.translate('Dashed') }}
+            {{ translate('Dashed') }}
         </option>
     </select>
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Border width:') }}</label>
+    <label>{{ translate('Border width:') }}</label>
     <input
         data-selector=".bx-viewport"
         data-prop="border-width"
@@ -28,7 +28,7 @@
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Border color:') }}</label>
+    <label>{{ translate('Border color:') }}</label>
     <input
         data-selector=".bx-viewport"
         data-prop="border-color"

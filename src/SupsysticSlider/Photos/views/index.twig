@@ -8,7 +8,7 @@
     {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
 
     {{ parent() }}
-    {{ breadcrumbs.item(environment.generateUrl('photos', 'index'), environment.translate('Images')) }}
+    {{ breadcrumbs.item(environment.generateUrl('photos', 'index'), translate('Images')) }}
 {% endblock %}
 
 {% block content %}
@@ -23,10 +23,10 @@
 
                 <h2 id="gg-alrt" style="text-align: center; color: #bfbfbf; margin: 50px 0 25px 0;">
                     <span style="margin-bottom: 20px; display: block;">
-                        {{ environment.translate('Upload your images from the Wordpress Media Library') }}
+                        {{ translate('Upload your images from the Wordpress Media Library') }}
                     </span>
                     <a class="button button-primary button-hero" href="#" onclick="jQuery('#gg-btn-upload').click();">
-                        {{ environment.translate('Upload new images') }}
+                        {{ translate('Upload new images') }}
                     </a>
                 </h2>
 

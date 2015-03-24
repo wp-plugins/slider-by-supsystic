@@ -11,10 +11,13 @@
         this.$pluginBtn = $('button#change');
         this.$pluginWindow = $('#changePluginWindow');
         this.$shadowDialog = $('#selectShadowDialog');
+        this.$importDialog = $('#choose-import-dialog');
         this.$deleteBtn = $('button#delete');
         this.$randomCheckbox = $('#generalRandomStart');
         this.$addPage = $('.add-page');
         this.$addPost = $('.add-post');
+        this.changed = null;
+        this.saved = null;
 
         this.init();
     }
@@ -220,6 +223,24 @@
         });
     };
 
+    Controller.prototype.initImportDialog = (function () {
+        this.$importDialog.dialog({
+            modal:    true,
+            width:    560,
+            autoOpen: false
+        });
+    });
+
+    Controller.prototype.openShadowDialog = function() {
+        var button = $('#choose-import'),
+            self = this;
+
+        button.on('click', function(e) {
+            e.preventDefault();
+            self.$importDialog.dialog('open');
+        });
+    };
+
     Controller.prototype.featuresNotices = function() {
         var $builderButton = $('#free-builder'),
             $videoButton = $('#free-video'),
@@ -241,7 +262,7 @@
             var notification = noty({
                 layout: 'topCenter',
                 type: 'information',
-                text : '<h3>Notice</h3>You can import YouTube and Vimeo videos in PRO version</br><a class="button button-primary" href="http://supsystic.com/plugins/slider/" style="margin: 10px;">Get Pro</a>',
+                text : '<h3>Notice</h3>You can import YouTube and Vimeo videos in PRO version</br><a class="button button-primary" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=video&utm_campaign=slider" style="margin: 10px;">Get Pro</a>',
                 timeout: false,
                 animation: {
                     open: 'animated flipInX',
@@ -251,6 +272,14 @@
                 }
             });
         });
+    };
+
+    Controller.prototype.toggleChanges = function() {
+        var $elements = $('input, select');
+
+        $elements.on('change', $.proxy(function() {
+            this.changed = true;
+        }, this));
     };
 
     /**
@@ -278,7 +307,9 @@
         this.deletePosts();
         this.initShadowDialog();
         this.openShadowDialog();
+        this.initImportDialog();
         this.featuresNotices();
+        this.toggleChanges();
         //this.initShadowSelection();
     });
 
@@ -313,6 +344,7 @@
      * @type {Function}
      */
     Controller.prototype.submit = (function () {
+        this.saved = true;
         this.$form.submit();
     });
 
@@ -351,7 +383,13 @@
     });
 
     $(document).ready(function () {
-        return new Controller();
+        WordPress.settings = new Controller();
     });
+
+    $(window).on('beforeunload', function(e) {
+        if(WordPress.settings.changed && !WordPress.settings.saved) {
+            return 'You have unsaved changes';
+        }
+    })
 
 }(jQuery, window.wp = window.wp || {}));

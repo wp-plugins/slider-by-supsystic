@@ -54,10 +54,10 @@
         <form id="bupWelcomePageFindUsForm" method="post" action="{{ environment.generateUrl('promo', 'index') }}">
             <input name="promo_viewed" value="true" type="hidden"/>
             <h1>
-                {{ environment.translate('Welcome to') }}
+                {{ translate('Welcome to') }}
                 {{ pluginName }}
-                {{ environment.translate('Version') }}
-                {{ environment.config.get('plugin_version') }}!
+                {{ translate('Version') }}
+                {{ config.get('plugin_version') }}!
             </h1>
             <div class="clear"></div>
             <div class="about-message">
@@ -79,25 +79,25 @@
             <!-- Google -->
             <label for="find-google">
                 <input value="1" type="radio" name="where_find_us" id="find-google"/>
-                {{ environment.translate('Google') }}
+                {{ translate('Google') }}
             </label>
 
             <!-- Wordpress.org -->
             <label for="find-wordpress">
                 <input value="2" type="radio" name="where_find_us" id="find-wordpress"/>
-                {{ environment.translate('Wordpress.org') }}
+                {{ translate('Wordpress.org') }}
             </label>
 
             <!-- Reffer a friend -->
             <label for="find-friend">
                 <input value="3" type="radio" name="where_find_us" id="find-friend"/>
-                {{ environment.translate('Reffer a friend') }}
+                {{ translate('Reffer a friend') }}
             </label>
 
             <!-- Find on the web -->
             <label for="find-web">
                 <input value="4" type="radio" name="where_find_us" id="find-web"/>
-                {{ environment.translate('Find on the web') }}
+                {{ translate('Find on the web') }}
             </label>
 
             <!-- Find on the web URL -->
@@ -106,7 +106,7 @@
             <!-- Other way -->
             <label for="find-other">
                 <input value="5" type="radio" name="where_find_us" id="find-other"/>
-                {{ environment.translate('Other way') }}
+                {{ translate('Other way') }}
             </label>
 
             <!-- Other way description -->
@@ -149,7 +149,7 @@
             </div>
             <div class="clear"></div>
 
-            <input class="button button-primary button-hero" type="submit" value="{{ environment.translate('Thank for check info. Start using plugin') }}"/>
+            <input class="button button-primary button-hero" type="submit" value="{{ translate('Thank for check info. Start using plugin') }}"/>
 
             <!-- <a class="button button-primary button-hero bupSendInfo" href="javascript:void(0)">Thank for check info. Start using plugin.</a>-->
 

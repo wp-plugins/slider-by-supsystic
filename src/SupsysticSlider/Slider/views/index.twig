@@ -15,40 +15,40 @@
                 <li>
                     <a href="{{ environment.generateUrl('slider', 'view', { 'id': slider.id }) }}" class="button">
                         <i class="fa fa-gear"></i>
-                        {{ environment.translate('Properties') }}
+                        {{ translate('Properties') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ environment.generateUrl('slider', 'view', { 'preview':'true', 'id': slider.id }) }}" class="button">
                         <i class="fa fa-eye"></i>
-                        {{ environment.translate('Preview') }}
+                        {{ translate('Preview') }}
                     </a>
                 </li>
                 <li>
                     <a class="delete-gallery button" href="{{ environment.generateUrl('slider', 'delete', { 'id': slider.id }) }}">
                         <i class="fa fa-trash-o"></i>
-                        {{ environment.translate('Delete Slider') }}
+                        {{ translate('Delete Slider') }}
                     </a>
                 </li>
             </ul>
             <div class="gg-counter">
                 <i class="fa fa-picture-o"></i>
-                {{ environment.translate('Total images: ') }}
+                {{ translate('Total images: ') }}
                 <span style="font-weight: 200;">{{ slider.images|length|default(0) }}</span>
             </div>
             {% if environment.isPro() %}
                 <div class="gg-counter">
                     <i class="fa fa-video-camera"></i>
-                    {{ environment.translate('Total videos: ') }}
+                    {{ translate('Total videos: ') }}
                     <span style="font-weight: 200;">{{ slider.videos|length|default(0) }}</span>
                 </div>
             {% endif %}
         </div>
         <div class="regular-text" id="propsShortcode" style="display: inline-block; margin-left: 20px;">
-            <h3 style="display: inline-block;"> {{ environment.translate('Shortcode: ') }} </h3>
+            <h3 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h3>
             [supsystic-slider id = {{ slider.id }}]
             </br>
-            <h3 style="display: inline-block;"> {{ environment.translate('PhpCode: ') }} </h3>
+            <h3 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h3>
             {{ '<?php echo do_shortcode("[supsystic-slider id =' ~ slider.id ~ ']") ?>' }}
         </div>
     </div>
@@ -58,7 +58,7 @@
     {% import 'macro/toolbar.twig' as toolbar %}
 
     <!-- Template: {{ environment.getModule('slider').getLocation() }}/views/index.twig -->
-    <h1 style="margin-left: 10px; padding: 20px; border-bottom: 1px solid black;">{{ environment.translate('Sliders List') }}</h1>
+    <h1 style="margin-left: 10px; padding: 20px; border-bottom: 1px solid black;">{{ translate('Sliders List') }}</h1>
     <!-- End of Template: {{ environment.getModule('slider').getLocation() }}/views/index.twig -->
 {% endblock %}
 
@@ -68,7 +68,7 @@
     {{ parent() }}
 
     <!-- Template: {{ environment.getModule('slider').getLocation() }}/views/index.twig -->
-    {{ breadcrumbs.item(environment.generateUrl('slider'), environment.translate('Sliders')) }}
+    {{ breadcrumbs.item(environment.generateUrl('slider'), translate('Sliders')) }}
     <!-- End of Template: {{ environment.getModule('slider').getLocation() }}/views/index.twig -->
 {% endblock %}
 
@@ -93,7 +93,7 @@
             <div class="new-slider" style="width: 100%;">
                 <div class="line name">
                     <div class="caption" style="width: 140px; display: inline-block;">
-                        <h3>{{ environment.translate('Slider Name') }}</h3>
+                        <h3>{{ translate('Slider Name') }}</h3>
                     </div>
                     <div style="display: inline-block;">
                         <input id="sliderNameInput" type="text" name="title"/>
@@ -150,19 +150,22 @@
                             'plugin': 'coin',
                             'preset': '',
                             'description': 'Post feed slider',
-                            'pro': 'true'
+                            'pro': 'true',
+                            'link' : 'http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=templatefeed&utm_campaign=slider'
                         },
                         'html_pro': {
                             'plugin': html_plugin,
                             'preset': '',
-                            'description': 'Html content',
-                            'pro': 'true'
+                            'description': 'HTML content',
+                            'pro': 'true',
+                            'link': 'http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=templatehtml&utm_campaign=slider'
                         },
                         'video_pro': {
                             'plugin': 'bx',
                             'preset': '',
                             'description': 'Video slider',
-                            'pro': 'true'
+                            'pro': 'true',
+                            'link': 'http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=templatevideo&utm_campaign=slider'
                         }
                     } %}
                     {% for element, value in presetImages %}
@@ -170,7 +173,7 @@
                             <img class="preset-image" src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/{{ element }}.jpg" width="400px" height="228px">
                             <div class="caption">{{ value.description }}</div>
                             {% if value.pro == 'true' and environment.isPro() != 'true' %}
-                                <a class="button" href="http://supsystic.com/plugins/slider/" style="opacity: 0.0;">Get Pro</a>
+                                <a class="button" href="{{ value.link }}" style="opacity: 0.0;">Get Pro</a>
                             {% endif %}
                         </div>
                     {% endfor %}

@@ -83,17 +83,20 @@
                 images = [];
 
             $entities.each(function () {
-                var $entity = $(this),
-                    isPhoto = $entity.data('entity-type') == 'photo',
-                    entityWidth = $entity.data('entity-info')
-                        .attachment
-                        .sizes
-                        .full
-                        .width;
+                //Redo this
+                if(typeof $(this).data('entity-info') == 'object') {
+                    var $entity = $(this),
+                        isPhoto = $entity.data('entity-type') == 'photo',
+                        entityWidth = $entity.data('entity-info')
+                            .attachment
+                            .sizes
+                            .full
+                            .width;
 
-                if ((entityWidth < width || !entityWidth) && isPhoto) {
-                    //$entity.addClass('active update');
-                    generateEntities(images, $entity);
+                    if ((entityWidth < width || !entityWidth) && isPhoto) {
+                        //$entity.addClass('active update');
+                        generateEntities(images, $entity);
+                    }
                 }
             });
             if(images.length) {

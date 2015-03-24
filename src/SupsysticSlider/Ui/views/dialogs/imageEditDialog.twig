@@ -7,21 +7,21 @@
     }
 </style>
 
-<div id="editDialog" title="{{ environment.translate('Edit image') }}">
+<div id="editDialog" title="{{ translate('Edit image') }}">
     <form id="editDialogForm">
         <table class="form-table">
             <tbody>
                 <tr>
                     <th scope="row" colspan="2">
                         <h4 class="title">
-                            {{ environment.translate('Main') }}
+                            {{ translate('Main') }}
                         </h4>
                     </th>
                 </tr>
                 <tr>
                     <th scope="row">
                         <label for="imageCaption">
-                            {{ environment.translate('Caption') }}
+                            {{ translate('Caption') }}
                         </label>
                     </th>
                     <td>
@@ -31,14 +31,14 @@
                 <tr>
                     <th scope="row" colspan="2">
                         <h4 class="title">
-                            {{ environment.translate('SEO') }}
+                            {{ translate('SEO') }}
                         </h4>
                     </th>
                 </tr>
                 <tr>
                     <th scope="row">
                         <label for="imageDescription">
-                            {{ environment.translate('Description') }}
+                            {{ translate('Description') }}
                         </label>
                     </th>
                     <td>
@@ -48,7 +48,7 @@
                 <tr>
                     <th scope="row">
                         <label for="imageAlt">
-                            {{ environment.translate('Alternative text') }}
+                            {{ translate('Alternative text') }}
                         </label>
                     </th>
                     <td>
@@ -58,10 +58,10 @@
                 <tr>
                     <th scope="row" colspan="2">
                         <h4 class="title">
-                            {{ environment.translate('External link') }}
+                            {{ translate('External link') }}
                             {% if environment.isPro() == false %}
                                 <span style="color:red;font-size: .7em;">
-                                    {{ environment.translate('Available in PRO version.') }}
+                                    {{ translate('Available in PRO version.') }}
                                 </span>
                             {% endif %}
                         </h4>
@@ -70,7 +70,7 @@
                 <tr>
                     <th scope="row">
                         <label for="imageLink">
-                            {{ environment.translate('Link') }}
+                            {{ translate('Link') }}
                         </label>
                     </th>
                     <td>
@@ -89,22 +89,22 @@
                 <tr>
                     <th scope="row">
                         <label for="inNewWindow">
-                            {{ environment.translate('Open in new window') }}
+                            {{ translate('Open in new window') }}
                         </label>
                     </th>
                     <td>
                         <select id="inNewWindow" {% if environment.isPro() %}name="target"{% else %}disabled="disabled"{% endif %}>
-                            <option value="_self">{{ environment.translate('No') }}</option>
-                            <option value="_blank">{{ environment.translate('Yes') }}</option>
+                            <option value="_self">{{ translate('No') }}</option>
+                            <option value="_blank">{{ translate('Yes') }}</option>
                         </select>
                     </td>
                     <tr>
                         <th scope="row" colspan="2">
                             <h4 class="title">
-                                {{ environment.translate('Embeded video') }}
+                                {{ translate('Embeded video') }}
                                 {% if environment.isPro() == false %}
                                     <span style="color:red;font-size: .7em;">
-                                        {{ environment.translate('Available in PRO version.') }}
+                                        {{ translate('Available in PRO version.') }}
                                     </span>
                                 {% endif %}
                             </h4>
@@ -113,13 +113,13 @@
                     <tr>
                         <th scope="row">
                             <label for="imageVideo">
-                                {{ environment.translate('Video URL') }}
+                                {{ translate('Video URL') }}
                             </label>
                         </th>
                         <td>
                             <input id="imageVideo" type="text" {% if environment.isPro() %}name="video"{% else %}disabled="disabled"{% endif %}/>
                             <p class="description">
-                                {{ environment.translate('Supports Youtube and Vimeo. URL will be converted to embed automatically.') }}
+                                {{ translate('Supports Youtube and Vimeo. URL will be converted to embed automatically.') }}
                             </p>
                         </td>
                     </tr>

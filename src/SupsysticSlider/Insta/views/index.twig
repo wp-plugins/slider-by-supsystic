@@ -1,0 +1,119 @@
+{% extends 'base.twig' %}
+
+{% block breadcrumbs %}
+
+    <nav id="supsystic-breadcrumbs" class="supsystic-breadcrumbs">
+        <a href="{{ environment.generateUrl('slider') }}">{{ translate('Slider by Supsystic') }}</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="{{ environment.generateUrl('slider', 'view') }}">{{ translate('Import images') }}</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="{{ environment.generateUrl('insta', 'index') }}">{{ translate('Instagram') }}</a>
+    </nav>
+
+{% endblock %}
+
+{% block toolbar %}
+    {% include '@insta/includes/toolbar.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    {% if images is iterable and images|length > 0 %}
+
+        <ul class="ssl-photos" data-sortable data-container="block">
+            {% for image in images %}
+                <li class="ssl-list-item" data-entity data-entity-type="photo"
+                    data-entity-info="{{ image|json_encode }}">
+                    <div class="gg-check" style="position: absolute; top: 14px; left: 14px;">
+                        <input type="checkbox" value="{{ image }}" class="gg-checkbox" data-observable>
+                    </div>
+                    {% set sizes = { 'width': 60, 'height': 80 } %}
+                    <img src="{{ image }}" width="150"
+                         style="min-height:150px;max-height:150px;"/>
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <p>Sorry, but you have no images on your instagram account</p>
+
+    {% endif %}
+
+    <script>
+        /*global jQuery*/
+        (function ($) {
+            jQuery(document).ready(function () {
+
+                jQuery('#add_images').click(function () {
+                    getResourcesList("{{ id }}");
+                });
+
+                var button_select = jQuery('#button-select').click(function () {
+
+                    jQuery('input:checkbox').each(function () {
+                        if (button_select.data('value') == 'select') {
+                            $(this).attr('checked', 'checked');
+                        } else {
+                            $(this).removeAttr('checked');
+                        }
+                    });
+                    if ($(this).data('value') == 'select') {
+                        $(this).data('value', 'remove');
+                    } else {
+                        $(this).data('value', 'select');
+                    }
+                });
+
+            });
+
+            function getResourcesList(galleryId) {
+                var url = [],
+                        elements = jQuery('.gg-checkbox:checked').each(function () {
+                            url.push(jQuery(this).val());
+                        }),
+                        resources = [];
+
+                if (elements.length) {
+                    SupsysticGallery.Loader.show('Please, wait until images will be imported.');
+                    var request = SupsysticGallery.Ajax.Post({
+                        module: 'insta',
+                        action: 'save'
+                    });
+
+                    request.add('urls', url);
+
+                    request.send(function (response) {
+
+                        for (var i = 0; i < response.ids.length; ++i) {
+                            resources.push({type: 'image', id: response.ids[i]});
+                        }
+
+                        if (resources.length) {
+                            $.post(window.wp.ajax.settings.url, {
+                                action: 'supsystic-slider',
+                                route: {module: 'slider', action: 'attach'},
+                                slider_id: galleryId,
+                                resources: resources
+                            }, function (response) {
+                                $.jGrowl(response.message);
+                            });
+
+                            request.send(function (response) {
+                                $.jGrowl('Attached');
+                                window.location = "{{ environment.generateUrl('slider') }}";
+                            });
+                        } else {
+                            $.jGrowl('Please select images for import');
+                        }
+
+                        $.jGrowl('Saved');
+                    });
+                } else {
+                    $.jGrowl('Please select images for import');
+                }
+            }
+
+        })(jQuery)
+    </script>
+{% endblock %}

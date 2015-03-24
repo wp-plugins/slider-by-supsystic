@@ -2,7 +2,7 @@
 {% set v = attribute(veditor, '.bx-caption') %}
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text align') }}</label>
+    <label>{{ translate('Text align') }}</label>
     <select
         name="[_veditor_][.bx-caption][text-align]"
         class="rs-veditor-input"
@@ -10,19 +10,19 @@
         data-prop="text-align"
     >
         <option value="left" {% if attribute(v, 'text-align')|default('left') == 'left' %}selected="selected"{% endif %}>
-            {{ environment.translate('Align left') }}
+            {{ translate('Align left') }}
         </option>
         <option value="center" {% if attribute(v, 'text-align')|default('left') == 'center' %}selected="selected"{% endif %}>
-            {{ environment.translate('Align center') }}
+            {{ translate('Align center') }}
         </option>
         <option value="right" {% if attribute(v, 'text-align')|default('left') == 'right' %}selected="selected"{% endif %}>
-            {{ environment.translate('Align right') }}
+            {{ translate('Align right') }}
         </option>
     </select>
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text color') }}</label>
+    <label>{{ translate('Text color') }}</label>
     <input
         name="[_veditor_][.bx-caption][color]"
         data-selector=".bx-caption"
@@ -35,7 +35,7 @@
 
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Background color') }}</label>
+    <label>{{ translate('Background color') }}</label>
     <input
         name="[_veditor_][.bx-caption][background-color]"
         data-selector=".bx-caption"
@@ -47,7 +47,7 @@
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text size') }}</label>
+    <label>{{ translate('Text size') }}</label>
     <input
             name="[_veditor_][.bx-caption][font-size]"
             class="rs-veditor-input"
@@ -59,7 +59,7 @@
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text Animation') }}</label>
+    <label>{{ translate('Text Animation') }}</label>
     <select
             name="[_veditor_][.bx-caption][text-animation]"
             class="rs-veditor-input"
@@ -70,16 +70,16 @@
             data-attr="data-effect"
             >
         <option value="disable" {% if attribute(v, 'text-animation')|default('disable') == 'disable' %}selected="selected"{% endif %}>
-            {{ environment.translate('Disable') }}
+            {{ translate('Disable') }}
         </option>
         <option value="enable" {% if attribute(v, 'text-animation')|default('disable') == 'enable' %}selected="selected"{% endif %}>
-            {{ environment.translate('Enable') }}
+            {{ translate('Enable') }}
         </option>
     </select>
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text in effect') }}</label>
+    <label>{{ translate('Text in effect') }}</label>
     <select
             name="[_veditor_][.bx-caption][text-in-effect]"
             class="rs-veditor-input"
@@ -90,40 +90,40 @@
             data-attr="data-in-effect"
             >
         <option value="fadeIn" {% if attribute(v, 'text-effect-in')|default('') == 'fadeIn' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeIn') }}
+            {{ translate('FadeIn') }}
         </option>
         <option value="rollIn" {% if attribute(v, 'text-effect-in')|default('') == 'rollIn' %}selected="selected"{% endif %}>
-            {{ environment.translate('RollIn') }}
+            {{ translate('RollIn') }}
         </option>
         <option value="fadeInLeftBig" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInLeftBig' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInLeftBig') }}
+            {{ translate('FadeInLeftBig') }}
         </option>
         <option value="fadeInRightBig" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInRightBig' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInRightBig') }}
+            {{ translate('FadeInRightBig') }}
         </option>
         <option value="fadeInLeft" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInLeft' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInLeft') }}
+            {{ translate('FadeInLeft') }}
         </option>
         <option value="fadeInRight" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInRight' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInRight') }}
+            {{ translate('FadeInRight') }}
         </option>
         <option value="fadeInUp" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInUp' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInUp') }}
+            {{ translate('FadeInUp') }}
         </option>
         <option value="fadeInDown" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInDown' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeInDown') }}
+            {{ translate('FadeInDown') }}
         </option>
         <option value="flipInX" {% if attribute(v, 'text-effect-in')|default('') == 'flipInX' %}selected="selected"{% endif %}>
-            {{ environment.translate('FlipInX') }}
+            {{ translate('FlipInX') }}
         </option>
         <option value="flipInY" {% if attribute(v, 'text-effect-in')|default('') == 'flipInY' %}selected="selected"{% endif %}>
-            {{ environment.translate('FlipInY') }}
+            {{ translate('FlipInY') }}
         </option>
     </select>
 </div>
 
 <div class="rs-veditor-group">
-    <label>{{ environment.translate('Text out effect') }}</label>
+    <label>{{ translate('Text out effect') }}</label>
     <select
             name="[_veditor_][.bx-caption][text-out-effect]"
             class="rs-veditor-input"
@@ -134,34 +134,34 @@
             data-attr="data-out-effect"
             >
         <option value="fadeOut" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOut' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOut') }}
+            {{ translate('FadeOut') }}
         </option>
         <option value="rollOut" {% if attribute(v, 'text-effect-out')|default('') == 'rollOut' %}selected="selected"{% endif %}>
-            {{ environment.translate('RollOut') }}
+            {{ translate('RollOut') }}
         </option>
         <option value="fadeOutLeftBig" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutLeftBig' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutLeftBig') }}
+            {{ translate('FadeOutLeftBig') }}
         </option>
         <option value="fadeOutRightBig" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutRightBig' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutRightBig') }}
+            {{ translate('FadeOutRightBig') }}
         </option>
         <option value="fadeOutLeft" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutLeft' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutLeft') }}
+            {{ translate('FadeOutLeft') }}
         </option>
         <option value="fadeOutRight" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutRight' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutRight') }}
+            {{ translate('FadeOutRight') }}
         </option>
         <option value="fadeOutUp" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutUp' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutUp') }}
+            {{ translate('FadeOutUp') }}
         </option>
         <option value="fadeOutDown" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutDown' %}selected="selected"{% endif %}>
-            {{ environment.translate('FadeOutDown') }}
+            {{ translate('FadeOutDown') }}
         </option>
         <option value="flipOutX" {% if attribute(v, 'text-effect-out')|default('') == 'flipOutX' %}selected="selected"{% endif %}>
-            {{ environment.translate('FlipOutX') }}
+            {{ translate('FlipOutX') }}
         </option>
         <option value="flipOutY" {% if attribute(v, 'text-effect-out')|default('') == 'flipOutY' %}selected="selected"{% endif %}>
-            {{ environment.translate('FlipOutY') }}
+            {{ translate('FlipOutY') }}
         </option>
     </select>
 </div>

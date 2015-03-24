@@ -15,6 +15,10 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         /** @var SupsysticSlider_Slider_Controller $controller */
         $controller = $this->getController();
         $dispatcher = $this->getEnvironment()->getDispatcher();
+        $twig = $this->getEnvironment()->getTwig();
+
+        $translate = new Twig_SimpleFunction('translate', array($this->getController(), 'translate'));
+        $twig->addFunction($translate);
 
         // Loads module assets.
         $dispatcher->on('after_ui_loaded', array($this, 'loadAssets'));

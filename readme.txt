@@ -3,19 +3,22 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider/
 Tags: 3D slider, best slider plugin, carousel, carousel slider, coin slider, coinslider, content slider, content slideshow, custom video slider, featured-content-slider, flex slider, free video slider, free video slideshow, Horizontal slider, HTML5 slider, image, Image Rotator, image slider, image slideshow, images, javascript slider, javascript slideshow, jquery slider, jquery slideshow, media, nivo slider, nivoslider, page, Photo Slider, picture slider, plugin, Post, posts, posts slider, recent post slider, responsive, slider, responsive slider, image slider, slider plugin, photo slider, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, galary, galery, gallary, gallerie, gallery, gallery decription, gallery image, gelary, gellary, gellery, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wordpress gallery, gallery plugin, responsive slideshow, image slidesgow, photo slideshow, photo, foto, foto slideshow, youtube slider, youtube slideshow
 Tested up to: 4.1.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 
 Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning image and video sliders with professional templates and options
 
 == Description ==
 
-[Slider by Supsystic](http://supsystic.com/plugins/slider/ "WordPress Slider Plugin by Supsystic") is a great way to create stunning image slider and video slider without programming skills. Fully responsive, work on any mobile device.
+[Slider by Supsystic](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=description&utm_campaign=slider "WordPress Slider Plugin by Supsystic") is a great way to create stunning image slider and video slider without programming skills. Fully responsive, work on any mobile device.
 
 * Responsive image slider
 * Stunning slideshow themes
+* Video Slider option
+* Post Feed slider
 * Easy to use slider builder interface
 * Shortcode
 * Set image captions
+* HTML Layer slideshow
 
 Using Slider by Supsystic Plugin, you will be able to attract more people to your site and amaze them with effective slideshows, which display your images in a marvellous way. It is rather simple - just select images you would like to show and Slider by Supsystic will create responsive slideshow.
 
@@ -26,7 +29,7 @@ SEO optimized sliders can do a better job of getting the images and captions ind
 
 = Support =
 
-If you have any problem or feature request for the Slider by Supsystic, please [let us know](http://supsystic.com/contact-us/ "Contact Us")!
+If you have any problem or feature request for the Slider by Supsystic, please [let us know](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=contactus&utm_campaign=slider "Contact Us")!
 
 == Screenshots ==
 
@@ -42,7 +45,7 @@ If you have any problem or feature request for the Slider by Supsystic, please [
 
 6. Post Feed Slider
 
-7. [WordPress Slider plugin](http://supsystic.com/plugins/slider/ "WordPress Slider Plugin") admin area
+7. [WordPress Slider plugin](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "WordPress Slider Plugin") admin area
 
 == Installation ==
 
@@ -186,6 +189,13 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.0.8 = 24/03/2015
+ * Minor fixes
+ * Functional fixes
+ * New translations added
+ * Social import added
+ * Video services import fixed
 
 = 1.0.7 = 16/03/2015
  * Minor fixes

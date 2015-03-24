@@ -160,9 +160,10 @@ class SupsysticSlider_Core_BaseController extends Rsc_Mvc_Controller
 
     public function translate($text)
     {
-        return $this->getEnvironment()
+        return __($text, 'ssl');
+        /*return $this->getEnvironment()
             ->getLang()
-            ->translate($text);
+            ->translate($text);*/
     }
 
     public function escape($text)

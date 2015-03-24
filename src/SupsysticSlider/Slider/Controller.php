@@ -814,6 +814,9 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                 }
             }
 
+            var_dump($type);
+            var_dump($id);
+
             $resources->add($sliderId, $type, $id);
         }
 

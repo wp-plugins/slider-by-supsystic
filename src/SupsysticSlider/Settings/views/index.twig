@@ -6,12 +6,12 @@
     {% import 'macro/breadcrumbs.twig' as breadcrumbs %}
 
     {{ parent() }}
-    {{ breadcrumbs.item(environment.generateUrl('settings', 'index'), environment.translate('Plugin settings')) }}
+    {{ breadcrumbs.item(environment.generateUrl('settings', 'index'), translate('Plugin settings')) }}
 {% endblock %}
 
 {% block content %}
 
-    {% set selectValues = { 'yes': environment.translate('Yes'), 'no': environment.translate('No') } %}
+    {% set selectValues = { 'yes': translate('Yes'), 'no': translate('No') } %}
 
     <div class="gg-item gg-gallery-panel">
 
@@ -44,11 +44,11 @@
                                 <option value="0" {% if registry.get('cache_enabled') == 0 %}selected{% endif %}>{{ selectValues.no }}</option>
                                 <option value="1" {% if registry.get('cache_enabled') == 1 %}selected{% endif %}>{{ selectValues.yes }}</option>
                             </select>
-                            <p class="description">{{ environment.translate('<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database.')|format('Slider by Supsystic')|raw }}</p>
+                            <p class="description">{{ translate('<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database.')|format('Slider by Supsystic')|raw }}</p>
                             {% if environment.config.get('uploads_rw') == false %}
                                 <p class="description">
                                     <strong>
-                                        {{ environment.translate('Caching is not available because your uploads directory is not writable.') }}
+                                        {{ translate('Caching is not available because your uploads directory is not writable.') }}
                                     </strong>
                                 </p>
                             {% endif %}
@@ -61,7 +61,7 @@
                         <td>
                             <input type="text" name="cache_ttl" id="gg-cache-ttl" value="{{ registry.get('cache_ttl')|default('86400') }}"/>
                             <p class="description">
-                                {{ environment.translate('The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours).') }}
+                                {{ translate('The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours).') }}
                             </p>
                         </td>
                     </tr>
@@ -70,7 +70,7 @@
                             &nbsp;
                         </th>
                         <td>
-                            <button class="button" id="clearCache" >{{ environment.translate('Clear cache') }}</button>
+                            <button class="button" id="clearCache" >{{ translate('Clear cache') }}</button>
                         </td>
                     </tr>
                     <tr>
@@ -82,13 +82,13 @@
                                 <option value="0" {% if registry.get('send_stats')|default(1) == 0 %}selected{% endif %}>{{ selectValues.no }}</option>
                                 <option value="1" {% if registry.get('send_stats')|default(1) == 1 %}selected{% endif %}>{{ selectValues.yes }}</option>
                             </select>
-                            <p class="description">{{ environment.translate('We don\'t collect statistics on you, we only collect the errors encountered during use in order to improve our product.') }}</p>
+                            <p class="description">{{ translate('We don\'t collect statistics on you, we only collect the errors encountered during use in order to improve our product.') }}</p>
                         </td>
                     </tr>
                     </tbody>
                 </table>
 
-                <input type="submit" value="{{ environment.translate('Save') }}" class="button button-primary"/>
+                <input type="submit" value="{{ translate('Save') }}" class="button button-primary"/>
 
             </fieldset>
         </form>

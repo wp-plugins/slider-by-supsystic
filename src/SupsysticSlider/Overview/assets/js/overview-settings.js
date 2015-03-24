@@ -23,8 +23,9 @@
         this.$mailButton.on('click', function(e) {
             if(!$userMail.val() || !$userText.val()) {
                 e.preventDefault();
-                $($userMail.parent()).append('<span style="color: red;">* Required</span>');
-                $($userText.parent()).append('<span style="color: red;">* Required</span>');
+                $userMail.closest('tr').find('.required').css('color', 'red');
+                $userText.closest('tr').find('.required').css('color', 'red');
+                $('.required-notification').show();
             }
         });
     };

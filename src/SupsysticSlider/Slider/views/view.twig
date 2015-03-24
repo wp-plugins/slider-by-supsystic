@@ -10,11 +10,11 @@
 {% block toolbar %}
     {% import 'macro/toolbar.twig' as toolbar %}
 
-    {{ toolbar.button('import-images', environment.translate('Add Images'), { 'id': 'gg-btn-upload','icon': 'upload', 'dataset': { 'folder-id': '0', 'slider-id': slider.id },'custom': { 'data-upload':'' } }) }}
+    {{ toolbar.button('choose-import', translate('Add Images'), { 'icon': 'upload' }) }}
 
     {% if slider.plugin != 'coin' %}
         {% if environment.isPro() %}
-            {{ toolbar.button('uploadVideo', environment.translate('Add Video'), { 'id': 'uploadVideo','icon': 'video-camera', 'dataset': { 'folder-id': '0', 'slider-id': slider.id } }) }}
+            {{ toolbar.button('uploadVideo', translate('Add Video'), { 'id': 'uploadVideo','icon': 'video-camera', 'dataset': { 'folder-id': '0', 'slider-id': slider.id } }) }}
         {% else %}
             <button id="free-video" class="button button-primary">
                 <i class="fa fa-video-camera"></i>
@@ -24,8 +24,8 @@
     {% endif %}
 
     {#{{ toolbar.primaryUrl('upload-images', environment.generateUrl('slider', 'add', { 'id': slider.id }), environment.translate('Add images'), { 'icon': 'upload' }) }}#}
-    {{ toolbar.button('preview-trigger', environment.translate('Preview'), { 'icon': 'eye', 'container': { 'style': {'float': 'right'}} }) }}
-    {{ toolbar.button('change', environment.translate('Change Slider') , { 'icon': 'wrench' }) }}
+    {{ toolbar.button('preview-trigger', translate('Preview'), { 'icon': 'eye', 'container': { 'style': {'float': 'right'}} }) }}
+    {{ toolbar.button('change', translate('Change Slider') , { 'icon': 'wrench' }) }}
 
     {{ toolbar.separator() }}
 
@@ -45,8 +45,8 @@
         {% endif %}
     {% endif %}
 
-    {{ toolbar.primary('save', environment.translate('Save'), { 'icon': 'check', 'container': { 'style': {'float': 'right'} }, 'custom': {'form': 'settings'} }) }}
-    {{ toolbar.button('delete', environment.translate('Delete'), { 'icon': 'trash-o', 'container': { 'style': {'float': 'right'} }, 'dataset': { 'id': slider.id, 'redirect-uri': environment.generateUrl('slider'), 'confirm': environment.translate('Are you really want to delete ') ~ slider.title ~ '?' } }) }}
+    {{ toolbar.primary('save', translate('Save'), { 'icon': 'check', 'container': { 'style': {'float': 'right'} }, 'custom': {'form': 'settings'} }) }}
+    {{ toolbar.button('delete', translate('Delete'), { 'icon': 'trash-o', 'container': { 'style': {'float': 'right'} }, 'dataset': { 'id': slider.id, 'redirect-uri': environment.generateUrl('slider'), 'confirm': translate('Are you really want to delete ') ~ slider.title ~ '?' } }) }}
 {% endblock %}
 
 {% block content %}
@@ -99,14 +99,14 @@
         <button id="delete-element" class="button" style="margin-left: 90%;">
             <i class="fa fa-fw fa-trash-o"></i>
         </button>
-        {% if slider.images is not empty %}
+        {% if slider.entities is not empty %}
             {{ view_type.list_view(slider) }}
         {% else %}
             <h2 class="header-muted" style="text-align: center;">You haven't any images yet.</h2>
         {% endif %}
         {% if environment.isPro() != 'true' %}
             <a href="http://supsystic.com/plugins/slider/">
-                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;">
+                <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider"><img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;"></a>
             </a>
         {% endif %}
     </div>
@@ -121,7 +121,7 @@
                 <tr data-tab="properties" id="properties">
                     <th scope="row">
                         <label for="propsShortcode">
-                            {{ environment.translate('Shortcode') }}
+                            {{ translate('Shortcode') }}
                         </label>
                     </th>
                     <td>
@@ -131,7 +131,7 @@
                 <tr>
                     <th scope="row">
                         <label for="propsSliderWidth">
-                            {{ environment.translate('Slider width') }}
+                            {{ translate('Slider width') }}
                         </label>
                     </th>
                     <td>
@@ -141,18 +141,24 @@
                                step="100"
                                name="properties[width]"
                                id="propsSliderWidth"/>
-                        <select class="regular-text"
-                                name="properties[widthType]"
-                                style="display: inline; height: inherit;position: relative; bottom: 2px; width: 64px;">
-                            <option value="px">pixels</option>
-                            <option value="%">percents</option>
-                        </select>
+                        {% if slider.plugin == 'bx' %}
+                            <select class="regular-text"
+                                    name="properties[widthType]"
+                                    style="display: inline; height: inherit;position: relative; bottom: 2px; width: 64px;">
+                                <option value="px">pixels</option>
+                                <option value="%">percents</option>
+                            </select>
+                        {% else %}
+                            <span class="regular-text" style="display: inline; height: inherit;position: relative; bottom: 2px;">
+                                {{ translate('pixels') }}
+                            </span>
+                        {% endif %}
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
                         <label for="propsSliderHeight">
-                            {{ environment.translate('Slider height') }}
+                            {{ translate('Slider height') }}
                         </label>
                     </th>
                     <td style="float: left;">
@@ -164,7 +170,7 @@
                                name="properties[height]"
                                id="propsSliderHeight"/>
                         <span class="regular-text" style="display: inline; height: inherit;position: relative; bottom: 2px;">
-                            {{ environment.translate('pixels') }}
+                            {{ translate('pixels') }}
                         </span>
                     </td>
                 </tr>
@@ -173,14 +179,14 @@
             </table>
         </form>
 
-        <div id="changePluginWindow" title="{{ environment.translate('Change Slider Type') }}" style="display: none;">
+        <div id="changePluginWindow" class="supsystic-plugin" title="{{ translate('Change Slider Type') }}" style="display: none;">
             <form id="changePlugin">
                 <input name="id" type="hidden" value="{{ slider.id }}"/>
                 <input name="route[module]" value="slider" type="hidden"/>
                 <input name="route[action]" value="changePlugin" type="hidden"/>
                 <input name="action" value="supsystic-slider" type="hidden"/>
 
-                <h3>{{ environment.translate('Select plugin') }}</h3>
+                <h3>{{ translate('Select plugin') }}</h3>
 
                 {% for plugin in environment.getModule('slider').getAvailableSliders() %}
                     <div>
@@ -199,15 +205,16 @@
                     <div>
                         <input type="radio" disabled>
                         <h3 style="display: inline-block;">
-                            {{ environment.translate('Jssor PRO') }}
+                            {{ translate('Jssor PRO') }}
                             {{ form.tooltip('general-slider-jssor', { 'border': '1px solid black;', 'padding': '1px 5px;', 'border-radius': '50%' }) }}
                         </h3>
+                        <a href="http://supsystic.com/plugins/slider/?utm_source=plugin&utm_medium=post&utm_campaign=slider" class="button button-primary" style="display: inline-block; margin-top: 14px;">More Info</a>
                         <br/>
                     </div>
                 {% endif %}
                 <p class="description">
-                    {{ environment.translate('Please note:') }}
-                    {{ environment.translate('Current settings will be removed without ability to restore.') }}
+                    {{ translate('Please note:') }}
+                    {{ translate('Current settings will be removed without ability to restore.') }}
                 </p>
             </form>
         </div>
@@ -217,23 +224,73 @@
         <img src="{{ environment.getConfig().get('admin_url') }}images/wpspin_light.gif" alt="" style="display: block; margin: 10px auto;"/>
     </div>
 
-    <div id="visual-editor-window" title="{{ environment.translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
+    <div id="visual-editor-window" title="{{ translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
     </div>
 
-    <div id="bx-editor-notice" title="{{ environment.translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
-        <a href="http://supsystic.com/plugins/slider/">
-            <img src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/pro_builder.jpg">
+    <div id="bx-editor-notice" title="{{ translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
+            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=builder&utm_campaign=slider">
+                <img src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/pro_builder.jpg">
+            </a>
+    </div>
+
+    <div id="choose-import-dialog" class="supsystic-plugin" title="{{ translate('Choose import source') }}" style="text-align: center;" hidden>
+        <button id="import-images" class="button button-primary button-hero" data-folder-id="0" data-slider-id="{{ slider.id }}" data-upload="">
+            <i class="fa fa-upload fa-2x"></i>
+            {{ translate('Import from Wordpress Media Library') }}
+        </button>
+        <h3>{{ translate('Import from social networks') }}</h3>
+        <a class="button button-primary button-hero" href="{{ environment.generateUrl('insta', 'index', {'id': slider.id}) }}" style="width: 400px;margin-bottom: 20px;">
+            <i class="fa fa-instagram fa-2x"></i>
+            {{ translate('Import from your Instagram account') }}
         </a>
+        {% if environment.isPro() == true %}
+            <a class="button button-primary button-hero" href="{{ environment.generateUrl('flickr', 'index', {'id': slider.id}) }}" style="width: 400px;margin-bottom: 20px;">
+                <i class="fa fa-flickr fa-2x"></i>
+                {{ translate('Import from your Flickr account') }}
+            </a>
+            <a class="button button-primary button-hero" href="{{ environment.generateUrl('tumblr', 'index', {'id': slider.id}) }}" style="width: 400px;margin-bottom: 20px;">
+                <i class="fa fa-tumblr fa-2x"></i>
+                {{ translate('Import from your Tumblr account') }}
+            </a>
+            <a class="button button-primary button-hero" href="{{ environment.generateUrl('facebook', 'index', {'id': slider.id}) }}" style="width: 400px;margin-bottom: 20px;">
+                <i class="fa fa-facebook fa-2x"></i>
+                {{ translate('Import from your Facebook account') }}
+            </a>
+        {% else %}
+            <h3>{{ translate('Get Pro to enable import') }}</h3>
+            <a class="button button-primary button-hero" href="http://supsystic.com/plugins/photo-gallery/" style="width: 400px;margin-bottom: 20px;">
+                <i class="fa fa-unlock fa-2x"></i>
+                {{ translate('Get PRO for 29$') }}
+            </a>
+            <button class="button button-primary button-hero gallery" data-folder-id="0"
+                    style="width: 400px;margin-bottom: 20px;"
+                    data-gallery-id="{{ slider.id }}" data-upload disabled>
+                <i class="fa fa-flickr fa-2x"></i>
+                {{ translate('Import from your Flickr account') }}
+            </button>
+            <button class="button button-primary button-hero gallery" data-folder-id="0"
+                    style="width: 400px;margin-bottom: 20px;"
+                    data-gallery-id="{{ slider.id }}" data-upload disabled>
+                <i class="fa fa-tumblr fa-2x"></i>
+                {{ translate('Import from your Tumblr account') }}
+            </button>
+            <button class="button button-primary button-hero gallery" data-folder-id="0"
+                    style="width: 400px;margin-bottom: 20px;"
+                    data-gallery-id="{{ slider.id }}" data-upload disabled>
+                <i class="fa fa-facebook fa-2x"></i>
+                {{ translate('Import from your Facebook account') }}
+            </button>
+        {% endif %}
     </div>
 
-    <div id="uploadVideoModal" title="{{ environment.translate('Import video') }}" style="display: none;">
+    <div id="uploadVideoModal" title="{{ translate('Import video') }}" style="display: none;">
         <form id="uploadVideoForm">
             <table class="form-table">
                 <thead>
                 <tr>
                     <th scope="row">
                         <label for="videoUrl">
-                            {{ environment.translate('Video URL:') }}
+                            {{ translate('Video URL:') }}
                         </label>
                     </th>
                     <td>
@@ -245,7 +302,7 @@
                             {% else %}
                                 {% set sources = ['Youtube'] %}
                             {% endif %}
-                            {{ environment.translate('Supported platforms: %s.')|format(sources|join(', ')) }}
+                            {{ translate('Supported platforms: %s.')|format(sources|join(', ')) }}
                         </p>
                         <p id="uploadVideoFormError" class="description" style="color:red;"></p>
                     </td>

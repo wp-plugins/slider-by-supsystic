@@ -1,0 +1,457 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Artur Kovalevsky <kovalevskyproj@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_MX\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid "New Slider"
+msgstr "Nueva presentación"
+
+msgid "Sliders"
+msgstr "Presentaciones"
+
+msgid "Images"
+msgstr "Imágenes"
+
+msgid "Settings"
+msgstr "Configuración"
+
+msgid "Get PRO"
+msgstr "Obten la versión PRO"
+
+msgid "Slider by Supsystic"
+msgstr "Slider creado por Supsystic"
+
+msgid "Loading"
+msgstr "Cargando"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "An error has occurred"
+msgstr "Se produjo un error"
+
+msgid "General"
+msgstr "General"
+
+msgid "Touch"
+msgstr "Táctil"
+
+msgid "Pager"
+msgstr "Contador"
+
+msgid "Mode"
+msgstr "Modo"
+
+msgid "Type of transition between slides."
+msgstr "Tipo de transición entre diapositivas"
+
+msgid "Captions"
+msgstr "Leyenda"
+
+msgid "Include image captions."
+msgstr "Incluir leyendas en la imagen."
+
+msgid "Speed"
+msgstr "Velocidad"
+
+msgid "Slide transition duration (in ms)."
+msgstr "Duración de la transición de la diapositiva (en ms)."
+
+msgid "Margin"
+msgstr "Margen"
+
+msgid "Margin between each slide."
+msgstr "Margen entre cada diapositiva"
+
+msgid "Starting slide"
+msgstr "Diapositiva inicial"
+
+msgid "Start slider on a random slide"
+msgstr "Iniciar presentación en una diapositiva aleatoria"
+
+msgid "Easing"
+msgstr "Movimiento"
+
+msgid "The type of \"easing\" to use during transitions."
+msgstr "El tipo de \"movimiento\" que se utilizará entre las transiciones."
+
+msgid "Enable touch"
+msgstr "Activar táctil"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "If <code>Yes</code>, slider will allow touch swipe transitions"
+msgstr "Si <code> Sí </code>, la presentación permitirá transiciones de pase táctil"
+
+msgid "One-to-One touch"
+msgstr "Pase táctil una-a-una"
+
+msgid "If <code>Yes</code>, non-fade slides follow the finger as it swipes"
+msgstr "Si <code> Sí</code>, las diapositivas aparecerán sin efecto de desvanecimiento al pase del dedo"
+
+msgid "Swipe threshold"
+msgstr "Umbral de pase"
+
+msgid "Amount of pixels a touch swipe needs to exceed in order to execute a slide transition"
+msgstr "La cantidad de pixeles que un pase táctil debe superar para ejecutar una transición de diapositiva"
+
+msgid "Enable pager"
+msgstr "Activar contador"
+
+msgid "If <code>Yes</code>, a pager will be added"
+msgstr "Si <code> Sí>/code>, se añadirá un contador"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "If <code>Full</code>, a pager link will be generated for each slide. If <code>Short</code>, a x / y pager will be used (ex. 1 / 5)"
+msgstr "En caso de usar <code>Completo</code>, se generará un contador de enlace para cada diapositiva. En caso de usar <code>Corto</code>, se utilizará un contador del tipo x / y (por ejemplo, 1 / 5)"
+
+msgid "Effects"
+msgstr "Efectos"
+
+msgid "Controls"
+msgstr "Controles"
+
+msgid "Effect"
+msgstr "Efecto"
+
+msgid "Select effect"
+msgstr "Seleccionar efecto"
+
+msgid "Title speed"
+msgstr "Velocidad del título"
+
+msgid "Speed of title appereance in ms."
+msgstr "La velocidad del título se muestra en ms."
+
+msgid "Opacity"
+msgstr "Opacidad"
+
+msgid "Opacity of title and navigation."
+msgstr "Opacidad del t´titulo y la navegación."
+
+msgid "Delay"
+msgstr "Retraso"
+
+msgid "Delay between images in ms."
+msgstr "Retraso entre las imágenes en ms."
+
+msgid "Pause on hover"
+msgstr "Pausa al posicionarse encima"
+
+msgid "Navigation"
+msgstr "Navegación"
+
+msgid "Prev and next buttons."
+msgstr "Botones de anterior y siguiente"
+
+msgid "Links"
+msgstr "Enlaces"
+
+msgid "Show images as links."
+msgstr "Mostrar imágenes como enlaces"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "No se pudo guardar la imagen seleccionada %s: %s"
+
+msgid "New Folder"
+msgstr "Nueva carpeta"
+
+msgid "The title can't be empty"
+msgstr "El título no puede dejarse en blanco"
+
+msgid "Title successfully updated"
+msgstr "Actualización exitosa del título"
+
+msgid "Failed to update position."
+msgstr "No se pudo actualizar la posición."
+
+msgid "Position updated successfully!"
+msgstr "¡Actualización exitosa de la posición!"
+
+msgid "Rename folder"
+msgstr "Renombrar carpeta"
+
+msgid "Folder name:"
+msgstr "Nombre de la carpeta:"
+
+msgid "Add images to the slider"
+msgstr "Agregar imágenes a la presentación"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "Por favor espere mientras el complemento obtiene la lista de presentaciones..."
+
+msgid "Select slider:"
+msgstr "Seleccione la presentación:"
+
+msgid "New folder"
+msgstr "Nueva carpeta"
+
+msgid "Import video"
+msgstr "Importar video"
+
+msgid "Video URL:"
+msgstr "URL del video:"
+
+msgid "Supported platforms: %s."
+msgstr "Plataformas compatibles: %s."
+
+msgid "Add images to the new slider"
+msgstr "Agregar imágenes a la nueva presentación"
+
+msgid "Slider title:"
+msgstr "Título de la presentación:"
+
+msgid "Upload new images"
+msgstr "Cargar imágenes nuevas"
+
+msgid "Import images"
+msgstr "Importar imágenes"
+
+msgid "Add new video"
+msgstr "Agregar un video nuevo"
+
+msgid "Import videos"
+msgstr "Importar videos"
+
+msgid "Create new folder"
+msgstr "Crear una nueva carpeta"
+
+msgid "Edit selected item"
+msgstr "Editar el elemento seleccionado"
+
+msgid "Delete selected items"
+msgstr "Eliminar los elementos seleccionados"
+
+msgid "Select/unselect all photos"
+msgstr "Seleccionar/deseleccionar todas las imágenes"
+
+msgid "Create new slider from the selected items"
+msgstr "Crear una nueva presentación con los elementos seleccionados"
+
+msgid "New slider from selected"
+msgstr "Nueva presentación a partir de los seleccionados"
+
+msgid "Add the selected items to the existing slider"
+msgstr "Agregar los elementos seleccionados a la presentación existente"
+
+msgid "Add selected to the slider"
+msgstr "Agregar los seleccionados a la presentación"
+
+msgid "Switch to the list view"
+msgstr "Cambiar a la vista de lista"
+
+msgid "Switch to the block view"
+msgstr "Cambiar a la vista de bloques"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "Carga las imágenes de la Biblioteca multimedia de Wordpress"
+
+msgid "All photos"
+msgstr "Todas las imágenes"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "Arrastra las imágenes aquí para moverlas desde la carpeta"
+
+msgid "Gallery by Supsystic"
+msgstr "Gallery creado por Supsystic"
+
+msgid "Lifetime for cached data"
+msgstr "Tiempo de vida para los datos en caché"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr "EL campo \"%s\" está disponible solamente para valores numéricos"
+
+msgid "Settings successfully updated!"
+msgstr "¡Actualización exitosa de la configuración!"
+
+msgid "Please correct following errors:"
+msgstr "Por favor corrija los errores siguientes:"
+
+msgid "Plugin settings"
+msgstr "Configuración del Plugin"
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> tiene su propio sistema de caché para reducir de forma significativa la carga de la base de datos."
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "El caché no está disponible debido a que su directorio de cargas no permite la escritura."
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "El tiempo en segundos después del que el caché será considerado como obsoleto. Predeterminado en: 86400 (24 horas)."
+
+msgid "Clear cache"
+msgstr "Limpiar el caché"
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "No recolectamos estadísticas personales, solamente recolectamos los errores producidos durante el uso con el fin de mejorar nuestro producto."
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Unable to delete selected slider"
+msgstr "No se pudo eliminar la presentación seleccionada"
+
+msgid "Failed to import selected items."
+msgstr "No se pudieron importar los elementos seleccionados."
+
+msgid "Invalid slider identifier."
+msgstr "Identificador de presentación no válido."
+
+msgid "Unable to find requested slider."
+msgstr "No se pudo encontrar la presentación solicitada."
+
+msgid "Failed to save settings. %s"
+msgstr "No se pudieron guardar las configuraciones. %s"
+
+msgid "Failed to attach resources"
+msgstr "No se pudieron adjuntar los recursos"
+
+msgid "Successfully removed!"
+msgstr "¡Eliminación exitosa!"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Images and Properties"
+msgstr "Imágenes y propiedades"
+
+msgid "Preview"
+msgstr "Vista previa"
+
+msgid "There are %s photos in the slider \"%s\""
+msgstr "Hay %s imágenes en la presentación \"%s\""
+
+msgid "New slider"
+msgstr "Nueva presentación"
+
+msgid "Slider title"
+msgstr "Título de la presentación"
+
+msgid "Select module"
+msgstr "Seleccionar módulo"
+
+msgid "Change plugin: "
+msgstr "Cambiar plugin:"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Are you really want to delete "
+msgstr "¿Estás seguro de que deseas eliminarlo?"
+
+msgid "Properties"
+msgstr "Propiedades"
+
+msgid "Shortcode"
+msgstr "Código abreviado"
+
+msgid "Images width"
+msgstr "Anchura de las imágenes"
+
+msgid "Images height"
+msgstr "Altura de las imágenes"
+
+msgid "Change plugin"
+msgstr "Cambiar plugin"
+
+msgid "Select plugin"
+msgstr "Seleccionar plugin"
+
+msgid "Please note:"
+msgstr "Por favor tenga en cuenta:"
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "La configuración actual será eliminada y no podrá recuperarse."
+
+msgid "Edit image"
+msgstr "Editar imagen"
+
+msgid "Main"
+msgstr "Principal"
+
+msgid "Caption"
+msgstr "Leyenda"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Alternative text"
+msgstr "Texto alterno"
+
+msgid "External link"
+msgstr "Enlace externo"
+
+msgid "Available in PRO version."
+msgstr "Disponible en la versión PRO."
+
+msgid "Link"
+msgstr "Enlace"
+
+msgid "Open in new window"
+msgstr "Abrir en una nueva ventana"
+
+msgid "Embeded video"
+msgstr "Video incrustado"
+
+msgid "Video URL"
+msgstr "URL dle video"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "Compatible con Youtube y Vimeo. la URL será convertida a incrustación de forma automática."
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Select %s"
+msgstr "Seleccionar %s"
+
+msgid "photo"
+msgstr "imagen"
+
+msgid "photos"
+msgstr "imágenes"
+
+msgid "Welcome to"
+msgstr "Bienvenido a"
+
+msgid "Version"
+msgstr "Versión"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "Recomienda a un amigo"
+
+msgid "Find on the web"
+msgstr "Encontrar en internet"
+
+msgid "Other way"
+msgstr "Otra forma"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "Gracias por revisar la información. Comienza a usar el plugin"

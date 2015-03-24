@@ -5,7 +5,7 @@
                 <nav id="gg-breadcrumbs" class="gg-breadcrumbs">
                     {% block breadcrumbs %}
                         <a href="{{ environment.generateUrl(environment.getConfig().get('default_module')) }}">
-                            {{ environment.translate('Slider by Supsystic') }}
+                            {{ translate('Slider by Supsystic') }}
                         </a>
                     {% endblock %}
                 </nav>
@@ -18,19 +18,19 @@
                     <li  {% if request.query.module == 'overview' %}class="active"{% endif %}>
                         <a href="{{ environment.generateUrl('overview') }}">
                             <i class="fa fa-info"></i>
-                            {{ environment.translate('Overview') }}
+                            {{ translate('Overview') }}
                         </a>
                     </li>
                     <li>
                         <a id="btn-add-new" href="{{ environment.generateUrl('slider', 'index', {'add':'true'}) }}">
                             <i class="fa fa-plus-circle"></i>
-                            {{ environment.translate('New Slider') }}
+                            {{ translate('New Slider') }}
                         </a>
                     </li>
                     <li {% if request.query.module == 'slider' or request.query.module is null %}class="active"{% endif %}>
                         <a href="{{ environment.generateUrl('slider') }}">
                             <i class="fa fa-archive"></i>
-                            {{ environment.translate('Sliders') }}
+                            {{ translate('Sliders') }}
                         </a>
                     </li>
                     {#<li {% if request.query.module == 'photos' %}class="active"{% endif %}>
@@ -42,15 +42,17 @@
                     <li  {% if request.query.module == 'settings' %}class="active"{% endif %}>
                         <a href="{{ environment.generateUrl('settings') }}">
                             <i class="fa fa-gear"></i>
-                            {{ environment.translate('Settings') }}
+                            {{ translate('Settings') }}
                         </a>
                     </li>
-                    <li  {% if request.query.module == 'license' %}class="active"{% endif %}>
-                        <a href="{{ environment.generateUrl('license') }}">
-                            <i class="fa fa-hand-o-right"></i>
-                            {{ environment.translate('License') }}
-                        </a>
-                    </li>
+                    {% if environment.isPro() %}
+                        <li  {% if request.query.module == 'license' %}class="active"{% endif %}>
+                            <a href="{{ environment.generateUrl('license') }}">
+                                <i class="fa fa-hand-o-right"></i>
+                                {{ translate('License') }}
+                            </a>
+                        </li>
+                    {% endif %}
                     {#{% if environment.isPro() == false %}
                         <li class="supsystic-pro">
                             <a href="{{ environment.getConfig().get('pro_url') }}">
@@ -80,7 +82,7 @@
     <div class="gg-modal-loading-object" hidden>
         <p>
             <span id="loading-text">Loading</span>
-            <img src="{{ environment.config.get('admin_url') ~ '/images/wpspin_light.gif' }}" alt="" title="{{ environment.translate('Loading') }}"/>
+            <img src="{{ environment.config.get('admin_url') ~ '/images/wpspin_light.gif' }}" alt="" title="{{ translate('Loading') }}"/>
         </p>
     </div>
 </div>

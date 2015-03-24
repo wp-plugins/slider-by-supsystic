@@ -25,9 +25,11 @@ class SupsysticSlider
             Rsc_Autoloader::register();
         }
 
+        add_action('init', array($this, '_loadPluginsTextdomain'));
+
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.0.7', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.0.8', $pluginPath);
 
         /* Configure */
         $environment->configure(
@@ -85,6 +87,15 @@ class SupsysticSlider
     public function getEnvironment() {
 
         return $this->environment;
+    }
+
+    public function _loadPluginsTextDomain()
+    {
+        load_plugin_textdomain(
+            'ssl',
+            false,
+            'slider-by-supsystic/app/langs/'
+        );
     }
 
     protected function initialize()

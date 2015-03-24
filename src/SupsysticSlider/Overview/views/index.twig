@@ -3,15 +3,15 @@
 {% block header %}
 
     <nav id="supsystic-breadcrumbs" class="supsystic-breadcrumbs">
-        <a href="{{ environment.generateUrl('galleries') }}">{{ environment.translate('Gallery by Supsystic') }}</a>
+        <a href="{{ environment.generateUrl('galleries') }}">{{ translate('Gallery by Supsystic') }}</a>
         <i class="fa fa-angle-right"></i>
-        <a href="{{ environment.generateUrl('galleries') }}">{{ environment.translate('Overview') }}</a>
+        <a href="{{ environment.generateUrl('galleries') }}">{{ translate('Overview') }}</a>
     </nav>
 
 {% endblock %}
 
 {% block content %}
-    <div class="supsystic-overview">
+    <div class="supsystic-overview" style="min-height: 1100px;">
         <div class="half-page-left">
             {#<h3>Gallery by Supsystic</h3>
             <div class="description">
@@ -35,7 +35,7 @@
                         Translate or update a translation Slider WordPress plugin in your language and get a Premium license for FREE.
                     </div>
                 </div>
-                <a href="http://supsystic.com/plugins/photo-gallery/#faq" class="button button-primary button-hero">
+                <a href="http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=faq&utm_campaign=slider" class="button button-primary button-hero">
                     <i class="fa fa-info-circle"></i>
                     Check all FAQs
                 </a>
@@ -83,35 +83,37 @@
                 <table class="contact-form-table">
                     <thead>
 
-                    {{ form.row(environment.translate('Your name'),
-                        form.text('mail[name]', '', { 'style': { 'width': '200px;' } })) }}
+                    {{ form.row(translate('Your name'),
+                        form.text('mail[name]', '', { 'style': { 'width': 'auto;' } })) }}
 
-                    {{ form.row(environment.translate('Your email'),
-                        form.text('mail[email]', '', { 'style': { 'width': '200px;' } })) }}
+                    {{ form.row(translate('Your email'),
+                        form.text('mail[email]', '', { 'style': { 'width': 'auto;' } })
+                        ~ '<span class="required">*</span>'
+                    ) }}
 
-                    {{ form.row(environment.translate('Website'),
-                        form.text('mail[website]', '', { 'style': { 'width': '200px;' } })) }}
+                    {{ form.row(translate('Website'),
+                        form.text('mail[website]', '', { 'style': { 'width': 'auto;' } })) }}
 
-                    {{ form.row(environment.translate('Subject'),
-                        form.text('mail[subject]', '', { 'style': { 'width': '200px;' } })) }}
+                    {{ form.row(translate('Subject'),
+                        form.text('mail[subject]', '', { 'style': { 'width': 'auto;' } })) }}
 
                     <tr>
                         <th scope="row">
-                            <label for="select-question">{{ environment.translate('Topic') }}</label>
+                            <label for="select-question">{{ translate('Topic') }}</label>
                         </th>
                         <td>
                             <select id="select-question" style="width: 200px;" name="mail[question]">
                                 <option value="plugin_options">
-                                    {{ environment.translate('Plugin options') }}
+                                    {{ translate('Plugin options') }}
                                 </option>
                                 <option value="bug">
-                                    {{ environment.translate('Report a bug') }}
+                                    {{ translate('Report a bug') }}
                                 </option>
                                 <option value="functionallity">
-                                    {{ environment.translate('Require a new functionallity') }}
+                                    {{ translate('Require a new functionallity') }}
                                 </option>
                                 <option value="other">
-                                    {{ environment.translate('Other') }}
+                                    {{ translate('Other') }}
                                 </option>
                             </select>
                         </td>
@@ -119,10 +121,11 @@
 
                     <tr>
                         <th scope="row">
-                            <label for="mail-text">{{ environment.translate('Type your message') }}</label>
+                            <label for="mail-text">{{ translate('Type your message') }}</label>
                         </th>
                         <td>
-                            <textarea id="mail-text" name="mail[message]" style="width: 200px; height: 100px;"></textarea>
+                            <textarea id="mail-text" name="mail[message]" style="width: auto; height: 100px;"></textarea>
+                            <span class="required">*</span>
                         </td>
                     </tr>
 
@@ -133,6 +136,8 @@
                     <i class="fa fa-upload"></i>
                     Send email
                 </button>
+
+                <div class="required-notification" style="color: red; float: left;" hidden>Fields with * are required to fill</div>
                 {{ form.close() }}
             </div>
         </div>

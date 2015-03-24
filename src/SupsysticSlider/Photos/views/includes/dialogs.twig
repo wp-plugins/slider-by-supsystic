@@ -1,9 +1,9 @@
 {# 'Rename Folder' dialog #}
 
-<div id="renameFolderDialog" title="{{ environment.translate('Rename folder') }}">
+<div id="renameFolderDialog" title="{{ translate('Rename folder') }}">
     <form id="renameFolderForm" accept-charset="utf-8" data-prevent-submit>
         <fieldset>
-            <label for="folderName">{{ environment.translate('Folder name:') }}</label>
+            <label for="folderName">{{ translate('Folder name:') }}</label>
             <input type="text" id="folderName" value="" name="folder_name" style="width: 100%;" required />
         </fieldset>
     </form>
@@ -11,9 +11,9 @@
 
 {# Choose Gallery dialog #}
 
-<div id="selectGalleryDialog" title="{{ environment.translate('Add images to the slider') }}">
+<div id="selectGalleryDialog" title="{{ translate('Add images to the slider') }}">
     <div id="galleryLoading">
-        <p>{{ environment.translate('Please wait while the plugin to get the list of sliders...') }}</p>
+        <p>{{ translate('Please wait while the plugin to get the list of sliders...') }}</p>
         <p class="gg-centered">
             <div class="gg-inline-loader gg-centered">&nbsp;</div>
         </p>
@@ -22,7 +22,7 @@
     <form id="galleryForm" accept-charset="UTF-8" style="display: none;" data-prevent-submit>
         <fieldset>
             <label for="galleryList">
-                {{ environment.translate('Select slider:') }}
+                {{ translate('Select slider:') }}
             </label><br/>
             <select name="gallery_list" id="galleryList" style="width: 100%;"></select>
         </fieldset>
@@ -31,10 +31,10 @@
 
 {# Create folder dialog #}
 
-<div id="newFolderDialog" title="{{ environment.translate('New folder') }}">
+<div id="newFolderDialog" title="{{ translate('New folder') }}">
     <form id="createFolderForm" accept-charset="utf-8" data-prevent-submit>
         <fieldset>
-            <label for="folder-name">{{ environment.translate('Folder name:') }}</label>
+            <label for="folder-name">{{ translate('Folder name:') }}</label>
             <input type="text" id="folder-name" value="" name="folder_name" style="width: 100%;"/>
         </fieldset>
     </form>
@@ -42,10 +42,10 @@
 
 {#New gallery#}
 
-<div id="newGalleryDialog" title="{{ environment.translate('Add images to the new slider') }}">
+<div id="newGalleryDialog" title="{{ translate('Add images to the new slider') }}">
     <form id="newGalleryForm" accept-charset="utf-8" data-prevent-submit>
         <fieldset>
-            <label for="galleryTitle">{{ environment.translate('Slider title:') }}</label>
+            <label for="galleryTitle">{{ translate('Slider title:') }}</label>
             <input style="width:100%" type="text" name="gallery_title" id="galleryTitle"/>
         </fieldset>
     </form>
