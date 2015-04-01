@@ -37,7 +37,7 @@
                     <tbody>
                     <tr>
                         <th scope="row">
-                            <label for="gg-cache-enabled">Use build-in caching:</label>
+                            <label for="gg-cache-enabled">{{ translate('Use build-in caching:') }}</label>
                         </th>
                         <td>
                             <select name="cache_enabled" id="cacheEnabled" style="width: 100px;" {% if environment.config.get('uploads_rw') == false %}disabled="disabled"{% endif %}>
@@ -56,7 +56,7 @@
                     </tr>
                     <tr id="cacheTtlRow">
                         <th scope="row">
-                            <label for="gg-cache-ttl">Lifetime for cached data:</label>
+                            <label for="gg-cache-ttl">{{ translate('Lifetime for cached data:') }}</label>
                         </th>
                         <td>
                             <input type="text" name="cache_ttl" id="gg-cache-ttl" value="{{ registry.get('cache_ttl')|default('86400') }}"/>
@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <th scope="row">
-                            <label for="gg-send-stats">Allow plugin to send anonymous usage statistics:</label>
+                            <label for="gg-send-stats">{{ translate('Allow plugin to send anonymous usage statistics:') }}</label>
                         </th>
                         <td>
                             <select name="send_stats" id="gg-sens-stats" style="width: 100px;">

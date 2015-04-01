@@ -23,6 +23,9 @@ class SupsysticSlider_Slider_Attachment
             if (!$height) {
                 $height = $width;
             }
+            if(!$width) {
+                $width = $height;
+            }
 
             return $this->getPlaceholderUrl($width, $height);
         }

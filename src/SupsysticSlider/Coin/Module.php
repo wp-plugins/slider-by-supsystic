@@ -92,7 +92,7 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSli
             ),
             'controls' => array(
                 'navigation' => self::OPT_TRUE,
-                'links'      => self::OPT_FALSE,
+                'links'      => self::OPT_TRUE,
             ),
             'properties' => array(
                 'width'  => 400,
@@ -114,6 +114,17 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSli
     public function render($slider)
     {
         $twig = $this->getEnvironment()->getTwig();
+
+        foreach($slider->images as $key => $value) {
+            $link = get_post_meta($value->attachment_id, '_slider_link');
+            $target = get_post_meta($value->attachment_id, 'target');
+            if($link && !empty($link)) {
+                $slider->images[$key]->attachment['external_link'] = $link[0];
+            }
+            if($target && !empty($target)) {
+                $slider->images[$key]->attachment['target'] = $target[0];
+            }
+        }
 
         return $twig->render(
             '@coin/markup.twig',

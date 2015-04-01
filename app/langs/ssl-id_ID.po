@@ -1,0 +1,735 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language: id\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid "Slider by Supsystic"
+msgstr "Slider oleh Supsystic"
+
+msgid "Overview"
+msgstr "Sekilas produk"
+
+msgid "New Slider"
+msgstr "Slider Baru"
+
+msgid "Sliders"
+msgstr "Sliders"
+
+msgid "Images"
+msgstr "Gambar"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "License"
+msgstr "Lisensi"
+
+msgid "Get PRO"
+msgstr "Dapatkan versi PRO"
+
+msgid "Loading"
+msgstr "Memuat"
+
+msgid "Error"
+msgstr "Kesalahan"
+
+msgid "An error has occurred"
+msgstr "Sebuah kesalahan telah terjadi"
+
+msgid "Authorization code is not specified."
+msgstr "Kode otorisasi tidak ditentukan."
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Upload your images from the Facebook Media Library"
+msgstr "Unggah gambar anda dari Media Library Facebook"
+
+msgid "Upload from Facebook"
+msgstr "Unggah dari Facebook"
+
+msgid "Upload new images"
+msgstr "Unggah gambar baru"
+
+msgid "Import images"
+msgstr "Impor gambar"
+
+msgid "Logout"
+msgstr "Keluar"
+
+msgid "Select/unselect all photos"
+msgstr "Pilih/tidak pilih semua foto"
+
+msgid "Empty user data."
+msgstr "Data pengguna kosong."
+
+msgid "Flickr"
+msgstr "Flickr"
+
+msgid "Upload your images from the Flickr Media Library"
+msgstr "Unggah gambar anda dari Media Library Flickr"
+
+msgid "Upload from Flickr"
+msgstr "Unggah dari Flickr"
+
+msgid "Effects"
+msgstr "Efek"
+
+msgid "Controls"
+msgstr "Kontrol"
+
+msgid "Mode"
+msgstr "Mode"
+
+msgid "Arrows"
+msgstr "Anak panah"
+
+msgid "Bullet control"
+msgstr "kontrol bullet"
+
+msgid "Responsive size Slider"
+msgstr "Ukuran responsif Slider"
+
+msgid "Thumbnails slider navigation"
+msgstr "Thumbnail navigasi slider"
+
+msgid "Enable Slideshow"
+msgstr "Aktifkan Slideshow"
+
+msgid "Slideshow Speed"
+msgstr "Kecepatan Slideshow"
+
+msgid "Select Shadow"
+msgstr "Pilih Bayangan"
+
+msgid "Select shadow effect"
+msgstr "Pilih efek bayangan"
+
+msgid "Check"
+msgstr "Cek"
+
+msgid "Authorization oauth_verifier is not specified."
+msgstr "Otorisasi oauth_verifier tidak ditentukan."
+
+msgid "Tumblr"
+msgstr "Tumblr"
+
+msgid "Upload your images from the Tumblr Media Library"
+msgstr "Unggah gambar anda dari Media Library Tumblr"
+
+msgid "Upload from Tumblr"
+msgstr "Unggah dari Tumblr"
+
+msgid "Text align"
+msgstr "Ratakan teks"
+
+msgid "Align left"
+msgstr "Rata kiri"
+
+msgid "Align center"
+msgstr "Rata tengah"
+
+msgid "Align right"
+msgstr "Rata kanan"
+
+msgid "Text color"
+msgstr "Warna teks"
+
+msgid "Background color"
+msgstr "Warna latar"
+
+msgid "Text size"
+msgstr "Ukuran teks"
+
+msgid "Text Animation"
+msgstr "Animasi teks"
+
+msgid "Disable"
+msgstr "Tidak aktif"
+
+msgid "Enable"
+msgstr "Aktif"
+
+msgid "Text in effect"
+msgstr "Efek teks masuk"
+
+msgid "FadeIn"
+msgstr "RollIn"
+
+msgid "RollIn"
+msgstr "RollIn"
+
+msgid "FadeInLeftBig"
+msgstr "FadeInLeftBig"
+
+msgid "FadeInRightBig"
+msgstr "FadeInRightBig"
+
+msgid "FadeInLeft"
+msgstr "FadeInLeft"
+
+msgid "FadeInRight"
+msgstr "FadeInRight"
+
+msgid "FadeInUp"
+msgstr "FadeInRight"
+
+msgid "FadeInDown"
+msgstr "FadeInDown"
+
+msgid "FlipInX"
+msgstr "FlipInX"
+
+msgid "FlipInY"
+msgstr "FlipInY"
+
+msgid "Text out effect"
+msgstr "Efek teks keluar"
+
+msgid "FadeOut"
+msgstr "FadeOut"
+
+msgid "RollOut"
+msgstr "RollOut"
+
+msgid "FadeOutLeftBig"
+msgstr "FadeOutLeftBig"
+
+msgid "FadeOutRightBig"
+msgstr "FadeOutRightBig"
+
+msgid "FadeOutLeft"
+msgstr "FadeOutLeft"
+
+msgid "FadeOutRight"
+msgstr "FadeOutRight"
+
+msgid "FadeOutUp"
+msgstr "FadeOutUp"
+
+msgid "FadeOutDown"
+msgstr "FadeOutDown"
+
+msgid "FlipOutX"
+msgstr "FlipOutX"
+
+msgid "FlipOutY"
+msgstr "FlipOutY"
+
+msgid "Controls type"
+msgstr "Tipe kontrol"
+
+msgid "circle_arrows"
+msgstr "circle_arrows"
+
+msgid "little_arrows"
+msgstr "little_arrows"
+
+msgid "standart_big"
+msgstr "standart_big"
+
+msgid "standart_small"
+msgstr "standart_small"
+
+msgid "circle_little"
+msgstr "circle_little"
+
+msgid "square_big"
+msgstr "square_big"
+
+msgid "fast"
+msgstr "cepat"
+
+msgid "little"
+msgstr "kecil"
+
+msgid "go_small"
+msgstr "go_small"
+
+msgid "Border style:"
+msgstr "Style garis:"
+
+msgid "None"
+msgstr "Tidak ada"
+
+msgid "Solid"
+msgstr "Lurus"
+
+msgid "Dashed"
+msgstr "Putus-putus"
+
+msgid "Border width:"
+msgstr "Lebar garis"
+
+msgid "Border color:"
+msgstr "Warna garis:"
+
+msgid "Thumbnails margin"
+msgstr "Jarak thumbnail"
+
+msgid "General"
+msgstr "Umum"
+
+msgid "Touch"
+msgstr "Sentuh"
+
+msgid "Pager"
+msgstr "Pager"
+
+msgid "Properties"
+msgstr "Properti"
+
+msgid "Slideshow"
+msgstr "Slideshow"
+
+msgid "Slideshow controls"
+msgstr "Kontrol slideshow"
+
+msgid "Navigation"
+msgstr "Navigasi"
+
+msgid "Captions"
+msgstr "Keterangan"
+
+msgid "Speed"
+msgstr "Kecepatan"
+
+msgid "Margin"
+msgstr "Jarak"
+
+msgid "Starting slide"
+msgstr "Slide awal"
+
+msgid "Start slider on a random slide"
+msgstr "Mulai slide secara acak"
+
+msgid "Easing"
+msgstr "Mempermudah"
+
+msgid "Enable touch"
+msgstr "Aktifkan sentuhan"
+
+msgid "Yes"
+msgstr "Ya"
+
+msgid "No"
+msgstr "Tidak"
+
+msgid "One-to-One touch"
+msgstr "Satu-untuk-Satu sentuhan"
+
+msgid "Swipe threshold"
+msgstr "Batas swipe"
+
+msgid "Enable pager"
+msgstr "Aktifkan pager"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "Effect"
+msgstr "Efek"
+
+msgid "Select effect"
+msgstr "Pilih efek"
+
+msgid "Title speed"
+msgstr "Kecepatan judul"
+
+msgid "Opacity"
+msgstr "Kegelapan"
+
+msgid "Delay"
+msgstr "Tunda"
+
+msgid "Pause"
+msgstr "Jeda"
+
+msgid "Links"
+msgstr "Link"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Upload your images from the Instagram Media Library"
+msgstr "Unggah gambar anda dari Media Library Instagram"
+
+msgid "Upload from Instagram"
+msgstr "Unggah dari Instagram"
+
+msgid "Gallery by Supsystic"
+msgstr "Galeri oleh Supsystic"
+
+msgid "Your name"
+msgstr "Nama anda"
+
+msgid "Your email"
+msgstr "Email anda"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Subject"
+msgstr "Subyek"
+
+msgid "Topic"
+msgstr "Topik"
+
+msgid "Plugin options"
+msgstr "Pengaturan plugin"
+
+msgid "Report a bug"
+msgstr "Laporkan bug/kesalahan"
+
+msgid "Require a new functionallity"
+msgstr "Memerlukan fungsionalitas baru"
+
+msgid "Other"
+msgstr "Lainnya"
+
+msgid "Type your message"
+msgstr "Ketik pesan anda"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "Tidak bisa menyimpan gambar terpilih %s: %s"
+
+msgid "New Folder"
+msgstr "Folder Baru"
+
+msgid "The title can't be empty"
+msgstr "Judul tidak bisa kosong"
+
+msgid "Title successfully updated"
+msgstr "Judul berhasil diperbarui"
+
+msgid "Failed to update position."
+msgstr "Gagal memperbarui posisi"
+
+msgid "Position updated successfully!"
+msgstr "Posisi berhasil diperbarui!"
+
+msgid "Rename folder"
+msgstr "Ubah nama folder"
+
+msgid "Folder name:"
+msgstr "Nama folder:"
+
+msgid "Add images to the slider"
+msgstr "Tambahkan gambar ke slider"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "Harap tunggu sementara plugin untuk mendapatkan daftar slider..."
+
+msgid "Select slider:"
+msgstr "Pilih slider:"
+
+msgid "New folder"
+msgstr "Folder baru"
+
+msgid "Add images to the new slider"
+msgstr "Pilih gambar untuk slider yang baru"
+
+msgid "Slider title:"
+msgstr "Judul slider:"
+
+msgid "Add new video"
+msgstr "Tambah video baru"
+
+msgid "Import videos"
+msgstr "Impor video"
+
+msgid "Create new folder"
+msgstr "Buat folder baru"
+
+msgid "Delete selected items"
+msgstr "Hapus item terpilih"
+
+msgid "Create new slider from the selected items"
+msgstr "Buat slider baru dari item yang dipilih"
+
+msgid "New slider from selected"
+msgstr "Slider baru dari yang dipilih"
+
+msgid "Add the selected items to the existing slider"
+msgstr "Tambah item yang dipilih ke slider"
+
+msgid "Add selected to the slider"
+msgstr "Tambah yang dipilih ke slider pilihan"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "Unggah gambar anda dari Media Library Wordpress"
+
+msgid "All photos"
+msgstr "Semua foto"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "Jatuhkan foto di sini untuk memindahkannya dari folder"
+
+msgid "Lifetime for cached data"
+msgstr "Seumur hidup untuk data cache"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr "Field \"%s\" tersedia hanya untuk nilai numerik"
+
+msgid "Settings successfully updated!"
+msgstr "Pengaturan sukses diperbarui!"
+
+msgid "Please correct following errors:"
+msgstr "Harap perbaiki kesalahan berikut:"
+
+msgid "Plugin settings"
+msgstr "Pengaturan plugin"
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> memiliki sistem caching sendiri untuk mengurangi beban secara signifikan pada database."
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "Caching tidak tersedia karena direktori upload anda tidak dapat ditulisi."
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "Waktu dalam detik cache akan dianggap usang. Standar: 86400 (24 jam)."
+
+msgid "Clear cache"
+msgstr "Bersihkan cache"
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "Kami tidak mengumpulkan statistik anda, kami hanya mengumpulkan kesalahan yang dialami selama penggunaan dalam rangka meningkatkan produk kami."
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Slider \"%s\" successfully created."
+msgstr "Slider \"%s\" berhasil dibuat."
+
+msgid "Failed to update positions."
+msgstr "Gagal untuk memperbarui posisi."
+
+msgid "Positions are successfully updated!"
+msgstr "Posisi berhasil diperbarui!"
+
+msgid "Unable to delete selected slider"
+msgstr "Tidak dapat menghapus slider terpilih"
+
+msgid "Failed to import selected items."
+msgstr "Gagal untuk mengimpor item terpilih."
+
+msgid "Invalid slider identifier."
+msgstr "Identifikasi slider tidak valid."
+
+msgid "Unable to find requested slider."
+msgstr "Tidak dapat menemukan slider yang diminta."
+
+msgid "Failed to save settings. %s"
+msgstr "Gagal menyimpan pengaturan. %s"
+
+msgid "Failed to change plugin: %s"
+msgstr "Gagal untuk mengubah plugin: %s"
+
+msgid "Failed to attach resources."
+msgstr "Gagal untuk melampirkan sumberdaya."
+
+msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
+msgstr "%s sumberdaya berhasil dilampirkan ke <a href=\"%s\">%s</a>"
+
+msgid "Successfully removed!"
+msgstr "Berhasil dihapus!"
+
+msgid "Failed to load settings"
+msgstr "Gagal membuka pengaturan"
+
+msgid "Import"
+msgstr "Impor"
+
+msgid "You have no images"
+msgstr "Anda tidak memiliki gambar"
+
+msgid "Upload to images"
+msgstr "Unggah ke gambar"
+
+msgid "Preview"
+msgstr "Pratinjau"
+
+msgid "Delete Slider"
+msgstr "Hapus slider"
+
+msgid "Total images: "
+msgstr "Total gambar:"
+
+msgid "Total videos: "
+msgstr "Total video:"
+
+msgid "Shortcode: "
+msgstr "Shortcode: "
+
+msgid "PhpCode: "
+msgstr "PhpCode: "
+
+msgid "Sliders List"
+msgstr "Daftar Slider"
+
+msgid "Slider Name"
+msgstr "Nama Slider"
+
+msgid "Select module"
+msgstr "Pilih modul"
+
+msgid "Add Images"
+msgstr "Tambah Gambar"
+
+msgid "Add Video"
+msgstr "Tambah Video"
+
+msgid "Add images"
+msgstr "Tambah image"
+
+msgid "Change Slider"
+msgstr "Ganti Slider"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "Are you really want to delete "
+msgstr "Anda yakin ingin menghapus"
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Slider width"
+msgstr "Lebar slider"
+
+msgid "pixels"
+msgstr "pixel"
+
+msgid "Slider height"
+msgstr "Tinggi slider"
+
+msgid "Change Slider Type"
+msgstr "Ganti Tipe Slider"
+
+msgid "Select plugin"
+msgstr "Pilih plugin"
+
+msgid "Jssor PRO"
+msgstr "Jssor PRO"
+
+msgid "Please note:"
+msgstr "Mohon diperhatikan:"
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "Pengaturan saat ini akan dihapus tanpa bisa dikembalikan."
+
+msgid "Visual editor"
+msgstr "Editor visual"
+
+msgid "Choose import source"
+msgstr "Pilih sumber impor"
+
+msgid "Import from Wordpress Media Library"
+msgstr "Impor dari Media Library Wordpress"
+
+msgid "Import from social networks"
+msgstr "Impor dari sosial media"
+
+msgid "Import from your Instagram account"
+msgstr "Impor dari akun Instagram anda"
+
+msgid "Import from your Flickr account"
+msgstr "Impor dari akun Flickr akun"
+
+msgid "Import from your Tumblr account"
+msgstr "Impor dari akun Tumblr anda"
+
+msgid "Import from your Facebook account"
+msgstr "Impor dari akun Facebook anda"
+
+msgid "Get Pro to enable import"
+msgstr "Dapatkan Pro untuk mengaktifkan import"
+
+msgid "Get PRO for 29$"
+msgstr "Dapatkan PRO seharga 29$"
+
+msgid "Import video"
+msgstr "Impor video"
+
+msgid "Video URL:"
+msgstr "Alamat URL video:"
+
+msgid "Supported platforms: %s."
+msgstr "Mendukung platform: %s"
+
+msgid "Edit image"
+msgstr "Ubah gambar"
+
+msgid "Main"
+msgstr "Utama"
+
+msgid "Caption"
+msgstr "Keterangan"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Alternative text"
+msgstr "Teks alternatif"
+
+msgid "External link"
+msgstr "Link eksternal"
+
+msgid "Available in PRO version."
+msgstr "Tersedia di versi PRO"
+
+msgid "Link"
+msgstr "Link"
+
+msgid "Open in new window"
+msgstr "Buka di jendela baru"
+
+msgid "Embeded video"
+msgstr "Pasang video"
+
+msgid "Video URL"
+msgstr "Alamat URL Video"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "Mendukung Youtube dan Vimeo. Alamat URL akan di konversi untuk dipasang secara otomatis."
+
+msgid "Select %s"
+msgstr "Pilih %s"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Welcome to"
+msgstr "Selamat data di"
+
+msgid "Version"
+msgstr "Versi"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "Ajak teman"
+
+msgid "Find on the web"
+msgstr "Temukan di website"
+
+msgid "Other way"
+msgstr "Jalan lain"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "Terimakasih telah melihat informasi. Mulai gunakan plugin"

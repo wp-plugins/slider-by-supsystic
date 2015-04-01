@@ -157,7 +157,7 @@
                 $.each(response.elements, function(index, value) {
                     var data = {
                         'id': '<input type="checkbox" class="post-cbox" value="' + value.id + '">',
-                        'image': '<img src=' + value.image + ' width = 60 height = 60>',
+                        'image': '<img src=' + value.imageUrl + ' width = 60 height = 60>',
                         'title': value.title
                     };
 
@@ -231,7 +231,7 @@
         });
     });
 
-    Controller.prototype.openShadowDialog = function() {
+    Controller.prototype.openImportDialog = function() {
         var button = $('#choose-import'),
             self = this;
 
@@ -310,6 +310,7 @@
         this.initImportDialog();
         this.featuresNotices();
         this.toggleChanges();
+        this.openImportDialog();
         //this.initShadowSelection();
     });
 

@@ -332,10 +332,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             }
         }
 
-        return $this->response(
-            $module->getSettingsTemplate(),
-            array('slider' => $current, 'path' => plugins_url() . '/slider-by-supsystic')
-        );
+        return $this->response($module->getSettingsTemplate(), array('slider' => $current));
     }
 
     /**

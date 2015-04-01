@@ -26,10 +26,11 @@ class SupsysticSlider
         }
 
         add_action('init', array($this, '_loadPluginsTextdomain'));
+        add_action('init', array($this, 'addShortcodeButton'));
 
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.0.8', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.0.9', $pluginPath);
 
         /* Configure */
         $environment->configure(
@@ -58,7 +59,7 @@ class SupsysticSlider
                 'uploads_rw'       => true,
                 'jpeg_quality'     => 95,
                 'plugin_db_update' => true,
-                'revision'         => 76
+                'revision'         => 106
             )
         );
 
@@ -96,6 +97,27 @@ class SupsysticSlider
             false,
             'slider-by-supsystic/app/langs/'
         );
+    }
+
+
+    public function addShortcodeButton() {
+        add_filter( "mce_external_plugins", array($this, 'addButton'));
+        add_filter( 'mce_buttons', array($this, 'registerButton'));
+        if(is_admin()) {
+            wp_enqueue_script('ssl-bpopup-js', $this->environment->getConfig()->get('plugin_url') . '/app/assets/js/jquery.bpopup.min.js');
+            wp_enqueue_style('ssl-popup-css', $this->environment->getConfig()->get('plugin_url') . '/app/assets/css/editor-dialog.css');
+        }
+    }
+
+    public function addButton( $plugin_array ) {
+        $plugin_array['addShortcodeSlider'] = $this->environment->getConfig()->get('plugin_url') . '/app/assets/js/buttons.js';
+
+        return $plugin_array;
+    }
+    public function registerButton( $buttons ) {
+        array_push( $buttons, 'addShortcodeSlider', 'selectShortcode' );
+
+        return $buttons;
     }
 
     protected function initialize()

@@ -69,30 +69,30 @@
 
     <div id="image-area" class="half-page-left">
         {% if environment.isPro() and slider.plugin != 'bx' %}
-            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Posts and Pages</h3>
+            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">{{ translate('Posts and Pages') }}</h3>
             <button class="button remove-post" style="display: block; margin-left: 20px;">
             <i class="fa fa-trash-o"></i>
-                Remove post
+                {{ translate('Remove post') }}
             </button>
             <table id="posts-table"></table>
-            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Select posts to show</h3>
-            <label for="post-feed-selectPages" style="margin-left: 20px;">Pages: </label>
+            <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">{{ translate('Select posts to show') }}</h3>
+            <label for="post-feed-selectPages" style="margin-left: 20px;">{{ translate('Pages: ') }}</label>
             <select id="post-feed-selectPages" style="margin-left: 17px; max-width: 240px;">
                 {% for page in all_pages({'posts_per_page': -1}) %}
                     <option value="{{ page.ID }}">{{ page.post_title }}</option>
                 {% endfor %}
             </select>
-            <button class="button add-page" style="height: 29px; line-height: 1px; float: right;">Add page</button>
+            <button class="button add-page" style="height: 29px; line-height: 1px; float: right;">{{ translate('Add page') }}</button>
             </br>
-            <label for="post-feed-selectPosts" style="margin-left: 20px;">Posts: </label>
+            <label for="post-feed-selectPosts" style="margin-left: 20px;">{{ translate('Posts: ') }}</label>
             <select id="post-feed-selectPosts" style="margin-left: 20px; max-width: 240px;">
                 {% for post in all_posts({'posts_per_page': -1}) %}
                     <option value="{{ post.ID }}">{{ post.post_title }}</option>
                 {% endfor %}
             </select>
-            <button class="button add-post" style="height: 29px; line-height: 1px; float: right;">Add post</button>
+            <button class="button add-post" style="height: 29px; line-height: 1px; float: right;">{{ translate('Add post') }}</button>
         {% endif %}
-        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">Media</h3>
+        <h3 style="margin-left: 20px; border-bottom: 1px solid #000000">{{ translate('Media') }}</h3>
         {#<button id="button-select" class="button " data-enabled="none|one|many|all" data-toolbar-button="" value="select" name="Select all" style="margin-left: 24px;">
             <i class="fa fa-fw fa-check"></i>
         </button>#}
@@ -102,7 +102,7 @@
         {% if slider.entities is not empty %}
             {{ view_type.list_view(slider) }}
         {% else %}
-            <h2 class="header-muted" style="text-align: center;">You haven't any images yet.</h2>
+            <h2 class="header-muted" style="text-align: center;">{{ translate("You haven't any images yet.") }}</h2>
         {% endif %}
         {% if environment.isPro() != 'true' %}
             <a href="http://supsystic.com/plugins/slider/">

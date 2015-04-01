@@ -25,6 +25,10 @@
                 var $entity = $(this);
                     index = $entity.data('entity-info').index;
 
+                if( typeof index == 'undefined') {
+                    index = parseInt($entity.data('entity-info').slice($entity.data('entity-info').indexOf('index') + 7, $entity.data('entity-info').indexOf('index') + 8));
+                }
+
                 data[index] = $entity.index($entities.selector);
             });
 

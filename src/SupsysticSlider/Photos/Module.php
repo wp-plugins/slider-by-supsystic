@@ -68,6 +68,12 @@ class SupsysticSlider_Photos_Module extends Rsc_Mvc_Module
      */
     public function loadAssets(SupsysticSlider_Ui_Module $ui)
     {
+        $environment = $this->getEnvironment();
+
+        if($environment->getPluginName() != 'ssl'){
+            return;
+        }
+
         $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery'));
         $ui->add(new SupsysticSlider_Ui_BackendJavascript('jquery-ui-dialog'));
 

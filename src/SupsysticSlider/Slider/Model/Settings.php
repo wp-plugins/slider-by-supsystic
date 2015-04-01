@@ -114,16 +114,17 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         if($elements && !empty($elements)) {
             foreach($elements as $id) {
                 $post = get_post($id);
-                $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), $thumbSize);
-                $image = $image[0];
+                $imageUrl = wp_get_attachment_image_src(get_post_thumbnail_id($id), $thumbSize);
+                $imageUrl = $imageUrl[0];
+                $image['attachment'] = wp_prepare_attachment_for_js(get_post_thumbnail_id($id));
                 array_push($posts, array(
                     'id' => $id,
                     'title'=> $post->post_title,
-                    'image' => $image,
                     //'author' => the_author($id),
                     'date' => date('F j, Y', strtotime($post->post_date)),
-                    'url' => get_permalink($id)
-
+                    'url' => get_permalink($id),
+                    'image' => $image,
+                    'imageUrl' => $imageUrl
                 ));
             }
         }

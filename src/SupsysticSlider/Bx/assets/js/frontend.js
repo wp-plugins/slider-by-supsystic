@@ -24,7 +24,7 @@
 
     var initThumbsTransition = function($slider, $thumbs) {
         $thumbs.find('li').on('click', function() {
-            $slider.goToSlide(parseInt($(this).index()) - 3);
+            $slider.goToSlide(parseInt($(this).index()));
             //$thumbs.goToSlide(parseInt($(this).index()) - 4);
         });
     };
@@ -32,16 +32,22 @@
     var initThumbs = function($slider, $current, config) {
         var $thumbs = $('.' + $slider.data('thumbs')).bxSlider({
                 slideWidth: 100,
-                minSlides: 3,
-                maxSlides: 3,
+                minSlides: 4,
+                maxSlides: 10,
                 slideMargin: 1,
+                infiniteLoop: false,
                 width: parseInt(config.width)
             }),
-            $thumbsContainer = $('.thumbs');
+            $thumbsContainer = $('.thumbs'),
+            maxWidth = parseInt(config.width);
 
         initThumbsTransition($current, $thumbs);
 
-        $thumbsContainer.closest('.bx-wrapper').css('max-width', parseInt(config.width));
+        if(parseInt($thumbsContainer.find('li').length * 100) < config.width) {
+            maxWidth = $thumbsContainer.find('li').length * 100;
+        }
+
+        $thumbsContainer.closest('.bx-wrapper').css('max-width', maxWidth);
         $thumbsContainer.closest('.bx-wrapper').css('margin-top', '5px');
     };
 

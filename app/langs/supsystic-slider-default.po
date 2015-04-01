@@ -1,13 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 msgid "Slider by Supsystic"
 msgstr ""
 
@@ -84,6 +74,9 @@ msgid "Controls"
 msgstr ""
 
 msgid "Mode"
+msgstr ""
+
+msgid "Distance"
 msgstr ""
 
 msgid "Arrows"
@@ -365,6 +358,27 @@ msgstr ""
 msgid "Gallery by Supsystic"
 msgstr ""
 
+msgid "Most common FAQs"
+msgstr ""
+
+msgid "How to get PRO version of plugin for FREE?"
+msgstr ""
+
+msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
+msgstr ""
+
+msgid "Translation"
+msgstr ""
+
+msgid "Check all FAQs"
+msgstr ""
+
+msgid "Video tutorial will be added soon"
+msgstr ""
+
+msgid "All news"
+msgstr ""
+
 msgid "Your name"
 msgstr ""
 
@@ -393,6 +407,12 @@ msgid "Other"
 msgstr ""
 
 msgid "Type your message"
+msgstr ""
+
+msgid "Send email"
+msgstr ""
+
+msgid "Fields with * are required to fill"
 msgstr ""
 
 msgid "Unable to save chosen photo %s: %s"
@@ -485,16 +505,25 @@ msgstr ""
 msgid "Plugin settings"
 msgstr ""
 
+msgid "Use build-in caching:"
+msgstr ""
+
 msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
 msgstr ""
 
 msgid "Caching is not available because your uploads directory is not writable."
 msgstr ""
 
+msgid "Lifetime for cached data:"
+msgstr ""
+
 msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
 msgstr ""
 
 msgid "Clear cache"
+msgstr ""
+
+msgid "Allow plugin to send anonymous usage statistics:"
 msgstr ""
 
 msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
@@ -594,6 +623,30 @@ msgid "Delete"
 msgstr ""
 
 msgid "Are you really want to delete "
+msgstr ""
+
+msgid "Posts and Pages"
+msgstr ""
+
+msgid "Remove post"
+msgstr ""
+
+msgid "Select posts to show"
+msgstr ""
+
+msgid "Pages: "
+msgstr ""
+
+msgid "Add page"
+msgstr ""
+
+msgid "Posts: "
+msgstr ""
+
+msgid "Add post"
+msgstr ""
+
+msgid "Media"
 msgstr ""
 
 msgid "Shortcode"
