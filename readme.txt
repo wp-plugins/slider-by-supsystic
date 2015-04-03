@@ -1,7 +1,7 @@
 === Slider by Supsystic ===
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
-Tags: 3D slider, best slider plugin, carousel, carousel slider, coin slider, coinslider, content slider, content slideshow, custom video slider, featured-content-slider, flex slider, free video slider, free video slideshow, Horizontal slider, HTML5 slider, image, Image Rotator, image slider, image slideshow, images, javascript slider, javascript slideshow, jquery slider, jquery slideshow, media, nivo slider, nivoslider, page, photo slider, picture slider, plugin, Post, posts, posts slider, recent post slider, responsive, slider, responsive slider, image slider, slider plugin, photo slider, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, galary, galery, gallary, gallerie, gallery, gallery decription, gallery image, gelary, gellary, gellery, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wordpress gallery, wordpress slider, gallery plugin, responsive slideshow, image slidesgow, photo slideshow, photo, foto, foto slideshow, youtube slider, youtube slideshow
+Tags: 3D slider, best slider plugin, carousel, carousel slider, coin slider, coinslider, content slider, content slideshow, custom video slider, featured-content-slider, flex slider, free video slider, free video slideshow, horizontal slider, HTML5 slider, image, Image Rotator, image slider, image slideshow, images, javascript slider, javascript slideshow, jquery slider, jquery slideshow, media, nivo slider, nivoslider, page, photo slider, picture slider, plugin, Post, posts, posts slider, recent post slider, responsive, slider, responsive slider, image slider, slider plugin, photo slider, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, galary, galery, gallary, gallerie, gallery, gallery decription, gallery image, gelary, gellary, gellery, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wordpress gallery, wordpress slider, gallery plugin, responsive slideshow, image slidesgow, photo slideshow, photo, foto, foto slideshow, youtube slider, youtube slideshow
 Tested up to: 4.1.1
 Stable tag: 1.0.9
 
@@ -20,6 +20,8 @@ Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning 
 * Shortcode
 * Set image captions and links
 * HTML Layer slideshow
+
+[youtube https://www.youtube.com/watch?v=lK_6w4IE044]
 
 Using Slider by Supsystic Plugin, you will be able to attract more people to your site and amaze them with effective slideshows, which display your images in a marvellous way. It is rather simple - just select images you would like to show and Slider by Supsystic will create responsive slideshow.
 
@@ -196,23 +198,23 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 = 1.0.9 = 1/04/2015
 
+ * New slideshow translations effects added
+ * Shortcode button added to tinyMCE editor
+ * Bx slider thumbs navigation mode changed
+ * Images with HTML drag and drop sorting fixed
+ * Coin slider links fixed
+ * Indonesian translation added
+ * Shortcode insertion dialog added
  * Minor fixes
  * Functional fixes
- * New translations added
- * Shortcode button added to tinyMCE editor
- * Shortcode insertion dialog added
- * Bx thumbs navigation mode changed
- * Images with HTML drag and drop sorting fixed
- * Coin links fixed
- * New translation file added
 
 = 1.0.8 = 24/03/2015
 
- * Minor fixes
  * Functional fixes
  * New translations added
  * Social import added
  * Video services import fixed
+ * Minor fixes
 
 = 1.0.7 = 16/03/2015
 
@@ -220,7 +222,7 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
  * Functional fixes
  * Drag and Drop images sorting added
  * Small images dialog added
- * Text animation fixed
+ * Text animation effects fixed
 
 = 1.0.5 = 10/03/2015
 
