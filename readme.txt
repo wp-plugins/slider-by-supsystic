@@ -1,11 +1,11 @@
 === Slider by Supsystic ===
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
-Tags: 3D slider, best slider plugin, carousel, carousel slider, coin slider, coinslider, content slider, content slideshow, custom video slider, featured-content-slider, flex slider, free video slider, free video slideshow, horizontal slider, HTML5 slider, image, Image Rotator, image slider, image slideshow, images, javascript slider, javascript slideshow, jquery slider, jquery slideshow, media, nivo slider, nivoslider, page, photo slider, picture slider, plugin, Post, posts, posts slider, recent post slider, responsive, slider, responsive slider, image slider, slider plugin, photo slider, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, galary, galery, gallary, gallerie, gallery, gallery decription, gallery image, gelary, gellary, gellery, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wordpress gallery, wordpress slider, gallery plugin, responsive slideshow, image slidesgow, photo slideshow, photo, foto, foto slideshow, youtube slider, youtube slideshow
+Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
 Tested up to: 4.1.1
 Stable tag: 1.0.9
 
-Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning image and video sliders with professional templates and options
+Responsive Slider by Supsystic - the ultimate slideshow solution. Create stunning image, video and content sliders with professional templates and options
 
 == Description ==
 
@@ -15,6 +15,7 @@ Responsive Slider by Supsystic the ultimate slideshow solution. Create stunning 
 * Stunning slideshow themes
 * Video Slider option
 * Post Feed slider
+* Content slider
 * Carousel slider
 * Easy to use slider builder interface
 * Shortcode
@@ -34,6 +35,8 @@ SEO optimized sliders can do a better job of getting the images and captions ind
 
 If you have any problem or feature request for the Slider by Supsystic, please [let us know](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=contactus&utm_campaign=slider "Contact Us")!
 
+== Languages ==
+English, Spanish, Mexican
 
 == Screenshots ==
 
