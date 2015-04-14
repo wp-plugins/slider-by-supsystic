@@ -166,5 +166,7 @@ class Rsc_Menu_Item
 
         call_user_func_array('add_submenu_page', $parameters);
         $this->resolver->setRoute($this->menuSlug, $this->moduleName);
+        remove_submenu_page('supsystic-slider', 'supsystic-slider');
+        remove_submenu_page('supsystic-gallery', 'supsystic-gallery');
     }
 }

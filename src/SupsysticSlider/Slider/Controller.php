@@ -317,7 +317,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             $link = get_post_meta($value->attachment_id, '_slider_link');
             $target = get_post_meta($value->attachment_id, 'target');
             $alt = get_post_meta($value->attachment_id, '_wp_attachment_image_alt');
-            $html = get_post_meta($value->attachment_id, 'slideHtml');
+            $html = get_post_meta($value->id, 'slideHtml');
             if($link && !empty($link)) {
                 $current->images[$key]->attachment['external_link'] = $link[0];
             }
@@ -331,6 +331,8 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                 $current->images[$key]->attachment['html'] = $html[0];
             }
         }
+
+        //var_dump($current->images);
 
         return $this->response($module->getSettingsTemplate(), array('slider' => $current));
     }

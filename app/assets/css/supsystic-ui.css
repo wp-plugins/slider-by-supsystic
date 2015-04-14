@@ -579,7 +579,7 @@ h3 .nav-tab {
 	background-position: -24px 0px !important;
 }
 .supsystic-plugin .s-ico .ui-grid-ico-sort {
-	background-image: url("images/arrows-sprite.png") !important;
+	background-image: url("images/arrows-sprite.png");
 	background-repeat: no-repeat !important;
 	width: 8px;
 	height: 4px;

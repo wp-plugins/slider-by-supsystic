@@ -371,3 +371,7 @@ ul.bx-pager {
 	margin-right: 1px !important;
 	margin-left: 0 !important;
 }
+
+.thumbs li {
+    cursor: pointer;
+}

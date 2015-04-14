@@ -102,11 +102,14 @@
         {% if slider.entities is not empty %}
             {{ view_type.list_view(slider) }}
         {% else %}
-            <h2 class="header-muted" style="text-align: center;">{{ translate("You haven't any images yet.") }}</h2>
+            <h2 class="header-muted" style="text-align: center;">
+                {{ translate("You haven't any images yet.") }}
+                <a id="add-images" href="#">Add Images</a>
+            </h2>
         {% endif %}
         {% if environment.isPro() != 'true' %}
-            <a href="http://supsystic.com/plugins/slider/">
-                <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider"><img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;"></a>
+            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider">
+                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%; margin-top: 30px;">
             </a>
         {% endif %}
     </div>

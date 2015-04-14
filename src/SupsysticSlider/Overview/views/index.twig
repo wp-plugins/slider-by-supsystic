@@ -43,20 +43,20 @@
 
             <div class="video">
                 <h3>Video tutorial</h3>
-                {#<iframe type="text/html"
+                <iframe type="text/html"
                         width="80%"
                         height="240px"
-                        src="http://www.youtube.com/embed/5bkjrlV14CE"
+                        src="http://www.youtube.com/embed/JyJYA3rPPOg"
                         frameborder="0">
-                </iframe>#}
-                <div style="width: 80%; height: 240px; text-align: center; font-size: 20px; font-weight: 800; border: 1px solid rgba(164, 170, 172, 0.28); line-height: 13;">{{ translate('Video tutorial will be added soon') }}</div>
+                </iframe>
+                {#<div style="width: 80%; height: 240px; text-align: center; font-size: 20px; font-weight: 800; border: 1px solid rgba(164, 170, 172, 0.28); line-height: 13;">{{ translate('Video tutorial will be added soon') }}</div>#}
             </div>
 
             <div class="server-settings">
                 <h3>Server Settings</h3>
                 <ul class="settings-list">
                     {% for title, element in serverSettings %}
-                        <li class="settings-line">
+                        <li class="settings-line" style="float: none;">
                             <div class="settings-title">{{ title|trim }}:</div>
                             <span>{{ element.value|trim }}</span>
                         </li>
@@ -68,7 +68,7 @@
             <div class="supsystic-overview-news">
                 {{ news|raw }}
             </div>
-            <a href="http://supsystic.com/plugins/slider/#faq" class="button button-primary button-hero">
+            <a href=" http://supsystic.com/slider-documentation/" class="button button-primary button-hero">
                 <i class="fa fa-info-circle"></i>
                 {{ translate('All news') }}
             </a>

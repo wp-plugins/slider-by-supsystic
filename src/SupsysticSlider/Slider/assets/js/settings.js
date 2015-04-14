@@ -16,6 +16,7 @@
         this.$randomCheckbox = $('#generalRandomStart');
         this.$addPage = $('.add-page');
         this.$addPost = $('.add-post');
+        this.$addImages = $('#add-images');
         this.changed = null;
         this.saved = null;
 
@@ -282,6 +283,15 @@
         }, this));
     };
 
+    Controller.prototype.initAddImagesLink = function() {
+
+        this.$addImages.on('click', function(e) {
+            e.preventDefault();
+
+            $('#choose-import').trigger('click');
+        });
+    };
+
     /**
      * Init controller.
      *
@@ -311,6 +321,7 @@
         this.featuresNotices();
         this.toggleChanges();
         this.openImportDialog();
+        this.initAddImagesLink();
         //this.initShadowSelection();
     });
 
@@ -350,6 +361,8 @@
     });
 
     Controller.prototype.intiPluginSelectWindow = (function () {
+        var self = this;
+
         this.$pluginWindow.dialog({
             modal:    true,
             width:    400,
@@ -363,6 +376,7 @@
                             $.proxy(
                                 function(response) {
                                     if (!response.error) {
+                                        self.saved = true;
                                         window.location.reload(true);
                                     } else {
                                         $.jGrowl(response.message);

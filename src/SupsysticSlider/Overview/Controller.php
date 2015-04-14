@@ -33,7 +33,7 @@ class SupsysticSlider_Overview_Controller extends SupsysticSlider_Core_BaseContr
             'Operating System' => array('value' => PHP_OS),
             'PHP Version' => array('value' => PHP_VERSION),
             'Server Software' => array('value' => $_SERVER['SERVER_SOFTWARE']),
-            'MySQL' => array('value' => mysql_get_server_info()),
+            'MySQL' => array('value' => @mysql_get_server_info()),
             'PHP Safe Mode' => array('value' => ini_get('safe_mode') ? 'Yes' : 'No', 'error' => ini_get('safe_mode')),
             'PHP Allow URL Fopen' => array('value' => ini_get('allow_url_fopen') ? 'Yes' : 'No'),
             'PHP Memory Limit' => array('value' => ini_get('memory_limit')),

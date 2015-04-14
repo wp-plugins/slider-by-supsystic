@@ -14,7 +14,7 @@
         jQuery("#jqgrid-htable-img-list").jqGrid({
             datatype: "local",
             autowidth: true,
-            shrinkToFit: true,
+            shrinkToFit: true,          
             colNames:['<i class="fa fa-fw fa-check" style="margin-left: 8px;"></i>', 'Image','Properties'],
             colModel:[
                 {name:'id', index:'id', sortable: false, width: 20, align: 'center'},
@@ -170,7 +170,7 @@
             {% endif %}
         {% else %}
             {% set src = image.attachment.sizes.thumbnail.url %}
-            {% set sizes = { 'width': 60, 'height': 60 } %}
+            {% set sizes = { 'width': 80, 'height': 80 } %}
         {% endif %}
         <img width="{{ sizes.width }}" height="{{ sizes.height }}" data-original="{{ src }}" class="attachment-80x60 ready-lazy" alt="{{ image.attachment.title }}">
     </a>
@@ -197,10 +197,9 @@
             <input type="text" name="description" value="{{ image.attachment.description }}" style="margin-left: 4px" placeholder="Image description"/>
         </p>
         <p id="photo-link-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
-            <input type="text" name="link" value="{{ image.attachment.external_link }}" style="margin-left: 4px" placeholder="Image link"/>
-            <label style="margin-left: 10px;">
-                <input type="checkbox" name="target" value="_blank" title="Open link in a new window" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
-            </label>
+            <input type="text" name="link" value="{{ image.attachment.external_link }}" style="margin-left: 4px" placeholder="Image link"/><br>
+               <input type="checkbox" id="link_in_a_new_window"  style="margin-left: 4px;" name="target" value="_blank" title="Open link in a new window" {% if image.attachment.target == '_blank' %} checked="checked"{% endif %}/>
+            <label for="link_in_a_new_window" style="margin-left: 10px;">Open link in a new window</label>
         </p>
         <p id="photo-seo-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
             {% if environment.isPro() %}
@@ -211,7 +210,8 @@
         </p>
         <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
             {% if environment.isPro() %}
-                <input type="text" name="html" value="{{ image.attachment.html }}" style="margin-left: 4px" placeholder="Slide html"/>
+                <input type="text" name="html" value="{{ image.attachment.html|json_encode() }}" style="margin-left: 4px" placeholder="Slide html" hidden />
+                <button class="button html-editor" data-id="{{ image.id }}" style="margin-left: 4px">Html Slide Editor</button>
             {% else %}
                 <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|raw }}" disabled/>
             {% endif %}
