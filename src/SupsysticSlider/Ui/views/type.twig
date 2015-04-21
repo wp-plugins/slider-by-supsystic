@@ -191,7 +191,7 @@
             <a href="#photo-seo-{{ image.id }}" class="add-new-h2 button">{{ translate('SEO')|trim }}</a>
         </strong>
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
-            <a href="#photo-html-{{ image.id }}" class="add-new-h2 button">{{ translate('HTML')|trim }}</a>
+            <a href="#photo-html-{{ image.id }}" class="add-new-h2 button" title="Add Header, buttons and custom HTML to the slide">{{ translate('HTML')|trim }}</a>
         </strong>
         <p id="photo-desc-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;">
             <input type="text" name="description" value="{{ image.attachment.description }}" style="margin-left: 4px" placeholder="Image description"/>
@@ -210,8 +210,8 @@
         </p>
         <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
             {% if environment.isPro() %}
-                <input type="text" name="html" value="{{ image.attachment.html|json_encode() }}" style="margin-left: 4px" placeholder="Slide html" hidden />
-                <button class="button html-editor" data-id="{{ image.id }}" style="margin-left: 4px">Html Slide Editor</button>
+                <input type="text" name="html" value="{{ unserialize_twig(image.attachment.html)|json_encode() }}" style="margin-left: 4px" placeholder="Slide html" hidden />
+                <button class="button html-editor photo-html-{{ image.id }}" data-id="{{ image.attachment.id }}" style="margin-left: 4px">Html Slide Editor</button>
             {% else %}
                 <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|raw }}" disabled/>
             {% endif %}

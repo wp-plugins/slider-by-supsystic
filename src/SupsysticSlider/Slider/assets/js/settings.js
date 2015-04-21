@@ -141,7 +141,8 @@
 
     Controller.prototype.fillPostsTable = function() {
         var posts = [],
-            sliderId = parseInt($('#sliderID').attr('value'));
+            sliderId = parseInt($('#sliderID').attr('value')),
+            self = this;
 
         $.post(WordPress.ajax.settings.url,
             {
@@ -164,6 +165,7 @@
 
                     jQuery("#posts-table").jqGrid('addRowData', index, data);
                 });
+                self.showPostsTable();
                 //$.jGrowl(response.message);
             });
     };
@@ -397,14 +399,29 @@
         this.$pluginWindow.dialog('open');
     });
 
+    Controller.prototype.showPostsTable = function() {
+        var $table = $('#gbox_posts-table .ui-jqgrid-btable'),
+            rowsNumber = $table.find('.jqgrow').length,
+            $elements = [
+                $('#gbox_posts-table'),
+                $('.remove-post'),
+                $('#image-area h3:first')
+            ];
+        if(!rowsNumber) {
+            $.each($elements, function(index, $value) {
+                $value.hide();
+            });
+        }
+    };
+
     $(document).ready(function () {
         WordPress.settings = new Controller();
     });
 
-    $(window).on('beforeunload', function(e) {
+    /*$(window).on('beforeunload', function(e) {
         if(WordPress.settings.changed && !WordPress.settings.saved) {
             return 'You have unsaved changes';
         }
-    })
+    });*/
 
 }(jQuery, window.wp = window.wp || {}));

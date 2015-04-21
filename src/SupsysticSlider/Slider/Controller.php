@@ -317,7 +317,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             $link = get_post_meta($value->attachment_id, '_slider_link');
             $target = get_post_meta($value->attachment_id, 'target');
             $alt = get_post_meta($value->attachment_id, '_wp_attachment_image_alt');
-            $html = get_post_meta($value->id, 'slideHtml');
+            $html = get_post_meta($value->attachment_id, 'slideHtml');
             if($link && !empty($link)) {
                 $current->images[$key]->attachment['external_link'] = $link[0];
             }
@@ -331,8 +331,6 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                 $current->images[$key]->attachment['html'] = $html[0];
             }
         }
-
-        //var_dump($current->images);
 
         return $this->response($module->getSettingsTemplate(), array('slider' => $current));
     }
@@ -832,6 +830,20 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                     ),
                     $slider->title
                 )
+            )
+        );
+    }
+
+    public function checkSettingsAction(Rsc_Http_Request $request) {
+        $sliderId  = $request->post->get('id');
+        $settings  = $request->post->get('settings');
+
+        var_dump(htmlspecialchars_decode($settings));
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            $this->getSuccessResponseData(
+                $this->translate('Successfully removed!')
             )
         );
     }

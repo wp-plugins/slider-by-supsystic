@@ -1,0 +1,800 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: Supsystic Slider V 1.1.0 版 - 正體中文語系\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Carrie Lis, Zheng <carrieli.blog@gmail.com>\n"
+"Language-Team: StartPress 工作室團隊 <support@startpress.cc>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Slider by Supsystic"
+msgstr "Slider by Supsystic"
+
+msgid "Overview"
+msgstr "概覽"
+
+msgid "New Slider"
+msgstr "新增幻燈片"
+
+msgid "Sliders"
+msgstr "幻燈片"
+
+msgid "Images"
+msgstr "圖片"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "License"
+msgstr "許可證"
+
+msgid "Get PRO"
+msgstr "獲取專業版"
+
+msgid "Loading"
+msgstr "載入中"
+
+msgid "Error"
+msgstr "錯誤"
+
+msgid "An error has occurred"
+msgstr "發生了一個錯誤"
+
+msgid "Authorization code is not specified."
+msgstr "沒有指定的授權碼。"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Upload your images from the Facebook Media Library"
+msgstr "從 Facebook 媒體庫上傳你的圖片"
+
+msgid "Upload from Facebook"
+msgstr "從 Facebook 上傳"
+
+msgid "Upload new images"
+msgstr "上傳新圖片"
+
+msgid "Import images"
+msgstr "匯入圖片"
+
+msgid "Logout"
+msgstr "登出"
+
+msgid "Select/unselect all photos"
+msgstr "選擇 / 取消選擇 所有圖片"
+
+msgid "Empty user data."
+msgstr "空白的會員資料。"
+
+msgid "Flickr"
+msgstr "Flickr"
+
+msgid "Upload your images from the Flickr Media Library"
+msgstr "從 Flickr 媒體庫上傳你的圖片"
+
+msgid "Upload from Flickr"
+msgstr "從 Flickr 上傳"
+
+msgid "Effects"
+msgstr "特效"
+
+msgid "Controls"
+msgstr "控制"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "Distance"
+msgstr "距離"
+
+msgid "Arrows"
+msgstr "箭頭"
+
+msgid "Bullet control"
+msgstr "控制圓點"
+
+msgid "Responsive size Slider"
+msgstr "響應式尺寸的幻燈片"
+
+msgid "Thumbnails slider navigation"
+msgstr "縮圖幻燈片導航"
+
+msgid "Enable Slideshow"
+msgstr "啟用幻燈秀"
+
+msgid "Slideshow Speed"
+msgstr "幻燈秀速度"
+
+msgid "Select Shadow"
+msgstr "選擇陰影"
+
+msgid "Select shadow effect"
+msgstr "選擇陰影特效"
+
+msgid "Check"
+msgstr "檢查"
+
+msgid "Authorization oauth_verifier is not specified."
+msgstr "沒有指定的 oauth_verifier 授權。"
+
+msgid "Tumblr"
+msgstr "Tumblr"
+
+msgid "Upload your images from the Tumblr Media Library"
+msgstr "從 Tumblr 媒體庫上傳你的圖片"
+
+msgid "Upload from Tumblr"
+msgstr "從 Tumblr 上傳"
+
+msgid "Text align"
+msgstr "文字對齊"
+
+msgid "Align left"
+msgstr "置左對齊"
+
+msgid "Align center"
+msgstr "置中對齊"
+
+msgid "Align right"
+msgstr "置右對齊"
+
+msgid "Text color"
+msgstr "文字顏色"
+
+msgid "Background color"
+msgstr "背景色"
+
+msgid "Text size"
+msgstr "文字大小"
+
+msgid "Text Animation"
+msgstr "文字動畫"
+
+msgid "Disable"
+msgstr "停用"
+
+msgid "Enable"
+msgstr "啟用"
+
+msgid "Text in effect"
+msgstr "文字特效"
+
+msgid "FadeIn"
+msgstr "淡入"
+
+msgid "RollIn"
+msgstr "翻滾而入"
+
+msgid "FadeInLeftBig"
+msgstr "左側巨型淡入"
+
+msgid "FadeInRightBig"
+msgstr "右側巨型淡入"
+
+msgid "FadeInLeft"
+msgstr "向左淡入"
+
+msgid "FadeInRight"
+msgstr "向右淡入"
+
+msgid "FadeInUp"
+msgstr "向上淡入"
+
+msgid "FadeInDown"
+msgstr "向下淡入"
+
+msgid "FlipInX"
+msgstr "水平翻頁進入"
+
+msgid "FlipInY"
+msgstr "垂直翻頁進入"
+
+msgid "Text out effect"
+msgstr "文字淡出特效"
+
+msgid "FadeOut"
+msgstr "淡出"
+
+msgid "RollOut"
+msgstr "翻滾而出"
+
+msgid "FadeOutLeftBig"
+msgstr "左側巨型淡出"
+
+msgid "FadeOutRightBig"
+msgstr "右側巨型淡出"
+
+msgid "FadeOutLeft"
+msgstr "向左淡出"
+
+msgid "FadeOutRight"
+msgstr "向右淡出"
+
+msgid "FadeOutUp"
+msgstr "向上淡出"
+
+msgid "FadeOutDown"
+msgstr "向下淡出"
+
+msgid "FlipOutX"
+msgstr "水平翻頁而出"
+
+msgid "FlipOutY"
+msgstr "垂直翻頁而出"
+
+msgid "Controls type"
+msgstr "控制點類型"
+
+msgid "circle_arrows"
+msgstr "圓形箭頭"
+
+msgid "little_arrows"
+msgstr "小箭頭"
+
+msgid "standart_big"
+msgstr "大型標準"
+
+msgid "standart_small"
+msgstr "小型標準"
+
+msgid "circle_little"
+msgstr "小圓"
+
+msgid "square_big"
+msgstr "大方塊"
+
+msgid "fast"
+msgstr "快速"
+
+msgid "little"
+msgstr "小型"
+
+msgid "go_small"
+msgstr "小"
+
+msgid "Border style:"
+msgstr "邊框樣式："
+
+msgid "None"
+msgstr "無"
+
+msgid "Solid"
+msgstr "實線"
+
+msgid "Dashed"
+msgstr "虛線"
+
+msgid "Border width:"
+msgstr "邊框寬度："
+
+msgid "Border color:"
+msgstr "邊框顏色："
+
+msgid "Thumbnails margin"
+msgstr "縮圖邊距"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Touch"
+msgstr "觸控"
+
+msgid "Pager"
+msgstr "呼叫"
+
+msgid "Properties"
+msgstr "特性"
+
+msgid "Slideshow"
+msgstr "幻燈秀"
+
+msgid "Slideshow controls"
+msgstr "幻燈秀控制"
+
+msgid "Navigation"
+msgstr "導航"
+
+msgid "Captions"
+msgstr "圖片說明"
+
+msgid "Speed"
+msgstr "速度"
+
+msgid "Margin"
+msgstr "邊距"
+
+msgid "Starting slide"
+msgstr "開始輪播"
+
+msgid "Start slider on a random slide"
+msgstr "開始隨機輪播"
+
+msgid "Easing"
+msgstr "緩慢"
+
+msgid "Enable touch"
+msgstr "啟用觸控"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "One-to-One touch"
+msgstr "一對一觸控"
+
+msgid "Swipe threshold"
+msgstr "橫掃數值"
+
+msgid "Enable pager"
+msgstr "啟用傳呼"
+
+msgid "Type"
+msgstr "類型"
+
+msgid "Effect"
+msgstr "特效"
+
+msgid "Select effect"
+msgstr "選擇特效"
+
+msgid "Title speed"
+msgstr "標題速度"
+
+msgid "Opacity"
+msgstr "透明度"
+
+msgid "Delay"
+msgstr "延遲速度"
+
+msgid "Pause"
+msgstr "暫停"
+
+msgid "Links"
+msgstr "鍊結網址"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Upload your images from the Instagram Media Library"
+msgstr "從 Instagram 媒體庫上傳你的圖片"
+
+msgid "Upload from Instagram"
+msgstr "從 Instagram 上傳"
+
+msgid "Gallery by Supsystic"
+msgstr "Gallery by Supsystic"
+
+msgid "Most common FAQs"
+msgstr "常見問答"
+
+msgid "How to get PRO version of plugin for FREE?"
+msgstr "如何免費獲取專業版外掛？"
+
+msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
+msgstr "你有一個令人難以置信的機會可以免費獲取專業版外掛：翻譯此外掛！如果你翻譯了此外掛，將獲得這令人讚嘆的優惠！"
+
+msgid "Translation"
+msgstr "翻譯外掛"
+
+msgid "Check all FAQs"
+msgstr "查看所有問答"
+
+msgid "Video tutorial will be added soon"
+msgstr "教學影片將很快問世"
+
+msgid "All news"
+msgstr "所有最新消息"
+
+msgid "Your name"
+msgstr "您的姓名"
+
+msgid "Your email"
+msgstr "您的 email"
+
+msgid "Website"
+msgstr "您的網站"
+
+msgid "Subject"
+msgstr "來信主旨"
+
+msgid "Topic"
+msgstr "問題"
+
+msgid "Plugin options"
+msgstr "外掛選項"
+
+msgid "Report a bug"
+msgstr "回報錯誤"
+
+msgid "Require a new functionallity"
+msgstr "新功能要求"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "Type your message"
+msgstr "您的訊息的類型"
+
+msgid "Send email"
+msgstr "發送 email"
+
+msgid "Fields with * are required to fill"
+msgstr " * 標示的欄位為必填"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "無法儲存所選照片 %s: %s"
+
+msgid "New Folder"
+msgstr "新資料夾"
+
+msgid "The title can't be empty"
+msgstr "標題不可留空"
+
+msgid "Title successfully updated"
+msgstr "已成功更新標題"
+
+msgid "Failed to update position."
+msgstr "位置無法更新。"
+
+msgid "Position updated successfully!"
+msgstr "位置已成功更新！"
+
+msgid "Rename folder"
+msgstr "重新命名資料夾"
+
+msgid "Folder name:"
+msgstr "資料夾名稱："
+
+msgid "Add images to the slider"
+msgstr "新增圖片到幻燈片"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "正在從幻燈片獲取列表，請稍後片刻…"
+
+msgid "Select slider:"
+msgstr "選擇幻燈片："
+
+msgid "New folder"
+msgstr "新資料夾"
+
+msgid "Add images to the new slider"
+msgstr "新增圖片到新幻燈片中"
+
+msgid "Slider title:"
+msgstr "幻燈片標題："
+
+msgid "Add new video"
+msgstr "新增影片"
+
+msgid "Import videos"
+msgstr "匯入影片"
+
+msgid "Create new folder"
+msgstr "新建資料夾"
+
+msgid "Delete selected items"
+msgstr "刪除所選項目"
+
+msgid "Create new slider from the selected items"
+msgstr "從所選項目建立新幻燈片"
+
+msgid "New slider from selected"
+msgstr "選擇新幻燈片"
+
+msgid "Add the selected items to the existing slider"
+msgstr "從所選項目新增到現有幻燈片"
+
+msgid "Add selected to the slider"
+msgstr "新增所選項目到幻燈片"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "從 WordPress 媒體庫上傳您的圖片"
+
+msgid "All photos"
+msgstr "所有照片"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "從資料夾拖曳照片到這裡"
+
+msgid "Lifetime for cached data"
+msgstr "快取資料有效時間"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr " \"%s\" 欄位僅提供數值"
+
+msgid "Settings successfully updated!"
+msgstr "設定已成功更新！"
+
+msgid "Please correct following errors:"
+msgstr "請更正以下錯誤："
+
+msgid "Plugin settings"
+msgstr "外掛設定"
+
+msgid "Use build-in caching:"
+msgstr "使用內建快取："
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> 有它自己的快取系統，以顯著降低資料庫的負載。"
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "快取功能無法使用，因為你的上傳資料夾不可寫入。"
+
+msgid "Lifetime for cached data:"
+msgstr "快取資料有效時間："
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "在幾秒鐘的時間過後，快取將被視為過時。預設：86400 (24 小時)。"
+
+msgid "Clear cache"
+msgstr "清除快取"
+
+msgid "Allow plugin to send anonymous usage statistics:"
+msgstr "允許外掛發送匿名使用統計："
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "我們不會收集你的統計資料，我們只收集在使用過程中所發生的錯誤，以便改善我們的產品。"
+
+msgid "Save"
+msgstr "儲存"
+
+msgid "Slider \"%s\" successfully created."
+msgstr " \"%s\" 幻燈片已成功建立。"
+
+msgid "Failed to update positions."
+msgstr "無法更新位置。"
+
+msgid "Positions are successfully updated!"
+msgstr "位置已成功更新！"
+
+msgid "Unable to delete selected slider"
+msgstr "無法刪除選定的幻燈片"
+
+msgid "Failed to import selected items."
+msgstr "無法匯入所選項目。"
+
+msgid "Invalid slider identifier."
+msgstr "無效的幻燈片標誌符號。"
+
+msgid "Unable to find requested slider."
+msgstr "無法找到所需幻燈片。"
+
+msgid "Failed to save settings. %s"
+msgstr "無法儲存設定。 %s"
+
+msgid "Failed to change plugin: %s"
+msgstr "無法變更外掛： %s"
+
+msgid "Failed to attach resources."
+msgstr "無法連結資源。"
+
+msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
+msgstr "%s 資源已成功連結到 <a href=\"%s\">%s</a>"
+
+msgid "Successfully removed!"
+msgstr "成功移除！"
+
+msgid "Failed to load settings"
+msgstr "無法載入設定"
+
+msgid "Import"
+msgstr "匯入"
+
+msgid "You have no images"
+msgstr "你沒有圖片"
+
+msgid "Upload to images"
+msgstr "上傳圖片"
+
+msgid "Preview"
+msgstr "預覽"
+
+msgid "Delete Slider"
+msgstr "刪除幻燈片"
+
+msgid "Total images: "
+msgstr "所有圖片："
+
+msgid "Total videos: "
+msgstr "所有影片："
+
+msgid "Shortcode: "
+msgstr "簡碼："
+
+msgid "PhpCode: "
+msgstr "PHP 程式碼："
+
+msgid "Sliders List"
+msgstr "幻燈片列表"
+
+msgid "Slider Name"
+msgstr "幻燈片名稱"
+
+msgid "Select module"
+msgstr "選擇模組"
+
+msgid "Add Images"
+msgstr "新增圖片"
+
+msgid "Add Video"
+msgstr "新增影片"
+
+msgid "Add images"
+msgstr "新增圖片"
+
+msgid "Change Slider"
+msgstr "變更幻燈片"
+
+msgid "Delete"
+msgstr "刪除"
+
+msgid "Are you really want to delete "
+msgstr "您確定要刪除嗎？"
+
+msgid "Posts and Pages"
+msgstr "文章和頁面"
+
+msgid "Remove post"
+msgstr "移除文章"
+
+msgid "Select posts to show"
+msgstr "顯示所選文章"
+
+msgid "Pages: "
+msgstr "頁面："
+
+msgid "Add page"
+msgstr "新增頁面"
+
+msgid "Posts: "
+msgstr "文章："
+
+msgid "Add post"
+msgstr "新增文章"
+
+msgid "Media"
+msgstr "媒體"
+
+msgid "Shortcode"
+msgstr "簡碼"
+
+msgid "Slider width"
+msgstr "幻燈片寬度"
+
+msgid "pixels"
+msgstr "像素"
+
+msgid "Slider height"
+msgstr "幻燈片高度"
+
+msgid "Change Slider Type"
+msgstr "變更幻燈片類型"
+
+msgid "Select plugin"
+msgstr "選擇外掛"
+
+msgid "Jssor PRO"
+msgstr "Jssor PRO"
+
+msgid "Please note:"
+msgstr "請注意："
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "目前的設定將被移除，且無法還原。"
+
+msgid "Visual editor"
+msgstr "視覺化編輯器"
+
+msgid "Choose import source"
+msgstr "選擇匯入來源"
+
+msgid "Import from Wordpress Media Library"
+msgstr "從 WordPress 媒體庫匯入"
+
+msgid "Import from social networks"
+msgstr "從社群網站匯入"
+
+msgid "Import from your Instagram account"
+msgstr "從你的 Instagram 帳戶匯入"
+
+msgid "Import from your Flickr account"
+msgstr "從你的 Flickr 帳戶匯入"
+
+msgid "Import from your Tumblr account"
+msgstr "從你的 Tumblr 帳戶匯入"
+
+msgid "Import from your Facebook account"
+msgstr "從你的 Facebook 帳戶匯入"
+
+msgid "Get Pro to enable import"
+msgstr "獲取專業版以便取得匯入功能"
+
+msgid "Get PRO for 29$"
+msgstr "以 USD$29 購買專業版"
+
+msgid "Import video"
+msgstr "匯入影片"
+
+msgid "Video URL:"
+msgstr "影片網址："
+
+msgid "Supported platforms: %s."
+msgstr "支援的平台有：%s."
+
+msgid "Edit image"
+msgstr "編輯圖片"
+
+msgid "Main"
+msgstr "主要"
+
+msgid "Caption"
+msgstr "圖片描述"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Description"
+msgstr "說明文字"
+
+msgid "Alternative text"
+msgstr "替代文字"
+
+msgid "External link"
+msgstr "外連網址"
+
+msgid "Available in PRO version."
+msgstr "專業版可用"
+
+msgid "Link"
+msgstr "鍊結網址"
+
+msgid "Open in new window"
+msgstr "在新視窗開啟"
+
+msgid "Embeded video"
+msgstr "嵌入影片"
+
+msgid "Video URL"
+msgstr "影片網址"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "支援 YouTube 和 Vimeo。影片網址將會自動轉換影片嵌入碼。"
+
+msgid "Select %s"
+msgstr "選擇 %s"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Welcome to"
+msgstr "歡迎來到"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "推薦給朋友"
+
+msgid "Find on the web"
+msgstr "在網路上尋找"
+
+msgid "Other way"
+msgstr "其他方法"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "感謝檢查資訊。開始使用外掛"

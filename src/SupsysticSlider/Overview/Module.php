@@ -16,7 +16,7 @@ class SupsysticSlider_Overview_Module extends Rsc_Mvc_Module
 
         // Client ID
         $config->add('post_id', 637);
-        $config->add('post_url', 'http://supsystic.com/?supsystic_site_news=give_it_for_me_pls');
+        $config->add('post_url', 'http://supsystic.com/news/main.html');
         $config->add('mail', 'support@supsystic.team.zendesk.com');
 
         $prefix = $config->get('hooks_prefix');
