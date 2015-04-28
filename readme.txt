@@ -3,9 +3,9 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
 Tested up to: 4.2
-Stable tag: 1.2.3
+Stable tag: 1.2.5
 
-Responsive Slider by Supsystic - the ultimate slideshow solution. Create stunning image, video and content sliders with professional templates and options
+Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
 == Description ==
 
@@ -24,7 +24,7 @@ Responsive Slider by Supsystic - the ultimate slideshow solution. Create stunnin
 
 [youtube https://www.youtube.com/watch?v=lK_6w4IE044]
 
-Using Slider by Supsystic Plugin, you will be able to attract more people to your site and amaze them with effective slideshows, which display your images in a marvellous way. It is rather simple - just select images you would like to show and Slider by Supsystic will create responsive slideshow.
+Using Slider by Supsystic, you will be able to attract more people to your site and amaze them with effective slideshows, which display your images in a marvellous way. It is rather simple - just select images you would like to show and Slider by Supsystic will create responsive slideshow.
 
 If you have this slider plugin on your website, you can upload large photo galleries there in one moment. It allows you to add both pictures and videos to the slider and customize the settings using different professional templates and options. All these things will help you to create a fascinating sliders for every visitor of your site.
 Now impressive slideshows can become a good addition to your WordPress site. Install Slyder by Supsystic and visitors be delighted by beautiful pictures from your photo and video galleries!
@@ -35,8 +35,15 @@ SEO optimized sliders can do a better job of getting the images and captions ind
 
 If you have any problem or feature request for the Slider by Supsystic, please [let us know](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=contactus&utm_campaign=slider "Contact Us")!
 
-== Languages ==
-English, Spanish, Mexican
+= Translations in your language =
+
+You have an incredible opportunity to get PRO version for free. Make Translation of the plugin! It will be amazing if you take advantage of this offer!
+
+* English
+* Spanish (Mexico)
+* Indonesian
+* Chinese (Taiwan)
+* German
 
 == Screenshots ==
 
@@ -198,6 +205,19 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.2.5 = 28/04/2015
+
+ * Widget option added
+ * Slider positioning from shortcode option added
+ * Jssor slider settings load fixed
+ * New preview system
+ * Minor fixes
+ * Functional changes
+
+= 1.2.4 = 22/04/2015
+
+ * Jssor slider fixes
 
 = 1.2.3 = 21/04/2015
 

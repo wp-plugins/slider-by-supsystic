@@ -64,7 +64,11 @@ class SupsysticSlider_Slider_Model_Sliders
         $sliders = $this->db->get_results($query->build());
 
         if (is_array($sliders) && count($sliders) > 0) {
-            return $this->compile($sliders);
+            if($this->environment) {
+                return $this->compile($sliders);
+            } else {
+                return $sliders;
+            }
         }
 
         return array();

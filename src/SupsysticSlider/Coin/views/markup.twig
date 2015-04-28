@@ -1,4 +1,4 @@
-<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }} supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" style="margin: 0 auto 5px;">
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.id }} supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" style="margin: 0 auto 5px;" data-position="{% if slider.settings.properties.position == 'left' %}left{% elseif slider.settings.properties.position == 'right' %}right{% endif %}">
     {% for entity in slider.entities %}
         {% if entity.type == 'image' %}
             {% if entity.attachment.external_link %}

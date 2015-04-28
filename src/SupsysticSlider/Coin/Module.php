@@ -68,7 +68,7 @@ class SupsysticSlider_Coin_Module extends Rsc_Mvc_Module implements SupsysticSli
 
         $ui->add(
             new SupsysticSlider_Ui_BackendJavascript(
-                'supsysticSlider-bx-preview',
+                'supsysticSlider-coin-frontend',
                 $this->getLocationUrl() . '/assets/js/frontend.js',
                 $preventCaching
             )

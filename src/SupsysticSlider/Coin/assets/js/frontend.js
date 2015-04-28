@@ -46,7 +46,7 @@
 
             $.each(settings, function (category, opts) {
                 if(category != '__veditor__') {
-                    $.each(opts, function (key, value) {;
+                    $.each(opts, function (key, value) {
                         if (key !== 'enabled') {
                             config[key] = stringToBoolean(value);
                         }
@@ -55,6 +55,8 @@
             });
 
             $slider.coinslider(config);
+
+            $slider.parent().css('float', config['position']);
         });
     };
 

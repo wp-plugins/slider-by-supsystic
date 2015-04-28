@@ -385,6 +385,30 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         );
     }
 
+    public function getRenderAction(Rsc_Http_Request $request) {
+        $sliderId = $request->post->get('id');
+        $isEmpty  = false;
+
+        /** @var SupsysticSlider_Slider_Module $self */
+        $self = $this->getModule('slider');
+
+        if ($slider = $this->getSliders()->getById($sliderId)) {
+            if (!property_exists($slider, 'entities') || !$slider->entities) {
+                $isEmpty = true;
+            }
+        }
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array(
+                'slider'   => $self->render(
+                    array('id'    => $sliderId)
+                ),
+                'is_empty' => $isEmpty
+            )
+        );
+    }
+
     public function updatePositionAction(Rsc_Http_Request $request)
     {
         $sliderId  = $request->post->get('slider_id');

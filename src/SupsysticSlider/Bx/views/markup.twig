@@ -1,4 +1,4 @@
-<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" data-thumbs="thumbnails-{{ slider.id }}">
+<div id="supsystic-slider-{{ slider.id }}" class="supsystic-slider supsystic-slider-{{ slider.plugin }}" data-settings="{{ slider.settings|json_encode }}" data-thumbs="thumbnails-{{ slider.id }}" style="{% if slider.settings.properties.position == 'left' %}float:left;{% elseif slider.settings.properties.position == 'right' %}float:right;{% endif %}">
     <ul style="margin: 0 !important;">
         {% for entity in slider.entities %}
             {% if entity.type == 'image' %}

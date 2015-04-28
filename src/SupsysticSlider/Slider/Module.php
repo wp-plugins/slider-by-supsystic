@@ -41,6 +41,8 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         // Add shortcode
         add_shortcode('supsystic-slider', array($this, 'render'));
 
+        add_action( 'widgets_init', array($this, 'registerWidget'));
+
         // Register menu items.
         $dispatcher->on(
             'ui_menu_items',
@@ -299,6 +301,10 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
             $slider->settings['properties']['height'] = $attributes['height'];
         }
 
+		if (isset($attributes['position'])) {
+			$slider->settings['properties']['position'] = $attributes['position'];
+		}
+
         /** @var SupsysticSlider_Slider_Interface $module */
         $module = $this->getEnvironment()->getModule($slider->plugin);
 
@@ -385,6 +391,10 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
             );
     }
 
+    public function registerWidget() {
+        register_widget( 'sslWidget' );
+    }
+
     public function addNewSliderMenuItem()
     {
         $menu = $this->getEnvironment()->getMenu();
@@ -419,3 +429,5 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         }
     }
 }
+
+require_once('Model/widget.php');
