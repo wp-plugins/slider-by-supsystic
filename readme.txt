@@ -2,7 +2,7 @@
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
-Tested up to: 4.2
+Tested up to: 4.2.1
 Stable tag: 1.2.5
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
@@ -44,6 +44,7 @@ You have an incredible opportunity to get PRO version for free. Make Translation
 * Indonesian
 * Chinese (Taiwan)
 * German
+
 
 == Screenshots ==
 
