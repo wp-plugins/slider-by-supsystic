@@ -5,9 +5,9 @@
         <h3>{{ slider.title|capitalize }}</h3>
         <div class="image">
             {% if slider.images|length > 0 %}
-                <img src="{{ get_image_src(slider.images[0].attachment.id, '420', '250')[0] }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="450" height="220"/>
+                <img src="{{ get_image_src(slider.images[0].attachment.id, '420', '250')[0] }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
             {% else %}
-                <img src="http://placehold.it/450x220&text={{ slider.title }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="450" height="220"/>
+                <img src="http://placehold.it/450x220&text={{ slider.title }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
             {% endif %}
         </div>
         <div class="buttons-wrap" style="display: inline-block; height: auto;">
@@ -45,11 +45,11 @@
             {% endif %}
         </div>
         <div class="regular-text" id="propsShortcode" style="display: inline-block; margin-left: 20px;">
-            <h3 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h3>
-            [supsystic-slider id = {{ slider.id }}]
+            <h4 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h4>
+            [supsystic-slider id={{ slider.id }} position="center"]
             </br>
-            <h3 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h3>
-            {{ '<?php echo do_shortcode("[supsystic-slider id =' ~ slider.id ~ ']") ?>' }}
+            <h4 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h4>
+            {{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}
         </div>
     </div>
 {% endmacro %}
