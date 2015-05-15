@@ -2,8 +2,8 @@
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
-Tested up to: 4.2.1
-Stable tag: 1.2.6
+Tested up to: 4.2.2
+Stable tag: 1.2.8
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
@@ -27,7 +27,7 @@ Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, v
 Using Slider by Supsystic, you will be able to attract more people to your site and amaze them with effective slideshows, which display your images in a marvellous way. It is rather simple - just select images you would like to show and Slider by Supsystic will create responsive slideshow.
 
 If you have this slider plugin on your website, you can upload large photo galleries there in one moment. It allows you to add both pictures and videos to the slider and customize the settings using different professional templates and options. All these things will help you to create a fascinating sliders for every visitor of your site.
-Now impressive slideshows can become a good addition to your WordPress site. Install Slyder by Supsystic and visitors be delighted by beautiful pictures from your photo and video galleries!
+Now impressive slideshows can become a good addition to your WordPress site. Install Slider by Supsystic and visitors be delighted by beautiful pictures from your photo and video galleries!
 
 SEO optimized sliders can do a better job of getting the images and captions indexed well in the search engine. Fade, slide, rollover, slice anything you think is possible now with Slider by Supsystic plugin. We give high level of support for users and are willing to help you out even for some custom implementations in slider.
 
@@ -44,25 +44,28 @@ You have an incredible opportunity to get PRO version for free. Make Translation
 * Indonesian
 * Chinese (Taiwan)
 * German
+* Italian
+* French
+* Russian
 
 
 == Screenshots ==
 
-1. [Post Feed Slider](http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=postfeed&utm_campaign=slider "PostFeed Slider")
+1. [Post Feed Slider](http://supsystic.com/post-feed-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "PostFeed Slider") - post feed slides dynamically create slideshow based on your WordPress posts and pages.
 
-2. [Thumbnail Slider](http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=thumbnail&utm_campaign=slider "Thubnail Slider")
+2. [Thumbnail Slider](http://supsystic.com/thumbnails-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "Thumbnail Slider") - thumbnails tend to be a huge part of most WordPress themes these days. Even very simple themes make use of them in different places.
 
-3. [Responsive Video Slider](http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=videoslider&utm_campaign=slider "Video Slider")
+3. [Responsive Video Slider](http://supsystic.com/video-slider-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "Video Slider") - add videos from Youtube or Vimeo to your slideshow. Full screen video support with custom video support.
 
-4. [Post Feed Carousel Slider](http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=carouselpostfeed&utm_campaign=slider "Post Feed Carousel")
+4. [Post Feed Carousel Slider](http://supsystic.com/post-feed-carousel-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "Post Feed Carousel") - dynamically create slideshow based on your WordPress posts and pages. Use carousel sliders to show more content of your site at one time.
 
-5. HTML Image Slider
+5. [HTML Image Slider](http://supsystic.com/html-support-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "HTML Content Slider") - use HTML effects to attract users to the slider.
 
-6. Pager Slider
+6. [Pager Slider](http://supsystic.com/pager-example?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "Pager Slider") - simple and nice slider theme with captions. Publish photos and images in a minute! 
 
-7. Image Slideshow
+7. [Image Slideshow](http://supsystic.com/slideshow-examle?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "Image Slideshow") is a brilliant method to stack and present series of images in your WordPress especially when space is a constraint.
 
-8. [WordPress Slider plugin](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "WordPress Slider Plugin") admin area
+8. [WordPress Slider plugin](http://supsystic.com/plugins/slider?utm_source=wordpress&utm_medium=screenshots&utm_campaign=slider "WordPress Slider Plugin") admin area. Choose one of 6 amazing slider templates and customize your slider with easy-to-use options.
 
 == Installation ==
 
@@ -204,8 +207,37 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 * [Popup plugin](https://wordpress.org/plugins/popup-by-supsystic/ "Popup plugin")
 * [Security and Firewall](https://wordpress.org/plugins/security-by-supsystic/ "Security solution")
 
+= Our plugins =
+
+* [Social Share Buttons by Supsystic](https://wordpress.org/plugins/social-share-buttons-by-supsystic/ "Social Share Buttons by Supsystic")
+* [Data Tables Generator by Supsystic](https://wordpress.org/plugins/data-tables-generator-by-supsystic/ "Data Tables Generator by Supsystic")
+* [Google Maps Easy](https://wordpress.org/plugins/google-maps-easy/ "Google Maps Easy")
+* [Gallery by Supsystic](https://wordpress.org/plugins/gallery-by-supsystic/ "Gallery by Supsystic")
+* [Backup by Supsystic](https://wordpress.org/plugins/backup-by-supsystic/ "Backup by Supsystic")
+* [Lightbox by Supsystic](https://wordpress.org/plugins/lightbox-by-supsystic/ "Lightbox by Supsystic")
+* [Slider by Supsystic](https://wordpress.org/plugins/slider-by-supsystic/ "Slider by Supsystic")
+* [PopUp by Supsystic](https://wordpress.org/plugins/popup-by-supsystic/ "PopUp by Supsystic")
+* [Security by Supsystic](https://wordpress.org/plugins/security-by-supsystic/ "Security by Supsystic")
+* [Secure Login by Supsystic](https://wordpress.org/plugins/secure-login-by-supsystic/ "Secure Login by Supsystic")
+
+
+
 
 == Changelog ==
+
+= 1.2.7 = 15/05/2015
+
+ * Admin settings fixed
+ * New dialogs for selecting arrows and bullets
+ * Minor bugs fixes
+ * Functional changes
+
+= 1.2.7 = 13/05/2015
+
+ * Bug fix with HTML slider caption
+ * New slide builder settings
+ * New translation files
+ * Minor bugs fixes
 
 = 1.2.6 = 07/05/2015
 

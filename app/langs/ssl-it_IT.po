@@ -1,224 +1,169 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: supsystic-slider-lang_ITALY\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 1.7.6\n"
+
 msgid "Slider by Supsystic"
 msgstr ""
 
 msgid "Overview"
-msgstr ""
+msgstr "Panoramica"
 
 msgid "New Slider"
-msgstr ""
+msgstr "Nuovo Slider"
 
 msgid "Sliders"
-msgstr ""
+msgstr "Sliders"
 
 msgid "Images"
-msgstr ""
+msgstr "Immagini"
 
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 msgid "License"
-msgstr ""
+msgstr "Licenza"
 
 msgid "Get PRO"
-msgstr ""
+msgstr "Ottieni PRO"
 
 msgid "Loading"
-msgstr ""
+msgstr "Caricando"
 
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 msgid "An error has occurred"
-msgstr ""
+msgstr "Si è verificato un errore"
 
 msgid "Authorization code is not specified."
-msgstr ""
+msgstr "Codice di autorizzazione non specificato"
 
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 msgid "Upload your images from the Facebook Media Library"
-msgstr ""
+msgstr "Carica la tua immagine dalla libreria Media di Facebook"
 
 msgid "Upload from Facebook"
-msgstr ""
+msgstr "Carica da Facebook"
 
 msgid "Upload new images"
-msgstr ""
+msgstr "Carica nuove immagini"
 
 msgid "Import images"
-msgstr ""
+msgstr "Importa immgini"
 
 msgid "Logout"
-msgstr ""
+msgstr "Esci"
 
 msgid "Select/unselect all photos"
-msgstr ""
+msgstr "Selezione/deseleziona tutte le foto"
 
 msgid "Empty user data."
-msgstr ""
+msgstr "Cancella dati utente."
 
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 msgid "Upload your images from the Flickr Media Library"
-msgstr ""
+msgstr "Carica le immagini dalla libreria media di Flickr"
 
 msgid "Upload from Flickr"
-msgstr ""
+msgstr "Carica da Flickr"
 
 msgid "Effects"
-msgstr ""
+msgstr "Effetti"
 
 msgid "Controls"
-msgstr ""
+msgstr "Controlli"
 
 msgid "Mode"
-msgstr ""
+msgstr "Modo"
 
 msgid "Distance"
-msgstr ""
+msgstr "Distanza"
 
 msgid "Arrows"
-msgstr ""
-
-msgid "Select Arrows"
-msgstr ""
+msgstr "Frecce"
 
 msgid "Bullet control"
 msgstr ""
 
-msgid "Select Bullet control"
-msgstr ""
-
 msgid "Responsive size Slider"
-msgstr ""
+msgstr "Dimensioni Responsive"
 
 msgid "Thumbnails slider navigation"
-msgstr ""
-
-msgid "Thumbnails type"
-msgstr ""
+msgstr "Navigazione delle anteprime"
 
 msgid "Enable Slideshow"
-msgstr ""
+msgstr "Abilita presentazione"
 
 msgid "Slideshow Speed"
-msgstr ""
+msgstr "Velocità presentazione"
 
 msgid "Select Shadow"
-msgstr ""
-
-msgid "Select arrows"
-msgstr ""
-
-msgid "Select bullet control"
-msgstr ""
+msgstr "Selezione ombra"
 
 msgid "Select shadow effect"
-msgstr ""
-
-msgid "Customize slide content"
-msgstr ""
-
-msgid "Main"
-msgstr ""
-
-msgid "Buttons"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Font size: "
-msgstr ""
-
-msgid "Font color: "
-msgstr ""
-
-msgid "Content"
-msgstr ""
-
-msgid "Effect"
-msgstr ""
-
-msgid "Add button"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Button properties"
-msgstr ""
-
-msgid "Text: "
-msgstr ""
-
-msgid "Link: "
-msgstr ""
-
-msgid "Open in new window: "
-msgstr ""
-
-msgid "Remove"
-msgstr ""
-
-msgid "Color: "
-msgstr ""
-
-msgid "Background: "
-msgstr ""
+msgstr "Seleziona effetto ombra"
 
 msgid "Check"
 msgstr ""
 
 msgid "Authorization oauth_verifier is not specified."
-msgstr ""
+msgstr "Autorizzazione oauth_verifier non specificata."
 
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 msgid "Upload your images from the Tumblr Media Library"
-msgstr ""
+msgstr "Carica immagini dalla libreria Media Tumblr"
 
 msgid "Upload from Tumblr"
-msgstr ""
+msgstr "Carica da Tumblr"
 
 msgid "Text align"
-msgstr ""
+msgstr "Allineamento testo"
 
 msgid "Align left"
-msgstr ""
+msgstr "Allinea a sinistra"
 
 msgid "Align center"
-msgstr ""
+msgstr "Allinea al centro"
 
 msgid "Align right"
-msgstr ""
+msgstr "Allinea a destra"
 
 msgid "Text color"
-msgstr ""
+msgstr "Colore del testo"
 
 msgid "Background color"
-msgstr ""
+msgstr "Colore sfondo"
 
 msgid "Text size"
-msgstr ""
+msgstr "Dimensione testo"
 
 msgid "Text Animation"
-msgstr ""
+msgstr "Animazione testo"
 
 msgid "Disable"
-msgstr ""
+msgstr "Disabilita"
 
 msgid "Enable"
-msgstr ""
+msgstr "Abilita"
 
 msgid "Text in effect"
-msgstr ""
+msgstr "Effetto entrata testo"
 
 msgid "FadeIn"
 msgstr ""
@@ -251,7 +196,7 @@ msgid "FlipInY"
 msgstr ""
 
 msgid "Text out effect"
-msgstr ""
+msgstr "Effetto in uscita testo"
 
 msgid "FadeOut"
 msgstr ""
@@ -284,7 +229,7 @@ msgid "FlipOutY"
 msgstr ""
 
 msgid "Controls type"
-msgstr ""
+msgstr "Tipo di controlli"
 
 msgid "circle_arrows"
 msgstr ""
@@ -314,28 +259,28 @@ msgid "go_small"
 msgstr ""
 
 msgid "Border style:"
-msgstr ""
+msgstr "Stile bordo:"
 
 msgid "None"
-msgstr ""
+msgstr "Nessuno"
 
 msgid "Solid"
-msgstr ""
+msgstr "Continuo"
 
 msgid "Dashed"
-msgstr ""
+msgstr "Tratteggiato"
 
 msgid "Border width:"
-msgstr ""
+msgstr "Spessore bordo:"
 
 msgid "Border color:"
-msgstr ""
+msgstr "Colore bordo:"
 
 msgid "Thumbnails margin"
-msgstr ""
+msgstr "Margini miniatura"
 
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 msgid "Touch"
 msgstr ""
@@ -344,313 +289,322 @@ msgid "Pager"
 msgstr ""
 
 msgid "Properties"
-msgstr ""
+msgstr "Proprietà"
 
 msgid "Slideshow"
-msgstr ""
+msgstr "Presentazione"
 
 msgid "Slideshow controls"
-msgstr ""
+msgstr "Controlli presentazione"
 
 msgid "Navigation"
-msgstr ""
+msgstr "Navigazione"
 
 msgid "Captions"
-msgstr ""
+msgstr "Didascalie"
 
 msgid "Speed"
-msgstr ""
+msgstr "Velocità"
 
 msgid "Margin"
-msgstr ""
+msgstr "Margine"
 
 msgid "Starting slide"
-msgstr ""
+msgstr "Inizio presentazione"
 
 msgid "Start slider on a random slide"
-msgstr ""
+msgstr "Inizia presentazione su una slide random"
 
 msgid "Easing"
 msgstr ""
 
 msgid "Enable touch"
-msgstr ""
+msgstr "Abilita touch"
 
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 msgid "No"
-msgstr ""
+msgstr "No"
 
 msgid "One-to-One touch"
-msgstr ""
+msgstr "Modalità One-to-One"
 
 msgid "Swipe threshold"
-msgstr ""
+msgstr "Ritardo di trascinamento"
 
 msgid "Enable pager"
-msgstr ""
+msgstr "Abilita pager"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
+
+msgid "Effect"
+msgstr "Effetto"
 
 msgid "Select effect"
-msgstr ""
+msgstr "Seleziona effetto"
 
 msgid "Title speed"
-msgstr ""
+msgstr "Velocità titolo"
 
 msgid "Opacity"
-msgstr ""
+msgstr "Opacità"
 
 msgid "Delay"
-msgstr ""
+msgstr "Ritardo"
 
 msgid "Pause"
-msgstr ""
+msgstr "Pausa "
 
 msgid "Links"
-msgstr ""
+msgstr "Links"
 
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 msgid "Upload your images from the Instagram Media Library"
-msgstr ""
+msgstr "Carica immagini dalla libreria media di Instagram"
 
 msgid "Upload from Instagram"
-msgstr ""
+msgstr "Carica da Instagram"
 
 msgid "Gallery by Supsystic"
-msgstr ""
+msgstr "Gallerie by Supsystic"
 
 msgid "Most common FAQs"
-msgstr ""
+msgstr "FAQ più frequenti"
 
 msgid "How to get PRO version of plugin for FREE?"
-msgstr ""
+msgstr "Come ottenere la versione PRO gratuitamente?"
 
 msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
-msgstr ""
+msgstr "Hai una incredibile opportunità di ottenere la versione PRO gratuitamente. Traduci il plugin. Sarebbe meraviglioso ottenere i vantaggi offerti!"
 
 msgid "Translation"
-msgstr ""
+msgstr "Traduzione"
 
 msgid "Check all FAQs"
-msgstr ""
+msgstr "Visualizza tutte le FAQ"
 
 msgid "Video tutorial will be added soon"
-msgstr ""
+msgstr "Un video tutoria verrà aggiunto presto"
 
 msgid "All news"
-msgstr ""
+msgstr "Tutte le News"
 
 msgid "Your name"
-msgstr ""
+msgstr "Tuo Nome"
 
 msgid "Your email"
-msgstr ""
+msgstr "Tua email"
 
 msgid "Website"
-msgstr ""
+msgstr "Sito"
 
 msgid "Subject"
-msgstr ""
+msgstr "Oggetto"
 
 msgid "Topic"
-msgstr ""
+msgstr "Domanda"
 
 msgid "Plugin options"
-msgstr ""
+msgstr "Opzioni plugin"
 
 msgid "Report a bug"
-msgstr ""
+msgstr "Segnala un bug"
 
 msgid "Require a new functionallity"
-msgstr ""
+msgstr "Richiedi nuova funzionalità"
 
 msgid "Other"
-msgstr ""
+msgstr "Altro"
 
 msgid "Type your message"
-msgstr ""
+msgstr "Scrivi il tuo messaggio"
 
 msgid "Send email"
-msgstr ""
+msgstr "Invia email"
 
 msgid "Fields with * are required to fill"
-msgstr ""
+msgstr "I campi con * sono obbligatori"
 
 msgid "Unable to save chosen photo %s: %s"
-msgstr ""
+msgstr "Impossibile salvare la foto scelta %s: %s"
 
 msgid "New Folder"
-msgstr ""
+msgstr "Nuova Cartella"
 
 msgid "The title can't be empty"
-msgstr ""
+msgstr "Il titolo non può essere vuoto"
 
 msgid "Title successfully updated"
-msgstr ""
+msgstr "Titolo caricato con successo"
 
 msgid "Failed to update position."
-msgstr ""
+msgstr "Impossibile aggiornare la posizione."
 
 msgid "Position updated successfully!"
-msgstr ""
+msgstr "Posizione aggiornata correttamente!"
 
 msgid "Rename folder"
-msgstr ""
+msgstr "Rinomina cartella"
 
 msgid "Folder name:"
-msgstr ""
+msgstr "Nome Cartella:"
 
 msgid "Add images to the slider"
-msgstr ""
+msgstr "Aggiungi immagini allo slider"
 
 msgid "Please wait while the plugin to get the list of sliders..."
-msgstr ""
+msgstr "Attendi mentre il plugin ottiene la lista degli slider"
 
 msgid "Select slider:"
-msgstr ""
+msgstr "Seleziona slide:"
 
 msgid "New folder"
-msgstr ""
+msgstr "Nuova cartella"
 
 msgid "Add images to the new slider"
-msgstr ""
+msgstr "Aggiungi immagini al nuovo slider"
 
 msgid "Slider title:"
-msgstr ""
+msgstr "Titolo slide:"
 
 msgid "Add new video"
-msgstr ""
+msgstr "Aggiungi nuovo video"
 
 msgid "Import videos"
-msgstr ""
+msgstr "Importa video"
 
 msgid "Create new folder"
-msgstr ""
+msgstr "Crea nuova cartella "
 
 msgid "Delete selected items"
-msgstr ""
+msgstr "Cancella elementi selezionati"
 
 msgid "Create new slider from the selected items"
-msgstr ""
+msgstr "Crea nuovo slide dagli elementi selezionati"
 
 msgid "New slider from selected"
-msgstr ""
+msgstr "Nuovo slider da selezione"
 
 msgid "Add the selected items to the existing slider"
-msgstr ""
+msgstr "Aggiungi gli elementi selezionati a uno slider esistente"
 
 msgid "Add selected to the slider"
-msgstr ""
+msgstr "Aggiungi selezione allo slider"
 
 msgid "Upload your images from the Wordpress Media Library"
-msgstr ""
+msgstr "Carica immagini dalla libreria WordPress"
 
 msgid "All photos"
-msgstr ""
+msgstr "Tutte le foto"
 
 msgid "Drop photos here to move them from the folder"
-msgstr ""
+msgstr "Lascia le foto qui per spostarle dalla cartella"
 
 msgid "Lifetime for cached data"
-msgstr ""
+msgstr "Durata dei dati cached"
 
 msgid "The field \"%s\" available only for numeric values"
-msgstr ""
+msgstr "Il campo \"%s\" può contenere solo valori numerici"
 
 msgid "Settings successfully updated!"
-msgstr ""
+msgstr "Impostazioni aggiornate correttamente!"
 
 msgid "Please correct following errors:"
-msgstr ""
+msgstr "Correggere i seguenti errori:"
 
 msgid "Plugin settings"
-msgstr ""
+msgstr "Impostazioni plugin"
 
 msgid "Use build-in caching:"
-msgstr ""
+msgstr "Utilizza caching built-in:"
 
 msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
-msgstr ""
+msgstr "<strong>%s</strong> ha il suo sistema di caching per ridurre significamente il carico del database."
 
 msgid "Caching is not available because your uploads directory is not writable."
-msgstr ""
+msgstr "Caching non disponibile perché la directory di upload non è scrivibile."
 
 msgid "Lifetime for cached data:"
 msgstr ""
 
 msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
-msgstr ""
+msgstr "Il tempo in secondi dopo il quale la cache viene considerata obsoleta. Default: 86400 (24 ore)."
 
 msgid "Clear cache"
-msgstr ""
+msgstr "Pulisci cache"
 
 msgid "Allow plugin to send anonymous usage statistics:"
-msgstr ""
+msgstr "Autorizza il plugin ad inviare statistiche anonime sull'utilizzo:"
 
 msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
-msgstr ""
+msgstr "Non raccogliamo statistiche su di te, solamente gli errori incontrati durante l'uso del plugin per poter migliorare il nostro prodotto."
+
+msgid "Save"
+msgstr "Salva"
 
 msgid "Slider \"%s\" successfully created."
-msgstr ""
+msgstr "Slider \"%s\" creato correttamente."
 
 msgid "Failed to update positions."
-msgstr ""
+msgstr "Impossibile aggiornare posizioni."
 
 msgid "Positions are successfully updated!"
-msgstr ""
+msgstr "Posizioni aggiornate correttamente!"
 
 msgid "Unable to delete selected slider"
-msgstr ""
+msgstr "Impossibile cancellare lo slider selezionato"
 
 msgid "Failed to import selected items."
-msgstr ""
+msgstr "Impossibile importare gli elementi selezionati."
 
 msgid "Invalid slider identifier."
-msgstr ""
+msgstr "ID slider non valido."
 
 msgid "Unable to find requested slider."
-msgstr ""
+msgstr "Impossibile trovare lo slider richiesto."
 
 msgid "Failed to save settings. %s"
-msgstr ""
+msgstr "Impossibile salvare le impostazioni. %s"
 
 msgid "Failed to change plugin: %s"
-msgstr ""
+msgstr "Impossibile cambiare il plugin: %s"
 
 msgid "Failed to attach resources."
-msgstr ""
+msgstr "Impossibile allegare la risorsa. "
 
 msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
-msgstr ""
+msgstr "%s risorse allegate con successo a <a href=\"%s\">%s</a>"
 
 msgid "Successfully removed!"
-msgstr ""
+msgstr "Rimosso con successo!"
 
 msgid "Failed to load settings"
-msgstr ""
+msgstr "Impossibile caricare impostazioni"
 
 msgid "Import"
-msgstr ""
+msgstr "Importa"
 
 msgid "You have no images"
-msgstr ""
+msgstr "Non hai immagini"
 
 msgid "Upload to images"
-msgstr ""
+msgstr "Carica su immagini"
+
+msgid "Preview"
+msgstr "Anteprima"
 
 msgid "Delete Slider"
-msgstr ""
+msgstr "Cancella slider"
 
 msgid "Total images: "
-msgstr ""
+msgstr "Immagini totali:"
 
 msgid "Total videos: "
-msgstr ""
+msgstr "Video totali:"
 
 msgid "Shortcode: "
 msgstr ""
@@ -659,73 +613,73 @@ msgid "PhpCode: "
 msgstr ""
 
 msgid "Sliders List"
-msgstr ""
+msgstr "Elenco slider"
 
 msgid "Slider Name"
-msgstr ""
+msgstr "Nome Slider"
 
 msgid "Select module"
-msgstr ""
+msgstr "Seleziona modulo"
 
 msgid "Add Images"
-msgstr ""
+msgstr "Aggiungi Immagini"
 
 msgid "Add Video"
-msgstr ""
+msgstr "Aggiungi Video"
 
 msgid "Add images"
-msgstr ""
+msgstr "Aggiungi immagini"
 
 msgid "Change Slider"
-msgstr ""
+msgstr "Cambia slider"
 
 msgid "Delete"
-msgstr ""
+msgstr "Cancella"
 
 msgid "Are you really want to delete "
-msgstr ""
+msgstr "Vuoi cancellare"
 
 msgid "Posts and Pages"
-msgstr ""
+msgstr "Post e Pagine"
 
 msgid "Remove post"
-msgstr ""
+msgstr "Rimuovi post"
 
 msgid "Select posts to show"
-msgstr ""
+msgstr "Seleziona i post da visualizzare"
 
 msgid "Pages: "
-msgstr ""
+msgstr "Pagine:"
 
 msgid "Add page"
-msgstr ""
+msgstr "Aggiungi pagina"
 
 msgid "Posts: "
-msgstr ""
+msgstr "Post:"
 
 msgid "Add post"
-msgstr ""
+msgstr "Aggiungi post"
 
 msgid "Media"
-msgstr ""
+msgstr "Media"
 
 msgid "Shortcode"
 msgstr ""
 
 msgid "Slider width"
-msgstr ""
+msgstr "Larghezza slider"
 
 msgid "pixels"
-msgstr ""
+msgstr "pixel"
 
 msgid "Slider height"
-msgstr ""
+msgstr "Altezza slider"
 
 msgid "Change Slider Type"
-msgstr ""
+msgstr "Cambia tipo slider"
 
 msgid "Select plugin"
-msgstr ""
+msgstr "Seleziona plugin"
 
 msgid "Jssor PRO"
 msgstr ""
@@ -734,48 +688,51 @@ msgid "Please note:"
 msgstr ""
 
 msgid "Current settings will be removed without ability to restore."
-msgstr ""
+msgstr "Le impostazioni verranno rimosse senza poter essere ripristinate."
 
 msgid "Visual editor"
-msgstr ""
+msgstr "Editor visuale"
 
 msgid "Choose import source"
-msgstr ""
+msgstr "Scegli sorgente importazione"
 
 msgid "Import from Wordpress Media Library"
-msgstr ""
+msgstr "Importa da galleria Wordpress"
 
 msgid "Import from social networks"
-msgstr ""
+msgstr "Importa da social network"
 
 msgid "Import from your Instagram account"
-msgstr ""
+msgstr "Importa da account Instagram"
 
 msgid "Import from your Flickr account"
-msgstr ""
+msgstr "Importa da Flickr"
 
 msgid "Import from your Tumblr account"
-msgstr ""
+msgstr "Importa da Tumblr"
 
 msgid "Import from your Facebook account"
-msgstr ""
+msgstr "Importa da Facebook"
 
 msgid "Get Pro to enable import"
-msgstr ""
+msgstr "Ottieni PRO per abilitare importazione"
 
 msgid "Get PRO for 29$"
-msgstr ""
+msgstr "Ottieni PRO per 29$"
 
 msgid "Import video"
-msgstr ""
+msgstr "Importa video"
 
 msgid "Video URL:"
-msgstr ""
+msgstr "URL video:"
 
 msgid "Supported platforms: %s."
-msgstr ""
+msgstr "Piattaforme supportate: %s."
 
 msgid "Edit image"
+msgstr "Edita immagine"
+
+msgid "Main"
 msgstr ""
 
 msgid "Caption"
@@ -785,43 +742,43 @@ msgid "SEO"
 msgstr ""
 
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 msgid "Alternative text"
-msgstr ""
+msgstr "Testo alternativo"
 
 msgid "External link"
-msgstr ""
+msgstr "Link esterno"
 
 msgid "Available in PRO version."
-msgstr ""
+msgstr "Disponibile nella versione PRO"
 
 msgid "Link"
 msgstr ""
 
 msgid "Open in new window"
-msgstr ""
+msgstr "Apri in una nuova finestra"
 
 msgid "Embeded video"
-msgstr ""
+msgstr "Video Embeded"
 
 msgid "Video URL"
-msgstr ""
+msgstr "URL Video"
 
 msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
-msgstr ""
+msgstr "Supporta Youtube e Vimeo. L'URL verrà convertita in embed automaticamente."
 
 msgid "Select %s"
-msgstr ""
+msgstr "Selezione %s"
 
 msgid "HTML"
 msgstr ""
 
 msgid "Welcome to"
-msgstr ""
+msgstr "Benvenuto in"
 
 msgid "Version"
-msgstr ""
+msgstr "Versione"
 
 msgid "Google"
 msgstr ""
@@ -830,13 +787,13 @@ msgid "Wordpress.org"
 msgstr ""
 
 msgid "Reffer a friend"
-msgstr ""
+msgstr "Riferisci a un amico"
 
 msgid "Find on the web"
-msgstr ""
+msgstr "Cerca sul web"
 
 msgid "Other way"
-msgstr ""
+msgstr "Altra via"
 
 msgid "Thank for check info. Start using plugin"
-msgstr ""
+msgstr "Grazie per aver verificato le info. Inizia ad usare il plugin"

@@ -1,0 +1,799 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Slider by Supsystic"
+msgstr "Supsystic Слайдер"
+
+msgid "Overview"
+msgstr "Обзор"
+
+msgid "New Slider"
+msgstr "Новый слайдер"
+
+msgid "Sliders"
+msgstr "Слайдеры"
+
+msgid "Images"
+msgstr "Картинки"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "License"
+msgstr "Лицензия"
+
+msgid "Get PRO"
+msgstr "Получить ПРО"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "An error has occurred"
+msgstr "Произошла ошибка"
+
+msgid "Authorization code is not specified."
+msgstr "Код авторизации не указано."
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Upload your images from the Facebook Media Library"
+msgstr "Загрузить картинки через Facebook "
+
+msgid "Upload from Facebook"
+msgstr "Загрузить через Facebook"
+
+msgid "Upload new images"
+msgstr "Загрузить новые картинки"
+
+msgid "Import images"
+msgstr "Импорт картинок"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Select/unselect all photos"
+msgstr "Выбрать /снять все фотографии"
+
+msgid "Empty user data."
+msgstr "Пусто"
+
+msgid "Flickr"
+msgstr "Flickr"
+
+msgid "Upload your images from the Flickr Media Library"
+msgstr "Загрузить картинки через Flickr "
+
+msgid "Upload from Flickr"
+msgstr "Загрузить через  Flickr"
+
+msgid "Effects"
+msgstr "Эффект"
+
+msgid "Controls"
+msgstr "Управление"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Distance"
+msgstr "Расстояние "
+
+msgid "Arrows"
+msgstr "Стрелки"
+
+msgid "Bullet control"
+msgstr "Kontrol bullet"
+
+msgid "Responsive size Slider"
+msgstr "Отзывчивый размер слайдера"
+
+msgid "Thumbnails slider navigation"
+msgstr "Миниатюры слайдера навигации"
+
+msgid "Enable Slideshow"
+msgstr "Включить слайдшоу"
+
+msgid "Slideshow Speed"
+msgstr "Скорость слайдшоу"
+
+msgid "Select Shadow"
+msgstr "Выбрать слайдшоу"
+
+msgid "Select shadow effect"
+msgstr "Выбрать эффект слайдшоу"
+
+msgid "Check"
+msgstr "Выбрать"
+
+msgid "Authorization oauth_verifier is not specified."
+msgstr "Авторизация oauth_verifier не указана."
+
+msgid "Tumblr"
+msgstr "Tumblr"
+
+msgid "Upload your images from the Tumblr Media Library"
+msgstr "Загрузить фотографии через  Tumblr медиа-библиотеку"
+
+msgid "Upload from Tumblr"
+msgstr "Загрузить через Tumblr"
+
+msgid "Text align"
+msgstr "Выравнивание текста"
+
+msgid "Align left"
+msgstr "Слева"
+
+msgid "Align center"
+msgstr "По центру"
+
+msgid "Align right"
+msgstr "Справа"
+
+msgid "Text color"
+msgstr "Цвет текста"
+
+msgid "Background color"
+msgstr "Цвет фона"
+
+msgid "Text size"
+msgstr "Размер текста"
+
+msgid "Text Animation"
+msgstr "Анимация текста"
+
+msgid "Disable"
+msgstr "Выключить"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Text in effect"
+msgstr "Эффект для текста"
+
+msgid "FadeIn"
+msgstr "FadeIn"
+
+msgid "RollIn"
+msgstr "RollIn"
+
+msgid "FadeInLeftBig"
+msgstr "FadeInLeftBig"
+
+msgid "FadeInRightBig"
+msgstr "FadeInRightBig"
+
+msgid "FadeInLeft"
+msgstr "FadeInLeft"
+
+msgid "FadeInRight"
+msgstr "FadeInRight"
+
+msgid "FadeInUp"
+msgstr "FadeInUp"
+
+msgid "FadeInDown"
+msgstr "FadeInDown"
+
+msgid "FlipInX"
+msgstr "FlipInX"
+
+msgid "FlipInY"
+msgstr "FlipInY"
+
+msgid "Text out effect"
+msgstr "Efek teks keluar"
+
+msgid "FadeOut"
+msgstr "FadeOut"
+
+msgid "RollOut"
+msgstr "RollOut"
+
+msgid "FadeOutLeftBig"
+msgstr "FadeOutLeftBig"
+
+msgid "FadeOutRightBig"
+msgstr "FadeOutRightBig"
+
+msgid "FadeOutLeft"
+msgstr "FadeOutLeft"
+
+msgid "FadeOutRight"
+msgstr "FadeOutRight"
+
+msgid "FadeOutUp"
+msgstr "FadeOutUp"
+
+msgid "FadeOutDown"
+msgstr "FadeOutDown"
+
+msgid "FlipOutX"
+msgstr "FlipOutX"
+
+msgid "FlipOutY"
+msgstr "FlipOutY"
+
+msgid "Controls type"
+msgstr "Тип управления"
+
+msgid "circle_arrows"
+msgstr "circle_arrows"
+
+msgid "little_arrows"
+msgstr "little_arrows"
+
+msgid "standart_big"
+msgstr "standart_big"
+
+msgid "standart_small"
+msgstr "standart_small"
+
+msgid "circle_little"
+msgstr "circle_little"
+
+msgid "square_big"
+msgstr "square_big"
+
+msgid "fast"
+msgstr "fast"
+
+msgid "little"
+msgstr "little"
+
+msgid "go_small"
+msgstr "go_small"
+
+msgid "Border style:"
+msgstr "Стиль рамки:"
+
+msgid "None"
+msgstr "Нету"
+
+msgid "Solid"
+msgstr "Твердый"
+
+msgid "Dashed"
+msgstr "Пунктирный"
+
+msgid "Border width:"
+msgstr "Ширина рамки:"
+
+msgid "Border color:"
+msgstr "Цвет рамки:"
+
+msgid "Thumbnails margin"
+msgstr "Отступ миниатюры"
+
+msgid "General"
+msgstr "Общее"
+
+msgid "Touch"
+msgstr "Касание"
+
+msgid "Pager"
+msgstr "Pager"
+
+msgid "Properties"
+msgstr "Свойства"
+
+msgid "Slideshow"
+msgstr "Слайдшоу"
+
+msgid "Slideshow controls"
+msgstr "Управление слайдшоу"
+
+msgid "Navigation"
+msgstr "Навигация"
+
+msgid "Captions"
+msgstr "Подписи"
+
+msgid "Speed"
+msgstr "Скорость"
+
+msgid "Margin"
+msgstr "Отступ"
+
+msgid "Starting slide"
+msgstr "Начать слайдшоу"
+
+msgid "Start slider on a random slide"
+msgstr "Начать слайдшоу с произвольного слайда"
+
+msgid "Easing"
+msgstr "Смягчение"
+
+msgid "Enable touch"
+msgstr "Включить касание"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "One-to-One touch"
+msgstr "One-to-One touch"
+
+msgid "Swipe threshold"
+msgstr "Проведение пальцем"
+
+msgid "Enable pager"
+msgstr "Включить pager"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Effect"
+msgstr "Эффект"
+
+msgid "Select effect"
+msgstr "Выбрать эффект"
+
+msgid "Title speed"
+msgstr "Скорость заголовка"
+
+msgid "Opacity"
+msgstr "Прозрачность"
+
+msgid "Delay"
+msgstr "Задержка"
+
+msgid "Pause"
+msgstr "Пауза"
+
+msgid "Links"
+msgstr "Ссылки"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Upload your images from the Instagram Media Library"
+msgstr "Загрузить картинки через Instagram"
+
+msgid "Upload from Instagram"
+msgstr "Загрузить с Instagram"
+
+msgid "Gallery by Supsystic"
+msgstr "Галерея Supsystic"
+
+msgid "Most common FAQs"
+msgstr "Наиболее распространенные Вопросы и ответы"
+
+msgid "How to get PRO version of plugin for FREE?"
+msgstr "Как получить PRO версию плагина БЕСПЛАТНО?"
+
+msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
+msgstr "У вас есть невероятная возможность получить PRO версию бесплатно. Сделайте перевод плагина. Это будет удивительно, если вы воспользоваться этим предложением!"
+
+msgid "Translation"
+msgstr "Переводы"
+
+msgid "Check all FAQs"
+msgstr "Часто задаваемые вопросы"
+
+msgid "Video tutorial will be added soon"
+msgstr "Видео урок будет добавлен в ближайшее время"
+
+msgid "All news"
+msgstr "Все новости"
+
+msgid "Your name"
+msgstr "Ваше Имя"
+
+msgid "Your email"
+msgstr "Ваш Email"
+
+msgid "Website"
+msgstr "Ваш сайт"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "Topic"
+msgstr "Раздел"
+
+msgid "Plugin options"
+msgstr "Опции плагина"
+
+msgid "Report a bug"
+msgstr "Сообщить об ошибке"
+
+msgid "Require a new functionallity"
+msgstr "Предложить новый функционал"
+
+msgid "Other"
+msgstr "Другое"
+
+msgid "Type your message"
+msgstr "Введите сообщение"
+
+msgid "Send email"
+msgstr "Оправить письмо"
+
+msgid "Fields with * are required to fill"
+msgstr "Поля, отмеченные *, обязательны для заполнения"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "Невозможно сохранить выбранную фотографию% S:% s"
+
+msgid "New Folder"
+msgstr "Новая папка"
+
+msgid "The title can't be empty"
+msgstr "Заголовок не может быть пустым"
+
+msgid "Title successfully updated"
+msgstr "Заголовок успешно обновлен"
+
+msgid "Failed to update position."
+msgstr "Не удалось обновить позицию."
+
+msgid "Position updated successfully!"
+msgstr "Позиция обновлена успешно"
+
+msgid "Rename folder"
+msgstr "Переименовать папку"
+
+msgid "Folder name:"
+msgstr "Имя папки:"
+
+msgid "Add images to the slider"
+msgstr "Добавить картинки к слайдеру"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "Пожалуйста, подождите, пока плагин получит список слайдеров ..."
+
+msgid "Select slider:"
+msgstr "Выбрать слайдер:"
+
+msgid "New folder"
+msgstr "Новая папка"
+
+msgid "Add images to the new slider"
+msgstr "Добавить картинки в новый слайдер"
+
+msgid "Slider title:"
+msgstr "Заголовок слайдера:"
+
+msgid "Add new video"
+msgstr "Добавить новое видео"
+
+msgid "Import videos"
+msgstr "Импорт видео"
+
+msgid "Create new folder"
+msgstr "Создать новую папку"
+
+msgid "Delete selected items"
+msgstr "Удалить выбранные элементы"
+
+msgid "Create new slider from the selected items"
+msgstr "Создать новый слайдер из выбранных элементов"
+
+msgid "New slider from selected"
+msgstr "Новый слайдер из выбранного"
+
+msgid "Add the selected items to the existing slider"
+msgstr "Добавить выбранные элементы в существующий слайдер"
+
+msgid "Add selected to the slider"
+msgstr "Добавить выбранное в слайдер"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "Загрузить фотографии из Wordpress медиа-библиотеки"
+
+msgid "All photos"
+msgstr "Все картинки"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "Оставьте фотографии здесь, чтобы переместить их из папки"
+
+msgid "Lifetime for cached data"
+msgstr "Срок для кэширования данных"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr "Поле   \"% s \" доступно только для числовых значений"
+
+msgid "Settings successfully updated!"
+msgstr "Настройки успешно обновлены!"
+
+msgid "Please correct following errors:"
+msgstr "Пожалуйста, исправьте следующие ошибки:"
+
+msgid "Plugin settings"
+msgstr "Настройки плагина"
+
+msgid "Use build-in caching:"
+msgstr "Использовать встроенное кэширование:"
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> имеет свою собственную систему кэширования и значительно снижает нагрузку на базу данных."
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "Кэширование не доступно, потому что ваш каталог загрузки недоступен для записи."
+
+msgid "Lifetime for cached data:"
+msgstr "Срок для кэшированных данных:"
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "Время в секундах, после которого кэш будет считаться устаревшим. По умолчанию: 86400 (24 часа)."
+
+msgid "Clear cache"
+msgstr "Очистить кэш"
+
+msgid "Allow plugin to send anonymous usage statistics:"
+msgstr "Разрешить отправку анонимной статистики использования:"
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "Мы не собираем статистику о вас, мы собираем только ошибки, возникающие во время использования, с тем чтобы улучшить наш продукт."
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Slider \"%s\" successfully created."
+msgstr "Слайдер \"%s\" успешно создан."
+
+msgid "Failed to update positions."
+msgstr "Не удалось обновить позицию."
+
+msgid "Positions are successfully updated!"
+msgstr "Позиция успешно обновлена!"
+
+msgid "Unable to delete selected slider"
+msgstr "Невозможно удалить выбранный слайдер"
+
+msgid "Failed to import selected items."
+msgstr "Не удалось импортировать выбранные элементы."
+
+msgid "Invalid slider identifier."
+msgstr "Неверный идентификатор слайдера."
+
+msgid "Unable to find requested slider."
+msgstr "Tidak dapat menemukan slider yang diminta."
+
+msgid "Failed to save settings. %s"
+msgstr "Не удалось сохранить настройки. %s"
+
+msgid "Failed to change plugin: %s"
+msgstr "Не удалось изменить плагин %s"
+
+msgid "Failed to attach resources."
+msgstr "Не удалось присоединить ресурсы"
+
+msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
+msgstr "%s ресурсы успешно присоединены к<a href=\"%s\">%s</a>"
+
+msgid "Successfully removed!"
+msgstr "Успешно удалено!"
+
+msgid "Failed to load settings"
+msgstr "Не удалось загрузить настройки"
+
+msgid "Import"
+msgstr "Импорт"
+
+msgid "You have no images"
+msgstr "У Вас нету картинок"
+
+msgid "Upload to images"
+msgstr "Загрузить для изображений"
+
+msgid "Preview"
+msgstr "Показать"
+
+msgid "Delete Slider"
+msgstr "Удалить слайдер"
+
+msgid "Total images: "
+msgstr "Всего картинок:"
+
+msgid "Total videos: "
+msgstr "Всего видео:"
+
+msgid "Shortcode: "
+msgstr "Шорткод: "
+
+msgid "PhpCode: "
+msgstr "Php код: "
+
+msgid "Sliders List"
+msgstr "Список слайдеров"
+
+msgid "Slider Name"
+msgstr "Имя слайдера"
+
+msgid "Select module"
+msgstr "Выбрать модуль"
+
+msgid "Add Images"
+msgstr "Добавить Картинки"
+
+msgid "Add Video"
+msgstr "Добавить видео"
+
+msgid "Add images"
+msgstr "Добавить картинки"
+
+msgid "Change Slider"
+msgstr "Изменить слайдер"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Are you really want to delete "
+msgstr "Вы действительно хотите удалить"
+
+msgid "Posts and Pages"
+msgstr "Посты и страницы"
+
+msgid "Remove post"
+msgstr "Удалить пост"
+
+msgid "Select posts to show"
+msgstr "Выбрать посты для отображения"
+
+msgid "Pages: "
+msgstr "Страницы"
+
+msgid "Add page"
+msgstr "Добавить страницу"
+
+msgid "Posts: "
+msgstr "Посты"
+
+msgid "Add post"
+msgstr "Добавить пост"
+
+msgid "Media"
+msgstr "Медиа"
+
+msgid "Shortcode"
+msgstr "Шорткод"
+
+msgid "Slider width"
+msgstr "Ширина слайдера"
+
+msgid "pixels"
+msgstr "пикселей"
+
+msgid "Slider height"
+msgstr "Высота слайдера"
+
+msgid "Change Slider Type"
+msgstr "Изменить тип слайдера"
+
+msgid "Select plugin"
+msgstr "Выбрать плагин"
+
+msgid "Jssor PRO"
+msgstr "Jssor ПРО"
+
+msgid "Please note:"
+msgstr "Пожалуйста, обратите внимание:"
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "Текущие настройки будут удалены без возможности восстановления."
+
+msgid "Visual editor"
+msgstr "Визуальный редактор"
+
+msgid "Choose import source"
+msgstr "Выбрать источник импорта"
+
+msgid "Import from Wordpress Media Library"
+msgstr "Импорт с Галереи Wordpress "
+
+msgid "Import from social networks"
+msgstr "Импорт с социальных сетей"
+
+msgid "Import from your Instagram account"
+msgstr "Импорт с Instagram аккаунта"
+
+msgid "Import from your Flickr account"
+msgstr "Импорт с Flickr аккаунта"
+
+msgid "Import from your Tumblr account"
+msgstr "Импорт с Tumblr аккаунта"
+
+msgid "Import from your Facebook account"
+msgstr "Импорт с Facebook аккаунта"
+
+msgid "Get Pro to enable import"
+msgstr "Получить ПРО чтобы включить импорт"
+
+msgid "Get PRO for 29$"
+msgstr "Получить ПРО версию за 29$"
+
+msgid "Import video"
+msgstr "Импорт видео"
+
+msgid "Video URL:"
+msgstr "Ссылка на видео:"
+
+msgid "Supported platforms: %s."
+msgstr "Поддерживаемые платформы:% s."
+
+msgid "Edit image"
+msgstr "Редактировать картинку"
+
+msgid "Main"
+msgstr "Главная"
+
+msgid "Caption"
+msgstr "Подпись"
+
+msgid "SEO"
+msgstr "СЕО"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Alternative text"
+msgstr "Альтернативный текст"
+
+msgid "External link"
+msgstr "Внешняя ссылка"
+
+msgid "Available in PRO version."
+msgstr "Доступно в ПРО версии"
+
+msgid "Link"
+msgstr "Ссылка"
+
+msgid "Open in new window"
+msgstr "Открыть в новом окне"
+
+msgid "Embeded video"
+msgstr "Встроенное видео"
+
+msgid "Video URL"
+msgstr "Видео URL"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "Поддерживает Youtube и Vimeo. Ссылка будет автоматически конвертироваться."
+
+msgid "Select %s"
+msgstr "Выбрать %s"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Welcome to"
+msgstr "Добро пожаловать"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "Приведи друга"
+
+msgid "Find on the web"
+msgstr "Наш сайт"
+
+msgid "Other way"
+msgstr "Другой путь"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "Спасибо за проверку информации. Начните использовать плагин"

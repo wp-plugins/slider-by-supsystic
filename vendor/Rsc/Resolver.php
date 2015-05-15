@@ -221,7 +221,7 @@ class Rsc_Resolver
     {
         $query = $this->request->query;
 
-        if (in_array($query->get('page'), array_keys($this->routes))) {
+        if (is_array($this->routes) && in_array($query->get('page'), array_keys($this->routes))) {
             $name = $this->routes[$query->get('page')];
         } else {
             /** @var Rsc_Mvc_Module $module */

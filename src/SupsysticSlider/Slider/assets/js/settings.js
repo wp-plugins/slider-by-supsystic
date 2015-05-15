@@ -405,7 +405,7 @@
             $elements = [
                 $('#gbox_posts-table'),
                 $('.remove-post'),
-                $('#image-area h3:first')
+                //$('#image-area h3:first')
             ];
         if(!rowsNumber) {
             $.each($elements, function(index, $value) {
