@@ -1,13 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Logger
- * This class is implementation of the PSR-3 logger interface
- *
- * @see http://www.php-fig.org/psr/psr-3/
- * @package Rsc
- * @author Artur Kovalevsky
- */
+
 class Rsc_Logger implements Rsc_Logger_Interface
 {
 

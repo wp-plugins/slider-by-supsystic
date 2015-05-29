@@ -1,13 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Feedback_Mailer
- *
- * That class provide simple layer to send the emails from the plugin.
- *
- * @package Rsc\Feedback
- * @author Artur Kovalevsky
- */
+
 class Rsc_Feedback_Mailer
 {
     /**

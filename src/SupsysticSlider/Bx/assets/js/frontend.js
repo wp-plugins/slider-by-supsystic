@@ -51,6 +51,16 @@
         $thumbsContainer.closest('.bx-wrapper').css('margin-top', '5px');
     };
 
+    var initWrapper = function() {
+        $('div#bx-clearfix').each(function() {
+            var slider = $(this).prev();
+            var wrapper = $(this).next('.bx-wrapper');
+            if(wrapper.length) {
+                wrapper.css('float', slider.css('float'));
+            }
+        });
+    };
+
     var init = (function ($container) {
         var $bx;
 
@@ -112,6 +122,8 @@
                 $('.' + $slider.data('thumbs')).remove();
             }
         });
+
+        initWrapper();
     });
 
     app.plugins = app.plugins || {};

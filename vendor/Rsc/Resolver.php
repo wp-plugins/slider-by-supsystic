@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Resolver
- * Modules resolver
- *
- * @package Rsc
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Resolver
 {
 
@@ -46,6 +38,7 @@ class Rsc_Resolver
         $this->environment = $environment;
         $this->modules = new Rsc_Common_Collection();
         $this->request = new Rsc_Http_Request();
+        $this->routes = array();
     }
 
     /**
@@ -221,7 +214,7 @@ class Rsc_Resolver
     {
         $query = $this->request->query;
 
-        if (is_array($this->routes) && in_array($query->get('page'), array_keys($this->routes))) {
+        if (in_array($query->get('page'), array_keys($this->routes))) {
             $name = $this->routes[$query->get('page')];
         } else {
             /** @var Rsc_Mvc_Module $module */

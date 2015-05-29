@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Form_Rule_Numeric
- * This validator is used in order to check the incoming data on the presence of only numeric values
- *
- * @package Rsc\Form\Rule
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Form_Rule_Numeric implements Rsc_Form_Rule_Interface
 {
 

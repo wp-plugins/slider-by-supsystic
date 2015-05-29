@@ -1,16 +1,6 @@
 <?php
 
-/**
- * Class Rsc_ClassLoader
- * Autoload of classes on PSR-0 standards for PHP >= 5.2.4
- *
- * @package Rsc
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Jordi Boggiano <j.boggiano@seld.be>
- * @author Artur Kovalevsky <kovalevskyproj@gmail.com>
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_ClassLoader
 {
 

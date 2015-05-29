@@ -24,6 +24,10 @@
     </ul>
 </div>
 
+{% if slider.settings.general.navigation == "1" %}
+    <div id="bx-clearfix" style="clear:both;"></div>
+{% endif %}
+
 <ul class="thumbnails-{{ slider.id }} thumbs" style="margin: 0 10px !important;">
     {% for entity in slider.entities %}
         <li>
@@ -35,3 +39,7 @@
         </li>
     {% endfor %}
 </ul>
+
+{% if slider.settings.general.navigation == "1" %}
+    <div id="bx-clearfix" style="clear:both;"></div>
+{% endif %}

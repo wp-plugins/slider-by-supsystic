@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Lang
- * Rsc wrapper for gettext extension
- *
- * @package Rsc
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Lang
 {
 

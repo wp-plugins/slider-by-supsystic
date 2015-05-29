@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Http_Response
- * Controller's response
- *
- * @package Rsc\Http
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Http_Response
 {
 

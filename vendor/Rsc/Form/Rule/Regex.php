@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Form_Rule_Regex
- * This validator is used in order to scan incoming data matches the selected regular expression
- *
- * @package Rsc\Form\Rule
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Form_Rule_Regex implements Rsc_Form_Rule_Interface
 {
 

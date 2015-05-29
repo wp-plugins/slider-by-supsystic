@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Form_Rule_Required
- * This validator does not allow to pass through a request empty data
- *
- * @package Rsc\Form\Rule
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Form_Rule_Required implements Rsc_Form_Rule_Interface
 {
 

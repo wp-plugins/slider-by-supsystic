@@ -1,15 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Common_Collection
- * Implementing collection of associative arrays.
- * Implement the interface Countable, IteratorAggregate, Serializable and ArrayAccess
- *
- * @package Rsc\Common
- * @author Artur Kovalevsky <kovalevskyproj@gmail.com>
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Common_Collection implements Countable, IteratorAggregate, Serializable, ArrayAccess
 {
 

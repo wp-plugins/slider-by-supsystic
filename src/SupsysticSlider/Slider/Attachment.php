@@ -34,9 +34,9 @@ class SupsysticSlider_Slider_Attachment
             return $url;
         }
 
-        if ($url = $this->getCroppedSizeUrl($attachment, $width, $height)) {
+        /*if ($url = $this->getCroppedSizeUrl($attachment, $width, $height)) {
             return $url;
-        }
+        }*/
 
         if ($url = $this->crop($attachment, $width, $height)) {
             return $url;
@@ -173,6 +173,7 @@ class SupsysticSlider_Slider_Attachment
         $filename = $filename . '-' . $width . 'x' . $height . '.' . $extension;
 
         if (is_file($file = dirname($filepath) . '/' . $filename)) {
+            update_option('crop_debug', str_replace(ABSPATH, get_bloginfo('wpurl') . '/', $file));
             return str_replace(ABSPATH, get_bloginfo('wpurl') . '/', $file);
         }
 

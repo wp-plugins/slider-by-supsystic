@@ -28,10 +28,6 @@ class Rsc_Feedback_SupportMailer
     {
         $this->mailer = (is_null($mailer) ? new Rsc_Feedback_Mailer() : $mailer);
 
-        /** @TODO: Supsystic Support Email here */
-        $this->mailer->setEmails(array(
-            'kovalevskyproj@gmail.com',
-        ));
         $this->mailer->setSubject($subject);
         $this->mailer->setMessage($message);
 

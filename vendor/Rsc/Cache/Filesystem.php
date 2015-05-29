@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Cache_Filesystem
- * Implementing an interface to the file system caching
- *
- * @package Rsc\Cache
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Cache_Filesystem implements Rsc_Cache_Interface
 {
 

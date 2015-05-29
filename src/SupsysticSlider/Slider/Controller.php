@@ -872,6 +872,61 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         );
     }
 
+    public function checkReviewNoticeAction(Rsc_Http_Request $request) {
+        $showNotice = get_option('showSliderRevNotice');
+        $show = false;
+
+        if(!$showNotice) {
+            update_option('showSliderRevNotice', array(
+                'date' => new DateTime(),
+                'is_shown' => false
+            ));
+        } else {
+            $currentDate = new DateTime();
+
+            if(($currentDate->diff($showNotice['date'])->d > 7) && $showNotice['is_shown'] != 1) {
+                $show = true;
+            }
+        }
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array('show' => $show)
+        );
+    }
+
+    public function checkNoticeButtonAction(Rsc_Http_Request $request) {
+        $code  = $request->post->get('buttonCode');
+        $showNotice = get_option('showSliderRevNotice');
+
+        if($code == 'is_shown') {
+            $showNotice['is_shown'] = true;
+        } else {
+            $showNotice['date'] = new DateTime();
+        }
+
+        $this->sendUsageStat($code);
+        update_option('showSliderRevNotice', $showNotice);
+
+        return $this->response(Rsc_Http_Response::AJAX);
+    }
+
+    public function sendUsageStat($state) {
+        $apiUrl = 'http://54.68.191.217';
+
+        $reqUrl = $apiUrl . '?mod=options&action=saveUsageStat&pl=rcs';
+        $res = wp_remote_post($reqUrl, array(
+            'body' => array(
+                'site_url' => get_bloginfo('wpurl'),
+                'site_name' => get_bloginfo('name'),
+                'plugin_code' => 'ssl',
+                'all_stat' => array('views' => 'review', 'code' => $state),
+            )
+        ));
+
+        return true;
+    }
+
     public function deleteResourceAction(Rsc_Http_Request $request)
     {
         $sliderId  = $request->post->get('id');

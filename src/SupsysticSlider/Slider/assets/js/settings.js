@@ -324,6 +324,7 @@
         this.toggleChanges();
         this.openImportDialog();
         this.initAddImagesLink();
+        this.showReviewNotice();
         //this.initShadowSelection();
     });
 
@@ -412,6 +413,51 @@
                 $value.hide();
             });
         }
+    };
+
+    Controller.prototype.initNoticeDialog = function() {
+        $('#reviewNotice').dialog({
+            modal:    true,
+            width:    600,
+            autoOpen: true
+        });
+    };
+
+    Controller.prototype.showReviewNotice = function() {
+        var self = this;
+
+        $.post(WordPress.ajax.settings.url,
+            {
+                action: 'supsystic-slider',
+                route: {
+                    module: 'slider',
+                    action: 'checkReviewNotice'
+                }
+            })
+            .success(function (response) {
+
+                if(response.show) {
+                    self.initNoticeDialog();
+
+                    $('#reviewNotice [data-statistic-code]').on('click', function() {
+                        var code = $(this).data('statistic-code');
+
+                        $.post(WordPress.ajax.settings.url,
+                            {
+                                buttonCode: code,
+                                action: 'supsystic-slider',
+                                route: {
+                                    module: 'slider',
+                                    action: 'checkNoticeButton'
+                                }
+                            })
+                            .success(function(response) {
+
+                                $('#reviewNotice').dialog('close');
+                            });
+                    });
+                }
+            });
     };
 
     $(document).ready(function () {

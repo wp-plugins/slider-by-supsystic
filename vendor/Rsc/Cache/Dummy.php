@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Cache_Filesystem
- * Debug caching
- *
- * @package Rsc\Cache
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Cache_Dummy implements Rsc_Cache_Interface
 {
 

@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Form_Filter_XssClear
- * These filter cleans the data from possible XSS-attacks
- *
- * @package Rsc\Form\Filter
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Form_Filter_XssClear implements Rsc_Form_Filter_Interface
 {
     /**

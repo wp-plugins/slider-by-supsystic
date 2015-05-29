@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Environment
- * Framework Environment
- *
- * @package Rsc
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Environment
 {
 
@@ -207,7 +199,7 @@ class Rsc_Environment
 
         $this->registerActivation();
         /* Do not edit this code in any case */
-        $this->fc320fde997f9bea5c39d56e094bfb99();
+//        $this->fc320fde997f9bea5c39d56e094bfb99();
         add_action('plugins_loaded', array($this, 'extend'));
     }
 

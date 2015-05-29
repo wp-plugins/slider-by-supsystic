@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Class Rsc_Mvc_Model
- * Base model
- *
- * @package Rsc\Mvc
- * @author Artur Kovalevsky
- * @copyright Copyright (c) 2015, supsystic.com
- * @link supsystic.com
- */
+
 class Rsc_Mvc_Model
 {
 
