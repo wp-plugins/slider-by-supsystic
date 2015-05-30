@@ -96,10 +96,10 @@
         {#<button id="button-select" class="button " data-enabled="none|one|many|all" data-toolbar-button="" value="select" name="Select all" style="margin-left: 24px;">
             <i class="fa fa-fw fa-check"></i>
         </button>#}
-        <button id="delete-element" class="button" style="margin-left: 90%;">
-            <i class="fa fa-fw fa-trash-o"></i>
-        </button>
         {% if slider.entities is not empty %}
+            <button id="delete-element" class="button" style="margin-left: 90%;">
+                <i class="fa fa-fw fa-trash-o"></i>
+            </button>
             {{ view_type.list_view(slider) }}
         {% else %}
             <h2 class="header-muted" style="text-align: center;">
