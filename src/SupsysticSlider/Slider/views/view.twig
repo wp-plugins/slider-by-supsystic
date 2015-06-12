@@ -108,8 +108,10 @@
             </h2>
         {% endif %}
         {% if environment.isPro() != 'true' %}
-            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider">
-                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%; margin-top: 30px;">
+
+            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider" style="text-decoration: none;">
+                <h3 style="margin-left: 20px;">Get Post Feed and Post Feed Carousel with PRO</h3>
+                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;">
             </a>
         {% endif %}
     </div>
@@ -211,7 +213,7 @@
                             {{ translate('Jssor PRO') }}
                             {{ form.tooltip('general-slider-jssor', { 'border': '1px solid black;', 'padding': '1px 5px;', 'border-radius': '50%' }) }}
                         </h3>
-                        <a href="http://supsystic.com/plugins/slider/?utm_source=plugin&utm_medium=post&utm_campaign=slider" class="button button-primary" style="display: inline-block; margin-top: 14px;">More Info</a>
+                        <a href="http://supsystic.com/plugins/slider/?utm_source=plugin&utm_medium=post&utm_campaign=slider" class="button button-primary" style="display: inline-block; margin-top: 14px;">Get PRO</a>
                         <br/>
                     </div>
                 {% endif %}
@@ -230,10 +232,16 @@
     <div id="visual-editor-window" title="{{ translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
     </div>
 
-    <div id="bx-editor-notice" title="{{ translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
-            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=builder&utm_campaign=slider">
-                <img src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/pro_builder.jpg">
+    <div id="bx-editor-notice" class="supsystic-plugin" title="{{ translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
+        <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=builder&utm_campaign=slider" style="box-shadow: none !important;">
+            <img src="{{ environment.getModule('slider').getLocationUrl() }}/assets/images/pro_builder.jpg">
+        </a>
+        <div style="text-align: center;">
+            <a class="button button-primary button-hero" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=builder&utm_campaign=slider" style="width: 400px; margin-bottom: 20px; text-align: center;">
+                <i class="fa fa-unlock fa-2x"></i>
+                {{ translate('Get PRO') }}
             </a>
+        </div>
     </div>
 
     <div id="choose-import-dialog" class="supsystic-plugin" title="{{ translate('Choose import source') }}" style="text-align: center;" hidden>
@@ -263,7 +271,7 @@
             <h3>{{ translate('Get Pro to enable import') }}</h3>
             <a class="button button-primary button-hero" href="http://supsystic.com/plugins/photo-gallery/" style="width: 400px;margin-bottom: 20px;">
                 <i class="fa fa-unlock fa-2x"></i>
-                {{ translate('Get PRO for 29$') }}
+                {{ translate('Get PRO') }}
             </a>
             <button class="button button-primary button-hero gallery" data-folder-id="0"
                     style="width: 400px;margin-bottom: 20px;"
@@ -341,12 +349,12 @@
                 jQuery('#button-select, #jqgh_jqgrid-htable-img-list_id').on('click', function() {
                     if($(this).val() == 'select') {
                         jQuery('[name="image[]"]').each(function() {
-                            $(this).attr('checked', 'checked');
+                            $(this).attr('checked', 'checked').iCheck('update');
                         });
                         $(this).val('deselect');
                     } else {
                         jQuery('[name="image[]"]').each(function() {
-                            $(this).removeAttr('checked');
+                            $(this).removeAttr('checked').iCheck('update');
                         });
                         $(this).val('select');
                     }

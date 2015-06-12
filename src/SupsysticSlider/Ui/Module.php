@@ -107,12 +107,15 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster-theme-shadow', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/themes/tooltipster-shadow.css'));
         $this->add(new SupsysticSlider_Ui_Stylesheet('rs-shadows-css', $url . '/app/assets/css/shadows.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-shadows-backend-css', $url . '/app/assets/css/shadows.css'));
+		$this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-menu-anti-duplicate-css', $url . '/app/assets/css/supsystic-for-all-admin.css'));
+		$this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-minimal', $url . '/app/assets/css/minimal/minimal.css'));
 
         /* Javascript */
         $this->add(new SupsysticSlider_Ui_BackendJavascript('jquery'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('jquery-ui-dialog'));
 
-        $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-types', $this->getLocationUrl() . '/js/types.js'));
+		$this->add(new SupsysticSlider_Ui_BackendJavascript('rs-icheck', $url . '/app/assets/js/icheck.min.js'));
+		$this->add(new SupsysticSlider_Ui_BackendJavascript('rs-types', $this->getLocationUrl() . '/js/types.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-ui-js', $url . '/app/assets/js/gird-gallery.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-lazy-load-ks', $url . '/app/assets/js/jquery.lazyload.min.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-form-serializer-js', $this->getLocationUrl() . '/plugins/gird-gallery.ui.formSerialize.js'));

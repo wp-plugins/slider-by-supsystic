@@ -2,8 +2,12 @@
 
 {% block breadcrumbs %}
 
-    <nav id="supsystic-breadcrumbs" class="supsystic-breadcrumbs">
+    <nav id="supsystic-breadcrumbs" class="supsystic-breadcrumbs" style="width:1000px;margin-left:0;">
         <a href="{{ environment.generateUrl('slider') }}">{{ translate('Slider by Supsystic') }}</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="{{ environment.generateUrl('slider') }}">{{ translate('Sliders') }}</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="{{ environment.generateUrl('slider', 'view', { 'id': id }) }}">{{ sliderName|capitalize }}</a>
         <i class="fa fa-angle-right"></i>
         <a href="{{ environment.generateUrl('slider', 'view') }}">{{ translate('Import images') }}</a>
         <i class="fa fa-angle-right"></i>
@@ -97,11 +101,7 @@
                                 resources: resources
                             }, function (response) {
                                 $.jGrowl(response.message);
-                            });
-
-                            request.send(function (response) {
-                                $.jGrowl('Attached');
-                                window.location = "{{ environment.generateUrl('slider') }}";
+                                window.location = response.redirectUrl.replace(/\\"/g, '"');
                             });
                         } else {
                             $.jGrowl('Please select images for import');

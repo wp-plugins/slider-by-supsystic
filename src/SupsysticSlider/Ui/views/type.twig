@@ -27,19 +27,19 @@
 
     {% if entities.entities is not defined %}
         {% for image in entities.images %}
-            {{ view.list_image(image, loop.index) }}
+            {{ view.list_image(image, loop.index, entities) }}
         {% else %}
             {# No images. #}
         {% endfor %}
         {% for video in entities.videos %}
-            {{ view.list_video(video, loop.index) }}
+            {{ view.list_video(video, loop.index, slider) }}
         {% endfor %}
     {% else %}
         {% for entity in entities.entities %}
             {% if entity.type == 'image' %}
-                {{ view.list_image(entity, loop.index) }}
+                {{ view.list_image(entity, loop.index, entities) }}
             {% elseif entity.type == 'video' %}
-                {{ view.list_video(entity, loop.index) }}
+                {{ view.list_video(entity, loop.index, entities) }}
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -177,8 +177,8 @@
     {% endspaceless %}
 {% endmacro %}
 
-{% macro properties(image) %}
-    {% set nonProMsg = 'Available in PRO' %}
+{% macro properties(image, slider) %}
+    {% set nonProMsg = '<a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=mainseo&utm_campaign=slider" target="_blank" style="color:#4ae8ea;margin-left:4px;">Available in PRO</a>' %}
     {% spaceless %}
     <form id="photo-editor-{{ image.id }}" class="photo-editor attachment-{{ image.attachment.id }}">
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
@@ -190,9 +190,11 @@
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
             <a href="#photo-seo-{{ image.id }}" class="add-new-h2 button">{{ translate('SEO')|trim }}</a>
         </strong>
-        <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
-            <a href="#photo-html-{{ image.id }}" class="add-new-h2 button" title="Add Header, buttons and custom HTML to the slide">{{ translate('HTML')|trim }}</a>
-        </strong>
+        {% if slider.plugin == 'jssor' %}
+            <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
+                <a href="#photo-html-{{ image.id }}" class="add-new-h2 button" title="Add Header, buttons and custom HTML to the slide">{{ translate('Content')|trim }}</a>
+            </strong>
+        {% endif %}
         <p id="photo-desc-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;">
             <input type="text" name="description" value="{{ image.attachment.description }}" style="margin-left: 4px" placeholder="Image description"/>
         </p>
@@ -205,7 +207,8 @@
             {% if environment.isPro() %}
                 <input type="text" name="seo" value="{{ image.attachment.seo }}" style="margin-left: 4px" placeholder="Image alt"/>
             {% else %}
-                <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|raw }}" disabled/>
+                {# <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|escape|raw }}" disabled/> #}
+                {{ nonProMsg|raw }}
             {% endif %}
         </p>
         <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
@@ -213,7 +216,8 @@
                 <input type="text" name="html" value="{{ unserialize_twig(image.attachment.html)|json_encode() }}" style="margin-left: 4px" placeholder="Slide html" hidden />
                 <button class="button html-editor photo-html-{{ image.id }}" data-id="{{ image.attachment.id }}" style="margin-left: 4px">Html Slide Editor</button>
             {% else %}
-                <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|raw }}" disabled/>
+                {# <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|escape|raw }}" disabled/> #}
+                {{ nonProMsg|raw }}
             {% endif %}
         </p>
         <input name="attachment_id" value="{{ image.attachment.id }}" type="hidden"/>
@@ -242,7 +246,7 @@
     {% endspaceless %}
 {% endmacro %}
 
-{% macro list_image(image, index) %}
+{% macro list_image(image, index, slider) %}
     {% import _self as view %}
 
     {% set nonProMsg = '<a href="http://supsystic.com" target="_blank" style="color: red;">Available in PRO</a>' %}
@@ -252,13 +256,19 @@
         var data = {
             id: '{{ view.idImage(image) }}',
             image: '{{ view.thumbnail(image) }}',
-            properties: '{{ view.properties(image) }}'
+            properties: '{{ view.properties(image, slider) }}'
         };
         jQuery("#jqgrid-htable-img-list").jqGrid('addRowData', "{{ index }}", data);
+
+        jQuery(document).ready(function() {
+            jQuery('p[id ^= "photo-link-"]').each(function() {
+                jQuery(this).find('div').css('margin-bottom', '0');
+            });
+        });
     </script>
 {% endmacro %}
 
-{% macro list_video(video, index) %}
+{% macro list_video(video, index, slider) %}
     {% import _self as view %}
 
     {% set nonProMsg = '<a href="http://supsystic.com" target="_blank" style="color:red;">Available in PRO</a>' %}
@@ -267,7 +277,7 @@
         var data = {
             id: '{{ view.idVideo(video) }}',
             image: '{{ view.thumbnail(video) }}',
-            properties: '{{ view.properties(video) }}'
+            properties: '{{ view.properties(video, slider) }}'
         };
         jQuery("#jqgrid-htable-img-list").jqGrid('addRowData', "{{ index }}", data);
     </script>

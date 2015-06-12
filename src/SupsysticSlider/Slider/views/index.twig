@@ -44,12 +44,13 @@
                 </div>
             {% endif %}
         </div>
-        <div class="regular-text" id="propsShortcode" style="display: inline-block; margin-left: 20px;">
+        <div class="ui-helper-clearfix"></div>
+        <div class="regular-text" id="propsShortcode" style="margin-left: 20px;">
             <h4 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h4>
             [supsystic-slider id={{ slider.id }} position="center"]
             </br>
             <h4 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h4>
-            {{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}
+            <label style="font-size: 13px;">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</label>
         </div>
     </div>
 {% endmacro %}

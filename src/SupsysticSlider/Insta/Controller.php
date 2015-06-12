@@ -22,14 +22,15 @@ class SupsysticSlider_Insta_Controller extends SupsysticSlider_Core_BaseControll
 
     public function indexAction(Rsc_Http_Request $request)
     {
-        $galleryId = $request->query->get('id');
+        $sliderId = $request->query->get('id');
+		$sliders = new SupsysticSlider_Slider_Model_Sliders;
         $id = get_option('insta_slider_id');
-        if($galleryId) {
-            if($galleryId != $id) {
-                update_option('insta_slider_id', $galleryId);
+        if($sliderId) {
+            if($sliderId != $id) {
+                update_option('insta_slider_id', $sliderId);
             }
         } else {
-            $galleryId = $id;
+			$sliderId = $id;
         }
 
         if (!get_option('insta_token')) {
@@ -41,7 +42,7 @@ class SupsysticSlider_Insta_Controller extends SupsysticSlider_Core_BaseControll
         return $this->response(
             '@insta/index.twig',
             array(
-                'images' => get_option('insta_thumbnails'), 'id' => $galleryId
+                'images' => get_option('insta_thumbnails'), 'id' => $sliderId, 'sliderName' => $sliders->getById($sliderId)->title
             )
         );
     }

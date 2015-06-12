@@ -84,7 +84,9 @@
             animation: 'swing',
             theme: 'tooltipster-shadow',
             position: 'top-left',
-            maxWidth: 400
+            maxWidth: 400,
+            autoClose: false,
+            timer: 2000
         });
 
         /* Lazy loading */
@@ -95,6 +97,7 @@
             }
         });
 
+        rsInitCustomCheckRadio();
         setContainerHeight();
         changeUiButtonToWp();
         closeOnOutside();
@@ -104,6 +107,24 @@
         setContainerHeight();
     });
 
+    function rsInitCustomCheckRadio(selector) {
+        if(!selector)
+            selector = document;
+        jQuery(selector).find('input').iCheck('destroy').iCheck({
+            checkboxClass: 'icheckbox_minimal'
+            ,	radioClass: 'iradio_minimal'
+        }).on('ifClicked', function(e){
+            jQuery(this).trigger('click')
+                .trigger('change');
+            rsCheckUpdateArea('.supsystic-container');
+        });
+    }
+    function rsCheckUpdate(checkbox) {
+        jQuery(checkbox).iCheck('update');
+    }
+    function rsCheckUpdateArea(selector) {
+        jQuery(selector).find('input[type=radio]').iCheck('update');
+    };
     function setContainerHeight() {
         var container = $('.supsystic-container'),
             content = $('.supsystic-content'),

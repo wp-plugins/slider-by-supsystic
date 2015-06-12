@@ -28,6 +28,7 @@
     background-color: white;
     /*margin-top: 10px;*/
     min-height: 280px;
+    min-width: 1000px;
 }
 
 .supsystic-plugin .supsystic-content .supsystic-navigation {

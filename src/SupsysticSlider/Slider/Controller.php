@@ -835,13 +835,10 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                 }
             }
 
-            var_dump($type);
-            var_dump($id);
-
             $resources->add($sliderId, $type, $id);
         }
 
-        return $this->response(
+        /*return $this->response(
             Rsc_Http_Response::AJAX,
             $this->getSuccessResponseData(
                 sprintf(
@@ -855,20 +852,42 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                     $slider->title
                 )
             )
-        );
+        );*/
+		return $this->response(
+			Rsc_Http_Response::AJAX,
+			array(
+				'message' => $this->translate(count($entities).' resources successfully attached to '.$slider->title),
+				'sliderId' => (int)$slider->id,
+				'redirectUrl' => $this->getEnvironment()->generateUrl(
+					'slider',
+					'view',
+					array(
+						'id' => $slider->id
+					)
+				)
+			)
+		);
     }
 
     public function checkSettingsAction(Rsc_Http_Request $request) {
         $sliderId  = $request->post->get('id');
         $settings  = $request->post->get('settings');
 
-        var_dump(htmlspecialchars_decode($settings));
-
         return $this->response(
             Rsc_Http_Response::AJAX,
             $this->getSuccessResponseData(
                 $this->translate('Successfully removed!')
             )
+        );
+    }
+
+    public function getFontsAction(Rsc_Http_Request $request) {
+        $resources = $this->getResources();
+        $fonts = $resources->getFontsList();
+
+        return $this->response(
+            Rsc_Http_Response::AJAX,
+            array('fonts' => $fonts)
         );
     }
 

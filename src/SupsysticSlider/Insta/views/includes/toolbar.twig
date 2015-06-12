@@ -1,6 +1,12 @@
 {# Toolbar #}
 <section id="photo-toolbar" class="supsystic-bar" data-intro="{{ manual.intro }}" data-step="1">
     <ul class="supsystic-bar-controls">
+        <li title="{{ translate('Return to the slider') }}">
+            <a class="button button-primary" href="{{ environment.generateUrl('slider', 'view', { 'id': id }) }}">
+                <i class="fa fa-angle-left"></i>
+                {{ translate('Return to the slider') }}
+            </a>
+        </li>
         <li title="{{ translate('Upload new images') }}">
             <button id="add_images" class="button button-primary">
                 <i class="fa fa-download"></i>
