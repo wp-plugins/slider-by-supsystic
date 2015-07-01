@@ -1,43 +1,68 @@
-{% set veditor = attribute(slider.data, '__veditor__') %}
+{% set veditor = attribute(slider.settings, '__veditor__') %}
 {% set v = attribute(veditor, '.bx-controls-direction') %}
 
-<div class="rs-veditor-group">
+<div class="rs-veditor-group supsystic-plugin">
     <label>{{ translate('Controls type') }}</label>
-    <select
-        name="[_veditor_][.bx-controls-direction][background]"
-        class="rs-veditor-input"
-        data-selector=".bx-controls-direction"
-        data-selector-helper="a"
-        data-prop="background"
-        data-type="controls"
-        data-attr="id"
-    >
-        <option value="circle_arrows" {% if attribute(v, 'background')|default('circle_arrows') == 'circle_arrows' %}selected="selected"{% endif %}>
-            {{ translate('circle_arrows') }}
-        </option>
-        <option value="little_arrows" {% if attribute(v, 'background')|default('circle_arrows') == 'little_arrows' %}selected="selected"{% endif %}>
-            {{ translate('little_arrows') }}
-        </option>
-        <option value="standart_big" {% if attribute(v, 'background')|default('circle_arrows') == 'standart_big' %}selected="selected"{% endif %}>
-            {{ translate('standart_big') }}
-        </option>
-        <option value="standart_small" {% if attribute(v, 'background')|default('circle_arrows') == 'standart_small' %}selected="selected"{% endif %}>
-            {{ translate('standart_small') }}
-        </option>
-        <option value="circle_little" {% if attribute(v, 'background')|default('circle_arrows') == 'circle_little' %}selected="selected"{% endif %}>
-            {{ translate('circle_little') }}
-        </option>
-        <option value="square_big" {% if attribute(v, 'background')|default('circle_arrows') == 'square_big' %}selected="selected"{% endif %}>
-            {{ translate('square_big') }}
-        </option>
-        <option value="fast" {% if attribute(v, 'background')|default('circle_arrows') == 'fast' %}selected="selected"{% endif %}>
-            {{ translate('fast') }}
-        </option>
-        <option value="little" {% if attribute(v, 'background')|default('circle_arrows') == 'little' %}selected="selected"{% endif %}>
-            {{ translate('little') }}
-        </option>
-        <option value="go_small" {% if attribute(v, 'background')|default('circle_arrows') == 'go_small' %}selected="selected"{% endif %}>
-            {{ translate('go_small') }}
-        </option>
-    </select>
+    <input
+            name="[_veditor_][.bx-controls-direction][background]"
+            id="bx-controls"
+            class="rs-veditor-input"
+            value="{{ attribute(v, 'background') }}"
+            data-selector=".bx-controls-direction"
+            data-prop="background"
+            hidden>
+    <button id="select-controls" class="button button-primary">
+        <i class="fa fa-fw fa-check"></i>
+        {{ translate('Select Controls type') }}
+    </button>
 </div>
+
+<script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+
+            // Init Controls type dialog
+            $('#select-controls').on('click', function () {
+                $('#selectControlsDialog').dialog({
+                    autoOpen: false,
+                    modal:    true,
+                    height:   600,
+                    width:    450,
+                    buttons:  {
+                        Cancel: function () {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+                var selectedControls = $('input#bx-controls').val();
+                if(selectedControls) {
+                    var controlsPreview = $('img#controlsType[data-value="'+selectedControls+'"]');
+                    if(controlsPreview) {
+                        controlsPreview.parent().removeClass().addClass('selectedPreset');
+                    }
+                }
+                $('#selectControlsDialog').dialog('open');
+            });
+            // Init presets highlighting in Controls type dialog (on mouseenter)
+            $('div#controlsType').each(function() {
+                $(this).on('mouseenter', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid aqua');
+                    }
+                });
+                $(this).on('mouseleave', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid gray');
+                    }
+                });
+            });
+            // Select Text in effect
+            $('img#controlsType').on('click', function() {
+                $('#bx-controls').attr('value', $(this).data('value'));
+                $('div.selectedPreset').removeClass().addClass('unselectedPreset');
+                $(this).parent().addClass('selectedPreset');
+                $('#selectControlsDialog').dialog('close');
+            });
+        });
+    }(jQuery));
+</script>

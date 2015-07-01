@@ -3,6 +3,7 @@
     function Controller() {
         this.$previewWindow = $('#previewWindow');
         this.$triggers = $('.changeEffect');
+        this.$optInProWnd = $('#rsOptInProWnd');
 
         this.init();
     }
@@ -11,6 +12,7 @@
         this.initPreviewWindow();
         this.initSlider();
         this.initTriggers();
+        this.initProOptionDialog();
     });
 
     Controller.prototype.initPreviewWindow = (function () {
@@ -75,6 +77,18 @@
                     links: false
                 });
             });
+    });
+
+    Controller.prototype.initProOptionDialog = (function () {
+        this.$optInProWnd.dialog({
+            modal:    true
+            ,	autoOpen: false
+            ,	width: 540
+            ,	height: 200
+        });
+        jQuery('#rsProOpt').click(function () {
+            jQuery('#rsOptInProWnd').dialog('open');
+        });
     });
 
     $(document).ready(function () {

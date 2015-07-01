@@ -109,8 +109,13 @@
         {% endif %}
         {% if environment.isPro() != 'true' %}
 
+            <span style="position:absolute; margin-left:20px; margin-top:7px; font-size:1.3em; font-weight:600; color:#222;">Post Feed and Post Feed Carousel</span>
+            <a class="button button-primary" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider" style="text-align:center; margin-bottom:5px; margin-left:409px;">
+                <i class="fa fa-unlock"></i>
+                {{ translate('Get PRO') }}
+            </a>
+
             <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider" style="text-decoration: none;">
-                <h3 style="margin-left: 20px;">Get Post Feed and Post Feed Carousel with PRO</h3>
                 <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;">
             </a>
         {% endif %}
@@ -130,7 +135,7 @@
                         </label>
                     </th>
                     <td>
-                        <span class="regular-text" id="propsShortcode" style="font-size: 13px;">[supsystic-slider id={{ slider.id }} position="center"]</span>
+                        <span class="regular-text" id="propsShortcode" style="font-size: 13px;cursor: pointer;">[supsystic-slider id={{ slider.id }} position="center"]</span>
                     </td>
                 </tr>
                 <tr>
@@ -221,6 +226,14 @@
                     {{ translate('Please note:') }}
                     {{ translate('Current settings will be removed without ability to restore.') }}
                 </p>
+                <div style="float: right;">
+                    <button id="changePlugin_changeBtn" class="button button-primary">
+                        {{ translate('Change') }}
+                    </button>
+                    <button id="changePlugin_cancelBtn" class="button button-primary">
+                        {{ translate('Cancel') }}
+                    </button>
+                </div>
             </form>
         </div>
     </div>
@@ -230,6 +243,16 @@
     </div>
 
     <div id="visual-editor-window" title="{{ translate('Visual editor') }}" data-id="{{ slider.id }}" data-loaded="false">
+    </div>
+
+    <div id="free-video-notice" class="supsystic-plugin" title="{{ translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
+        <span style="text-align: center;"><h3>Notice</h3>You can import YouTube and Vimeo videos in PRO version</span>
+        <div style="text-align: center;">
+            <a class="button button-primary" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=video&utm_campaign=slider" style="margin-bottom: 20px; margin-top: 20px; text-align: center;">
+                <i class="fa fa-unlock"></i>
+                {{ translate('Get PRO') }}
+            </a>
+        </div>
     </div>
 
     <div id="bx-editor-notice" class="supsystic-plugin" title="{{ translate('Get PRO') }}" data-id="{{ slider.id }}" hidden>
@@ -294,7 +317,7 @@
         {% endif %}
     </div>
 
-    <div id="uploadVideoModal" title="{{ translate('Import video') }}" style="display: none;">
+    <div id="uploadVideoModal" class="supsystic-plugin" title="{{ translate('Import video') }}" style="display: none;">
         <form id="uploadVideoForm">
             <table class="form-table">
                 <thead>
@@ -324,6 +347,14 @@
             <input value="photos" name="route[module]" type="hidden"/>
             <input value="importVideo" name="route[action]" type="hidden"/>
         </form>
+        <div style="float: right;">
+            <button id="uploadVideoModal_importBtn" class="button button-primary">
+                {{ translate('Import') }}
+            </button>
+            <button id="uploadVideoModal_closeBtn" class="button button-primary">
+                {{ translate('Close') }}
+            </button>
+        </div>
     </div>
 
     <div id="reviewNotice" title="Review" hidden>

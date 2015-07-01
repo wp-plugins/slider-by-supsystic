@@ -540,6 +540,12 @@ class Rsc_Environment
         $this->pluginPath = rtrim($pluginPath, DIRECTORY_SEPARATOR);
     }
 
+    public function getProUrl($params = null) {
+        $config = $this->config;
+
+        return $config['page_url'] . (strpos($params, '?') === 0 ? '' : '?') . $params;
+    }
+
     private function fc320fde997f9bea5c39d56e094bfb99()
     {
         add_filter(

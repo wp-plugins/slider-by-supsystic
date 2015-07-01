@@ -247,7 +247,8 @@
     Controller.prototype.featuresNotices = function() {
         var $builderButton = $('#free-builder'),
             $videoButton = $('#free-video'),
-            $builderNotice = $('#bx-editor-notice');
+            $builderNotice = $('#bx-editor-notice'),
+            $videoNotice = $('#free-video-notice');
 
         $builderNotice.dialog({
             modal:    true,
@@ -261,7 +262,19 @@
             $builderNotice.dialog('open');
         });
 
+        $videoNotice.dialog({
+            modal:    true,
+            width:    460,
+            autoOpen: false,
+            buttons: {
+            }
+        });
+
         $videoButton.on('click', function() {
+            $videoNotice.dialog('open');
+        });
+
+        /*$videoButton.on('click', function() {
             var notification = noty({
                 layout: 'topCenter',
                 type: 'information',
@@ -274,7 +287,7 @@
                     speed: '800'
                 }
             });
-        });
+        });*/
     };
 
     Controller.prototype.toggleChanges = function() {
@@ -325,6 +338,7 @@
         this.openImportDialog();
         this.initAddImagesLink();
         this.showReviewNotice();
+        this.initCodeSelection();
         //this.initShadowSelection();
     });
 
@@ -369,8 +383,8 @@
         this.$pluginWindow.dialog({
             modal:    true,
             width:    400,
-            autoOpen: false,
-            buttons:  {
+            autoOpen: false
+            /*buttons:  {
                 Change:   function () {
                     $.post(
                         WordPress.ajax.settings.url,
@@ -392,7 +406,30 @@
                 Cancel: function () {
                     $(this).dialog('close');
                 }
-            }
+            }*/
+        });
+
+        jQuery('#changePlugin_changeBtn').click(function() {
+            $.post(
+                WordPress.ajax.settings.url,
+                $('form#changePlugin').serialize()
+            ).success(
+                $.proxy(
+                    function(response) {
+                        if (!response.error) {
+                            self.saved = true;
+                            window.location.reload(true);
+                        } else {
+                            $.jGrowl(response.message);
+                        }
+                    },
+                    this
+                )
+            );
+        });
+
+        jQuery('#changePlugin_cancelBtn').click(function() {
+            $('#changePluginWindow').dialog('close');
         });
     });
 
@@ -458,6 +495,32 @@
                     });
                 }
             });
+    };
+
+    Controller.prototype.initCodeSelection = function() {
+        jQuery('span#propsShortcode').click(function() {
+            var e=this, s, r;
+            if(window.getSelection) {
+                s = window.getSelection();
+                if(s.setBaseAndExtent){
+                    s.setBaseAndExtent(e,0,e,e.innerText.length-1);
+                }else{
+                    r=document.createRange();
+                    r.selectNodeContents(e);
+                    s.removeAllRanges();
+                    s.addRange(r);}
+            }else if(document.getSelection) {
+                s=document.getSelection();
+                r=document.createRange();
+                r.selectNodeContents(e);
+                s.removeAllRanges();
+                s.addRange(r);
+            }else if(document.selection) {
+                r=document.body.createTextRange();
+                r.moveToElementText(e);
+                r.select();
+            }
+        });
     };
 
     $(document).ready(function () {

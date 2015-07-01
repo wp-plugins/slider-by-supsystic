@@ -102,7 +102,7 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-jquery-structure-min-ui', $url.'/app/assets/css/jquery-ui.structure.min.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-jquery-theme-min-ui', $url.'/app/assets/css/jquery-ui.theme.min.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'));
-        $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-jgrowl', '//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.2.12/jquery.jgrowl.min.css'));
+		$this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-jgrowl', $url . '/app/assets/css/supsystic-jgrowl.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/tooltipster.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster-theme-shadow', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/themes/tooltipster-shadow.css'));
         $this->add(new SupsysticSlider_Ui_Stylesheet('rs-shadows-css', $url . '/app/assets/css/shadows.css'));
@@ -131,6 +131,7 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-common', $this->getLocationUrl() . '/js/common.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-ajax', $this->getLocationUrl() . '/js/ajax.js'));
         $this->add(new SupsysticSlider_Ui_BackendJavascript('rs-ajax-queue', $this->getLocationUrl() . '/js/ajaxQueue.js'));
+		$this->add(new SupsysticSlider_Ui_BackendJavascript('rs-holder', $url . '/app/assets/js/holder.js'));
     }
 
 }

@@ -85,7 +85,7 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
             )
         );
 
-        if ($environment->isAction('index')) {
+        if ($environment->isAction('index') || $environment->isAction('showPresets')) {
             $ui->add(
                 new SupsysticSlider_Ui_BackendJavascript(
                     'supsysticSlider-slider-index',
@@ -401,7 +401,8 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
 
         $submenuNewSlider = $menu->createSubmenuItem();
         $submenuNewSlider->setCapability('manage_options')
-            ->setMenuSlug('supsystic-slider&module=slider&action=index&add=true')
+            //->setMenuSlug('supsystic-slider&module=slider&action=index&add=true')
+			->setMenuSlug('supsystic-slider&module=slider&action=showPresets')
             ->setMenuTitle('New slider')
             ->setPageTitle('New slider')
             ->setModuleName('slider');

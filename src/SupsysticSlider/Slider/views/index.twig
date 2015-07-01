@@ -37,6 +37,7 @@
                 <span style="font-weight: 200;">{{ slider.images|length|default(0) }}</span>
             </div>
             {% if environment.isPro() %}
+                <br />
                 <div class="gg-counter">
                     <i class="fa fa-video-camera"></i>
                     {{ translate('Total videos: ') }}
@@ -44,13 +45,21 @@
                 </div>
             {% endif %}
         </div>
-        <div class="ui-helper-clearfix"></div>
-        <div class="regular-text" id="propsShortcode" style="margin-left: 20px;">
+        {#<div class="ui-helper-clearfix"></div>#}
+        {#<div class="regular-text" id="propsShortcode" style="margin-left: 20px;">
             <h4 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h4>
             [supsystic-slider id={{ slider.id }} position="center"]
             </br>
             <h4 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h4>
             <label style="font-size: 13px;">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</label>
+        </div>#}
+        <div class="shortcode-wrap">
+            <div class="rs-shortcode">
+                Shortcode:<br /><br />
+                <span class="rsCopyTextCode">[supsystic-slider id={{ slider.id }} position="center"]</span><br /><br />
+                PhpCode:<br /><br />
+                <span class="rsCopyTextCode">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</span><br /><br />
+            </div>
         </div>
     </div>
 {% endmacro %}

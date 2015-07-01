@@ -35,7 +35,7 @@
                         Translate or update a translation Slider WordPress plugin in your language and get a Premium license for FREE.') }}
                     </div>
                 </div>
-                <a href="http://supsystic.com/plugins/slider/#faq?utm_source=plugin&utm_medium=faq&utm_campaign=slider" class="button button-primary button-hero">
+                <a href="http://supsystic.com/slider-documentation/" class="button button-primary button-hero">
                     <i class="fa fa-info-circle"></i>
                     {{ translate('Check all FAQs') }}
                 </a>
@@ -68,7 +68,7 @@
             <div class="supsystic-overview-news">
                 {{ news|raw }}
             </div>
-            <a href=" http://supsystic.com/slider-documentation/" class="button button-primary button-hero">
+            <a href="http://supsystic.com/plugins/slider/" class="button button-primary button-hero">
                 <i class="fa fa-info-circle"></i>
                 {{ translate('All news') }}
             </a>
@@ -84,18 +84,16 @@
                     <thead>
 
                     {{ form.row(translate('Your name'),
-                        form.text('mail[name]', '', { 'style': { 'width': 'auto;' } })) }}
+                        form.text('mail[name]', '', { 'style': { 'width': 'auto' }, 'required': '' })) }}
 
                     {{ form.row(translate('Your email'),
-                        form.text('mail[email]', '', { 'style': { 'width': 'auto;' } })
-                        ~ '<span class="required">*</span>'
-                    ) }}
+                        form.text('mail[email]', contactForm.email, { 'style': { 'width': 'auto' }, 'required': '' })) }}
 
                     {{ form.row(translate('Website'),
-                        form.text('mail[website]', '', { 'style': { 'width': 'auto;' } })) }}
+                        form.text('mail[website]', contactForm.website, { 'style': { 'width': 'auto' }, 'required': '' })) }}
 
                     {{ form.row(translate('Subject'),
-                        form.text('mail[subject]', '', { 'style': { 'width': 'auto;' } })) }}
+                        form.text('mail[subject]', '', { 'style': { 'width': 'auto' }, 'required': '' })) }}
 
                     <tr>
                         <th scope="row">
@@ -121,11 +119,10 @@
 
                     <tr>
                         <th scope="row">
-                            <label for="mail-text">{{ translate('Type your message') }}</label>
+                            <label for="mail-text">{{ translate('Message') }}</label>
                         </th>
                         <td>
-                            <textarea id="mail-text" name="mail[message]" style="width: auto; height: 100px;"></textarea>
-                            <span class="required">*</span>
+                            <textarea id="mail-text" name="mail[message]" style="width: 265px; height: 130px;" required=""></textarea>
                         </td>
                     </tr>
 

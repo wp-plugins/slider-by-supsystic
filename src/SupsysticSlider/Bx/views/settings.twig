@@ -157,4 +157,75 @@
     {{ form.row(translate('Type'),
     form.select('pager[pagerType]', {'full': 'Full', 'short': 'Short'}, slider.settings.pager.pagerType, {'id': 'pagerType' }), 'general-pager-type') }}
 
+    <div id="selectTextInEffectDialog" title="{{ translate('Select Text in effect') }}" style="display: none;">
+        {% set textInEffects = {
+            'fadeIn': 'FadeIn',
+            'rollIn': 'RollIn',
+            'fadeInLeftBig': 'FadeInLeftBig',
+            'fadeInRightBig': 'FadeInRightBig',
+            'fadeInLeft': 'FadeInLeft',
+            'fadeInRight': 'FadeInRight',
+            'fadeInUp': 'FadeInUp',
+            'fadeInDown': 'FadeInDown',
+            'flipInX': 'FlipInX',
+            'flipInY': 'FlipInY'
+        } %}
+        {% for key, value in textInEffects %}
+            <div id="tieImg" class="unselectedPreset" style="position: relative; width: 400px;">
+                <img id="tieImg" data-src="holder.js/400x120?text={{ value }}" data-value="{{ key }}">
+                <div class="bx-caption-preview" style="text-align: left; color: #000000; background-color: rgba(0,0,0,.3); font-size: 1em; width: 100%;">
+                    <span data-in-effect="{{ key }}">{{ value }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="selectTextOutEffectDialog" title="{{ translate('Select Text out effect') }}" style="display: none;">
+        {% set textOutEffects = {
+            'fadeOut': 'FadeOut',
+            'rollOut': 'RollOut',
+            'fadeOutLeftBig': 'FadeOutLeftBig',
+            'fadeOutRightBig': 'FadeOutRightBig',
+            'fadeOutLeft': 'FadeOutLeft',
+            'fadeOutRight': 'FadeOutRight',
+            'fadeOutUp': 'FadeOutUp',
+            'fadeOutDown': 'FadeOutDown',
+            'flipOutX': 'FlipOutX',
+            'flipOutY': 'FlipOutY'
+        } %}
+        {% for key, value in textOutEffects %}
+            <div id="toeImg" class="unselectedPreset" style="position: relative; width: 400px;">
+                <img id="toeImg" data-src="holder.js/400x120?text={{ value }}" data-value="{{ key }}">
+                <div class="bx-caption-preview" style="text-align: left; color: #000000; background-color: rgba(0,0,0,.3); font-size: 1em; width: 100%;">
+                    <span data-out-effect="{{ key }}">{{ value }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="selectControlsDialog" title="{{ translate('Select Controls type') }}" style="display: none;">
+        {% set controlsType = {
+            'circle_arrows': 'Circle Arrows',
+            'little_arrows': 'Little Arrows',
+            'standart_big': 'Standart Big',
+            'standart_small': 'Standart Small',
+            'circle_little': 'Circle Little',
+            'square_big': 'Square Big',
+            'fast': 'Fast',
+            'little': 'Little',
+            'go_small': 'Go Small'
+        } %}
+        {% for key, value in controlsType %}
+            <div id="controlsType" class="unselectedPreset" style="position: relative; width: 400px;">
+                <img id="controlsType" data-src="holder.js/400x120?text={{ value }}" data-value="{{ key }}">
+                <div class="bx-wrapper" style="margin: inherit !important; position: static !important;">
+                    <div class="bx-controls-preview" style="">
+                        <a href="" class="bx-prev" id="{{ key }}">Prev</a>
+                        <a href="" class="bx-next" id="{{ key }}">Next</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

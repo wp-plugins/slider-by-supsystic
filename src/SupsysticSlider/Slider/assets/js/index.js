@@ -84,10 +84,9 @@
     });
 
     Controller.prototype.togglePresets = function() {
-        var $presets = this.$newSlider.find('.preset'),
-            $plugin = this.$newSlider.find('#slider-plugin'),
-            $preset = this.$newSlider.find('#slider-preset');
-
+        var $presets = jQuery('.preset'),
+            $plugin = jQuery('input#slider-plugin'),
+            $preset = jQuery('input#slider-preset');
         $presets.on('click', function() {
             $presets.removeClass('selected');
             $(this).addClass('selected');
@@ -187,6 +186,30 @@
 
         $('#cancel-slider-button').on('click', function () {
             controller.$newSlider.dialog('close');
+        });
+
+        jQuery('.rsCopyTextCode').click(function() {
+            var e=this, s, r;
+            if(window.getSelection) {
+                s = window.getSelection();
+                if(s.setBaseAndExtent){
+                    s.setBaseAndExtent(e,0,e,e.innerText.length-1);
+                }else{
+                    r=document.createRange();
+                    r.selectNodeContents(e);
+                    s.removeAllRanges();
+                    s.addRange(r);}
+            }else if(document.getSelection) {
+                s=document.getSelection();
+                r=document.createRange();
+                r.selectNodeContents(e);
+                s.removeAllRanges();
+                s.addRange(r);
+            }else if(document.selection) {
+                r=document.body.createTextRange();
+                r.moveToElementText(e);
+                r.select();
+            }
         });
 
     });

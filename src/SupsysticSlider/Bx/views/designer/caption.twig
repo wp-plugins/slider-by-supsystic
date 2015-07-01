@@ -78,90 +78,145 @@
     </select>
 </div>
 
-<div class="rs-veditor-group">
+<div class="rs-veditor-group supsystic-plugin">
     <label>{{ translate('Text in effect') }}</label>
-    <select
+    <input
             name="[_veditor_][.bx-caption][text-in-effect]"
+            id="bx-caption-tie"
             class="rs-veditor-input"
+            value="{{ attribute(v, 'text-effect-in') }}"
             data-selector=".bx-caption"
-            data-selector-helper="span"
             data-prop="text-effect-in"
-            data-type="in-effect"
-            data-attr="data-in-effect"
-            >
-        <option value="fadeIn" {% if attribute(v, 'text-effect-in')|default('') == 'fadeIn' %}selected="selected"{% endif %}>
-            {{ translate('FadeIn') }}
-        </option>
-        <option value="rollIn" {% if attribute(v, 'text-effect-in')|default('') == 'rollIn' %}selected="selected"{% endif %}>
-            {{ translate('RollIn') }}
-        </option>
-        <option value="fadeInLeftBig" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInLeftBig' %}selected="selected"{% endif %}>
-            {{ translate('FadeInLeftBig') }}
-        </option>
-        <option value="fadeInRightBig" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInRightBig' %}selected="selected"{% endif %}>
-            {{ translate('FadeInRightBig') }}
-        </option>
-        <option value="fadeInLeft" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInLeft' %}selected="selected"{% endif %}>
-            {{ translate('FadeInLeft') }}
-        </option>
-        <option value="fadeInRight" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInRight' %}selected="selected"{% endif %}>
-            {{ translate('FadeInRight') }}
-        </option>
-        <option value="fadeInUp" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInUp' %}selected="selected"{% endif %}>
-            {{ translate('FadeInUp') }}
-        </option>
-        <option value="fadeInDown" {% if attribute(v, 'text-effect-in')|default('') == 'fadeInDown' %}selected="selected"{% endif %}>
-            {{ translate('FadeInDown') }}
-        </option>
-        <option value="flipInX" {% if attribute(v, 'text-effect-in')|default('') == 'flipInX' %}selected="selected"{% endif %}>
-            {{ translate('FlipInX') }}
-        </option>
-        <option value="flipInY" {% if attribute(v, 'text-effect-in')|default('') == 'flipInY' %}selected="selected"{% endif %}>
-            {{ translate('FlipInY') }}
-        </option>
-    </select>
+            hidden>
+    <button id="select-tie" class="button button-primary">
+        <i class="fa fa-fw fa-check"></i>
+        {{ translate('Select Text in effect') }}
+    </button>
 </div>
 
-<div class="rs-veditor-group">
+<div class="rs-veditor-group supsystic-plugin">
     <label>{{ translate('Text out effect') }}</label>
-    <select
+    <input
             name="[_veditor_][.bx-caption][text-out-effect]"
+            id="bx-caption-toe"
             class="rs-veditor-input"
+            value="{{ attribute(v, 'text-effect-out') }}"
             data-selector=".bx-caption"
-            data-selector-helper="span"
             data-prop="text-effect-out"
-            data-type="out-effect"
-            data-attr="data-out-effect"
-            >
-        <option value="fadeOut" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOut' %}selected="selected"{% endif %}>
-            {{ translate('FadeOut') }}
-        </option>
-        <option value="rollOut" {% if attribute(v, 'text-effect-out')|default('') == 'rollOut' %}selected="selected"{% endif %}>
-            {{ translate('RollOut') }}
-        </option>
-        <option value="fadeOutLeftBig" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutLeftBig' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutLeftBig') }}
-        </option>
-        <option value="fadeOutRightBig" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutRightBig' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutRightBig') }}
-        </option>
-        <option value="fadeOutLeft" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutLeft' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutLeft') }}
-        </option>
-        <option value="fadeOutRight" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutRight' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutRight') }}
-        </option>
-        <option value="fadeOutUp" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutUp' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutUp') }}
-        </option>
-        <option value="fadeOutDown" {% if attribute(v, 'text-effect-out')|default('') == 'fadeOutDown' %}selected="selected"{% endif %}>
-            {{ translate('FadeOutDown') }}
-        </option>
-        <option value="flipOutX" {% if attribute(v, 'text-effect-out')|default('') == 'flipOutX' %}selected="selected"{% endif %}>
-            {{ translate('FlipOutX') }}
-        </option>
-        <option value="flipOutY" {% if attribute(v, 'text-effect-out')|default('') == 'flipOutY' %}selected="selected"{% endif %}>
-            {{ translate('FlipOutY') }}
-        </option>
-    </select>
+            hidden>
+    <button id="select-toe" class="button button-primary">
+        <i class="fa fa-fw fa-check"></i>
+        {{ translate('Select Text out effect') }}
+    </button>
 </div>
+
+<script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+            // Set caption settings to Text In / Text Out dialogs
+            function setCaptionSettings() {
+                var textAlign = $('select[name="[_veditor_][.bx-caption][text-align]"]').val();
+                var textColor = $('input[name="[_veditor_][.bx-caption][color]"]').val();
+                var bgColor = $('input[name="[_veditor_][.bx-caption][background-color]"]').val();
+                var textSize = $('input[name="[_veditor_][.bx-caption][font-size]"]').val();
+                var props = {
+                    'text-align': textAlign,
+                    'color': textColor,
+                    'background-color': bgColor,
+                    'font-size': textSize
+                };
+
+                $('div#tieImg').find('div.bx-caption-preview').css(props);
+                $('div#toeImg').find('div.bx-caption-preview').css(props);
+            }
+            // Initial caption settings
+            setCaptionSettings();
+            // Init Text in effect dialog
+            $('#select-tie').on('click', function () {
+                $('#selectTextInEffectDialog').dialog({
+                    autoOpen: false,
+                    modal:    true,
+                    height:   600,
+                    width:    450,
+                    buttons:  {
+                        Cancel: function () {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+                var selectedTie = $('input#bx-caption-tie').val();
+                if(selectedTie) {
+                    var tiePreview = $('img#tieImg[data-value="'+selectedTie+'"]');
+                    if(tiePreview) {
+                        tiePreview.parent().removeClass().addClass('selectedPreset');
+                    }
+                }
+                $('#selectTextInEffectDialog').dialog('open');
+            });
+            // Init Text out effect dialog
+            $('#select-toe').on('click', function () {
+                $('#selectTextOutEffectDialog').dialog({
+                    autoOpen: false,
+                    modal:    true,
+                    height:   600,
+                    width:    450,  
+                    buttons:  {
+                        Cancel: function () {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+                var selectedToe = $('input#bx-caption-toe').val();
+                if(selectedToe) {
+                    var toePreview = $('img#toeImg[data-value="'+selectedToe+'"]');
+                    if(toePreview) {
+                        toePreview.parent().removeClass().addClass('selectedPreset');
+                    }
+                }
+                $('#selectTextOutEffectDialog').dialog('open');
+            });
+            // Init looping text animation in Text in dialog (on mouseenter)
+            $('div#tieImg').each(function() {
+                $(this).on('mouseenter', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid aqua');
+                    }
+                    $(this).find('div.bx-caption-preview').find('span').textillate();
+                });
+                $(this).on('mouseleave', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid gray');
+                    }
+                });
+            });
+            // Select Text in effect
+            $('img#tieImg').on('click', function() {
+                $('#bx-caption-tie').attr('value', $(this).data('value'));
+                $('div.selectedPreset').removeClass().addClass('unselectedPreset');
+                $(this).parent().addClass('selectedPreset');
+                $('#selectTextInEffectDialog').dialog('close');
+            });
+            // Init looping text animation in Text out dialog (on mouseenter)
+            $('div#toeImg').each(function() {
+                $(this).on('mouseenter', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid aqua');
+                    }
+                    $(this).find('div.bx-caption-preview').find('span').textillate();
+                });
+                $(this).on('mouseleave', function() {
+                    if($(this).is('.unselectedPreset')) {
+                        $(this).css('border-bottom', '1px solid gray');
+                    }
+                });
+            });
+            // Select Text out effect
+            $('img#toeImg').on('click', function() {
+                $('#bx-caption-toe').attr('value', $(this).data('value'));
+                $('div.selectedPreset').removeClass().addClass('unselectedPreset');
+                $(this).parent().addClass('selectedPreset');
+                $('#selectTextOutEffectDialog').dialog('close');
+            });
+        });
+    }(jQuery));
+</script>

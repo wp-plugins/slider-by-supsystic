@@ -149,6 +149,13 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         );
     }
 
+	public function showPresetsAction(Rsc_Http_Request $request) {
+		return $this->response(
+			'@slider/slider_preset.twig',
+			array('available' => $this->getModule('slider')->getAvailableSliders())
+		);
+	}
+
     /**
      * Shows full list of the sliders.
      *
@@ -705,7 +712,7 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
 
             // Settings id != 0;
         } else {
-            $data['__veditor__'] = $settings->getById($current->settings_id)->data['__veditor__'];
+            $data['__veditor__'] = isset($settings->getById($current->settings_id)->data['__veditor__']) ? $settings->getById($current->settings_id)->data['__veditor__'] : '';
             if (!$settings->update($current->settings_id, $data)) {
                 $message = sprintf(
                     $this->translate(
@@ -1016,17 +1023,17 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                     break;
                 case 'bx-prev':
                     $template = $twig->render('@bx/designer/controls.twig', array(
-                        'slider' => $settings,
+                        'slider' => $slider,
                     ));
                     break;
                 case 'bx-prev-button button':
                     $template = $twig->render('@bx/designer/controls.twig', array(
-                        'slider' => $settings,
+                        'slider' => $slider,
                     ));
                     break;
                 case 'bx-next':
                     $template = $twig->render('@bx/designer/controls.twig', array(
-                        'slider' => $settings,
+                        'slider' => $slider,
                     ));
                     break;
                 case 'bx-controls bx-has-pager thumbnails bx-has-controls-direction':

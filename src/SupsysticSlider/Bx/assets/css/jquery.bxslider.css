@@ -375,3 +375,49 @@ ul.bx-pager {
 .thumbs li {
     cursor: pointer;
 }
+
+.bx-caption-preview {
+    display: block;
+    font-family: Arial;
+    padding: 10px 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-bottom: 4px;
+}
+
+.bx-caption-preview span {
+    margin-left: 10px;
+}
+
+.selectedPreset, .unselectedPreset {
+    cursor: pointer;
+}
+
+.selectedPreset {
+    border-bottom: 1px solid aqua !important;
+}
+
+.unselectedPreset {
+    border-bottom: 1px solid gray;
+}
+
+.bx-wrapper:hover .bx-controls-preview {
+    opacity: 1.0;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.bx-wrapper .bx-controls-preview a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px !important;
+    height: 32px !important;
+    text-indent: -9999px;
+    z-index: 9999;
+}

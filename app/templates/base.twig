@@ -21,13 +21,13 @@
                             {{ translate('Overview') }}
                         </a>
                     </li>
-                    <li>
-                        <a id="btn-add-new" href="{{ environment.generateUrl('slider', 'index', {'add':'true'}) }}">
+                    <li {% if request.query.module == 'slider' and request.query.action == 'showPresets' %}class="active"{% endif %}>
+                        <a id="btn-add-new" href="{{ environment.generateUrl('slider', 'showPresets') }}">
                             <i class="fa fa-plus-circle"></i>
                             {{ translate('New Slider') }}
                         </a>
                     </li>
-                    <li {% if request.query.module == 'slider' or request.query.module is null %}class="active"{% endif %}>
+                    <li {% if (request.query.module == 'slider' or request.query.module is null) and request.query.action != 'showPresets'  %}class="active"{% endif %}>
                         <a href="{{ environment.generateUrl('slider') }}">
                             <i class="fa fa-archive"></i>
                             {{ translate('Sliders') }}

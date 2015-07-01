@@ -34,14 +34,15 @@
         var self = this;
 
         this.$faqToggles.on('click', function() {
-            self.$faqToggles.find('div.description').hide();
-            $(this).find('div.description').show();
+            //self.$faqToggles.find('div.description').hide();
+            //$(this).find('div.description').show();
+            jQuery(this).find('div.description').toggle();
         });
     };
 
     Controller.prototype.init = function() {
         this.initScroll();
-        this.checkMail();
+        //this.checkMail();
         this.initFaqToggles();
     };
 

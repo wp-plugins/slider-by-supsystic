@@ -13,7 +13,11 @@ class SupsysticSlider_Overview_Controller extends SupsysticSlider_Core_BaseContr
             '@overview/index.twig',
             array(
                 'serverSettings' => $serverSettings,
-                'news' => $this->loadNews($config['post_url'])
+                'news' => $this->loadNews($config['post_url']),
+				'contactForm' => array(
+					'email' => get_bloginfo('admin_email'),
+					'website' => get_bloginfo('url')
+				)
             )
         );
     }

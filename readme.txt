@@ -3,7 +3,7 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
 Tested up to: 4.2.2
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
@@ -229,6 +229,18 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.3.1 = 11/06/2015
+
+ * Controls type option moved to dialog
+ * Added initial caption settings in Text In / Text Out dialogs
+ * Fix posts rendering & default caption text & background colors in Coin slider
+ * Default ui buttons changed
+ * Changes in Overview page
+ * Font loader checks added, radiobuttons fix for Jssor
+ * Coin caption height modified
+ * New settings: caption text color & bg color for Coin Slider
+ * Minor fixes
 
 = 1.3.1 = 11/06/2015
 

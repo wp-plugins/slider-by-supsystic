@@ -1,0 +1,799 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Slider by Supsystic"
+msgstr "מחוון של Supsystic"
+
+msgid "Overview"
+msgstr "סקירה"
+
+msgid "New Slider"
+msgstr "מחוון חדש"
+
+msgid "Sliders"
+msgstr "מחוונים"
+
+msgid "Images"
+msgstr "תמונות"
+
+msgid "Settings"
+msgstr "הגדרות"
+
+msgid "License"
+msgstr "רישיון"
+
+msgid "Get PRO"
+msgstr "קבל PRO"
+
+msgid "Loading"
+msgstr "טעינה"
+
+msgid "Error"
+msgstr "שגיאה"
+
+msgid "An error has occurred"
+msgstr "אירעה שגיאה"
+
+msgid "Authorization code is not specified."
+msgstr "קוד אישור לא צוין."
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Upload your images from the Facebook Media Library"
+msgstr "העלה את התמונות שלך מספריית המדיה פייסבוק"
+
+msgid "Upload from Facebook"
+msgstr "העלה מפייסבוק"
+
+msgid "Upload new images"
+msgstr "העלה תמונות חדשות"
+
+msgid "Import images"
+msgstr "יבוא תמונות"
+
+msgid "Logout"
+msgstr "להתנתק"
+
+msgid "Select/unselect all photos"
+msgstr "בחר / בטל בחירת כל התמונות"
+
+msgid "Empty user data."
+msgstr "נתוני משתמש ריקים."
+
+msgid "Flickr"
+msgstr "Flickr"
+
+msgid "Upload your images from the Flickr Media Library"
+msgstr "העלה את התמונות שלך מספריית המדיה Flickr"
+
+msgid "Upload from Flickr"
+msgstr "העלה מ- Flickr"
+
+msgid "Effects"
+msgstr "אפקטים"
+
+msgid "Controls"
+msgstr "בקרה"
+
+msgid "Mode"
+msgstr "מצב"
+
+msgid "Distance"
+msgstr "מרחק"
+
+msgid "Arrows"
+msgstr "חיצים"
+
+msgid "Bullet control"
+msgstr "שליטת כדור"
+
+msgid "Responsive size Slider"
+msgstr "המחוון גודל מגיב"
+
+msgid "Thumbnails slider navigation"
+msgstr "ניווט מחוון תמונות ממוזערות"
+
+msgid "Enable Slideshow"
+msgstr "הפעל מצגת"
+
+msgid "Slideshow Speed"
+msgstr "מהירות המצגת "
+
+msgid "Select Shadow"
+msgstr "בחר צל"
+
+msgid "Select shadow effect"
+msgstr "בחר אפקט הצל"
+
+msgid "Check"
+msgstr "בדוק"
+
+msgid "Authorization oauth_verifier is not specified."
+msgstr "אישור oauth_verifier לא צוין."
+
+msgid "Tumblr"
+msgstr "Tumblr"
+
+msgid "Upload your images from the Tumblr Media Library"
+msgstr "העלה את התמונות שלך מספריית המדיה Tumblr"
+
+msgid "Upload from Tumblr"
+msgstr "העלה מTumblr"
+
+msgid "Text align"
+msgstr "יישור טקסט"
+
+msgid "Align left"
+msgstr "יישור לשמאל"
+
+msgid "Align center"
+msgstr "יישר למרכז"
+
+msgid "Align right"
+msgstr "יישור לימין"
+
+msgid "Text color"
+msgstr "צבע הטקסט"
+
+msgid "Background color"
+msgstr "צבע הרקע"
+
+msgid "Text size"
+msgstr "גודל טקסט"
+
+msgid "Text Animation"
+msgstr "אנימצית טקסט"
+
+msgid "Disable"
+msgstr "בטל"
+
+msgid "Enable"
+msgstr "הפעל"
+
+msgid "Text in effect"
+msgstr "טקסט באפקט"
+
+msgid "FadeIn"
+msgstr "FadeIn"
+
+msgid "RollIn"
+msgstr "RollIn"
+
+msgid "FadeInLeftBig"
+msgstr "FadeInLeftBig"
+
+msgid "FadeInRightBig"
+msgstr "FadeInRightBig"
+
+msgid "FadeInLeft"
+msgstr "FadeInLeft"
+
+msgid "FadeInRight"
+msgstr "FadeInRight"
+
+msgid "FadeInUp"
+msgstr "FadeInUp"
+
+msgid "FadeInDown"
+msgstr "FadeInDown"
+
+msgid "FlipInX"
+msgstr "FlipInX"
+
+msgid "FlipInY"
+msgstr "FlipInY"
+
+msgid "Text out effect"
+msgstr "אפקט טקסט יצאה"
+
+msgid "FadeOut"
+msgstr "FadeOut"
+
+msgid "RollOut"
+msgstr "RollOut"
+
+msgid "FadeOutLeftBig"
+msgstr "FadeOutLeftBig"
+
+msgid "FadeOutRightBig"
+msgstr "FadeOutRightBig"
+
+msgid "FadeOutLeft"
+msgstr "FadeOutLeft"
+
+msgid "FadeOutRight"
+msgstr "FadeOutRight"
+
+msgid "FadeOutUp"
+msgstr "FadeOutUp"
+
+msgid "FadeOutDown"
+msgstr "FadeOutDown"
+
+msgid "FlipOutX"
+msgstr "FlipOutX"
+
+msgid "FlipOutY"
+msgstr "FlipOutY"
+
+msgid "Controls type"
+msgstr "סוג בקרה"
+
+msgid "circle_arrows"
+msgstr "circle_arrows"
+
+msgid "little_arrows"
+msgstr "little_arrows"
+
+msgid "standart_big"
+msgstr "standart_big"
+
+msgid "standart_small"
+msgstr "standart_small"
+
+msgid "circle_little"
+msgstr "circle_little"
+
+msgid "square_big"
+msgstr "square_big"
+
+msgid "fast"
+msgstr "מהר"
+
+msgid "little"
+msgstr "קטן"
+
+msgid "go_small"
+msgstr "go_small"
+
+msgid "Border style:"
+msgstr "סגנון גבול:"
+
+msgid "None"
+msgstr "אין"
+
+msgid "Solid"
+msgstr "מוצק"
+
+msgid "Dashed"
+msgstr "מקווקו"
+
+msgid "Border width:"
+msgstr "רוחב הגבול:"
+
+msgid "Border color:"
+msgstr "צבע הגבול:"
+
+msgid "Thumbnails margin"
+msgstr "מרווח תמונות ממוזערות"
+
+msgid "General"
+msgstr "כללי"
+
+msgid "Touch"
+msgstr "מַגָע"
+
+msgid "Pager"
+msgstr "זימונית"
+
+msgid "Properties"
+msgstr "מאפיינים"
+
+msgid "Slideshow"
+msgstr "מצגת"
+
+msgid "Slideshow controls"
+msgstr "בקרות מצגת"
+
+msgid "Navigation"
+msgstr "ניווט"
+
+msgid "Captions"
+msgstr "כיתובים"
+
+msgid "Speed"
+msgstr "מהירות"
+
+msgid "Margin"
+msgstr "מרווח"
+
+msgid "Starting slide"
+msgstr "שקופית התחלתית"
+
+msgid "Start slider on a random slide"
+msgstr "התחל מחוון בשקופית אקראית"
+
+msgid "Easing"
+msgstr "הקלה"
+
+msgid "Enable touch"
+msgstr "הפעל מגע"
+
+msgid "Yes"
+msgstr "כן"
+
+msgid "No"
+msgstr "לא"
+
+msgid "One-to-One touch"
+msgstr "One-to-One touch"
+
+msgid "Swipe threshold"
+msgstr "החלק עם אצבע"
+
+msgid "Enable pager"
+msgstr "הפעל זימונית"
+
+msgid "Type"
+msgstr "סוג"
+
+msgid "Effect"
+msgstr "אפקט"
+
+msgid "Select effect"
+msgstr "בחר אפקט"
+
+msgid "Title speed"
+msgstr "מהירות הכותרת "
+
+msgid "Opacity"
+msgstr "שקיפות"
+
+msgid "Delay"
+msgstr "עיכוב"
+
+msgid "Pause"
+msgstr "השהה"
+
+msgid "Links"
+msgstr "קישורים"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Upload your images from the Instagram Media Library"
+msgstr "העלה את התמונות שלך מספריית המדיה Instagram"
+
+msgid "Upload from Instagram"
+msgstr "העלה מInstagram"
+
+msgid "Gallery by Supsystic"
+msgstr "גלריה של Supsystic"
+
+msgid "Most common FAQs"
+msgstr "שאלות נפוצות השכיחות ביותר"
+
+msgid "How to get PRO version of plugin for FREE?"
+msgstr "איך לקבל גרסת PRO של תוסף בחינם?"
+
+msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
+msgstr "יש לך הזדמנות מדהימה לקבל גרסת PRO בחינם. תרגם את התוסף. זה יהיה מדהים אם אתה לוקח את יתרון של הצעה זו!"
+
+msgid "Translation"
+msgstr "תרגום"
+
+msgid "Check all FAQs"
+msgstr "בדקו את כל השאלות הנפוצות"
+
+msgid "Video tutorial will be added soon"
+msgstr "הדרכה וידאו תתווסף בקרוב"
+
+msgid "All news"
+msgstr "כל החדשות"
+
+msgid "Your name"
+msgstr "השם שלך"
+
+msgid "Your email"
+msgstr "האימייל שלך"
+
+msgid "Website"
+msgstr "אתר"
+
+msgid "Subject"
+msgstr "נושא"
+
+msgid "Topic"
+msgstr "נושא"
+
+msgid "Plugin options"
+msgstr "אפשרויות תוסף"
+
+msgid "Report a bug"
+msgstr "דווח על באג"
+
+msgid "Require a new functionallity"
+msgstr "דורש הפונקציונליות החדשה"
+
+msgid "Other"
+msgstr "אחר"
+
+msgid "Type your message"
+msgstr "הקלד את הודעתך"
+
+msgid "Send email"
+msgstr "שלח דואר אלקטרוני"
+
+msgid "Fields with * are required to fill"
+msgstr "נדרש למלא שדות עם *"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "אין אפשרות לשמור את התמונה שנבחרה  %s: %s"
+
+msgid "New Folder"
+msgstr "תיקייה חדשה"
+
+msgid "The title can't be empty"
+msgstr "הכותרת לא יכולה להיות ריקה"
+
+msgid "Title successfully updated"
+msgstr "כותרת עודכנה בהצלחה"
+
+msgid "Failed to update position."
+msgstr "נכשל ניסיון לעדכן את העמדה."
+
+msgid "Position updated successfully!"
+msgstr "מיקום עודכן בהצלחה!"
+
+msgid "Rename folder"
+msgstr "שינוי שם תיקייה"
+
+msgid "Folder name:"
+msgstr "שם תיקייה:"
+
+msgid "Add images to the slider"
+msgstr "הוסף תמונות למחוון"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "אנא המתן בזמן התוסף כדי לקבל את הרשימה של מחוונים ..."
+
+msgid "Select slider:"
+msgstr "בחר מחוון:"
+
+msgid "New folder"
+msgstr "תיקייה חדשה"
+
+msgid "Add images to the new slider"
+msgstr "הוסף תמונות למחוון החדש"
+
+msgid "Slider title:"
+msgstr "כותרת המחוון:"
+
+msgid "Add new video"
+msgstr "הוסף וידאו חדש"
+
+msgid "Import videos"
+msgstr "יבוא ווידאו "
+
+msgid "Create new folder"
+msgstr "צור תיקייה חדשה"
+
+msgid "Delete selected items"
+msgstr "מחק פריטים שנבחרו"
+
+msgid "Create new slider from the selected items"
+msgstr "צור מחוון חדש מהפריטים שנבחרו"
+
+msgid "New slider from selected"
+msgstr "מחוון חדש מנבחר"
+
+msgid "Add the selected items to the existing slider"
+msgstr "הוסף את הפריטים שנבחרו למחוון הקיים"
+
+msgid "Add selected to the slider"
+msgstr "הוסף נבחר למחוון"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "העלה את התמונות שלך מספריית המדיה וורדפרס"
+
+msgid "All photos"
+msgstr "כל התמונות"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "שחרר את התמונות כאן כדי להעביר אותם מהתיקייה"
+
+msgid "Lifetime for cached data"
+msgstr "כל החיים לנתונים במטמון"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr "השדה  \"%s\" זמין רק עבור ערכים מספריים"
+
+msgid "Settings successfully updated!"
+msgstr "הגדרות עודכנו בהצלחה!"
+
+msgid "Please correct following errors:"
+msgstr "אנא תקן שגיאות הבאות:"
+
+msgid "Plugin settings"
+msgstr "הגדרות תוסף"
+
+msgid "Use build-in caching:"
+msgstr "השתמש בהצטברות במטמון:"
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> יש מערכת במטמון שלו כדי להפחית באופן משמעותי את העומס על מסד הנתונים."
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "מטמון אינו זמין משום ספריית הקבצים שלך אינה ניתנת לכתיבה."
+
+msgid "Lifetime for cached data:"
+msgstr "כל החיים לנתונים במטמון:"
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "הזמן בשניות לאחר שהמטמון ייחשב מיושן. ברירת מחדל: 86400 (24 שעות)."
+
+msgid "Clear cache"
+msgstr "ניקוי זיכרון המטמון"
+
+msgid "Allow plugin to send anonymous usage statistics:"
+msgstr "לאפשר לתוסף לשלוח נתוני שימוש אנונימיים:"
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "אנחנו לא אוספים נתונים סטטיסטיים עליך, אנו אוספים רק השגיאות שנתקלו במהלך שימוש על מנת לשפר את המוצר שלנו."
+
+msgid "Save"
+msgstr "שמור"
+
+msgid "Slider \"%s\" successfully created."
+msgstr "המחוון \"%s \" נוצר בהצלחה."
+
+msgid "Failed to update positions."
+msgstr "נכשל ניסיון לעדכן עמדות."
+
+msgid "Positions are successfully updated!"
+msgstr "עמדות עודכנו בהצלחה!"
+
+msgid "Unable to delete selected slider"
+msgstr "לא ניתן למחוק מחוון הנבחר"
+
+msgid "Failed to import selected items."
+msgstr "נכשל יבוא פריטים שנבחרו."
+
+msgid "Invalid slider identifier."
+msgstr "מזהה מחוון לא חוקי."
+
+msgid "Unable to find requested slider."
+msgstr "לא ניתן למצוא את המחוון המבוקש."
+
+msgid "Failed to save settings. %s"
+msgstr "נכשל ניסיון לשמור את ההגדרות. %s"
+
+msgid "Failed to change plugin: %s"
+msgstr "נכשל ניסיון לשנות תוסף: %s"
+
+msgid "Failed to attach resources."
+msgstr "נכשל ניסיון לצרף משאבים."
+
+msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
+msgstr "%s משאבים מצורפים בהצלחה ל <a href=\"%s\">%s</a>"
+
+msgid "Successfully removed!"
+msgstr "הוסר בהצלחה!"
+
+msgid "Failed to load settings"
+msgstr "נכשל ניסיון לטעון הגדרות"
+
+msgid "Import"
+msgstr "יבוא"
+
+msgid "You have no images"
+msgstr "אין לך תמונות"
+
+msgid "Upload to images"
+msgstr "העלה על תמונות"
+
+msgid "Preview"
+msgstr "תצוגה מקדימה"
+
+msgid "Delete Slider"
+msgstr "מחק המחוון"
+
+msgid "Total images: "
+msgstr "סך הכל תמונות:"
+
+msgid "Total videos: "
+msgstr "סה\"כ סרטים:"
+
+msgid "Shortcode: "
+msgstr "קוד קצר: "
+
+msgid "PhpCode: "
+msgstr "קוד PHP:"
+
+msgid "Sliders List"
+msgstr "רשימת מחוונים"
+
+msgid "Slider Name"
+msgstr "שם מחוון"
+
+msgid "Select module"
+msgstr "בחר מודול"
+
+msgid "Add Images"
+msgstr "הוסף תמונות"
+
+msgid "Add Video"
+msgstr "הוסף וידאו"
+
+msgid "Add images"
+msgstr "הוספת תמונות"
+
+msgid "Change Slider"
+msgstr "שינוי המחוון"
+
+msgid "Delete"
+msgstr "מחק"
+
+msgid "Are you really want to delete "
+msgstr "האם אתה באמת רוצה למחוק"
+
+msgid "Posts and Pages"
+msgstr "הודעות ודפים"
+
+msgid "Remove post"
+msgstr "הסר הודעה"
+
+msgid "Select posts to show"
+msgstr "בחר הודעות להציגה"
+
+msgid "Pages: "
+msgstr "עמודים: "
+
+msgid "Add page"
+msgstr "הוסף דף"
+
+msgid "Posts: "
+msgstr "הודעות: "
+
+msgid "Add post"
+msgstr "להוסיף הודעה"
+
+msgid "Media"
+msgstr "מדיה"
+
+msgid "Shortcode"
+msgstr "קוד קצר"
+
+msgid "Slider width"
+msgstr "רוחב המחוון"
+
+msgid "pixels"
+msgstr "פיקסלים"
+
+msgid "Slider height"
+msgstr "גובה מחוון"
+
+msgid "Change Slider Type"
+msgstr "שינוי סוג המחוון "
+
+msgid "Select plugin"
+msgstr "בחר תוסף"
+
+msgid "Jssor PRO"
+msgstr "Jssor ПРО"
+
+msgid "Please note:"
+msgstr "לתשומת לבך:"
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "הגדרות נוכחיים יוסרו ללא יכולת שחזור."
+
+msgid "Visual editor"
+msgstr "עורך ויזואלי"
+
+msgid "Choose import source"
+msgstr "בחר מקור יבוא"
+
+msgid "Import from Wordpress Media Library"
+msgstr "יבוא מספריית המדיה וורדפרס"
+
+msgid "Import from social networks"
+msgstr "יבוא מרשתות חברתיות"
+
+msgid "Import from your Instagram account"
+msgstr "יבוא מהחשבון שלך Instagram"
+
+msgid "Import from your Flickr account"
+msgstr "יבוא מחשבון Flickr שלכם"
+
+msgid "Import from your Tumblr account"
+msgstr "יבוא מחשבון Tumblr שלך"
+
+msgid "Import from your Facebook account"
+msgstr "יבוא מהחשבון שלך בפייסבוק"
+
+msgid "Get Pro to enable import"
+msgstr "קבל Pro כדי לאפשר יבוא"
+
+msgid "Get PRO for 29$"
+msgstr "קבל PRO עבור $ 29"
+
+msgid "Import video"
+msgstr "יבוא וידאו"
+
+msgid "Video URL:"
+msgstr "כתובת אתר של סרטון:"
+
+msgid "Supported platforms: %s."
+msgstr "פלטפורמות נתמכות: %s."
+
+msgid "Edit image"
+msgstr "עריכת תמונה"
+
+msgid "Main"
+msgstr "ראשי"
+
+msgid "Caption"
+msgstr "כיתוב"
+
+msgid "SEO"
+msgstr "קידום אתרים"
+
+msgid "Description"
+msgstr "תיאור"
+
+msgid "Alternative text"
+msgstr "טקסט חלופי"
+
+msgid "External link"
+msgstr "קישור חיצוני"
+
+msgid "Available in PRO version."
+msgstr "זמין בגרסת PRO."
+
+msgid "Link"
+msgstr "קישור"
+
+msgid "Open in new window"
+msgstr "פתח בחלון חדש"
+
+msgid "Embeded video"
+msgstr "וידאו מוטבע"
+
+msgid "Video URL"
+msgstr "כתובת אתר של וידאו"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "תומך בYoutube וVimeo. כתובת אתר יומר להטמעה באופן אוטומטי."
+
+msgid "Select %s"
+msgstr "בחר %s"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Welcome to"
+msgstr "ברוך הבא ל"
+
+msgid "Version"
+msgstr "גרסה"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "הזמן חבר"
+
+msgid "Find on the web"
+msgstr "מצא באינטרנט"
+
+msgid "Other way"
+msgstr "דרך אחרת"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "תודה עבור בדיקת מידע. התחל באמצעות תוסף"

@@ -23,153 +23,189 @@
 
     {% import _self as macro %}
 
-    <table class="form-table" data-tab="effects" id="effects">
-        <thead>
-        <tr>
-            <th scope="row">
-                <label for="effectsEffect">
-                    {{ translate('Effect') }}
-                    {{ form.tooltip('general-effect') }}
-                </label>
-            </th>
+    <thead>
+    <tr data-tab="effects" id="effects">
+        <th scope="row">
+            <label for="effectsEffect">
+                {{ translate('Effect') }}
+                {{ form.tooltip('general-effect') }}
+            </label>
+        </th>
+        <td>
+            <span id="effectName" style="position: relative; bottom: -5px; margin-right: 5px;">{{ slider.settings.effects.effect|title }}</span>
+            <button id="showEffectsPreview" class="button">
+                {{ translate('Select effect') }}
+            </button>
+            <input name="effects[effect]" value="{{ slider.settings.effects.effect }}" type="hidden"/>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label>
+                {{ translate('Caption text color') }}
+            </label>
+            {% if environment.isPro() != 'true' %}
+                <span class="rsProOptMiniLabel">
+                    <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption_text_color&utm_campaign=slider" target="_blank">PRO option</a>
+                </span>
+            {% endif %}
+        </th>
+        {% if environment.isPro() %}
             <td>
-                <span id="effectName" style="position: relative; bottom: -5px; margin-right: 5px;">{{ slider.settings.effects.effect|title }}</span>
-                <button id="showEffectsPreview" class="button">
-                    {{ translate('Select effect') }}
-                </button>
-                <input name="effects[effect]" value="{{ slider.settings.effects.effect }}" type="hidden"/>
+                <input name="post[caption_color]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_color|default('#000000') }}"/>
             </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="effectsTitleSpeed">
-                    {{ translate('Title speed') }}
-                    {{ form.tooltip('general-title-speed') }}
-                </label>
-            </th>
+        {% else %}
             <td>
-                <input class="regular-text" type="number" name="effects[titleSpeed]"
-                       id="effectsTitleSpeed" value="{{ slider.settings.effects.titleSpeed }}" step="100" min="0"/>
+                <a id="rsProOpt" class="wp-color-result" style="background-color: rgb(0, 0, 0);" title="Select Color"></a>
             </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="effectsOpacity">
-                    {{ translate('Opacity') }}
-                    {{ form.tooltip('general-opacity') }}
-                </label>
-            </th>
+        {% endif %}
+    </tr>
+    <tr>
+        <th scope="row">
+            <label>
+                {{ translate('Caption background color') }}
+            </label>
+            {% if environment.isPro() != 'true' %}
+                <span class="rsProOptMiniLabel">
+                    <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption_background_color&utm_campaign=slider" target="_blank">PRO option</a>
+                </span>
+            {% endif %}
+        </th>
+        {% if environment.isPro() %}
             <td>
-                <input class="regular-text" type="number"
-                       name="effects[opacity]" id="effectsOpacity" value="{{ slider.settings.effects.opacity }}" min="0" max="1" step="0.1"/>
+                <input name="post[caption_bg]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_bg|default('rgba(0,0,0,.3)') }}"/>
             </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="effectsDelay">
-                    {{ translate('Delay') }}
-                    {{ form.tooltip('general-delay') }}
-                </label>
-            </th>
+        {% else %}
             <td>
-                <input class="regular-text" type="number" name="effects[delay]"
-                       id="effectsDelay" value="{{ slider.settings.effects.delay }}" min="0" step="100"/>
+                <a id="rsProOpt" class="wp-color-result" style="background-color: rgba(0, 0, 0, 0.3);" title="Select Color"></a>
             </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="effectsHoverPause">
-                    {{ translate('Pause') }}
-                    {{ form.tooltip('general-pause') }}
-                </label>
-            </th>
-            <td>
-                <label for="effectsHoverPauseFalse">
-                    <input type="radio" name="effects[hoverPause]"
-                           id="effectsHoverPauseTrue"
-                           value="true" {{ macro.checked('true', slider.settings.effects.hoverPause, true) }}/>
-                    <span>{{ translate('Yes') }}</span>
-                    <br/>
-                </label>
-                <label for="effectsHoverPauseFalse">
-                    <input type="radio" name="effects[hoverPause]"
-                           id="effectsHoverPauseFalse"
-                           value="false" {{ macro.checked('false', slider.settings.effects.hoverPause, false) }}/>
-                    <span>{{ translate('No') }}</span>
-                    <br/>
-                </label>
-            </td>
-        </tr>
-        </thead>
-    </table>
+        {% endif %}
 
-    <table class="form-table" data-tab="controls" id="controls">
-        <thead>
-        <tr>
-            <th scope="row">
-                <label for="controlsNavigation">
-                    {{ translate('Navigation') }}
-                    {{ form.tooltip('general-navigation-coin') }}
-                </label>
-            </th>
-            <td>
-                <label for="controlsNavigationTrue">
-                    <input type="radio" name="controls[navigation]"
-                           id="controlsNavigationTrue"
-                           value="true"
-                           {% if 'true' == slider.settings.controls.navigation %}
-                               checked="checked"
-                           {% endif %}
-                           />
-                    <span>{{ translate('Yes') }}</span>
-                    <br/>
-                </label>
-                <label for="controlsNavigationFalse">
-                    <input type="radio" name="controls[navigation]"
-                           id="controlsNavigationFalse"
-                           value="false"
-                            {% if 'false' == slider.settings.controls.navigation %}
-                                checked="checked"
-                            {% endif %}
-                           />
-                    <span>{{ translate('No') }}</span>
-                    <br/>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="controlsLinks">
-                    {{ translate('Links') }}
-                    {{ form.tooltip('general-links') }}
-                </label>
-            </th>
-            <td>
-                <label for="controlsLinksTrue">
-                    <input type="radio" name="controls[links]"
-                           id="controlsLinksTrue"
-                           value="true"
-                           {% if 'true' == slider.settings.controls.links %}
-                               checked="checked"
-                           {% endif %}
-                           />
-                    <span>{{ translate('Yes') }}</span>
-                    <br/>
-                </label>
-                <label for="controlsLinksFalse">
-                    <input value="false" type="radio" name="controls[links]"
-                           id="controlsLinksFalse"
-                           {% if 'false' == slider.settings.controls.links %}
-                               checked="checked"
-                           {% endif %}
-                           />
-                    <span>{{ translate('No') }}</span>
-                    <br/>
-                </label>
-            </td>
-        </tr>
-        </thead>
-    </table>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label for="effectsTitleSpeed">
+                {{ translate('Title speed') }}
+                {{ form.tooltip('general-title-speed') }}
+            </label>
+        </th>
+        <td>
+            <input class="regular-text" type="number" name="effects[titleSpeed]"
+                   id="effectsTitleSpeed" value="{{ slider.settings.effects.titleSpeed }}" step="100" min="0" style="width: auto !important;"/>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label for="effectsOpacity">
+                {{ translate('Opacity') }}
+                {{ form.tooltip('general-opacity') }}
+            </label>
+        </th>
+        <td>
+            <input class="regular-text" type="number"
+                   name="effects[opacity]" id="effectsOpacity" value="{{ slider.settings.effects.opacity }}" min="0" max="1" step="0.1" style="width: auto !important;"/>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label for="effectsDelay">
+                {{ translate('Delay') }}
+                {{ form.tooltip('general-delay') }}
+            </label>
+        </th>
+        <td>
+            <input class="regular-text" type="number" name="effects[delay]"
+                   id="effectsDelay" value="{{ slider.settings.effects.delay }}" min="0" step="100" style="width: auto !important;"/>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label for="effectsHoverPause">
+                {{ translate('Pause') }}
+                {{ form.tooltip('general-pause') }}
+            </label>
+        </th>
+        <td>
+            <label for="effectsHoverPauseFalse">
+                <input type="radio" name="effects[hoverPause]"
+                       id="effectsHoverPauseTrue"
+                       value="true" {{ macro.checked('true', slider.settings.effects.hoverPause, true) }}/>
+                <span>{{ translate('Yes') }}</span>
+                <br/>
+            </label>
+            <label for="effectsHoverPauseFalse">
+                <input type="radio" name="effects[hoverPause]"
+                       id="effectsHoverPauseFalse"
+                       value="false" {{ macro.checked('false', slider.settings.effects.hoverPause, false) }}/>
+                <span>{{ translate('No') }}</span>
+                <br/>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label for="controlsNavigation">
+                {{ translate('Navigation') }}
+                {{ form.tooltip('general-navigation-coin') }}
+            </label>
+        </th>
+        <td>
+            <label for="controlsNavigationTrue">
+                <input type="radio" name="controls[navigation]"
+                       id="controlsNavigationTrue"
+                       value="true"
+                        {% if 'true' == slider.settings.controls.navigation %}
+                            checked="checked"
+                        {% endif %}
+                        />
+                <span>{{ translate('Yes') }}</span>
+                <br/>
+            </label>
+            <label for="controlsNavigationFalse">
+                <input type="radio" name="controls[navigation]"
+                       id="controlsNavigationFalse"
+                       value="false"
+                        {% if 'false' == slider.settings.controls.navigation %}
+                            checked="checked"
+                        {% endif %}
+                        />
+                <span>{{ translate('No') }}</span>
+                <br/>
+            </label>
+        </td>
+    </tr>
+    <tr data-tab="controls" id="controls">
+        <th scope="row">
+            <label for="controlsLinks">
+                {{ translate('Links') }}
+                {{ form.tooltip('general-links') }}
+            </label>
+        </th>
+        <td>
+            <label for="controlsLinksTrue">
+                <input type="radio" name="controls[links]"
+                       id="controlsLinksTrue"
+                       value="true"
+                        {% if 'true' == slider.settings.controls.links %}
+                            checked="checked"
+                        {% endif %}
+                        />
+                <span>{{ translate('Yes') }}</span>
+                <br/>
+            </label>
+            <label for="controlsLinksFalse">
+                <input value="false" type="radio" name="controls[links]"
+                       id="controlsLinksFalse"
+                        {% if 'false' == slider.settings.controls.links %}
+                            checked="checked"
+                        {% endif %}
+                        />
+                <span>{{ translate('No') }}</span>
+                <br/>
+            </label>
+        </td>
+    </tr>
+    </thead>
 
     <!-- Effect preview modal window -->
     <div id="previewWindow" style="display: none" title="Effects">
@@ -193,5 +229,12 @@
                 </label>
             {% endfor %}
         </div>
+    </div>
+
+    <!--Option available in PRO version Wnd-->
+    <div id="rsOptInProWnd" style="display: none;" title="Improve Free version">
+        <p class="supsystic-plugin">
+            Please be advised that this option is available only in <a target="_blank" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption&utm_campaign=slider">PRO version</a>. You can <a target="_blank" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption&utm_campaign=slider" class="button button-primary">Get PRO</a> today and get this and other PRO option for your Sliders!
+        </p>
     </div>
 {% endblock %}
