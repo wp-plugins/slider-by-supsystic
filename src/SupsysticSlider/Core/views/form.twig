@@ -138,3 +138,11 @@
         {% endfor %}
     </select>
 {% endmacro %}
+
+{% macro selectv(name, options, selected, attributes) %}
+    <select name="{{ name }}" {% for attribute, value in attributes %}{{ attribute }}="{{ value }}"{% endfor %}>
+        {% for text in options %}
+            <option value="{{ text }}" name = "{{ text|lower }}" {% if selected == text %}selected{% endif %}>{{ text }}</option>
+        {% endfor %}
+    </select>
+{% endmacro %}

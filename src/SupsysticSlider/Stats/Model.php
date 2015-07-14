@@ -34,7 +34,10 @@ class SupsysticSlider_Stats_Model extends SupsysticSlider_Core_BaseModel
     {
         parent::__construct((bool)$debugEnabled);
 
-        $this->table       = $this->db->prefix . 'gg_stats';
+        $config = $environment->getConfig();
+        $vendor = $config->get('db_prefix');
+
+        $this->table       = $this->db->prefix . $vendor . 'stats';
         $this->maxVisits   = 10;
         $this->environment = $environment;
     }

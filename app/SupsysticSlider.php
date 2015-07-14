@@ -30,7 +30,7 @@ class SupsysticSlider
 
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.3.2', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.3.3', $pluginPath);
 
         /* Configure */
         $environment->configure(
@@ -51,7 +51,7 @@ class SupsysticSlider
                     'position'   => '100.4',
                 ),
                 'shortcode_name'   => 'supsystic-slider',
-                'db_prefix'        => 'ss_',
+                'db_prefix'        => 'rs_',
                 'hooks_prefix'     => 'ss_',
                 'page_url'         => 'http://supsystic.com/plugins/slider',
                 'ajax_url'         => admin_url('admin-ajax.php'),

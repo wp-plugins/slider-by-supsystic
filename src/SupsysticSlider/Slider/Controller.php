@@ -339,7 +339,10 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             }
         }
 
-        return $this->response($module->getSettingsTemplate(), array('slider' => $current));
+		$resources = $this->getResources();
+		$fonts = $resources->getFontsList();
+
+		return $this->response($module->getSettingsTemplate(), array('slider' => $current, 'fontList' => $fonts));
     }
 
     /**

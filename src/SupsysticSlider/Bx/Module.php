@@ -81,6 +81,22 @@ class SupsysticSlider_Bx_Module extends Rsc_Mvc_Module implements SupsysticSlide
 					$preventCaching
 				)
 			);
+
+            $ui->add(
+                new SupsysticSlider_Ui_BackendJavascript(
+                    'supsysticSlider-bx-controls',
+                    $this->getLocationUrl() . '/assets/js/bx.controls.settings.js',
+                    $preventCaching
+                )
+            );
+
+            $ui->add(
+                new SupsysticSlider_Ui_BackendJavascript(
+                    'supsysticSlider-bx-captions',
+                    $this->getLocationUrl() . '/assets/js/bx.caption.settings.js',
+                    $preventCaching
+                )
+            );
         }
     }
 

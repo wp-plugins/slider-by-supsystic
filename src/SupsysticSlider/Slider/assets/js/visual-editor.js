@@ -243,6 +243,9 @@ Color.prototype.toString = function(remove_alpha) {
                 .trigger('change');
 
             $sidebar.empty().append($template);
+
+            _app.initBuilderControls();
+            _app.initBuilderCaptions();
         });
     });
 
