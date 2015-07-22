@@ -51,6 +51,24 @@
             {% endfor %}
         </td>
     </tr>
+    {% set veditor = attribute(slider.settings, '__veditor__') %}
+    {% set caption = attribute(veditor, '.bx-caption') %}
+    <tr>
+        <th scope="row">
+            <label>{{ translate('Caption text color') }}</label>
+        </th>
+        <td>
+            <input name="caption[.bx-caption][color]" type="text" class="gg-color-picker" value="{{ attribute(caption, 'color')|default('#000000') }}"/>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <label>{{ translate('Caption background color') }}</label>
+        </th>
+        <td>
+            <input name="caption[.bx-caption][background-color]" type="text" class="gg-color-picker" value="{{ attribute(caption, 'background-color')|default('rgba(0,0,0,.3)') }}"/>
+        </td>
+    </tr>
 
     {{ form.row(translate('Speed'),
     form.input('text', 'general[speed]', slider.settings.general.speed|default(500), {'id': 'generalSpeed', 'class': 'regular-text', 'style': 'width: 140px;' }), 'general-speed') }}

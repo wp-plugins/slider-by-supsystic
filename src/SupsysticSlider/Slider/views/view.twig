@@ -103,21 +103,9 @@
             {{ view_type.list_view(slider) }}
         {% else %}
             <h2 class="header-muted" style="text-align: center;">
-                {{ translate("You haven't any images yet.") }}
+                {{ translate("You haven't any images yet.") }}<br>
                 <a id="add-images" href="#">Add Images</a>
             </h2>
-        {% endif %}
-        {% if environment.isPro() != 'true' %}
-
-            <span style="position:absolute; margin-left:20px; margin-top:7px; font-size:1.3em; font-weight:600; color:#222;">Post Feed and Post Feed Carousel</span>
-            <a class="button button-primary" href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider" style="text-align:center; margin-bottom:5px; margin-left:409px;">
-                <i class="fa fa-unlock"></i>
-                {{ translate('Get PRO') }}
-            </a>
-
-            <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=post&utm_campaign=slider" style="text-decoration: none;">
-                <img src="{{ environment.getModule('coin').getLocationUrl() }}/assets/samples/posts_pro.jpg" style="margin-left: 20px; width: 90%;">
-            </a>
         {% endif %}
     </div>
     <div id="settings-area" class="half-page-right settings">
@@ -211,8 +199,7 @@
                         <br/>
                     </div>
                 {% endfor %}
-                {% if environment.isPro() != 'true' %}
-                    <div>
+                    <div style="{% if environment.isPro() %}display: none;{% endif %}">
                         <input type="radio" disabled>
                         <h3 style="display: inline-block;">
                             {{ translate('Jssor PRO') }}
@@ -221,7 +208,6 @@
                         <a href="http://supsystic.com/plugins/slider/?utm_source=plugin&utm_medium=post&utm_campaign=slider" class="button button-primary" style="display: inline-block; margin-top: 14px;">Get PRO</a>
                         <br/>
                     </div>
-                {% endif %}
                 <p class="description">
                     {{ translate('Please note:') }}
                     {{ translate('Current settings will be removed without ability to restore.') }}
@@ -270,7 +256,7 @@
     <div id="choose-import-dialog" class="supsystic-plugin" title="{{ translate('Choose import source') }}" style="text-align: center;" hidden>
         <button id="import-images" class="button button-primary button-hero" data-folder-id="0" data-slider-id="{{ slider.id }}" data-upload="">
             <i class="fa fa-upload fa-2x"></i>
-            {{ translate('Import from Wordpress Media Library') }}
+            {{ translate('Import from WordPress Media Library') }}
         </button>
         <h3>{{ translate('Import from social networks') }}</h3>
         <a class="button button-primary button-hero" href="{{ environment.generateUrl('insta', 'index', {'id': slider.id}) }}" style="width: 400px;margin-bottom: 20px;">

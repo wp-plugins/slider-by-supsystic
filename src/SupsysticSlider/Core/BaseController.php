@@ -81,13 +81,23 @@ class SupsysticSlider_Core_BaseController extends Rsc_Mvc_Controller
      */
     public function getModule($module)
     {
-        if (is_object($module)) {
-            preg_match('/SupsysticSlider_(.*)_(.*)/', get_class($module), $matches);
+//        if (is_object($module)) {
+//            preg_match('/SupsysticSlider_(.*)_(.*)/', get_class($module), $matches);
+//
+//            $module = strtolower(isset($matches[1]) ? $matches[1] : null);
+//        }
+//
+//        return $this->getEnvironment()->getModule($module);
 
-            $module = strtolower(isset($matches[1]) ? $matches[1] : null);
+        $resolver = $this->getEnvironment()->getResolver();
+
+        if ($module instanceof SupsysticSlider_Core_BaseController) {
+            $parts = explode('_', get_class($module));
+
+            return array_key_exists('1', $parts) ? $parts[1] : null;
         }
 
-        return $this->getEnvironment()->getModule($module);
+        return $resolver->getModulesList()->get($module);
     }
 
     /**

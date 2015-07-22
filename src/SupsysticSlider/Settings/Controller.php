@@ -33,7 +33,7 @@ class SupsysticSlider_Settings_Controller extends SupsysticSlider_Core_BaseContr
         $settings = $this->getModel('settings');
 
         /** @var SupsysticSlider_Settings_Module $module */
-        $module   = $this->getModule($this);
+        $module   = $this->getModule('settings');
         $registry = $module->getRegistry();
 
         $lang = $this->getEnvironment()->getLang();

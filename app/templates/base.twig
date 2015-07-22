@@ -45,7 +45,7 @@
                             {{ translate('Settings') }}
                         </a>
                     </li>
-                    {% if environment.isPro() %}
+                    {% if environment.getModule('license') %}
                         <li  {% if request.query.module == 'license' %}class="active"{% endif %}>
                             <a href="{{ environment.generateUrl('license') }}">
                                 <i class="fa fa-hand-o-right"></i>

@@ -276,7 +276,11 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         if ($previewAction) {
             $id = $request->query->get('id');
             return $this->redirect(
-                $this->generateUrl('slider', 'view') . '&id=' . $id . '#previewAction'
+                $this->generateUrl(
+                    'slider',
+                    'view',
+                    array('id' => $id . '#previewAction')
+                )
             );
         }
 
@@ -716,6 +720,12 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
             // Settings id != 0;
         } else {
             $data['__veditor__'] = isset($settings->getById($current->settings_id)->data['__veditor__']) ? $settings->getById($current->settings_id)->data['__veditor__'] : '';
+            // Set caption settings from view page
+            $caption = $request->post->get('caption');
+            if (is_array($caption)) {
+                $data['__veditor__']['.bx-caption']['color'] = $caption['.bx-caption']['color'];
+                $data['__veditor__']['.bx-caption']['background-color'] = $caption['.bx-caption']['background-color'];
+            }
             if (!$settings->update($current->settings_id, $data)) {
                 $message = sprintf(
                     $this->translate(

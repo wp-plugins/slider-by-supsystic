@@ -44,43 +44,20 @@
             <label>
                 {{ translate('Caption text color') }}
             </label>
-            {% if environment.isPro() != 'true' %}
-                <span class="rsProOptMiniLabel">
-                    <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption_text_color&utm_campaign=slider" target="_blank">PRO option</a>
-                </span>
-            {% endif %}
         </th>
-        {% if environment.isPro() %}
-            <td>
-                <input name="post[caption_color]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_color|default('#000000') }}"/>
-            </td>
-        {% else %}
-            <td>
-                <a id="rsProOpt" class="wp-color-result" style="background-color: rgb(0, 0, 0);" title="Select Color"></a>
-            </td>
-        {% endif %}
+        <td>
+            <input name="post[caption_color]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_color|default('#000000') }}"/>
+        </td>
     </tr>
     <tr>
         <th scope="row">
             <label>
                 {{ translate('Caption background color') }}
             </label>
-            {% if environment.isPro() != 'true' %}
-                <span class="rsProOptMiniLabel">
-                    <a href="http://supsystic.com/plugins/slider?utm_source=plugin&utm_medium=caption_background_color&utm_campaign=slider" target="_blank">PRO option</a>
-                </span>
-            {% endif %}
         </th>
-        {% if environment.isPro() %}
-            <td>
-                <input name="post[caption_bg]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_bg|default('rgba(0,0,0,.3)') }}"/>
-            </td>
-        {% else %}
-            <td>
-                <a id="rsProOpt" class="wp-color-result" style="background-color: rgba(0, 0, 0, 0.3);" title="Select Color"></a>
-            </td>
-        {% endif %}
-
+        <td>
+            <input name="post[caption_bg]" type="text" class="gg-color-picker" value="{{ slider.settings.post.caption_bg|default('rgba(0,0,0,.3)') }}"/>
+        </td>
     </tr>
     <tr>
         <th scope="row">

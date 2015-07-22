@@ -182,13 +182,13 @@
     {% spaceless %}
     <form id="photo-editor-{{ image.id }}" class="photo-editor attachment-{{ image.attachment.id }}">
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
-            <a href="#photo-desc-{{ image.id }}" class="add-new-h2 button active">{{ translate('Caption')|trim }}</a>
+            <a href="#photo-desc-{{ image.id }}" class="add-new-h2 button active" title="Caption">{{ translate('Caption')|trim }}</a>
         </strong>
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
-            <a href="#photo-link-{{ image.id }}" class="add-new-h2 button">{{ translate('Link')|trim }}</a>
+            <a href="#photo-link-{{ image.id }}" class="add-new-h2 button" title="Link">{{ translate('Link')|trim }}</a>
         </strong>
         <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">
-            <a href="#photo-seo-{{ image.id }}" class="add-new-h2 button">{{ translate('SEO')|trim }}</a>
+            <a href="#photo-seo-{{ image.id }}" class="add-new-h2 button" title="SEO">{{ translate('SEO')|trim }}</a>
         </strong>
         {% if slider.plugin == 'jssor' %}
             <strong data-tabcontent=".tabcontent-{{ image.id }}" style="margin-left: 4px;">

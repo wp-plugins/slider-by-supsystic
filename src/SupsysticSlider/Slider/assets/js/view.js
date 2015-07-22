@@ -4,6 +4,13 @@
 
     $(document).ready(function () {
 
+        // Set hidden overflow to jQGrid (for no scrolling)
+        $('#image-area')
+            .find('#gbox_jqgrid-htable-img-list')
+            .find('.ui-jqgrid-view')
+            .find('.ui-jqgrid-bdiv')
+            .css('overflow', 'hidden');
+
         var $error = $('div.error'),
             $entities = $('[data-entity]'),
             sliderId = $('#sliderID').val();

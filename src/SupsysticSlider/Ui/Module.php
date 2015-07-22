@@ -42,6 +42,7 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
             array($this->assets, 'load')
         );
 
+        add_action('admin_enqueue_scripts', array($this, 'menuAntiDuplicate'));
         add_action('admin_enqueue_scripts', array($this, 'colorpicker'));
 
         // Allows to sort menu items.
@@ -49,6 +50,12 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
 
         $dispatcher->dispatch('ui_menu_items');
         $this->getEnvironment()->getMenu()->register();
+    }
+
+    public function menuAntiDuplicate()
+    {
+        $url = $this->getEnvironment()->getConfig()->get('plugin_url');
+        wp_enqueue_style('rs-menu-anti-duplicate', $url . '/app/assets/css/supsystic-for-all-admin.css');
     }
 
     public function colorpicker()
@@ -107,7 +114,6 @@ class SupsysticSlider_Ui_Module extends Rsc_Mvc_Module
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-tooltipster-theme-shadow', '//cdn.jsdelivr.net/jquery.tooltipster/3.3.0/css/themes/tooltipster-shadow.css'));
         $this->add(new SupsysticSlider_Ui_Stylesheet('rs-shadows-css', $url . '/app/assets/css/shadows.css'));
         $this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-shadows-backend-css', $url . '/app/assets/css/shadows.css'));
-		$this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-menu-anti-duplicate-css', $url . '/app/assets/css/supsystic-for-all-admin.css'));
 		$this->add(new SupsysticSlider_Ui_BackendStylesheet('rs-minimal', $url . '/app/assets/css/minimal/minimal.css'));
 
         /* Javascript */

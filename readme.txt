@@ -3,7 +3,7 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
 Tested up to: 4.2.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
@@ -84,12 +84,12 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 = To install a plugin via FTP, you must =
 
-1. Download the plugin
-2. Unarchive the plugin
+1. Download the slider plugin
+2. Unarchive the Slider by Supsystic plugin
 3. Copy the folder with plugin
 4. Open ftp \wp-content\plugins\
 5. Paste the plug-ins folder in the folder
-6. Go to admin panel => open item "Plugins" => activate the plugin 
+6. Go to admin panel => open item "Plugins" => activate the slider plugin to enable carousel, postfeed, content sliders
 
 == Other Notes ==
 
@@ -226,9 +226,14 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 * [Secure Login by Supsystic](https://wordpress.org/plugins/secure-login-by-supsystic/ "Secure Login by Supsystic")
 
 
-
-
 == Changelog ==
+
+= 1.3.4 = 22/07/2015
+ * Image Slider Caption settings moved to free versions
+ * Responsive menu anti-duplicate fix
+ * Post Feed slider appearance changes
+ * Minor errors fixed
+ 
 
 = 1.3.3 = 15/07/2015
  * JS code for Bx editor moved to separate files

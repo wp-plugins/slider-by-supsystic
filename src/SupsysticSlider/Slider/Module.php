@@ -355,7 +355,7 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         $config  = $environment->getConfig();
         $modules = $environment
             ->getResolver()
-            ->getModules();
+            ->getModulesList();
 
         if (!$config->has(self::AVAILABLE_SLIDERS)) {
             $config->add(self::AVAILABLE_SLIDERS, array());
@@ -403,8 +403,8 @@ class SupsysticSlider_Slider_Module extends SupsysticSlider_Core_BaseModule
         $submenuNewSlider->setCapability('manage_options')
             //->setMenuSlug('supsystic-slider&module=slider&action=index&add=true')
 			->setMenuSlug('supsystic-slider&module=slider&action=showPresets')
-            ->setMenuTitle('New slider')
-            ->setPageTitle('New slider')
+            ->setMenuTitle('New Slider')
+            ->setPageTitle('New Slider')
             ->setModuleName('slider');
 
         $menu->addSubmenuItem('newSlider', $submenuNewSlider);
