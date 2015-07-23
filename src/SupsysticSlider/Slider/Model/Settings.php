@@ -171,6 +171,10 @@ class SupsysticSlider_Slider_Model_Settings extends SupsysticSlider_Core_BaseMod
         /** @var SupsysticSlider_Slider_Interface $module */
         $module = $this->environment->getModule($plugin);
 
+        if (null === $module) {
+            return $slider;
+        }
+
         if ($slider->settings_id == 0) {
 
             if (null === $module) {

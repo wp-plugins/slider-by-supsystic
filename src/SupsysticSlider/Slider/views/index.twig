@@ -1,67 +1,69 @@
 {% extends 'base.twig' %}
 
 {% macro renderSlider(slider) %}
-    <div class="gg-item gg-slider" id="slider-{{ slider.id }}">
-        <h3>{{ slider.title|capitalize }}</h3>
-        <div class="image">
-            {% if slider.images|length > 0 %}
-                <img src="{{ get_image_src(slider.images[0].attachment.id, '420', '250')[0] }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
-            {% else %}
-                <img src="http://placehold.it/450x220&text={{ slider.title }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
-            {% endif %}
-        </div>
-        <div class="buttons-wrap" style="display: inline-block; height: auto;">
-            <ul class="gg-control-btn">
-                <li>
-                    <a href="{{ environment.generateUrl('slider', 'view', { 'id': slider.id }) }}" class="button">
-                        <i class="fa fa-gear"></i>
-                        {{ translate('Properties') }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ environment.generateUrl('slider', 'view', { 'preview':'true', 'id': slider.id }) }}" class="button">
-                        <i class="fa fa-eye"></i>
-                        {{ translate('Preview') }}
-                    </a>
-                </li>
-                <li>
-                    <a class="delete-gallery button" href="{{ environment.generateUrl('slider', 'delete', { 'id': slider.id }) }}">
-                        <i class="fa fa-trash-o"></i>
-                        {{ translate('Delete Slider') }}
-                    </a>
-                </li>
-            </ul>
-            <div class="gg-counter">
-                <i class="fa fa-picture-o"></i>
-                {{ translate('Total images: ') }}
-                <span style="font-weight: 200;">{{ slider.images|length|default(0) }}</span>
+    {% if environment.getModule(slider.plugin) %}
+        <div class="gg-item gg-slider" id="slider-{{ slider.id }}">
+            <h3>{{ slider.title|capitalize }}</h3>
+            <div class="image">
+                {% if slider.images|length > 0 %}
+                    <img src="{{ get_image_src(slider.images[0].attachment.id, '420', '250')[0] }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
+                {% else %}
+                    <img src="http://placehold.it/450x220&text={{ slider.title }}" alt="{{ slider.title }}" title="{{ slider.title }}" width="400" height="196"/>
+                {% endif %}
             </div>
-            {% if environment.isPro() %}
-                <br />
+            <div class="buttons-wrap" style="display: inline-block; height: auto;">
+                <ul class="gg-control-btn">
+                    <li>
+                        <a href="{{ environment.generateUrl('slider', 'view', { 'id': slider.id }) }}" class="button">
+                            <i class="fa fa-gear"></i>
+                            {{ translate('Properties') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ environment.generateUrl('slider', 'view', { 'preview':'true', 'id': slider.id }) }}" class="button">
+                            <i class="fa fa-eye"></i>
+                            {{ translate('Preview') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="delete-gallery button" href="{{ environment.generateUrl('slider', 'delete', { 'id': slider.id }) }}">
+                            <i class="fa fa-trash-o"></i>
+                            {{ translate('Delete Slider') }}
+                        </a>
+                    </li>
+                </ul>
                 <div class="gg-counter">
-                    <i class="fa fa-video-camera"></i>
-                    {{ translate('Total videos: ') }}
-                    <span style="font-weight: 200;">{{ slider.videos|length|default(0) }}</span>
+                    <i class="fa fa-picture-o"></i>
+                    {{ translate('Total images: ') }}
+                    <span style="font-weight: 200;">{{ slider.images|length|default(0) }}</span>
                 </div>
-            {% endif %}
-        </div>
-        {#<div class="ui-helper-clearfix"></div>#}
-        {#<div class="regular-text" id="propsShortcode" style="margin-left: 20px;">
-            <h4 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h4>
-            [supsystic-slider id={{ slider.id }} position="center"]
-            </br>
-            <h4 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h4>
-            <label style="font-size: 13px;">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</label>
-        </div>#}
-        <div class="shortcode-wrap">
-            <div class="rs-shortcode">
-                Shortcode:<br /><br />
-                <span class="rsCopyTextCode">[supsystic-slider id={{ slider.id }} position="center"]</span><br /><br />
-                PhpCode:<br /><br />
-                <span class="rsCopyTextCode">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</span><br /><br />
+                {% if environment.isPro() %}
+                    <br />
+                    <div class="gg-counter">
+                        <i class="fa fa-video-camera"></i>
+                        {{ translate('Total videos: ') }}
+                        <span style="font-weight: 200;">{{ slider.videos|length|default(0) }}</span>
+                    </div>
+                {% endif %}
+            </div>
+            {#<div class="ui-helper-clearfix"></div>#}
+            {#<div class="regular-text" id="propsShortcode" style="margin-left: 20px;">
+                <h4 style="display: inline-block;"> {{ translate('Shortcode: ') }} </h4>
+                [supsystic-slider id={{ slider.id }} position="center"]
+                </br>
+                <h4 style="display: inline-block;"> {{ translate('PhpCode: ') }} </h4>
+                <label style="font-size: 13px;">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</label>
+            </div>#}
+            <div class="shortcode-wrap">
+                <div class="rs-shortcode">
+                    Shortcode:<br /><br />
+                    <span class="rsCopyTextCode">[supsystic-slider id={{ slider.id }} position="center"]</span><br /><br />
+                    PhpCode:<br /><br />
+                    <span class="rsCopyTextCode">{{ '<?php echo do_shortcode(\'[supsystic-slider id=' ~ slider.id ~ ' position="center"]\') ?>' }}</span><br /><br />
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endmacro %}
 
 {% block toolbar %}

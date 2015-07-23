@@ -287,6 +287,10 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
         $id      = $request->query->get('id');
         $current = $sliders->getById($id);
 
+        if (null === $this->getEnvironment()->getModule($current->plugin)) {
+            return $this->response('error.twig', array('message'=>$this->getEnvironment()->translate('Plugin for this type of slider is missing, or is available in the PRO version')));
+        }
+
         /** @var SupsysticSlider_Slider_Interface $module */
         $module = $this->getModule($current->plugin);
 
@@ -1069,6 +1073,8 @@ class SupsysticSlider_Slider_Controller extends SupsysticSlider_Core_BaseControl
                 $this->translate('Failed to load settings')
             );
         }
+
+
 
         return $this->response(Rsc_Http_Response::AJAX, array(
             'template' => $template,
