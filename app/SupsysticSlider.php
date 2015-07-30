@@ -30,7 +30,7 @@ class SupsysticSlider
 
         /* Create new plugin instance */
         $pluginPath  = dirname(dirname(__FILE__));
-        $environment = new Rsc_Environment('ssl', '1.3.5', $pluginPath);
+        $environment = new Rsc_Environment('ssl', '1.3.6', $pluginPath);
 
         /* Configure */
         $environment->configure(

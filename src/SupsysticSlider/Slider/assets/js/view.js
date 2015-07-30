@@ -129,9 +129,9 @@
          * @type {Function}
          */
         Controller.prototype.init = (function () {
-            if (hasSmallImages()) {
+            /*if (hasSmallImages()) {
                 fireSmallImages();
-            }
+            }*/
         });
 
         return new Controller();

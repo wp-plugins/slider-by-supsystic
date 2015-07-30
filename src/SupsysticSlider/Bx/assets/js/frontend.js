@@ -121,6 +121,13 @@
             } else {
                 $('.' + $slider.data('thumbs')).remove();
             }
+
+            // Change slide by a click
+            $current.find('li > img').each(function() {
+                $(this).on('click', function() {
+                    $current.goToNextSlide();
+                });
+            });
         });
 
         initWrapper();
