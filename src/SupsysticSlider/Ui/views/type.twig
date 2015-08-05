@@ -211,15 +211,17 @@
                 {{ nonProMsg|raw }}
             {% endif %}
         </p>
-        <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
-            {% if environment.isPro() %}
-                <input type="text" name="html" value="{{ unserialize_twig(image.attachment.html)|json_encode() }}" style="margin-left: 4px" placeholder="Slide html" hidden />
-                <button class="button html-editor photo-html-{{ image.id }}" data-id="{{ image.attachment.id }}" style="margin-left: 4px" title="Html Slide Editor">Html Slide Editor</button>
-            {% else %}
-                {# <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|escape|raw }}" disabled/> #}
-                {{ nonProMsg|raw }}
-            {% endif %}
-        </p>
+        {% if slider.plugin == 'jssor' %}
+            <p id="photo-html-{{ image.id }}" class="tabcontent-{{ image.id }}" style="margin: 0;" hidden>
+                {% if environment.isPro() %}
+                    <input type="text" name="html" value="{% if image.attachment.html != 'false' %}{{ unserialize_twig(image.attachment.html)|json_encode() }}{% endif %}" style="margin-left: 4px" placeholder="Slide html" hidden />
+                    <button class="button html-editor photo-html-{{ image.id }}" data-id="{{ image.attachment.id }}" style="margin-left: 4px" title="Html Slide Editor">Html Slide Editor</button>
+                {% else %}
+                    {# <input type="text" style="width: 50%; margin-left: 4px;" placeholder="{{ nonProMsg|escape|raw }}" disabled/> #}
+                    {{ nonProMsg|raw }}
+                {% endif %}
+            </p>
+        {% endif %}
         <input name="attachment_id" value="{{ image.attachment.id }}" type="hidden"/>
         <input name="action" value="{{ environment.getConfig().get('ajax_action') }}" type="hidden"/>
         <input name="route[module]" value="photos" type="hidden"/>

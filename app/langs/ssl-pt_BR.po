@@ -1,0 +1,800 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Zeca Martins <zecamartins@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Slider by Supsystic"
+msgstr "Slider por Supsystic"
+
+msgid "Overview"
+msgstr "Visão geral"
+
+msgid "New Slider"
+msgstr "Novo slider"
+
+msgid "Sliders"
+msgstr "Sliders"
+
+msgid "Images"
+msgstr "Imagens"
+
+msgid "Settings"
+msgstr "Configurações"
+
+msgid "License"
+msgstr "Licença"
+
+msgid "Get PRO"
+msgstr "Adquira a versão PRO"
+
+msgid "Loading"
+msgstr "Carregando"
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "An error has occurred"
+msgstr "Ocorreu um erro"
+
+msgid "Authorization code is not specified."
+msgstr "Código de autorização não especificado"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Upload your images from the Facebook Media Library"
+msgstr "Carregar a partir da biblioteca de mídia do Facebook"
+
+msgid "Upload from Facebook"
+msgstr "Fazer upload do Facebook"
+
+msgid "Upload new images"
+msgstr "Enviar novas imagens"
+
+msgid "Import images"
+msgstr "Importar imagens"
+
+msgid "Logout"
+msgstr "Sair"
+
+msgid "Select/unselect all photos"
+msgstr "Marcar/desmarcar todas as fotos"
+
+msgid "Empty user data."
+msgstr "Limpar dados de usuário"
+
+msgid "Flickr"
+msgstr "Flickr"
+
+msgid "Upload your images from the Flickr Media Library"
+msgstr "Subir imagens a partir da biblioteca de mídia do Flickr"
+
+msgid "Upload from Flickr"
+msgstr "Fazer upload do Flickr"
+
+msgid "Effects"
+msgstr "Efeitos"
+
+msgid "Controls"
+msgstr "Controles"
+
+msgid "Mode"
+msgstr "Modo"
+
+msgid "Distance"
+msgstr "Distância"
+
+msgid "Arrows"
+msgstr "Setas"
+
+msgid "Bullet control"
+msgstr "Controle de marcadores"
+
+msgid "Responsive size Slider"
+msgstr "Slider de dimensões responsivas"
+
+msgid "Thumbnails slider navigation"
+msgstr "Miniaturas de navegação"
+
+msgid "Enable Slideshow"
+msgstr "Habilitar Slideshow"
+
+msgid "Slideshow Speed"
+msgstr "Velocidade do Slideshow"
+
+msgid "Select Shadow"
+msgstr "Selecionar sombra"
+
+msgid "Select shadow effect"
+msgstr "Selecionar efeito de sombra"
+
+msgid "Check"
+msgstr "Checar"
+
+msgid "Authorization oauth_verifier is not specified."
+msgstr "Autorização oauth_verifier não especificada"
+
+msgid "Tumblr"
+msgstr "Tumblr"
+
+msgid "Upload your images from the Tumblr Media Library"
+msgstr "Subir imagens da bilioteca de mídia do Tumblr"
+
+msgid "Upload from Tumblr"
+msgstr "Subir do Tumblr"
+
+msgid "Text align"
+msgstr "Alinhamento de texto"
+
+msgid "Align left"
+msgstr "Alinhar à esquerda"
+
+msgid "Align center"
+msgstr "Centralizar"
+
+msgid "Align right"
+msgstr "Alinhar à direita"
+
+msgid "Text color"
+msgstr "Cor do texto"
+
+msgid "Background color"
+msgstr "Cor do fundo"
+
+msgid "Text size"
+msgstr "Tamanho do texto"
+
+msgid "Text Animation"
+msgstr "Animação do texto"
+
+msgid "Disable"
+msgstr "Desabilitar"
+
+msgid "Enable"
+msgstr "Habilitar"
+
+msgid "Text in effect"
+msgstr "Texto com efeito"
+
+msgid "FadeIn"
+msgstr "Surgimento"
+
+msgid "RollIn"
+msgstr "Rolagem"
+
+msgid "FadeInLeftBig"
+msgstr "Aumento gradual - grande à esquerda"
+
+msgid "FadeInRightBig"
+msgstr "Aumento gradual - grande à direita"
+
+msgid "FadeInLeft"
+msgstr "Aumento gradual à esquerda"
+
+msgid "FadeInRight"
+msgstr "Aumento gradual à direita"
+
+msgid "FadeInUp"
+msgstr "Aumento gradual acima"
+
+msgid "FadeInDown"
+msgstr "Aumento gradual para baixo"
+
+msgid "FlipInX"
+msgstr "Dobrar em X"
+
+msgid "FlipInY"
+msgstr "Dobrar em Y"
+
+msgid "Text out effect"
+msgstr "Efeito de saída de texto"
+
+msgid "FadeOut"
+msgstr "Desaparecimento"
+
+msgid "RollOut"
+msgstr "Rolagem"
+
+msgid "FadeOutLeftBig"
+msgstr "Desaparecimento - grande à esquerda"
+
+msgid "FadeOutRightBig"
+msgstr "Desaparecimento - grande à direita"
+
+msgid "FadeOutLeft"
+msgstr "Desaparecimento à esquerda"
+
+msgid "FadeOutRight"
+msgstr "Desaparecimento à direita"
+
+msgid "FadeOutUp"
+msgstr "Desaparecimento acima"
+
+msgid "FadeOutDown"
+msgstr "Desaparecimento abaixo"
+
+msgid "FlipOutX"
+msgstr "Desdobrar em X"
+
+msgid "FlipOutY"
+msgstr "Desdobrar em Y"
+
+msgid "Controls type"
+msgstr "Tipo de controles"
+
+msgid "circle_arrows"
+msgstr "círculo_setas"
+
+msgid "little_arrows"
+msgstr "pequenas_setas"
+
+msgid "standart_big"
+msgstr "standard_grande"
+
+msgid "standart_small"
+msgstr "standard_pequeno"
+
+msgid "circle_little"
+msgstr "círculo_pequeno"
+
+msgid "square_big"
+msgstr "quadrado_grande"
+
+msgid "fast"
+msgstr "rápido"
+
+msgid "little"
+msgstr "pequeno"
+
+msgid "go_small"
+msgstr "ir_pequeno"
+
+msgid "Border style:"
+msgstr "Estilo da borda"
+
+msgid "None"
+msgstr "Nenhum"
+
+msgid "Solid"
+msgstr "Sólido"
+
+msgid "Dashed"
+msgstr "Pontilhado"
+
+msgid "Border width:"
+msgstr "Espessura da borda"
+
+msgid "Border color:"
+msgstr "Cor da borda"
+
+msgid "Thumbnails margin"
+msgstr "Margem das miniaturas"
+
+msgid "General"
+msgstr "Geral"
+
+msgid "Touch"
+msgstr "Contato"
+
+msgid "Pager"
+msgstr "Páginas"
+
+msgid "Properties"
+msgstr "Propriedades"
+
+msgid "Slideshow"
+msgstr "Slideshow"
+
+msgid "Slideshow controls"
+msgstr "Controles do slideshow"
+
+msgid "Navigation"
+msgstr "Navegação"
+
+msgid "Captions"
+msgstr "Subtítulos"
+
+msgid "Speed"
+msgstr "Velocidade"
+
+msgid "Margin"
+msgstr "Margem"
+
+msgid "Starting slide"
+msgstr "Slide inicial"
+
+msgid "Start slider on a random slide"
+msgstr "Iniciar o slider em modo aleatório"
+
+msgid "Easing"
+msgstr "Amenizar"
+
+msgid "Enable touch"
+msgstr "Habilitar toque"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "No"
+msgstr "Não"
+
+msgid "One-to-One touch"
+msgstr "Contato um a um"
+
+msgid "Swipe threshold"
+msgstr "Entrada swipe"
+
+msgid "Enable pager"
+msgstr "Habilitar paginação"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Effect"
+msgstr "Efeito"
+
+msgid "Select effect"
+msgstr "Selecionar efeito"
+
+msgid "Title speed"
+msgstr "Velocidade do título"
+
+msgid "Opacity"
+msgstr "Transparência"
+
+msgid "Delay"
+msgstr "Intervalo"
+
+msgid "Pause"
+msgstr "Pausa"
+
+msgid "Links"
+msgstr "Links"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Upload your images from the Instagram Media Library"
+msgstr "Subir imagens da biblioteca de mídia do Instagram"
+
+msgid "Upload from Instagram"
+msgstr "Subir do Instagram"
+
+msgid "Gallery by Supsystic"
+msgstr "Galeria por Supsystic"
+
+msgid "Most common FAQs"
+msgstr "Perguntas frequentes"
+
+msgid "How to get PRO version of plugin for FREE?"
+msgstr "Como obter GRATUITAMENTE a versão PRO deste plugin?"
+
+msgid "You have an incredible opportunity to get PRO version for free. Make Translation of plugin. It will be amazing if you take advantage of this offer!"
+msgstr "Você tem uma oportunidade incrível para obter a versão PRO gratuitamente. Faça a tradução de plugin. Não perca esta oferta!"
+
+msgid "Translation"
+msgstr "Tradução"
+
+msgid "Check all FAQs"
+msgstr "Ver todas as perguntas frequentes"
+
+msgid "Video tutorial will be added soon"
+msgstr "Um tutorial em video será disponibilizado em breve!"
+
+msgid "All news"
+msgstr "Todas as novidades"
+
+msgid "Your name"
+msgstr "Seu nome"
+
+msgid "Your email"
+msgstr "Seu e-mail"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Subject"
+msgstr "Assunto"
+
+msgid "Topic"
+msgstr "Tópico"
+
+msgid "Plugin options"
+msgstr "Opções do plugin"
+
+msgid "Report a bug"
+msgstr "Informar um probema"
+
+msgid "Require a new functionallity"
+msgstr "Solicitar nova funcionalidade"
+
+msgid "Other"
+msgstr "Outros"
+
+msgid "Type your message"
+msgstr "Deixe sua mensagem"
+
+msgid "Send email"
+msgstr "Enviar e-mail"
+
+msgid "Fields with * are required to fill"
+msgstr "Campos com * são de preenchimento obrigatório"
+
+msgid "Unable to save chosen photo %s: %s"
+msgstr "Não é possível salvar imagem escolhida %s: %s"
+
+msgid "New Folder"
+msgstr "Nova pasta"
+
+msgid "The title can't be empty"
+msgstr "O título não pode estar vazio"
+
+msgid "Title successfully updated"
+msgstr "Título atualizado com sucesso"
+
+msgid "Failed to update position."
+msgstr "Falha na atualização da posição"
+
+msgid "Position updated successfully!"
+msgstr "Posição atualizada com sucesso"
+
+msgid "Rename folder"
+msgstr "Renomear pasta"
+
+msgid "Folder name:"
+msgstr "Nome da pasta"
+
+msgid "Add images to the slider"
+msgstr "Adicionar imagens ao slider"
+
+msgid "Please wait while the plugin to get the list of sliders..."
+msgstr "Por favor, aguarde enquanto o plugin obtém a lista de sliders..."
+
+msgid "Select slider:"
+msgstr "Selecionar slider:"
+
+msgid "New folder"
+msgstr "Nova pasta"
+
+msgid "Add images to the new slider"
+msgstr "Adicione imagens ao novo slider"
+
+msgid "Slider title:"
+msgstr "Título do slider"
+
+msgid "Add new video"
+msgstr "Adicionar novo vídeo"
+
+msgid "Import videos"
+msgstr "Importar vídeos"
+
+msgid "Create new folder"
+msgstr "Criar nova pasta"
+
+msgid "Delete selected items"
+msgstr "Excluir itens selecionados"
+
+msgid "Create new slider from the selected items"
+msgstr "Criar novo slider a partir dos itens selecionados"
+
+msgid "New slider from selected"
+msgstr "Novo slider a partir dos selecionados"
+
+msgid "Add the selected items to the existing slider"
+msgstr "Adcionar itens selecionados ao slider existente"
+
+msgid "Add selected to the slider"
+msgstr "Adicionar selecionado ao slider"
+
+msgid "Upload your images from the Wordpress Media Library"
+msgstr "Adicionar imagens a partir da biblioteca de mídia do Wordpress"
+
+msgid "All photos"
+msgstr "Todas as imagens"
+
+msgid "Drop photos here to move them from the folder"
+msgstr "Arraste as imagens para cá"
+
+msgid "Lifetime for cached data"
+msgstr "Duração dos dados em cache"
+
+msgid "The field \"%s\" available only for numeric values"
+msgstr "Campo \"%s\" disponível apenas para valores numéricos"
+
+msgid "Settings successfully updated!"
+msgstr "Configurações atualizadas com sucesso!"
+
+msgid "Please correct following errors:"
+msgstr "Por favor, corrija os seguintes erros:"
+
+msgid "Plugin settings"
+msgstr "Configurações do plugin"
+
+msgid "Use build-in caching:"
+msgstr "Usar cache interno"
+
+msgid "<strong>%s</strong> has its own caching system in order to significantly reduce the load on the database."
+msgstr "<strong>%s</strong> tem seu próprio cache interno para reduzir significativamente o volume do banco de dados."
+
+msgid "Caching is not available because your uploads directory is not writable."
+msgstr "Cache não disponível porque seu diretório de uploads não é gravável"
+
+msgid "Lifetime for cached data:"
+msgstr "Duração dos dados em cache"
+
+msgid "The time in seconds after which the cache will be considered obsolete. Default: 86400 (24 hours)."
+msgstr "Tempo em segundos após o qual o cache será considerado obsoleto. Padrão: 86400 (24 horas)"
+
+msgid "Clear cache"
+msgstr "Limpar cache"
+
+msgid "Allow plugin to send anonymous usage statistics:"
+msgstr "Autorizar o plugin a enviar anonimamente estatísticas de uso"
+
+msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgstr "Não coletamos dados estatísticos sobre seu uso do plugin. Coletamos apenas informações sobre erros para podermos melhorar sempre nosso produto."
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Slider \"%s\" successfully created."
+msgstr "Slider \"%s\" criado com sucesso"
+
+msgid "Failed to update positions."
+msgstr "Falha na atualização de posições"
+
+msgid "Positions are successfully updated!"
+msgstr "Posições atualizadas com sucesso!"
+
+msgid "Unable to delete selected slider"
+msgstr "Slider selecionado não pode ser apagado"
+
+msgid "Failed to import selected items."
+msgstr "Falha na importação dos itens selecionados"
+
+msgid "Invalid slider identifier."
+msgstr "Identificador de slider inválido"
+
+msgid "Unable to find requested slider."
+msgstr "Não foi possível encontrar slider selecionado."
+
+msgid "Failed to save settings. %s"
+msgstr "Falha ao salvar configurações. %s"
+
+msgid "Failed to change plugin: %s"
+msgstr "Falha ao alterar plugin: %s"
+
+msgid "Failed to attach resources."
+msgstr "Falha ao anexar recursos."
+
+msgid "%s resources successfully attached to <a href=\"%s\">%s</a>"
+msgstr "%s recursos anexados com sucesso a <a href=\"%s\">%s</a>"
+
+msgid "Successfully removed!"
+msgstr "Removido com sucesso!"
+
+msgid "Failed to load settings"
+msgstr "Falha ao carregar configurações"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "You have no images"
+msgstr "Você não tem imagens"
+
+msgid "Upload to images"
+msgstr "Subir para imagens"
+
+msgid "Preview"
+msgstr "Visualizar"
+
+msgid "Delete Slider"
+msgstr "Apagar slider"
+
+msgid "Total images: "
+msgstr "Total de imagens:"
+
+msgid "Total videos: "
+msgstr "Total de vídeos:"
+
+msgid "Shortcode: "
+msgstr "Código reduzido: "
+
+msgid "PhpCode: "
+msgstr "Código Php: "
+
+msgid "Sliders List"
+msgstr "Lista de sliders"
+
+msgid "Slider Name"
+msgstr "Nome do slider"
+
+msgid "Select module"
+msgstr "Selecionar módulo"
+
+msgid "Add Images"
+msgstr "Adicionar imagens"
+
+msgid "Add Video"
+msgstr "Adicionar vídeo"
+
+msgid "Add images"
+msgstr "Adicionar imagem"
+
+msgid "Change Slider"
+msgstr "Mudar slider"
+
+msgid "Delete"
+msgstr "Excluir"
+
+msgid "Are you really want to delete "
+msgstr "Você realmente quer excluir"
+
+msgid "Posts and Pages"
+msgstr "Postagens e páginas"
+
+msgid "Remove post"
+msgstr "Remover postagem"
+
+msgid "Select posts to show"
+msgstr "Selecionar postagens a serem apresentadas"
+
+msgid "Pages: "
+msgstr "Páginas:"
+
+msgid "Add page"
+msgstr "Adicionar página"
+
+msgid "Posts: "
+msgstr "Postagens:"
+
+msgid "Add post"
+msgstr "Adicionar postagem"
+
+msgid "Media"
+msgstr "Mídia"
+
+msgid "Shortcode"
+msgstr "Código reduzido"
+
+msgid "Slider width"
+msgstr "Largura do slider"
+
+msgid "pixels"
+msgstr "pixels"
+
+msgid "Slider height"
+msgstr "Altura do slider"
+
+msgid "Change Slider Type"
+msgstr "Trocar tipo de slider"
+
+msgid "Select plugin"
+msgstr "Selecionar plugin"
+
+msgid "Jssor PRO"
+msgstr "Jssor PRO"
+
+msgid "Please note:"
+msgstr "Importante:"
+
+msgid "Current settings will be removed without ability to restore."
+msgstr "Configração atuais serão removidas sem possibilidade de restauração."
+
+msgid "Visual editor"
+msgstr "Editor visual"
+
+msgid "Choose import source"
+msgstr "Escolha origem de dados"
+
+msgid "Import from Wordpress Media Library"
+msgstr "Importar da biblioteca de mídia do Wordpress"
+
+msgid "Import from social networks"
+msgstr "Importar das redes sociais"
+
+msgid "Import from your Instagram account"
+msgstr "Importar da biblioteca de mídia do Instagram"
+
+msgid "Import from your Flickr account"
+msgstr "Importar de sua conta no Flickr"
+
+msgid "Import from your Tumblr account"
+msgstr "Importar de sua conta no Tumblr"
+
+msgid "Import from your Facebook account"
+msgstr "Importar de sua conta do Facebook"
+
+msgid "Get Pro to enable import"
+msgstr "Adquira a versão PRO para habilitar importação"
+
+msgid "Get PRO for 29$"
+msgstr "Adquira a versão PRO por 29$"
+
+msgid "Import video"
+msgstr "Importar video"
+
+msgid "Video URL:"
+msgstr "URL do video:"
+
+msgid "Supported platforms: %s."
+msgstr "Plataformas compatíveis: %s"
+
+msgid "Edit image"
+msgstr "Editar imagem"
+
+msgid "Main"
+msgstr "Principal"
+
+msgid "Caption"
+msgstr "Informações"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Alternative text"
+msgstr "Texto alternativo"
+
+msgid "External link"
+msgstr "Link externo"
+
+msgid "Available in PRO version."
+msgstr "Disponível na versão PRO."
+
+msgid "Link"
+msgstr "Link"
+
+msgid "Open in new window"
+msgstr "Abrir em nova janela"
+
+msgid "Embeded video"
+msgstr "Incorporar vídeo"
+
+msgid "Video URL"
+msgstr "URL do Video"
+
+msgid "Supports Youtube and Vimeo. URL will be converted to embed automatically."
+msgstr "Suporta Youtube e Vimeo. A URL será convertida para incorporação automática."
+
+msgid "Select %s"
+msgstr "Selecionar %s"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "Welcome to"
+msgstr "Bem-vindo a"
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "Google"
+msgstr "Google"
+
+msgid "Wordpress.org"
+msgstr "Wordpress.org"
+
+msgid "Reffer a friend"
+msgstr "Indique um amigo"
+
+msgid "Find on the web"
+msgstr "Encontre na web"
+
+msgid "Other way"
+msgstr "Outro caminho"
+
+msgid "Thank for check info. Start using plugin"
+msgstr "Obrigado pelas informações. Comece a usar o plugin"

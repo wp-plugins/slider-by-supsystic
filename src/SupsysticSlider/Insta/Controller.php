@@ -177,7 +177,7 @@ class SupsysticSlider_Insta_Controller extends SupsysticSlider_Core_BaseControll
     protected function getClient()
     {
         /** @var SupsysticSlider_Insta_Module $insta */
-        $insta = $this->getModule($this);
+        $insta = $this->getModule('insta');
 
         return $insta->getClient();
     }

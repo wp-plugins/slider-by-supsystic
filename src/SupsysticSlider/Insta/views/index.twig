@@ -57,9 +57,9 @@
 
                     jQuery('input:checkbox').each(function () {
                         if (button_select.data('value') == 'select') {
-                            $(this).attr('checked', 'checked');
+                            $(this).attr('checked', 'checked').iCheck('update');
                         } else {
-                            $(this).removeAttr('checked');
+                            $(this).removeAttr('checked').iCheck('update');
                         }
                     });
                     if ($(this).data('value') == 'select') {

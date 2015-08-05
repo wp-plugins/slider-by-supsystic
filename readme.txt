@@ -2,8 +2,8 @@
 Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
-Tested up to: 4.2.3
-Stable tag: 1.3.6
+Tested up to: 4.2.4
+Stable tag: 1.3.7
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
@@ -227,6 +227,15 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.3.7 = 06/08/2015
+ * Minor fix Jssor Html Editor errors
+ * Added Portuguese (Brazil) language
+ * Set slider margin - depending on slider caption height
+ * Modify Html Jssor caption markup for middle vertical alignment
+ * Hide slider width/height warning msg, fix "check all" btn in social networks tabs
+ * Fix error in the Instagram module
+ * Updated default language translation file
 
 = 1.3.6 = 30/07/2015
  * Jssor slider bug-fixing

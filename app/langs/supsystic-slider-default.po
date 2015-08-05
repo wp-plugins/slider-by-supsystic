@@ -43,6 +43,9 @@ msgstr ""
 msgid "Upload from Facebook"
 msgstr ""
 
+msgid "Return to the slider"
+msgstr ""
+
 msgid "Upload new images"
 msgstr ""
 
@@ -95,6 +98,12 @@ msgid "Responsive size Slider"
 msgstr ""
 
 msgid "Thumbnails slider navigation"
+msgstr ""
+
+msgid "Bottom caption"
+msgstr ""
+
+msgid "Show caption settings"
 msgstr ""
 
 msgid "Thumbnails type"
@@ -172,7 +181,25 @@ msgstr ""
 msgid "Background: "
 msgstr ""
 
-msgid "Check"
+msgid "Size: "
+msgstr ""
+
+msgid "Background opacity: "
+msgstr ""
+
+msgid "Font: "
+msgstr ""
+
+msgid "Congradulations! You have successfully installed and activated PRO version of Slider by Supsystic plugin."
+msgstr ""
+
+msgid "Your premium support is expired in {{ days }} days"
+msgstr ""
+
+msgid "You will not be able to update your pro version with expired license"
+msgstr ""
+
+msgid "Activate"
 msgstr ""
 
 msgid "Authorization oauth_verifier is not specified."
@@ -185,6 +212,36 @@ msgid "Upload your images from the Tumblr Media Library"
 msgstr ""
 
 msgid "Upload from Tumblr"
+msgstr ""
+
+msgid "Caption position"
+msgstr ""
+
+msgid "Select Caption position"
+msgstr ""
+
+msgid "Caption settings editor"
+msgstr ""
+
+msgid "Text color: "
+msgstr ""
+
+msgid "Font family: "
+msgstr ""
+
+msgid "Background color: "
+msgstr ""
+
+msgid "Activate License"
+msgstr ""
+
+msgid "Renew License"
+msgstr ""
+
+msgid "Congratulations! You have successfully installed and activated PRO version of Slider by Supsystic plugin."
+msgstr ""
+
+msgid "Your premium support is expired in ' ~ days ~ ' days"
 msgstr ""
 
 msgid "Text align"
@@ -220,97 +277,19 @@ msgstr ""
 msgid "Text in effect"
 msgstr ""
 
-msgid "FadeIn"
-msgstr ""
-
-msgid "RollIn"
-msgstr ""
-
-msgid "FadeInLeftBig"
-msgstr ""
-
-msgid "FadeInRightBig"
-msgstr ""
-
-msgid "FadeInLeft"
-msgstr ""
-
-msgid "FadeInRight"
-msgstr ""
-
-msgid "FadeInUp"
-msgstr ""
-
-msgid "FadeInDown"
-msgstr ""
-
-msgid "FlipInX"
-msgstr ""
-
-msgid "FlipInY"
+msgid "Select Text in effect"
 msgstr ""
 
 msgid "Text out effect"
 msgstr ""
 
-msgid "FadeOut"
-msgstr ""
-
-msgid "RollOut"
-msgstr ""
-
-msgid "FadeOutLeftBig"
-msgstr ""
-
-msgid "FadeOutRightBig"
-msgstr ""
-
-msgid "FadeOutLeft"
-msgstr ""
-
-msgid "FadeOutRight"
-msgstr ""
-
-msgid "FadeOutUp"
-msgstr ""
-
-msgid "FadeOutDown"
-msgstr ""
-
-msgid "FlipOutX"
-msgstr ""
-
-msgid "FlipOutY"
+msgid "Select Text out effect"
 msgstr ""
 
 msgid "Controls type"
 msgstr ""
 
-msgid "circle_arrows"
-msgstr ""
-
-msgid "little_arrows"
-msgstr ""
-
-msgid "standart_big"
-msgstr ""
-
-msgid "standart_small"
-msgstr ""
-
-msgid "circle_little"
-msgstr ""
-
-msgid "square_big"
-msgstr ""
-
-msgid "fast"
-msgstr ""
-
-msgid "little"
-msgstr ""
-
-msgid "go_small"
+msgid "Select Controls type"
 msgstr ""
 
 msgid "Border style:"
@@ -356,6 +335,12 @@ msgid "Navigation"
 msgstr ""
 
 msgid "Captions"
+msgstr ""
+
+msgid "Caption text color"
+msgstr ""
+
+msgid "Caption background color"
 msgstr ""
 
 msgid "Speed"
@@ -472,7 +457,7 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-msgid "Type your message"
+msgid "Message"
 msgstr ""
 
 msgid "Send email"
@@ -487,7 +472,7 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-msgid "The title can't be empty"
+msgid "The title can\'t be empty"
 msgstr ""
 
 msgid "Title successfully updated"
@@ -547,7 +532,7 @@ msgstr ""
 msgid "Add selected to the slider"
 msgstr ""
 
-msgid "Upload your images from the Wordpress Media Library"
+msgid "Upload your images from the WordPress Media Library"
 msgstr ""
 
 msgid "All photos"
@@ -592,10 +577,13 @@ msgstr ""
 msgid "Allow plugin to send anonymous usage statistics:"
 msgstr ""
 
-msgid "We don't collect statistics on you, we only collect the errors encountered during use in order to improve our product."
+msgid "We don\'t collect statistics on you, we only collect the errors encountered during use in order to improve our product."
 msgstr ""
 
 msgid "Slider \"%s\" successfully created."
+msgstr ""
+
+msgid "Plugin for this type of slider is missing, or is available in the PRO version"
 msgstr ""
 
 msgid "Failed to update positions."
@@ -661,10 +649,22 @@ msgstr ""
 msgid "Sliders List"
 msgstr ""
 
+msgid "You haven\'t any sliders yet"
+msgstr ""
+
+msgid "Choose Slider Template. You can change it later."
+msgstr ""
+
 msgid "Slider Name"
 msgstr ""
 
 msgid "Select module"
+msgstr ""
+
+msgid "Create new slider"
+msgstr ""
+
+msgid "Slider Name:"
 msgstr ""
 
 msgid "Add Images"
@@ -736,13 +736,19 @@ msgstr ""
 msgid "Current settings will be removed without ability to restore."
 msgstr ""
 
+msgid "Change"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
 msgid "Visual editor"
 msgstr ""
 
 msgid "Choose import source"
 msgstr ""
 
-msgid "Import from Wordpress Media Library"
+msgid "Import from WordPress Media Library"
 msgstr ""
 
 msgid "Import from social networks"
@@ -763,9 +769,6 @@ msgstr ""
 msgid "Get Pro to enable import"
 msgstr ""
 
-msgid "Get PRO for 29$"
-msgstr ""
-
 msgid "Import video"
 msgstr ""
 
@@ -773,6 +776,9 @@ msgid "Video URL:"
 msgstr ""
 
 msgid "Supported platforms: %s."
+msgstr ""
+
+msgid "Close"
 msgstr ""
 
 msgid "Edit image"
@@ -814,29 +820,3 @@ msgstr ""
 msgid "Select %s"
 msgstr ""
 
-msgid "HTML"
-msgstr ""
-
-msgid "Welcome to"
-msgstr ""
-
-msgid "Version"
-msgstr ""
-
-msgid "Google"
-msgstr ""
-
-msgid "Wordpress.org"
-msgstr ""
-
-msgid "Reffer a friend"
-msgstr ""
-
-msgid "Find on the web"
-msgstr ""
-
-msgid "Other way"
-msgstr ""
-
-msgid "Thank for check info. Start using plugin"
-msgstr ""
