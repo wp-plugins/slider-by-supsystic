@@ -3,7 +3,7 @@ Contributors: supsystic.com
 Donate link: http://supsystic.com/plugins/slider
 Tags: slider, slider plugin, carousel, coin slider, content slider, content slideshow, flex slider, video slider, horizontal slider, HTML5 slider, image slider, image slideshow, javascript, jquery, nivo slider, photo slider, posts slider, responsive, responsive slider, image slider, image, slide show, slideshow, wordpress slider, photo slideshow, youtube, slides
 Tested up to: 4.2.4
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 
 Responsive Slider by Supsystic - the ultimate slideshow solution. Build image, video and content sliders with professional templates and options
 
@@ -227,6 +227,11 @@ Important! Shortcode must be inserted in a text editor page, and not in the visu
 
 
 == Changelog ==
+
+= 1.3.8 = 11/08/2015
+ * Fix Bx & Coin loader (visibility changes from hidden to visible)
+ * Added image slider link (URL) validate functionality
+ * Minor bugs fixed
 
 = 1.3.7 = 06/08/2015
  * Minor fix Jssor Html Editor errors

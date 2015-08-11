@@ -99,6 +99,8 @@
 
     $(document).ready(function () {
         app.init();
+        // Show sliders (Bx & Coin) only after initialization
+        $('.supsystic-slider').css('visibility', 'visible');
     }).ajaxComplete(function() {
         //app.init();
     });
